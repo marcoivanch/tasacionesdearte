@@ -15,45 +15,33 @@ body {
   font-family: 'Inter', sans-serif;
   background: #0a0f1c;
   color: #e2e8f0;
-  line-height: 1.6;
 }
 
 h1, h2 {
   font-family: 'Playfair Display', serif;
-  letter-spacing: 0.5px;
 }
 
-/* NAV (CORREGIDO) */
+/* NAV */
 .nav {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 18px 40px;
+  padding: 18px;
   display: flex;
-  justify-content: center; /* 🔴 mejor distribución */
+  justify-content: center;
   gap: 30px;
   background: rgba(10,15,28,0.7);
   backdrop-filter: blur(10px);
-  z-index: 1000;
-  flex-wrap: wrap; /* 🔴 evita que se corte */
 }
 
 .nav a {
   color: #cbd5f5;
   text-decoration: none;
-  font-size: 14px;
-  white-space: nowrap; /* 🔴 evita salto raro */
-}
-
-.nav a:hover {
-  color: white;
 }
 
 /* HERO */
 .hero {
-  position: relative;
   height: 100vh;
-  margin-top: 60px;
   background: url('iStock-1198427623.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
@@ -71,96 +59,58 @@ h1, h2 {
 .hero-content {
   position: relative;
   z-index: 2;
+  max-width: 800px;
 }
 
 .hero h1 {
-  font-size: 52px;
-  margin-bottom: 10px;
+  font-size: 48px;
 }
 
 .hero p {
   color: #94a3b8;
-  font-size: 18px;
 }
 
-/* GENERAL */
-.section {
-  max-width: 1100px;
+/* BLOQUE CLAVE */
+.clientes {
+  max-width: 1000px;
   margin: auto;
-  padding: 90px 20px;
+  padding: 80px 20px;
 }
 
-.card {
-  background: #020617;
-  border: 1px solid rgba(148,163,184,0.15);
-  border-radius: 12px;
-  padding: 35px;
-  margin-bottom: 30px;
-  transition: 0.3s;
+.clientes h2 {
+  margin-bottom: 20px;
 }
 
-.card:hover {
-  border-color: rgba(56,189,248,0.4);
+.clientes ul {
+  color: #cbd5f5;
+  line-height: 1.8;
 }
 
-img {
-  width: 100%;
-  border-radius: 12px;
-  margin: 40px 0;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+/* CTA */
+.cta {
+  text-align: center;
+  padding: 80px 20px;
 }
 
-.grid {
-  display: grid;
-  gap: 30px;
+.cta p {
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
-@media(min-width: 768px){
-  .grid-2 {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-a {
-  color: #38bdf8;
-  border-bottom: 1px solid rgba(56,189,248,0.4);
+.btn {
+  display: inline-block;
+  background: #25D366;
+  color: white;
+  padding: 14px 22px;
+  border-radius: 30px;
   text-decoration: none;
 }
 
+/* FOOTER */
 .footer {
   text-align: center;
   padding: 40px;
   color: #64748b;
-}
-
-/* WHATSAPP */
-.whatsapp {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background: #25D366;
-  color: white;
-  padding: 14px 18px;
-  border-radius: 50px;
-  font-size: 14px;
-  text-decoration: none;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-}
-
-.whatsapp:hover {
-  background: #1ebe5d;
-}
-
-/* 🔴 AJUSTE MÓVIL SUAVE */
-@media(max-width: 768px){
-  .nav {
-    gap: 15px;
-    padding: 15px;
-  }
-
-  .hero h1 {
-    font-size: 32px;
-  }
 }
 
 </style>
@@ -168,136 +118,51 @@ a {
 
 <body>
 
-<!-- NAV -->
 <div class="nav">
   <a href="index.html">Inicio</a>
   <a href="bitacora.html">Bitácora técnica</a>
   <a href="ranking.html">Mercado del arte</a>
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <h1>Tasación y Peritaje de Obras de Arte</h1>
+    <h1>Peritaje y tasación de obras de arte</h1>
     <p>Perito profesional registrado</p>
     <p>Lima – Perú</p>
   </div>
 </section>
 
-<!-- PERFIL -->
-<section class="section">
-  <div class="grid grid-2">
+<!-- 🔴 BLOQUE CLAVE -->
+<section class="clientes">
+  <h2>¿En qué situaciones se requiere una tasación de arte?</h2>
 
-    <div>
-      <h2>Marco Iván Cabrera Hernández</h2>
-      <p>Licenciado en Arte</p>
-      <p>Magíster en Gestión Pública</p>
-      <p>
-        Tasador de Arte – Perito 
-        <a href="https://www.gob.pe/institucion/vivienda/normas-legales/1896604-025-2021-vivienda-vmcs-dgprcs" target="_blank">
-        registrado
-        </a> (Perito N°62)
-      </p>
-      <p style="font-size:14px; color:#64748b;">
-        Resolución Ministerial verificable en el portal oficial del Estado Peruano.
-      </p>
-    </div>
-
-    <div>
-      <img src="Marco Cabrera 2026.jfif">
-    </div>
-
-  </div>
+  <ul>
+    <li>Procesos de herencia y sucesión patrimonial</li>
+    <li>Valoración para seguros de obras de arte</li>
+    <li>Procesos judiciales y peritajes técnicos</li>
+    <li>Auditorías y control patrimonial institucional</li>
+    <li>Determinación de valor para compra o venta</li>
+  </ul>
 </section>
 
-<!-- INFORMES -->
-<section class="section">
-  <img src="informes técnicos de tasación.png">
+<!-- 🔴 LLAMADA A LA ACCIÓN -->
+<section class="cta">
+  <p>
+  Consulta técnica directa para evaluación de obras de arte
+  </p>
 
-  <div class="card">
-    <h2>Objeto del servicio</h2>
-    <p>
-    Elaboración de informes técnicos de tasación de obras de arte y bienes culturales,
-    destinados a fines legales, contables, aseguradores y de gestión patrimonial.
-    </p>
-  </div>
-</section>
+  <a class="btn" href="https://wa.me/51930046681">
+    Contactar por WhatsApp
+  </a>
 
-<!-- TRABAJO -->
-<section class="section">
-  <div class="grid grid-2">
-
-    <div>
-      <img src="Acción.png">
-    </div>
-
-    <div>
-      <h2>Ejercicio pericial</h2>
-      <p>
-      Evaluación directa de obras, análisis material, revisión documental y verificación técnica conforme a criterios normativos y de mercado.
-      </p>
-      <p>
-      Intervención en contextos institucionales, colecciones privadas y procesos judiciales.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- EQUIPO -->
-<section class="section">
-  <img src="Equipo de trabajo.png">
-</section>
-
-<!-- METODOLOGÍA -->
-<section class="section">
-  <div class="card">
-    <h2>Metodología</h2>
-    <p>Aplicación del Reglamento Nacional de Tasaciones (RNT).</p>
-    <p>Valoración bajo criterios de valor razonable y costo de reposición.</p>
-    <p>Referencia a NICSP 17, 33, 45 y 46.</p>
-    <p>Análisis técnico, documental y de mercado.</p>
-  </div>
-</section>
-
-<!-- PROCESO -->
-<section class="section">
-  <div class="card">
-    <h2>Proceso de tasación</h2>
-    <p>1. Recepción de solicitud</p>
-    <p>2. Evaluación técnica del bien</p>
-    <p>3. Análisis normativo y de mercado</p>
-    <p>4. Elaboración del informe técnico</p>
-    <p>5. Entrega formal documentada</p>
-  </div>
-</section>
-
-<!-- CONDICIÓN -->
-<section class="section">
-  <div class="card">
-    <h2>Condición profesional</h2>
-    <p>El servicio se presta en ejercicio independiente de la profesión.</p>
-    <p>La firma del informe es personal, verificable y trazable.</p>
-  </div>
-</section>
-
-<!-- CONTACTO -->
-<section class="section">
-  <div class="card">
-    <h2>Contacto</h2>
-    <p>Correo electrónico:</p>
-    <p><strong>oficina@tasacionesdearte.org.es</strong></p>
-    <p>Lima, Perú</p>
-  </div>
+  <p style="margin-top:15px;">
+  oficina@tasacionesdearte.org.pe
+  </p>
 </section>
 
 <div class="footer">
 © 2026 Tasaciones de Arte
 </div>
-
-<a class="whatsapp" href="https://wa.me/51930046681" target="_blank">
-WhatsApp
-</a>
 
 </body>
 </html>
