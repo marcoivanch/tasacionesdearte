@@ -17,10 +17,6 @@ body {
   color: #e2e8f0;
 }
 
-h1, h2 {
-  font-family: 'Playfair Display', serif;
-}
-
 /* NAV */
 .nav {
   position: fixed;
@@ -32,28 +28,44 @@ h1, h2 {
   gap: 30px;
   background: rgba(10,15,28,0.7);
   backdrop-filter: blur(10px);
+  z-index: 1000;
+  flex-wrap: wrap;
 }
 
 .nav a {
   color: #cbd5f5;
   text-decoration: none;
+  font-size: 14px;
 }
 
-/* HERO */
+/* HERO CORREGIDO */
 .hero {
   height: 100vh;
-  background: url('iStock-1198427623.jpg') center/cover no-repeat;
+  margin-top: 60px;
+  background: rgba(10,15,28,0.85);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  position: relative;
 }
 
+/* IMAGEN SIN RECORTE */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('iStock-1198427623.jpg') center no-repeat;
+  background-size: contain; /* 🔴 clave */
+  opacity: 0.25;
+}
+
+/* overlay */
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(10,15,28,0.88);
+  background: rgba(10,15,28,0.7);
 }
 
 .hero-content {
@@ -63,6 +75,7 @@ h1, h2 {
 }
 
 .hero h1 {
+  font-family: 'Playfair Display', serif;
   font-size: 48px;
 }
 
@@ -70,47 +83,78 @@ h1, h2 {
   color: #94a3b8;
 }
 
-/* BLOQUE CLAVE */
-.clientes {
-  max-width: 1000px;
-  margin: auto;
-  padding: 80px 20px;
-}
-
-.clientes h2 {
-  margin-bottom: 20px;
-}
-
-.clientes ul {
-  color: #cbd5f5;
-  line-height: 1.8;
-}
-
-/* CTA */
-.cta {
+/* BLOQUE COMERCIAL SUTIL */
+.contexto {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
   text-align: center;
-  padding: 80px 20px;
 }
 
-.cta p {
-  font-size: 18px;
-  margin-bottom: 20px;
+.contexto p {
+  color: #cbd5f5;
+  line-height: 1.7;
 }
 
-.btn {
-  display: inline-block;
-  background: #25D366;
-  color: white;
-  padding: 14px 22px;
-  border-radius: 30px;
-  text-decoration: none;
+/* GENERAL (TU CONTENIDO) */
+.section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 90px 20px;
 }
 
-/* FOOTER */
+.card {
+  background: #020617;
+  border: 1px solid rgba(148,163,184,0.15);
+  border-radius: 12px;
+  padding: 35px;
+  margin-bottom: 30px;
+}
+
+img {
+  width: 100%;
+  border-radius: 12px;
+  margin: 40px 0;
+}
+
+.grid {
+  display: grid;
+  gap: 30px;
+}
+
+@media(min-width: 768px){
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .footer {
   text-align: center;
   padding: 40px;
   color: #64748b;
+}
+
+/* WHATSAPP */
+.whatsapp {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #25D366;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero::before {
+    background-size: cover; /* 🔴 en móvil sí */
+  }
 }
 
 </style>
@@ -124,45 +168,97 @@ h1, h2 {
   <a href="ranking.html">Mercado del arte</a>
 </div>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <h1>Peritaje y tasación de obras de arte</h1>
+    <h1>Tasación y Peritaje de Obras de Arte</h1>
     <p>Perito profesional registrado</p>
     <p>Lima – Perú</p>
   </div>
 </section>
 
-<!-- 🔴 BLOQUE CLAVE -->
-<section class="clientes">
-  <h2>¿En qué situaciones se requiere una tasación de arte?</h2>
-
-  <ul>
-    <li>Procesos de herencia y sucesión patrimonial</li>
-    <li>Valoración para seguros de obras de arte</li>
-    <li>Procesos judiciales y peritajes técnicos</li>
-    <li>Auditorías y control patrimonial institucional</li>
-    <li>Determinación de valor para compra o venta</li>
-  </ul>
+<!-- 🔴 BLOQUE ESTRATÉGICO (SUAVE) -->
+<section class="contexto">
+  <p>
+  Servicio técnico especializado en valoración de obras de arte aplicado a procesos legales, patrimoniales,
+  aseguradores y administrativos.
+  </p>
 </section>
 
-<!-- 🔴 LLAMADA A LA ACCIÓN -->
-<section class="cta">
-  <p>
-  Consulta técnica directa para evaluación de obras de arte
-  </p>
+<!-- AQUÍ CONTINÚA TODO TU CONTENIDO ORIGINAL -->
+<!-- (no modificado, solo reorganizado visualmente) -->
 
-  <a class="btn" href="https://wa.me/51930046681">
-    Contactar por WhatsApp
-  </a>
+<section class="section">
+  <div class="grid grid-2">
+    <div>
+      <h2>Marco Iván Cabrera Hernández</h2>
+      <p>Licenciado en Arte</p>
+      <p>Magíster en Gestión Pública</p>
+      <p>
+        Tasador de Arte – Perito 
+        <a href="https://www.gob.pe/institucion/vivienda/normas-legales/1896604-025-2021-vivienda-vmcs-dgprcs" target="_blank">
+        registrado
+        </a> (Perito N°62)
+      </p>
+    </div>
 
-  <p style="margin-top:15px;">
-  oficina@tasacionesdearte.org.pe
-  </p>
+    <div>
+      <img src="Marco Cabrera 2026.jfif">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <img src="informes técnicos de tasación.png">
+  <div class="card">
+    <h2>Objeto del servicio</h2>
+    <p>
+    Elaboración de informes técnicos de tasación de obras de arte y bienes culturales.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="grid grid-2">
+    <div>
+      <img src="Acción.png">
+    </div>
+
+    <div>
+      <h2>Ejercicio pericial</h2>
+      <p>
+      Evaluación técnica conforme a criterios normativos y de mercado.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <img src="Equipo de trabajo.png">
+</section>
+
+<section class="section">
+  <div class="card">
+    <h2>Metodología</h2>
+    <p>Aplicación del Reglamento Nacional de Tasaciones.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="card">
+    <h2>Contacto</h2>
+    <p><strong>oficina@tasacionesdearte.org.pe</strong></p>
+    <p>+51 930 046 681</p>
+  </div>
 </section>
 
 <div class="footer">
 © 2026 Tasaciones de Arte
 </div>
+
+<a class="whatsapp" href="https://wa.me/51930046681">
+WhatsApp
+</a>
 
 </body>
 </html>
