@@ -23,24 +23,26 @@ h1, h2 {
   letter-spacing: 0.5px;
 }
 
-/* NAV */
+/* NAV (CORREGIDO) */
 .nav {
   position: fixed;
   top: 0;
   width: 100%;
   padding: 18px 40px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center; /* 🔴 mejor distribución */
   gap: 30px;
   background: rgba(10,15,28,0.7);
   backdrop-filter: blur(10px);
   z-index: 1000;
+  flex-wrap: wrap; /* 🔴 evita que se corte */
 }
 
 .nav a {
   color: #cbd5f5;
   text-decoration: none;
   font-size: 14px;
+  white-space: nowrap; /* 🔴 evita salto raro */
 }
 
 .nav a:hover {
@@ -149,6 +151,18 @@ a {
   background: #1ebe5d;
 }
 
+/* 🔴 AJUSTE MÓVIL SUAVE */
+@media(max-width: 768px){
+  .nav {
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+}
+
 </style>
 </head>
 
@@ -156,7 +170,7 @@ a {
 
 <!-- NAV -->
 <div class="nav">
-  <a href="#">Inicio</a>
+  <a href="index.html">Inicio</a>
   <a href="bitacora.html">Bitácora técnica</a>
   <a href="ranking.html">Mercado del arte</a>
 </div>
@@ -281,7 +295,6 @@ a {
 © 2026 Tasaciones de Arte
 </div>
 
-<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/51930046681" target="_blank">
 WhatsApp
 </a>
