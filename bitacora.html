@@ -21,7 +21,7 @@ h1, h2 {
     font-family: 'Playfair Display', serif;
 }
 
-/* NAV (IGUAL QUE INDEX) */
+/* NAV */
 .nav {
   position: fixed;
   top: 0;
@@ -40,7 +40,6 @@ h1, h2 {
   color: #cbd5f5;
   text-decoration: none;
   font-size: 14px;
-  white-space: nowrap;
 }
 
 .nav a:hover {
@@ -63,32 +62,28 @@ h1, h2 {
 
 /* CONTENIDO */
 .container {
-    max-width: 1000px;
+    max-width: 900px;
     margin: auto;
     padding: 20px 20px 80px;
 }
 
 .article {
-    margin-bottom: 100px;
+    margin-bottom: 60px;
+}
+
+.separator {
+    border-top: 1px solid rgba(148,163,184,0.2);
+    margin: 60px 0 40px;
 }
 
 .article img {
     width: 100%;
     border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.tag {
-    font-size: 12px;
-    color: #38bdf8;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    margin: 20px 0;
 }
 
 .article h2 {
     font-size: 28px;
-    margin-bottom: 15px;
 }
 
 .article p {
@@ -96,10 +91,10 @@ h1, h2 {
     line-height: 1.7;
 }
 
-/* VIDEO RESPONSIVO (CLAVE) */
+/* VIDEO RESPONSIVO */
 .video {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
+    padding-bottom: 56.25%;
     height: 0;
     margin-top: 25px;
     border-radius: 10px;
@@ -108,30 +103,38 @@ h1, h2 {
 
 .video iframe {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     border: none;
 }
 
-/* FOOTER */
+/* CONTACTO */
+.contacto {
+    margin-top: 80px;
+    padding: 40px;
+    border-top: 1px solid rgba(148,163,184,0.2);
+    text-align: center;
+}
+
+.contacto p {
+    margin: 8px 0;
+}
+
+/* WHATSAPP */
+.whatsapp {
+  display: inline-block;
+  margin-top: 15px;
+  background: #25D366;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 25px;
+  text-decoration: none;
+}
+
 .footer {
     text-align: center;
     padding: 40px;
     color: #64748b;
-}
-
-/* RESPONSIVE */
-@media(max-width: 768px){
-    .nav {
-        gap: 15px;
-        padding: 15px;
-    }
-
-    .header h1 {
-        font-size: 30px;
-    }
 }
 
 </style>
@@ -139,14 +142,12 @@ h1, h2 {
 
 <body>
 
-<!-- NAV -->
 <div class="nav">
     <a href="index.html">Inicio</a>
     <a href="bitacora.html">Bitácora técnica</a>
     <a href="ranking.html">Mercado del arte</a>
 </div>
 
-<!-- HEADER -->
 <div class="header">
     <h1>Bitácora técnica de arte y peritaje</h1>
     <p>Análisis, investigación y aportes en valoración de bienes culturales</p>
@@ -154,68 +155,16 @@ h1, h2 {
 
 <div class="container">
 
-<!-- ARTÍCULO 1 -->
+<!-- 2025 -->
+<div class="separator"></div>
+
 <div class="article">
-
-    <img src="Exposición de resultados.png">
-
-    <div class="tag">Investigación académica</div>
-
-    <h2>Gestión en la tasación de obras de arte para aranceles de importación en una aduana de Lima (2023)</h2>
-
-    <p>
-    Investigación aplicada orientada a la determinación de valor en bienes culturales dentro del sistema aduanero. 
-    Se analiza la relación entre el valor declarado y el valor de mercado, identificando limitaciones metodológicas 
-    en los procesos de valoración.
-    </p>
-
-    <p>
-    Se proponen criterios técnicos que integran análisis de mercado, documentación y materialidad de la obra, 
-    contribuyendo al desarrollo de estándares aplicables en contextos institucionales.
-    </p>
-
-    <p>
-        <a href="https://repositorio.ucv.edu.pe/handle/20.500.12692/124165" target="_blank">
-        Ver investigación completa
-        </a>
-    </p>
-
-</div>
-
-<!-- ARTÍCULO 2 -->
-<div class="article">
-
-    <img src="Conferencia en Bellas Artes 2024.png">
-
-    <div class="tag">Conferencia académica</div>
-
-    <h2>La capitulación de Ayacucho: versiones, registro y análisis técnico (2024)</h2>
-
-    <p>
-    Conferencia desarrollada en la Escuela Nacional Superior Autónoma de Bellas Artes del Perú.
-    </p>
-
-    <p>
-    Análisis comparativo de versiones atribuidas a Daniel Hernández, criterios de atribución y evaluación técnica.
-    </p>
-
-    <div class="video">
-        <iframe src="https://www.youtube.com/embed/FRfvo0eD6wQ" allowfullscreen></iframe>
-    </div>
-
-</div>
-
-<!-- ARTÍCULO 3 -->
-<div class="article">
+    <h2>Los funerales de Atahualpa: análisis histórico y técnico (2025)</h2>
 
     <img src="Conferencia Pinacoteca 2025.png">
 
-    <div class="tag">Conferencia institucional</div>
-
-    <h2>Los funerales de Atahualpa: análisis histórico y técnico (2025)</h2>
-
     <p>
-    Conferencia en la Pinacoteca Municipal Ignacio Merino sobre la obra de Luis Montero.
+    Conferencia realizada en la Pinacoteca Municipal Ignacio Merino sobre la obra de Luis Montero.
     </p>
 
     <p>
@@ -225,7 +174,63 @@ h1, h2 {
     <div class="video">
         <iframe src="https://www.youtube.com/embed/na2nvNBzxDM" allowfullscreen></iframe>
     </div>
+</div>
 
+<div class="separator"></div>
+
+<!-- 2024 -->
+<div class="article">
+    <h2>La capitulación de Ayacucho: versiones, registro y análisis técnico (2024)</h2>
+
+    <img src="Conferencia en Bellas Artes 2024.png">
+
+    <p>
+    Conferencia desarrollada en la Escuela Nacional Superior Autónoma de Bellas Artes del Perú.
+    </p>
+
+    <p>
+    Análisis comparativo de versiones atribuidas a Daniel Hernández.
+    </p>
+
+    <div class="video">
+        <iframe src="https://www.youtube.com/embed/FRfvo0eD6wQ" allowfullscreen></iframe>
+    </div>
+</div>
+
+<div class="separator"></div>
+
+<!-- 2023 -->
+<div class="article">
+    <h2>Gestión en la tasación de obras de arte para aranceles de importación (2023)</h2>
+
+    <img src="Exposición de resultados.png">
+
+    <p>
+    Investigación aplicada sobre valoración de bienes culturales en el sistema aduanero.
+    </p>
+
+    <p>
+    Propuesta de criterios técnicos para mejorar la precisión en la determinación de valor.
+    </p>
+
+    <p>
+        <a href="https://repositorio.ucv.edu.pe/handle/20.500.12692/124165" target="_blank">
+        Ver investigación completa
+        </a>
+    </p>
+</div>
+
+<div class="separator"></div>
+
+<!-- CONTACTO -->
+<div class="contacto">
+    <p><strong>Contacto profesional</strong></p>
+    <p>Correo: oficina@tasacionesdearte.org.pe</p>
+    <p>Teléfono: +51 930 046 681</p>
+
+    <a class="whatsapp" href="https://wa.me/51930046681" target="_blank">
+        WhatsApp
+    </a>
 </div>
 
 </div>
