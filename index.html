@@ -3,142 +3,224 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Tasación y Peritaje de Obras de Arte</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0b1120;
-  color: #e5e7eb;
+  font-family: 'Inter', sans-serif;
+  background: #0a0f1c;
+  color: #e2e8f0;
 }
 
-header {
-  padding: 60px 20px;
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('iStock-1198427623.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  border-bottom: 1px solid #1e293b;
 }
 
-h1 {
-  font-size: 34px;
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10,15,28,0.85);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 48px;
   margin-bottom: 10px;
 }
 
-h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-p {
+.hero p {
   color: #94a3b8;
+  font-size: 18px;
 }
 
 .section {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
-  padding: 40px 20px;
+  padding: 80px 20px;
 }
 
 .card {
   background: #020617;
-  padding: 25px;
-  margin-bottom: 20px;
-  border-radius: 8px;
   border: 1px solid #1e293b;
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 30px;
 }
 
 img {
   width: 100%;
-  border-radius: 8px;
-  margin-bottom: 20px;
+  border-radius: 10px;
+  margin: 30px 0;
 }
 
 a {
-  color: #22c55e;
+  color: #38bdf8;
   text-decoration: none;
 }
 
-footer {
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+@media(min-width: 768px){
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.footer {
   text-align: center;
-  padding: 30px;
+  padding: 40px;
   color: #64748b;
 }
+
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Tasación y Peritaje de Obras de Arte</h1>
-  <p>Ejercicio profesional independiente</p>
-  <p>Lima – Perú</p>
-</header>
-
-<section class="section">
-
-  <div class="card">
-    <h2>Marco Iván Cabrera Hernández</h2>
-    <p>Licenciado en Arte</p>
-    <p>Magíster en Gestión Pública</p>
-    <p>
-      Tasador de Arte – Perito 
-      <a href="https://www.gob.pe/institucion/vivienda/normas-legales/1896604-025-2021-vivienda-vmcs-dgprcs" target="_blank">
-      registrado
-      </a> (Perito N°62)
-    </p>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Tasación y Peritaje de Obras de Arte</h1>
+    <p>Ejercicio profesional independiente</p>
+    <p>Lima – Perú</p>
   </div>
+</section>
 
-  <img src="TU_IMAGEN_INFORMES.jpg">
+<!-- PERFIL -->
+<section class="section">
+  <div class="grid grid-2">
+
+    <div>
+      <h2>Marco Iván Cabrera Hernández</h2>
+      <p>Licenciado en Arte</p>
+      <p>Magíster en Gestión Pública</p>
+      <p>
+        Tasador de Arte – Perito 
+        <a href="https://www.gob.pe/institucion/vivienda/normas-legales/1896604-025-2021-vivienda-vmcs-dgprcs" target="_blank">
+        registrado
+        </a> (Perito N°62)
+      </p>
+    </div>
+
+    <div>
+      <img src="Marco Cabrera 2026.jfif">
+    </div>
+
+  </div>
+</section>
+
+<!-- INFORMES -->
+<section class="section">
+  <img src="informes técnicos de tasación.png">
 
   <div class="card">
     <h2>Objeto del servicio</h2>
-    <p>Elaboración de informes técnicos de tasación de obras de arte y bienes culturales, destinados a fines legales, contables, aseguradores y patrimoniales.</p>
+    <p>
+    Elaboración de informes técnicos de tasación de obras de arte y bienes culturales,
+    destinados a fines legales, contables, aseguradores y de gestión patrimonial.
+    </p>
   </div>
+</section>
 
-  <div class="card">
-    <h2>Ámbito de actuación</h2>
-    <p><strong>Sector público:</strong> cumplimiento normativo, control patrimonial y procesos administrativos.</p>
-    <p><strong>Sector privado:</strong> valoración económica, asesoría patrimonial y gestión de riesgos.</p>
-    <p><strong>Ámbito legal:</strong> procesos judiciales, peritajes y soporte técnico especializado.</p>
+<!-- TRABAJO -->
+<section class="section">
+  <div class="grid grid-2">
+
+    <div>
+      <img src="Acción.png">
+    </div>
+
+    <div>
+      <h2>Ejercicio pericial</h2>
+      <p>
+      Evaluación directa de obras, análisis material, revisión documental y
+      verificación técnica conforme a criterios normativos y de mercado.
+      </p>
+      <p>
+      Intervención en contextos institucionales, colecciones privadas y procesos judiciales.
+      </p>
+    </div>
+
   </div>
+</section>
 
-  <img src="TU_IMAGEN_TRABAJO.jpg">
+<!-- EQUIPO -->
+<section class="section">
+  <img src="Equipo de trabajo.png">
+</section>
 
+<!-- METODOLOGÍA -->
+<section class="section">
   <div class="card">
     <h2>Metodología</h2>
     <p>Aplicación del Reglamento Nacional de Tasaciones (RNT).</p>
-    <p>Criterios técnicos: valor razonable y valor de reposición.</p>
-    <p>Evaluación conforme a estándares técnicos y análisis de mercado.</p>
+    <p>Valoración bajo criterios de valor razonable y costo de reposición.</p>
+    <p>Referencia a NICSP 17, 33, 45 y 46.</p>
+    <p>Análisis técnico, documental y de mercado.</p>
   </div>
+</section>
 
+<!-- PROCESO -->
+<section class="section">
   <div class="card">
-    <h2>Proceso</h2>
+    <h2>Proceso de tasación</h2>
     <p>1. Recepción de solicitud</p>
     <p>2. Evaluación técnica del bien</p>
     <p>3. Análisis normativo y de mercado</p>
     <p>4. Elaboración del informe técnico</p>
     <p>5. Entrega formal documentada</p>
   </div>
+</section>
 
-  <img src="TU_IMAGEN_PERFIL.jpg">
-
+<!-- CONDICIÓN -->
+<section class="section">
   <div class="card">
     <h2>Condición profesional</h2>
-    <p>El servicio se presta en ejercicio independiente de la profesión.</p>
-    <p>La firma del informe es personal, verificable y trazable.</p>
+    <p>
+    El servicio se presta en ejercicio independiente de la profesión.
+    </p>
+    <p>
+    La firma del informe es personal, verificable y trazable.
+    </p>
   </div>
+</section>
 
+<!-- CONTACTO -->
+<section class="section">
   <div class="card">
     <h2>Contacto</h2>
     <p>Email: marcoivanbitel@gmail.com</p>
     <p>Lima, Perú</p>
   </div>
-
 </section>
 
-<footer>
+<div class="footer">
 © 2026 Tasaciones de Arte
-</footer>
+</div>
 
 </body>
 </html>
