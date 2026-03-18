@@ -15,10 +15,12 @@ body {
   font-family: 'Inter', sans-serif;
   background: #0a0f1c;
   color: #e2e8f0;
+  line-height: 1.6;
 }
 
 h1, h2 {
   font-family: 'Playfair Display', serif;
+  letter-spacing: 0.5px;
 }
 
 .hero {
@@ -35,17 +37,16 @@ h1, h2 {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(10,15,28,0.85);
+  background: rgba(10,15,28,0.88);
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 800px;
 }
 
 .hero h1 {
-  font-size: 48px;
+  font-size: 52px;
   margin-bottom: 10px;
 }
 
@@ -57,31 +58,32 @@ h1, h2 {
 .section {
   max-width: 1100px;
   margin: auto;
-  padding: 80px 20px;
+  padding: 90px 20px;
 }
 
 .card {
   background: #020617;
-  border: 1px solid #1e293b;
-  border-radius: 10px;
-  padding: 30px;
+  border: 1px solid rgba(148,163,184,0.15);
+  border-radius: 12px;
+  padding: 35px;
   margin-bottom: 30px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  border-color: rgba(56,189,248,0.4);
 }
 
 img {
   width: 100%;
-  border-radius: 10px;
-  margin: 30px 0;
-}
-
-a {
-  color: #38bdf8;
-  text-decoration: none;
+  border-radius: 12px;
+  margin: 40px 0;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
 .grid {
   display: grid;
-  gap: 20px;
+  gap: 30px;
 }
 
 @media(min-width: 768px){
@@ -90,10 +92,34 @@ a {
   }
 }
 
+a {
+  color: #38bdf8;
+  border-bottom: 1px solid rgba(56,189,248,0.4);
+  text-decoration: none;
+}
+
 .footer {
   text-align: center;
   padding: 40px;
   color: #64748b;
+}
+
+/* BOTÓN WHATSAPP */
+.whatsapp {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #25D366;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 50px;
+  font-size: 14px;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.whatsapp:hover {
+  background: #1ebe5d;
 }
 
 </style>
@@ -105,7 +131,7 @@ a {
 <section class="hero">
   <div class="hero-content">
     <h1>Tasación y Peritaje de Obras de Arte</h1>
-    <p>Perito profesional registrado</p>
+    <p>Ejercicio profesional independiente</p>
     <p>Lima – Perú</p>
   </div>
 </section>
@@ -123,6 +149,9 @@ a {
         <a href="https://www.gob.pe/institucion/vivienda/normas-legales/1896604-025-2021-vivienda-vmcs-dgprcs" target="_blank">
         registrado
         </a> (Perito N°62)
+      </p>
+      <p style="font-size:14px; color:#64748b;">
+        Resolución Ministerial verificable en el portal oficial del Estado Peruano.
       </p>
     </div>
 
@@ -157,8 +186,7 @@ a {
     <div>
       <h2>Ejercicio pericial</h2>
       <p>
-      Evaluación directa de obras, análisis material, revisión documental y
-      verificación técnica conforme a criterios normativos y de mercado.
+      Evaluación directa de obras, análisis material, revisión documental y verificación técnica conforme a criterios normativos y de mercado.
       </p>
       <p>
       Intervención en contextos institucionales, colecciones privadas y procesos judiciales.
@@ -200,12 +228,8 @@ a {
 <section class="section">
   <div class="card">
     <h2>Condición profesional</h2>
-    <p>
-    El servicio se presta en ejercicio independiente de la profesión.
-    </p>
-    <p>
-    La firma del informe es personal, verificable y trazable.
-    </p>
+    <p>El servicio se presta en ejercicio independiente de la profesión.</p>
+    <p>La firma del informe es personal, verificable y trazable.</p>
   </div>
 </section>
 
@@ -213,7 +237,8 @@ a {
 <section class="section">
   <div class="card">
     <h2>Contacto</h2>
-    <p>Email: oficina@tasacionesdearte.org.es</p>
+    <p>Correo electrónico:</p>
+    <p><strong>oficina@tasacionesdearte.org.es</strong></p>
     <p>Lima, Perú</p>
   </div>
 </section>
@@ -221,6 +246,11 @@ a {
 <div class="footer">
 © 2026 Tasaciones de Arte
 </div>
+
+<!-- BOTÓN WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/51930046681" target="_blank">
+WhatsApp
+</a>
 
 </body>
 </html>
