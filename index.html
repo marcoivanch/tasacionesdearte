@@ -17,7 +17,6 @@ body {
   color: #e2e8f0;
 }
 
-/* NAV */
 .nav {
   position: fixed;
   top: 0;
@@ -68,7 +67,7 @@ body {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 800px;
+  max-width: 850px;
 }
 
 .hero h1 {
@@ -80,25 +79,21 @@ body {
   color: #94a3b8;
 }
 
-/* CONTEXTO */
-.contexto {
-  max-width: 900px;
-  margin: 60px auto 20px;
-  padding: 0 20px;
-  text-align: center;
-  line-height: 1.7;
-}
-
 /* CASOS */
 .casos {
   max-width: 900px;
-  margin: 20px auto 80px;
+  margin: 40px auto 80px;
   padding: 0 20px;
   text-align: center;
 }
 
 .casos h2 {
   font-family: 'Playfair Display', serif;
+  margin-bottom: 15px;
+}
+
+.casos p {
+  color: #94a3b8;
   margin-bottom: 20px;
 }
 
@@ -145,7 +140,16 @@ img {
   }
 }
 
-/* 🔴 CONTACTO OPTIMIZADO */
+/* CONTEXTO */
+.contexto {
+  max-width: 900px;
+  margin: 60px auto 20px;
+  padding: 0 20px;
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* CONTACTO */
 .contacto {
   max-width: 900px;
   margin: auto;
@@ -155,25 +159,18 @@ img {
 
 .contacto h2 {
   font-family: 'Playfair Display', serif;
-  margin-bottom: 15px;
 }
 
 .contacto p {
   color: #cbd5f5;
-  margin-bottom: 10px;
-}
-
-.contacto strong {
-  color: #ffffff;
 }
 
 .cta {
   margin-top: 25px;
-  font-size: 16px;
   color: #94a3b8;
 }
 
-/* WHATSAPP */
+/* BOTÓN */
 .btn-whatsapp {
   display: inline-block;
   margin-top: 20px;
@@ -182,11 +179,6 @@ img {
   padding: 14px 22px;
   border-radius: 30px;
   text-decoration: none;
-  font-size: 15px;
-}
-
-.btn-whatsapp:hover {
-  background: #1ebe5d;
 }
 
 .footer {
@@ -195,7 +187,6 @@ img {
   color: #64748b;
 }
 
-/* FLOAT */
 .whatsapp {
   position: fixed;
   bottom: 25px;
@@ -207,7 +198,6 @@ img {
   text-decoration: none;
 }
 
-/* MOBILE */
 @media(max-width:768px){
   .hero h1 {
     font-size: 32px;
@@ -231,14 +221,19 @@ img {
 
 <section class="hero">
   <div class="hero-content">
-    <h1>Tasación y Peritaje de Obras de Arte</h1>
+    <h1>Peritaje y tasación de obras de arte para fines legales, patrimoniales y administrativos</h1>
     <p>Perito profesional registrado</p>
     <p>Lima – Perú</p>
   </div>
 </section>
 
 <section class="casos">
-  <h2>Tasaciones efectivas para</h2>
+  <h2>Intervención pericial en los siguientes contextos</h2>
+
+  <p>
+  Determinación técnica del valor de obras de arte conforme a normativa vigente y criterios de mercado.
+  </p>
+
   <ul>
     <li>Procesos de herencia y sucesión patrimonial</li>
     <li>Valoración para seguros de obras de arte</li>
@@ -304,7 +299,6 @@ img {
   aseguradores y administrativos.
 </section>
 
-<!-- 🔴 CONTACTO QUE CIERRA -->
 <section class="contacto">
   <h2>Contacto profesional</h2>
 
@@ -312,12 +306,12 @@ img {
   <p><strong>+51 930 046 681</strong></p>
 
   <p class="cta">
-  Consulta directa para evaluación técnica de obras de arte.<br>
-  Respuesta personalizada según el caso.
+  Atención directa del perito para evaluación preliminar según el caso concreto.<br>
+  Respuesta técnica y confidencial.
   </p>
 
   <a class="btn-whatsapp" href="https://wa.me/51930046681">
-    Iniciar consulta por WhatsApp
+    Solicitar evaluación por WhatsApp
   </a>
 </section>
 
