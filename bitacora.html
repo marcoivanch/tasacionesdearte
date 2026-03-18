@@ -29,19 +29,26 @@ h1, h2 {
     display: flex;
     justify-content: flex-end;
     gap: 30px;
-    background: rgba(10,15,28,0.85);
+    background: rgba(10,15,28,0.9);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
 }
 
 .nav a {
     color: #cbd5f5;
     text-decoration: none;
-    font-size: 14px;
-    letter-spacing: 1px;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: #38bdf8;
 }
 
 .header {
     text-align: center;
-    padding: 120px 20px 80px;
+    padding: 140px 20px 80px;
 }
 
 .header h1 {
@@ -59,12 +66,12 @@ h1, h2 {
 }
 
 .article {
-    margin-bottom: 80px;
+    margin-bottom: 100px;
 }
 
 .article img {
     width: 100%;
-    border-radius: 8px;
+    border-radius: 10px;
     margin-bottom: 20px;
 }
 
@@ -72,16 +79,30 @@ h1, h2 {
     font-size: 12px;
     color: #38bdf8;
     margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .article h2 {
-    font-size: 26px;
-    margin-bottom: 10px;
+    font-size: 28px;
+    margin-bottom: 15px;
 }
 
 .article p {
     color: #cbd5f5;
-    line-height: 1.6;
+    line-height: 1.7;
+}
+
+.video {
+    margin-top: 25px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+iframe {
+    width: 100%;
+    height: 480px;
+    border: none;
 }
 
 .footer {
@@ -95,10 +116,14 @@ h1, h2 {
 
 <body>
 
+<!-- NAV -->
 <div class="nav">
     <a href="index.html">INICIO</a>
+    <a href="bitacora.html">BITÁCORA</a>
+    <a href="ranking.html">RANKING</a>
 </div>
 
+<!-- HEADER -->
 <div class="header">
     <h1>Bitácora técnica de arte y peritaje</h1>
     <p>Análisis, investigación y aportes en valoración de bienes culturales</p>
@@ -113,23 +138,23 @@ h1, h2 {
 
     <div class="tag">Investigación académica</div>
 
-    <h2>Gestión en la tasación de obras de arte para aranceles de importación en una aduana de Lima (2023) [Tesis Maestría]</h2>
+    <h2>Gestión en la tasación de obras de arte para aranceles de importación en una aduana de Lima (2023)</h2>
 
     <p>
-    Investigación aplicada orientada a la problemática de la determinación de valor en bienes culturales dentro del sistema aduanero. 
-    Se analiza la relación entre el valor declarado y el valor de mercado en obras de arte, identificando brechas metodológicas 
-    y limitaciones en los procedimientos de fiscalización.
+    Investigación aplicada orientada a la determinación de valor en bienes culturales dentro del sistema aduanero. 
+    Se analiza la relación entre el valor declarado y el valor de mercado, identificando limitaciones metodológicas 
+    en los procesos de valoración.
     </p>
 
     <p>
-    El estudio propone criterios técnicos para una valoración más precisa, integrando enfoques de mercado, documentación 
-    y análisis material, contribuyendo al desarrollo de estándares aplicables en contextos institucionales.
+    Se proponen criterios técnicos que integran análisis de mercado, documentación y materialidad de la obra, 
+    contribuyendo al desarrollo de estándares aplicables en contextos institucionales.
     </p>
 
     <p>
-    <a href="https://repositorio.ucv.edu.pe/handle/20.500.12692/124165" target="_blank" style="color:#38bdf8;">
-    Ver repositorio oficial
-    </a>
+        <a href="https://repositorio.ucv.edu.pe/handle/20.500.12692/124165" target="_blank" style="color:#38bdf8;">
+        Ver investigación completa
+        </a>
     </p>
 
 </div>
@@ -137,21 +162,28 @@ h1, h2 {
 <!-- ARTÍCULO 2 -->
 <div class="article">
 
-    <img src="Conferencia en Bellas Artes 2024.png">
+    <img src="Conferencia BBAA 2024.png">
 
     <div class="tag">Conferencia académica</div>
 
-    <h2>"La capitulación de Ayacucho": versiones, registro y análisis técnico (2024)</h2>
+    <h2>La capitulación de Ayacucho: versiones, registro y análisis técnico (2024)</h2>
 
     <p>
-    Exposición desarrollada en la Escuela Nacional Superior Autónoma de Bellas Artes del Perú, 
-    centrada en el estudio comparativo de versiones atribuidas a Daniel Hernández.
+    Conferencia desarrollada en la Escuela Nacional Superior Autónoma de Bellas Artes del Perú, 
+    centrada en el análisis comparativo de versiones atribuidas a Daniel Hernández.
     </p>
 
     <p>
-    Se abordaron problemáticas de atribución, registro patrimonial y análisis de elementos materiales, 
-    destacando la importancia de la lectura técnica frente a interpretaciones historiográficas tradicionales.
+    Se abordaron criterios de atribución, registro patrimonial y evaluación material, 
+    estableciendo diferencias técnicas verificables entre versiones y cuestionando lecturas historiográficas tradicionales.
     </p>
+
+    <!-- VIDEO BBAA -->
+    <div class="video">
+        <iframe src="https://www.youtube.com/embed/FRfvo0eD6wQ" 
+        title="Conferencia Bellas Artes"
+        allowfullscreen></iframe>
+    </div>
 
 </div>
 
@@ -162,17 +194,24 @@ h1, h2 {
 
     <div class="tag">Conferencia institucional</div>
 
-    <h2>"Los funerales de Atahualpa": análisis histórico y técnico (2025)</h2>
+    <h2>Los funerales de Atahualpa: análisis histórico y técnico (2025)</h2>
 
     <p>
-    Conferencia desarrollada en la Pinacoteca Municipal Ignacio Merino, enfocada en la obra de Luis Montero 
-    como pieza clave en la construcción de la narrativa histórica republicana.
+    Conferencia realizada en la Pinacoteca Municipal Ignacio Merino, dedicada al análisis de la obra de Luis Montero 
+    como construcción visual del relato histórico republicano.
     </p>
 
     <p>
-    El análisis integra aspectos iconográficos, contexto histórico y evaluación material, 
-    proponiendo una lectura crítica sobre la función simbólica de la pintura en el imaginario nacional.
+    Se integran elementos iconográficos, contexto histórico y evaluación técnica de la obra, 
+    proponiendo una lectura crítica sobre su función simbólica dentro del imaginario nacional.
     </p>
+
+    <!-- VIDEO PINACOTECA -->
+    <div class="video">
+        <iframe src="https://www.youtube.com/embed/na2nvNBzxDM" 
+        title="Conferencia Pinacoteca"
+        allowfullscreen></iframe>
+    </div>
 
 </div>
 
