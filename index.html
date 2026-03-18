@@ -38,11 +38,10 @@ body {
   font-size: 14px;
 }
 
-/* HERO CORREGIDO */
+/* HERO */
 .hero {
   height: 100vh;
   margin-top: 60px;
-  background: rgba(10,15,28,0.85);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,22 +49,20 @@ body {
   position: relative;
 }
 
-/* IMAGEN SIN RECORTE */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
   background: url('iStock-1198427623.jpg') center no-repeat;
-  background-size: contain; /* 🔴 clave */
+  background-size: contain;
   opacity: 0.25;
 }
 
-/* overlay */
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(10,15,28,0.7);
+  background: rgba(10,15,28,0.75);
 }
 
 .hero-content {
@@ -83,20 +80,40 @@ body {
   color: #94a3b8;
 }
 
-/* BLOQUE COMERCIAL SUTIL */
+/* CONTEXTO */
 .contexto {
   max-width: 900px;
-  margin: 60px auto;
+  margin: 60px auto 20px;
+  padding: 0 20px;
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* CASOS */
+.casos {
+  max-width: 900px;
+  margin: 20px auto 80px;
   padding: 0 20px;
   text-align: center;
 }
 
-.contexto p {
-  color: #cbd5f5;
-  line-height: 1.7;
+.casos h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
 }
 
-/* GENERAL (TU CONTENIDO) */
+.casos ul {
+  list-style: none;
+  padding: 0;
+  color: #cbd5f5;
+  line-height: 1.8;
+}
+
+.casos li {
+  margin-bottom: 8px;
+}
+
+/* CONTENIDO */
 .section {
   max-width: 1100px;
   margin: auto;
@@ -128,13 +145,57 @@ img {
   }
 }
 
+/* 🔴 CONTACTO OPTIMIZADO */
+.contacto {
+  max-width: 900px;
+  margin: auto;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.contacto h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 15px;
+}
+
+.contacto p {
+  color: #cbd5f5;
+  margin-bottom: 10px;
+}
+
+.contacto strong {
+  color: #ffffff;
+}
+
+.cta {
+  margin-top: 25px;
+  font-size: 16px;
+  color: #94a3b8;
+}
+
+/* WHATSAPP */
+.btn-whatsapp {
+  display: inline-block;
+  margin-top: 20px;
+  background: #25D366;
+  color: white;
+  padding: 14px 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.btn-whatsapp:hover {
+  background: #1ebe5d;
+}
+
 .footer {
   text-align: center;
   padding: 40px;
   color: #64748b;
 }
 
-/* WHATSAPP */
+/* FLOAT */
 .whatsapp {
   position: fixed;
   bottom: 25px;
@@ -153,7 +214,7 @@ img {
   }
 
   .hero::before {
-    background-size: cover; /* 🔴 en móvil sí */
+    background-size: cover;
   }
 }
 
@@ -168,7 +229,6 @@ img {
   <a href="ranking.html">Mercado del arte</a>
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
     <h1>Tasación y Peritaje de Obras de Arte</h1>
@@ -177,16 +237,21 @@ img {
   </div>
 </section>
 
-<!-- 🔴 BLOQUE ESTRATÉGICO (SUAVE) -->
 <section class="contexto">
-  <p>
   Servicio técnico especializado en valoración de obras de arte aplicado a procesos legales, patrimoniales,
   aseguradores y administrativos.
-  </p>
 </section>
 
-<!-- AQUÍ CONTINÚA TODO TU CONTENIDO ORIGINAL -->
-<!-- (no modificado, solo reorganizado visualmente) -->
+<section class="casos">
+  <h2>¿En qué situaciones se requiere una tasación de obras de arte?</h2>
+  <ul>
+    <li>Procesos de herencia y sucesión patrimonial</li>
+    <li>Valoración para seguros de obras de arte</li>
+    <li>Procesos judiciales y peritajes técnicos</li>
+    <li>Auditorías y control patrimonial institucional</li>
+    <li>Determinación de valor para compra o venta</li>
+  </ul>
+</section>
 
 <section class="section">
   <div class="grid grid-2">
@@ -212,9 +277,7 @@ img {
   <img src="informes técnicos de tasación.png">
   <div class="card">
     <h2>Objeto del servicio</h2>
-    <p>
-    Elaboración de informes técnicos de tasación de obras de arte y bienes culturales.
-    </p>
+    <p>Elaboración de informes técnicos de tasación de obras de arte y bienes culturales.</p>
   </div>
 </section>
 
@@ -223,12 +286,9 @@ img {
     <div>
       <img src="Acción.png">
     </div>
-
     <div>
       <h2>Ejercicio pericial</h2>
-      <p>
-      Evaluación técnica conforme a criterios normativos y de mercado.
-      </p>
+      <p>Evaluación técnica conforme a criterios normativos y de mercado.</p>
     </div>
   </div>
 </section>
@@ -244,12 +304,21 @@ img {
   </div>
 </section>
 
-<section class="section">
-  <div class="card">
-    <h2>Contacto</h2>
-    <p><strong>oficina@tasacionesdearte.org.pe</strong></p>
-    <p>+51 930 046 681</p>
-  </div>
+<!-- 🔴 CONTACTO QUE CIERRA -->
+<section class="contacto">
+  <h2>Contacto profesional</h2>
+
+  <p><strong>oficina@tasacionesdearte.org.pe</strong></p>
+  <p><strong>+51 930 046 681</strong></p>
+
+  <p class="cta">
+  Consulta directa para evaluación técnica de obras de arte.<br>
+  Respuesta personalizada según el caso.
+  </p>
+
+  <a class="btn-whatsapp" href="https://wa.me/51930046681">
+    Iniciar consulta por WhatsApp
+  </a>
 </section>
 
 <div class="footer">
