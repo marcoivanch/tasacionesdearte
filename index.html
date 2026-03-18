@@ -15,16 +15,37 @@ body {
   font-family: 'Inter', sans-serif;
   background: #0a0f1c;
   color: #e2e8f0;
-  line-height: 1.6;
 }
 
 h1, h2 {
   font-family: 'Playfair Display', serif;
-  letter-spacing: 0.5px;
 }
 
+/* NAV */
+.nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(10,15,28,0.9);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 25px;
+  z-index: 10;
+}
+
+.nav a {
+  color: #cbd5f5;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav a:hover {
+  color: white;
+}
+
+/* HERO */
 .hero {
-  position: relative;
   height: 100vh;
   background: url('iStock-1198427623.jpg') center/cover no-repeat;
   display: flex;
@@ -37,7 +58,7 @@ h1, h2 {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(10,15,28,0.88);
+  background: rgba(10,15,28,0.85);
 }
 
 .hero-content {
@@ -47,12 +68,6 @@ h1, h2 {
 
 .hero h1 {
   font-size: 52px;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  color: #94a3b8;
-  font-size: 18px;
 }
 
 .section {
@@ -67,18 +82,12 @@ h1, h2 {
   border-radius: 12px;
   padding: 35px;
   margin-bottom: 30px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  border-color: rgba(56,189,248,0.4);
 }
 
 img {
   width: 100%;
   border-radius: 12px;
   margin: 40px 0;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
 .grid {
@@ -92,19 +101,7 @@ img {
   }
 }
 
-a {
-  color: #38bdf8;
-  border-bottom: 1px solid rgba(56,189,248,0.4);
-  text-decoration: none;
-}
-
-.footer {
-  text-align: center;
-  padding: 40px;
-  color: #64748b;
-}
-
-/* BOTÓN WHATSAPP */
+/* WhatsApp */
 .whatsapp {
   position: fixed;
   bottom: 25px;
@@ -113,19 +110,19 @@ a {
   color: white;
   padding: 14px 18px;
   border-radius: 50px;
-  font-size: 14px;
-  text-decoration: none;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-}
-
-.whatsapp:hover {
-  background: #1ebe5d;
 }
 
 </style>
 </head>
 
 <body>
+
+<!-- NAV -->
+<div class="nav">
+  <a href="#">Inicio</a>
+  <a href="bitacora.html">Bitácora técnica</a>
+  <a href="ranking.html">Mercado del arte</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -150,9 +147,6 @@ a {
         registrado
         </a> (Perito N°62)
       </p>
-      <p style="font-size:14px; color:#64748b;">
-        Resolución Ministerial verificable en el portal oficial del Estado Peruano.
-      </p>
     </div>
 
     <div>
@@ -168,86 +162,11 @@ a {
 
   <div class="card">
     <h2>Objeto del servicio</h2>
-    <p>
-    Elaboración de informes técnicos de tasación de obras de arte y bienes culturales,
-    destinados a fines legales, contables, aseguradores y de gestión patrimonial.
-    </p>
+    <p>Elaboración de informes técnicos de tasación de obras de arte.</p>
   </div>
 </section>
 
-<!-- TRABAJO -->
-<section class="section">
-  <div class="grid grid-2">
-
-    <div>
-      <img src="Acción.png">
-    </div>
-
-    <div>
-      <h2>Ejercicio pericial</h2>
-      <p>
-      Evaluación directa de obras, análisis material, revisión documental y verificación técnica conforme a criterios normativos y de mercado.
-      </p>
-      <p>
-      Intervención en contextos institucionales, colecciones privadas y procesos judiciales.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- EQUIPO -->
-<section class="section">
-  <img src="Equipo de trabajo.png">
-</section>
-
-<!-- METODOLOGÍA -->
-<section class="section">
-  <div class="card">
-    <h2>Metodología</h2>
-    <p>Aplicación del Reglamento Nacional de Tasaciones (RNT).</p>
-    <p>Valoración bajo criterios de valor razonable y costo de reposición.</p>
-    <p>Referencia a NICSP 17, 33, 45 y 46.</p>
-    <p>Análisis técnico, documental y de mercado.</p>
-  </div>
-</section>
-
-<!-- PROCESO -->
-<section class="section">
-  <div class="card">
-    <h2>Proceso de tasación</h2>
-    <p>1. Recepción de solicitud</p>
-    <p>2. Evaluación técnica del bien</p>
-    <p>3. Análisis normativo y de mercado</p>
-    <p>4. Elaboración del informe técnico</p>
-    <p>5. Entrega formal documentada</p>
-  </div>
-</section>
-
-<!-- CONDICIÓN -->
-<section class="section">
-  <div class="card">
-    <h2>Condición profesional</h2>
-    <p>El servicio se presta en ejercicio independiente de la profesión.</p>
-    <p>La firma del informe es personal, verificable y trazable.</p>
-  </div>
-</section>
-
-<!-- CONTACTO -->
-<section class="section">
-  <div class="card">
-    <h2>Contacto</h2>
-    <p>Correo electrónico:</p>
-    <p><strong>oficina@tasacionesdearte.org.es</strong></p>
-    <p>Lima, Perú</p>
-  </div>
-</section>
-
-<div class="footer">
-© 2026 Tasaciones de Arte
-</div>
-
-<!-- BOTÓN WHATSAPP -->
+<!-- WhatsApp -->
 <a class="whatsapp" href="https://wa.me/51930046681" target="_blank">
 WhatsApp
 </a>
