@@ -21,7 +21,7 @@ h1, h2 {
   font-family: 'Playfair Display', serif;
 }
 
-/* NAV (idéntico a index) */
+/* NAV */
 .nav {
   position: fixed;
   top: 0;
@@ -33,17 +33,12 @@ h1, h2 {
   background: rgba(10,15,28,0.7);
   backdrop-filter: blur(10px);
   z-index: 1000;
-  flex-wrap: wrap;
 }
 
 .nav a {
   color: #cbd5f5;
   text-decoration: none;
   font-size: 14px;
-}
-
-.nav a:hover {
-  color: white;
 }
 
 /* HEADER */
@@ -60,67 +55,54 @@ h1, h2 {
   color: #94a3b8;
 }
 
-/* CONTENIDO */
+/* CONTENEDOR */
 .container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
-  padding: 20px 20px 80px;
+  padding: 20px;
 }
 
-.article {
+/* ARTÍCULO DESTACADO */
+.destacado {
+  background: #020617;
+  border: 1px solid rgba(148,163,184,0.2);
+  border-radius: 12px;
+  padding: 30px;
   margin-bottom: 60px;
 }
 
-.separator {
-  border-top: 1px solid rgba(148,163,184,0.2);
-  margin: 60px 0 40px;
-}
-
-.article img {
+.destacado img {
   width: 100%;
   border-radius: 10px;
   margin: 20px 0;
 }
 
-.article h2 {
-  font-size: 28px;
+/* ÍNDICE */
+.indice h2 {
+  margin-bottom: 30px;
 }
 
-.article p {
-  color: #cbd5f5;
-  line-height: 1.7;
-}
-
-/* VIDEO RESPONSIVO */
-.video {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  margin-top: 25px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.video iframe {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* CONTACTO */
-.contacto {
-  margin-top: 80px;
-  padding: 40px;
+.card {
   border-top: 1px solid rgba(148,163,184,0.2);
-  text-align: center;
+  padding: 25px 0;
 }
 
-.contacto p {
-  margin: 8px 0;
+.card h3 {
+  margin-bottom: 10px;
 }
 
-/* WHATSAPP (forzado y corregido) */
+.card p {
+  color: #94a3b8;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #cbd5f5;
+  text-decoration: none;
+}
+
+/* WHATSAPP */
 .whatsapp {
   position: fixed !important;
   bottom: 25px;
@@ -137,12 +119,6 @@ h1, h2 {
   text-align: center;
   padding: 40px;
   color: #64748b;
-}
-
-@media(max-width:768px){
-  .header h1 {
-    font-size: 30px;
-  }
 }
 
 </style>
@@ -163,50 +139,9 @@ h1, h2 {
 
 <div class="container">
 
-<div class="separator"></div>
-
-<div class="article">
-  <h2>Los funerales de Atahualpa: análisis histórico y técnico (2025)</h2>
-
-  <img src="Conferencia Pinacoteca 2025.png">
-
-  <p>
-  Conferencia realizada en la Pinacoteca Municipal Ignacio Merino sobre la obra de Luis Montero.
-  </p>
-
-  <p>
-  Evaluación iconográfica, histórica y técnica dentro del contexto republicano.
-  </p>
-
-  <div class="video">
-    <iframe src="https://www.youtube.com/embed/na2nvNBzxDM" allowfullscreen></iframe>
-  </div>
-</div>
-
-<div class="separator"></div>
-
-<div class="article">
-  <h2>La capitulación de Ayacucho: versiones, registro y análisis técnico (2024)</h2>
-
-  <img src="Conferencia en Bellas Artes 2024.png">
-
-  <p>
-  Conferencia desarrollada en la Escuela Nacional Superior Autónoma de Bellas Artes del Perú.
-  </p>
-
-  <p>
-  Análisis comparativo de versiones atribuidas a Daniel Hernández.
-  </p>
-
-  <div class="video">
-    <iframe src="https://www.youtube.com/embed/FRfvo0eD6wQ" allowfullscreen></iframe>
-  </div>
-</div>
-
-<div class="separator"></div>
-
-<div class="article">
-  <h2>Gestión en la tasación de obras de arte para aranceles de importación (2023)</h2>
+<!-- ARTÍCULO ANCLADO -->
+<div class="destacado">
+  <h2>Gestión en la tasación de obras de arte para aranceles de importación</h2>
 
   <img src="Exposición de resultados.png">
 
@@ -225,12 +160,22 @@ h1, h2 {
   </p>
 </div>
 
-<div class="separator"></div>
+<!-- ÍNDICE -->
+<div class="indice">
+  <h2>Índice de publicaciones</h2>
 
-<div class="contacto">
-  <p><strong>Contacto profesional</strong></p>
-  <p>Correo: oficina@tasacionesdearte.org.es</p>
-  <p>Teléfono: +51 930 046 681</p>
+  <div class="card">
+    <h3>Los funerales de Atahualpa</h3>
+    <p>Análisis histórico y técnico presentado en la Pinacoteca Municipal Ignacio Merino.</p>
+    <a href="bitacora-funerales.html">Ver análisis completo</a>
+  </div>
+
+  <div class="card">
+    <h3>La capitulación de Ayacucho</h3>
+    <p>Estudio comparativo de versiones atribuidas a Daniel Hernández.</p>
+    <a href="bitacora-capitulacion.html">Ver análisis completo</a>
+  </div>
+
 </div>
 
 </div>
@@ -239,7 +184,6 @@ h1, h2 {
 © 2026 Tasaciones de Arte
 </div>
 
-<!-- BOTÓN FLOTANTE -->
 <a class="whatsapp" href="https://wa.me/51930046681">
 WhatsApp
 </a>
