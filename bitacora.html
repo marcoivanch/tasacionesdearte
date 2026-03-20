@@ -11,22 +11,22 @@
 <style>
 
 body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: #0a0f1c;
-    color: #e2e8f0;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #0a0f1c;
+  color: #e2e8f0;
 }
 
 h1, h2 {
-    font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display', serif;
 }
 
-/* NAV */
+/* NAV (idéntico a index) */
 .nav {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 18px 40px;
+  padding: 18px;
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -48,93 +48,101 @@ h1, h2 {
 
 /* HEADER */
 .header {
-    text-align: center;
-    padding: 140px 20px 60px;
+  text-align: center;
+  padding: 140px 20px 60px;
 }
 
 .header h1 {
-    font-size: 42px;
+  font-size: 42px;
 }
 
 .header p {
-    color: #94a3b8;
+  color: #94a3b8;
 }
 
 /* CONTENIDO */
 .container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px 20px 80px;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px 20px 80px;
 }
 
 .article {
-    margin-bottom: 60px;
+  margin-bottom: 60px;
 }
 
 .separator {
-    border-top: 1px solid rgba(148,163,184,0.2);
-    margin: 60px 0 40px;
+  border-top: 1px solid rgba(148,163,184,0.2);
+  margin: 60px 0 40px;
 }
 
 .article img {
-    width: 100%;
-    border-radius: 10px;
-    margin: 20px 0;
+  width: 100%;
+  border-radius: 10px;
+  margin: 20px 0;
 }
 
 .article h2 {
-    font-size: 28px;
+  font-size: 28px;
 }
 
 .article p {
-    color: #cbd5f5;
-    line-height: 1.7;
+  color: #cbd5f5;
+  line-height: 1.7;
 }
 
 /* VIDEO RESPONSIVO */
 .video {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    margin-top: 25px;
-    border-radius: 10px;
-    overflow: hidden;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  margin-top: 25px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .video iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 /* CONTACTO */
 .contacto {
-    margin-top: 80px;
-    padding: 40px;
-    border-top: 1px solid rgba(148,163,184,0.2);
-    text-align: center;
+  margin-top: 80px;
+  padding: 40px;
+  border-top: 1px solid rgba(148,163,184,0.2);
+  text-align: center;
 }
 
 .contacto p {
-    margin: 8px 0;
+  margin: 8px 0;
 }
 
-/* WHATSAPP */
+/* WHATSAPP (flotante como index) */
 .whatsapp {
-  display: inline-block;
-  margin-top: 15px;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
   background: #25D366;
   color: white;
-  padding: 10px 16px;
-  border-radius: 25px;
+  padding: 14px 18px;
+  border-radius: 50px;
   text-decoration: none;
+  z-index: 1000;
 }
 
 .footer {
-    text-align: center;
-    padding: 40px;
-    color: #64748b;
+  text-align: center;
+  padding: 40px;
+  color: #64748b;
+}
+
+@media(max-width:768px){
+  .header h1 {
+    font-size: 30px;
+  }
 }
 
 </style>
@@ -143,94 +151,86 @@ h1, h2 {
 <body>
 
 <div class="nav">
-    <a href="index.html">Inicio</a>
-    <a href="bitacora.html">Bitácora técnica</a>
-    <a href="ranking.html">Mercado del arte</a>
+  <a href="index.html">Inicio</a>
+  <a href="bitacora.html">Bitácora técnica</a>
+  <a href="ranking.html">Mercado del arte</a>
 </div>
 
 <div class="header">
-    <h1>Bitácora técnica de arte y peritaje</h1>
-    <p>Análisis, investigaciones y aportes en arte</div> 
+  <h1>Bitácora técnica de arte y peritaje</h1>
+  <p>Análisis, investigaciones y aportes en arte</p>
 </div>
 
 <div class="container">
 
-<!-- 2025 -->
 <div class="separator"></div>
 
 <div class="article">
-    <h2>Los funerales de Atahualpa: análisis histórico y técnico (2025)</h2>
+  <h2>Los funerales de Atahualpa: análisis histórico y técnico (2025)</h2>
 
-    <img src="Conferencia Pinacoteca 2025.png">
+  <img src="Conferencia Pinacoteca 2025.png">
 
-    <p>
-    Conferencia realizada en la Pinacoteca Municipal Ignacio Merino sobre la obra de Luis Montero.
-    </p>
+  <p>
+  Conferencia realizada en la Pinacoteca Municipal Ignacio Merino sobre la obra de Luis Montero.
+  </p>
 
-    <p>
-    Evaluación iconográfica, histórica y técnica dentro del contexto republicano.
-    </p>
+  <p>
+  Evaluación iconográfica, histórica y técnica dentro del contexto republicano.
+  </p>
 
-    <div class="video">
-        <iframe src="https://www.youtube.com/embed/na2nvNBzxDM" allowfullscreen></iframe>
-    </div>
+  <div class="video">
+    <iframe src="https://www.youtube.com/embed/na2nvNBzxDM" allowfullscreen></iframe>
+  </div>
 </div>
 
 <div class="separator"></div>
 
-<!-- 2024 -->
 <div class="article">
-    <h2>La capitulación de Ayacucho: versiones, registro y análisis técnico (2024)</h2>
+  <h2>La capitulación de Ayacucho: versiones, registro y análisis técnico (2024)</h2>
 
-    <img src="Conferencia en Bellas Artes 2024.png">
+  <img src="Conferencia en Bellas Artes 2024.png">
 
-    <p>
-    Conferencia desarrollada en la Escuela Nacional Superior Autónoma de Bellas Artes del Perú.
-    </p>
+  <p>
+  Conferencia desarrollada en la Escuela Nacional Superior Autónoma de Bellas Artes del Perú.
+  </p>
 
-    <p>
-    Análisis comparativo de versiones atribuidas a Daniel Hernández.
-    </p>
+  <p>
+  Análisis comparativo de versiones atribuidas a Daniel Hernández.
+  </p>
 
-    <div class="video">
-        <iframe src="https://www.youtube.com/embed/FRfvo0eD6wQ" allowfullscreen></iframe>
-    </div>
+  <div class="video">
+    <iframe src="https://www.youtube.com/embed/FRfvo0eD6wQ" allowfullscreen></iframe>
+  </div>
 </div>
 
 <div class="separator"></div>
 
-<!-- 2023 -->
 <div class="article">
-    <h2>Gestión en la tasación de obras de arte para aranceles de importación (2023)</h2>
+  <h2>Gestión en la tasación de obras de arte para aranceles de importación (2023)</h2>
 
-    <img src="Exposición de resultados.png">
+  <img src="Exposición de resultados.png">
 
-    <p>
-    Investigación aplicada sobre valoración de bienes culturales en el sistema aduanero.
-    </p>
+  <p>
+  Investigación aplicada sobre valoración de bienes culturales en el sistema aduanero.
+  </p>
 
-    <p>
-    Propuesta de criterios técnicos para mejorar la precisión en la determinación de valor.
-    </p>
+  <p>
+  Propuesta de criterios técnicos para mejorar la precisión en la determinación de valor.
+  </p>
 
-    <p>
-        <a href="https://repositorio.ucv.edu.pe/handle/20.500.12692/124165" target="_blank">
-        Ver investigación completa
-        </a>
-    </p>
-</div>
-
-<div class="separator"></div>
-
-<!-- CONTACTO -->
-<div class="contacto">
-    <p><strong>Contacto profesional</strong></p>
-    <p>Correo: oficina@tasacionesdearte.org.pe</p>
-    <p>Teléfono: +51 930 046 681</p>
-
-    <a class="whatsapp" href="https://wa.me/51930046681" target="_blank">
-        WhatsApp
+  <p>
+    <a href="https://repositorio.ucv.edu.pe/handle/20.500.12692/124165" target="_blank">
+    Ver investigación completa
     </a>
+  </p>
+</div>
+
+<div class="separator"></div>
+
+<div class="contacto">
+  <p><strong>Contacto profesional</strong></p>
+  <p>Correo: oficina@tasacionesdearte.org.pe</p>
+  <p>Teléfono: +51 930 046 681</p>
 </div>
 
 </div>
@@ -238,6 +238,11 @@ h1, h2 {
 <div class="footer">
 © 2026 Tasaciones de Arte
 </div>
+
+<!-- BOTÓN FLOTANTE -->
+<a class="whatsapp" href="https://wa.me/51930046681">
+WhatsApp
+</a>
 
 </body>
 </html>
