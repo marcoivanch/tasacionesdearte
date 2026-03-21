@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -17,6 +17,7 @@ body {
   color:#e2e8f0;
 }
 
+/* NAV CORREGIDO */
 .nav {
   position:fixed;
   top:0;
@@ -26,12 +27,15 @@ body {
   justify-content:center;
   gap:30px;
   background:rgba(10,15,28,0.85);
+  backdrop-filter:blur(10px);
+  z-index:1000;
 }
 
 .nav a {
   color:#cbd5f5;
   text-decoration:none;
   font-size:14px;
+  white-space:nowrap;
 }
 
 .header {
@@ -81,6 +85,33 @@ p {
   color:#64748b;
 }
 
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:#25D366;
+  color:white;
+  padding:14px 18px;
+  border-radius:50px;
+  text-decoration:none;
+  z-index:9999;
+}
+
+/* MOBILE NAV */
+@media(max-width:768px){
+  .nav{
+    gap:15px;
+    padding:12px;
+    overflow-x:auto;
+    justify-content:flex-start;
+  }
+
+  .nav a{
+    font-size:13px;
+  }
+}
+
 </style>
 </head>
 
@@ -90,6 +121,7 @@ p {
   <a href="index.html">Inicio</a>
   <a href="bitacora.html">Bitácora profesional</a>
   <a href="ranking.html">Mercado del arte</a>
+  <a href="contacto.html">Contacto</a>
 </div>
 
 <div class="header">
@@ -147,6 +179,11 @@ Cada caso requiere una evaluación específica, por lo que el costo se determina
 <div class="footer">
 © 2026 Tasaciones de Arte
 </div>
+
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/51930046681">
+WhatsApp
+</a>
 
 </body>
 </html>
