@@ -34,6 +34,7 @@ body{
   color:#cbd5f5;
   text-decoration:none;
   font-size:14px;
+  white-space:nowrap;
 }
 
 /* HERO */
@@ -156,8 +157,20 @@ a.correo:hover{
   text-decoration:none;
 }
 
-/* MOBILE */
+/* MOBILE FIX SOLO NAV */
 @media(max-width:768px){
+
+  .nav{
+    gap:15px;
+    padding:12px;
+    overflow-x:auto;
+    justify-content:flex-start;
+  }
+
+  .nav a{
+    font-size:13px;
+  }
+
   .hero h1{
     font-size:30px;
   }
