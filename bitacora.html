@@ -21,7 +21,7 @@ h1, h2 {
   font-family: 'Playfair Display', serif;
 }
 
-/* NAV (CORREGIDO) */
+/* NAV */
 .nav {
   position: fixed;
   top: 0;
@@ -42,12 +42,25 @@ h1, h2 {
   white-space: nowrap;
 }
 
-/* HEADER */
+/* HEADER CON IMAGEN */
 .header {
+  position: relative;
   text-align: center;
-  padding: 140px 20px 60px;
+  padding: 160px 20px 80px;
+  overflow: hidden;
 }
 
+.header::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url('Imagen perito bitácora.png') center center no-repeat;
+  background-size:130%;
+  opacity:0.30;
+  z-index:-1;
+}
+
+/* TEXTO */
 .header h1 {
   font-size: 42px;
 }
@@ -151,6 +164,14 @@ h1, h2 {
     font-size:13px;
   }
 
+  .header{
+    padding:140px 20px 60px;
+  }
+
+  .header::before{
+    background-size:160%;
+  }
+
   .card {
     flex-direction: column;
     align-items: flex-start;
@@ -181,7 +202,6 @@ h1, h2 {
 
 <div class="container">
 
-<!-- ARTÍCULO ANCLADO -->
 <div class="destacado">
   <h2>Gestión en la tasación de obras de arte para aranceles de importación</h2>
 
@@ -202,7 +222,6 @@ h1, h2 {
   </p>
 </div>
 
-<!-- DESEMPEÑO PROFESIONAL -->
 <div class="indice">
   <h2>Desempeño profesional</h2>
 
