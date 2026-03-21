@@ -16,7 +16,7 @@ body{
   color:#e2e8f0;
 }
 
-/* NAV */
+/* NAV (CORREGIDO IGUAL QUE INDEX) */
 .nav{
   position:fixed;
   top:0;
@@ -48,55 +48,47 @@ body{
 h1{
   text-align:center;
   font-weight:500;
-  margin-bottom:8px;
+  margin-bottom:10px;
 }
 
 .sub{
   text-align:center;
   color:#94a3b8;
-  margin-bottom:15px;
-  font-size:14px;
+  margin-bottom:25px;
+  line-height:1.5;
 }
 
 .disclaimer{
   text-align:center;
-  font-size:12px;
+  font-size:13px;
   color:#64748b;
-  margin-bottom:30px;
+  margin-bottom:40px;
+  line-height:1.6;
 }
 
 /* FORM */
 form{
   display:flex;
   flex-direction:column;
-  gap:16px;
+  gap:22px;
 }
 
-/* BLOQUES */
 .field{
   display:flex;
   flex-direction:column;
-  gap:6px;
 }
 
-/* DOBLE COLUMNA */
-.row{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
-}
-
-/* LABEL */
 label{
-  font-size:12px;
+  font-size:13px;
   color:#cbd5f5;
+  margin-bottom:6px;
 }
 
 /* INPUTS */
 input, select, textarea{
   width:100%;
-  padding:12px;
-  border-radius:8px;
+  padding:14px;
+  border-radius:10px;
   border:1px solid rgba(148,163,184,0.2);
   background:#020617;
   color:#e2e8f0;
@@ -108,36 +100,29 @@ input:focus, select:focus, textarea:focus{
   border-color:#25D366;
 }
 
-/* RADIO */
+/* RADIO FIX (AQUÍ ESTÁ LA CORRECCIÓN REAL) */
 .radio-group{
-  display:grid;
-  grid-template-columns:1fr 1fr;
+  display:flex;
+  flex-direction:column;
   gap:10px;
-  margin-top:5px;
 }
 
 .radio-option{
   display:flex;
   align-items:center;
-  gap:8px;
+  gap:10px;
   font-size:14px;
-}
-
-/* TEXTAREA */
-textarea{
-  min-height:120px;
-  resize:vertical;
 }
 
 /* BOTÓN */
 button{
   margin-top:10px;
-  padding:14px;
+  padding:15px;
   border:none;
-  border-radius:25px;
+  border-radius:30px;
   background:#25D366;
   color:white;
-  font-size:14px;
+  font-size:15px;
   cursor:pointer;
 }
 
@@ -154,7 +139,7 @@ button{
   font-size:14px;
 }
 
-/* MOBILE */
+/* MOBILE NAV FIX */
 @media(max-width:768px){
 
   .nav{
@@ -166,14 +151,6 @@ button{
 
   .nav a{
     font-size:13px;
-  }
-
-  .row{
-    grid-template-columns:1fr;
-  }
-
-  .radio-group{
-    grid-template-columns:1fr;
   }
 }
 </style>
@@ -194,11 +171,11 @@ button{
   <h1>Consulta profesional</h1>
 
   <p class="sub">
-    Inicie el proceso mediante una evaluación preliminar del caso.
+    Inicie el proceso mediante una consulta preliminar.
   </p>
 
   <p class="disclaimer">
-    La información proporcionada será tratada de forma confidencial. No genera obligación contractual.
+    El envío de este formulario tiene carácter informativo y no genera obligación contractual.
   </p>
 
   <form action="https://formsubmit.co/radiarte@hotmail.com" method="POST">
@@ -207,70 +184,61 @@ button{
     <input type="hidden" name="_cc" value="marcoivanbitel@gmail.com,oficina@tasacionesdearte.org.es">
     <input type="hidden" name="_next" value="https://tasacionesdearte.org.pe/gracias.html">
 
-    <!-- NOMBRE -->
     <div class="field">
       <label>Nombre del solicitante</label>
       <input type="text" name="Nombre" required>
     </div>
 
-    <!-- FILA -->
-    <div class="row">
-
-      <div class="field">
-        <label>Nacionalidad</label>
-        <input type="text" name="Nacionalidad" required>
-      </div>
-
-      <div class="field">
-        <label>Número de documento</label>
-        <input type="text" name="NumeroDocumento" required>
-      </div>
-
+    <div class="field">
+      <label>Nacionalidad</label>
+      <input type="text" name="Nacionalidad" required>
     </div>
 
-    <!-- DOCUMENTO -->
     <div class="field">
       <label>Documento de identidad</label>
 
       <div class="radio-group">
 
         <label class="radio-option">
-          <input type="radio" name="TipoDocumento" value="DNI" required> DNI
+          <input type="radio" name="TipoDocumento" value="DNI" required>
+          DNI
         </label>
 
         <label class="radio-option">
-          <input type="radio" name="TipoDocumento" value="RUC"> RUC
+          <input type="radio" name="TipoDocumento" value="RUC">
+          RUC
         </label>
 
         <label class="radio-option">
-          <input type="radio" name="TipoDocumento" value="Pasaporte"> Pasaporte
+          <input type="radio" name="TipoDocumento" value="Pasaporte">
+          Pasaporte
         </label>
 
         <label class="radio-option">
-          <input type="radio" name="TipoDocumento" value="CE"> CE
+          <input type="radio" name="TipoDocumento" value="CE">
+          CE
         </label>
 
       </div>
     </div>
 
-    <!-- CONTACTO -->
-    <div class="row">
-
-      <div class="field">
-        <label>Email</label>
-        <input type="email" name="Email" required>
-      </div>
-
-      <div class="field">
-        <label>Celular</label>
-        <input type="text" name="Celular">
-      </div>
-
-    </div>
-
-    <!-- MENSAJE -->
     <div class="field">
-      <label>Descripción del caso</label>
+      <label>Número de documento</label>
+      <input type="text" name="NumeroDocumento" required>
+    </div>
+
+    <div class="field">
+      <label>Email</label>
+      <input type="email" name="Email" required>
+    </div>
+
+    <div class="field">
+      <label>Celular</label>
+      <input type="text" name="Celular">
+    </div>
+
+    <div class="field">
+      <label>Mensaje</label>
       <textarea name="Mensaje"></textarea>
     </div>
 
