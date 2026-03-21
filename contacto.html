@@ -16,7 +16,7 @@ body{
   color:#e2e8f0;
 }
 
-/* NAV (CORREGIDO IGUAL QUE INDEX) */
+/* NAV (CORREGIDO) */
 .nav{
   position:fixed;
   top:0;
@@ -58,6 +58,7 @@ h1{
   line-height:1.5;
 }
 
+/* DISCLAIMER */
 .disclaimer{
   text-align:center;
   font-size:13px;
@@ -100,18 +101,16 @@ input:focus, select:focus, textarea:focus{
   border-color:#25D366;
 }
 
-/* RADIO FIX (AQUÍ ESTÁ LA CORRECCIÓN REAL) */
+textarea{
+  min-height:140px;
+  resize:vertical;
+}
+
+/* RADIO */
 .radio-group{
   display:flex;
   flex-direction:column;
-  gap:10px;
-}
-
-.radio-option{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-size:14px;
+  gap:8px;
 }
 
 /* BOTÓN */
@@ -124,6 +123,15 @@ button{
   color:white;
   font-size:15px;
   cursor:pointer;
+}
+
+/* MENSAJE */
+.success{
+  display:none;
+  text-align:center;
+  margin-top:20px;
+  color:#25D366;
+  font-size:15px;
 }
 
 /* WHATSAPP */
@@ -139,7 +147,7 @@ button{
   font-size:14px;
 }
 
-/* MOBILE NAV FIX */
+/* SOLO FIX MOBILE NAV */
 @media(max-width:768px){
 
   .nav{
@@ -158,7 +166,7 @@ button{
 
 <body>
 
-<!-- NAV -->
+<!-- NAV (CORREGIDO) -->
 <div class="nav">
   <a href="index.html">Inicio</a>
   <a href="bitacora.html">Bitácora profesional</a>
@@ -171,16 +179,18 @@ button{
   <h1>Consulta profesional</h1>
 
   <p class="sub">
-    Inicie el proceso mediante una consulta preliminar.
+    Inicie el proceso mediante una consulta preliminar. Esta instancia permite evaluar el caso y definir el alcance del servicio.
   </p>
 
   <p class="disclaimer">
     El envío de este formulario tiene carácter informativo y no genera obligación contractual.
+    La información proporcionada será tratada de forma confidencial.
   </p>
 
-  <form action="https://formsubmit.co/radiarte@hotmail.com" method="POST">
+  <form id="form" action="https://formsubmit.co/radiarte@hotmail.com" method="POST">
 
     <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_cc" value="marcoivanbitel@gmail.com,oficina@tasacionesdearte.org.es">
     <input type="hidden" name="_next" value="https://tasacionesdearte.org.pe/gracias.html">
 
@@ -196,35 +206,17 @@ button{
 
     <div class="field">
       <label>Documento de identidad</label>
-
       <div class="radio-group">
-
-        <label class="radio-option">
-          <input type="radio" name="TipoDocumento" value="DNI" required>
-          DNI
-        </label>
-
-        <label class="radio-option">
-          <input type="radio" name="TipoDocumento" value="RUC">
-          RUC
-        </label>
-
-        <label class="radio-option">
-          <input type="radio" name="TipoDocumento" value="Pasaporte">
-          Pasaporte
-        </label>
-
-        <label class="radio-option">
-          <input type="radio" name="TipoDocumento" value="CE">
-          CE
-        </label>
-
+        <label><input type="radio" name="TipoDocumento" value="DNI" required> DNI</label>
+        <label><input type="radio" name="TipoDocumento" value="RUC"> RUC</label>
+        <label><input type="radio" name="TipoDocumento" value="Pasaporte"> Pasaporte</label>
+        <label><input type="radio" name="TipoDocumento" value="CE"> CE</label>
       </div>
     </div>
 
     <div class="field">
       <label>Número de documento</label>
-      <input type="text" name="NumeroDocumento" required>
+      <input type="text" id="doc" name="NumeroDocumento" required>
     </div>
 
     <div class="field">
@@ -235,6 +227,19 @@ button{
     <div class="field">
       <label>Celular</label>
       <input type="text" name="Celular">
+    </div>
+
+    <div class="field">
+      <label>Tipo de solicitud</label>
+      <select name="TipoSolicitud">
+        <option>Consulta profesional (diagnóstico)</option>
+        <option>Peritaje de obra de arte</option>
+        <option>Tasación de obra de arte</option>
+        <option>Asesoría / Consultoría</option>
+        <option>Información instituciones públicas</option>
+        <option>Información sector privado</option>
+        <option>Otro</option>
+      </select>
     </div>
 
     <div class="field">
@@ -251,6 +256,30 @@ button{
 <a class="whatsapp" href="https://wa.me/51930046681">
 WhatsApp
 </a>
+
+<script>
+const form = document.getElementById('form');
+const doc = document.getElementById('doc');
+
+form.addEventListener('submit', function(e){
+
+  const tipo = document.querySelector('input[name="TipoDocumento"]:checked');
+
+  if(tipo){
+    if(tipo.value === "DNI" && doc.value.length !== 8){
+      alert("El DNI debe tener 8 dígitos");
+      e.preventDefault();
+      return;
+    }
+    if(tipo.value === "RUC" && doc.value.length !== 11){
+      alert("El RUC debe tener 11 dígitos");
+      e.preventDefault();
+      return;
+    }
+  }
+
+});
+</script>
 
 </body>
 </html>
