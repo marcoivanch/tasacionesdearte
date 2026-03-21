@@ -42,38 +42,51 @@ h1, h2 {
   white-space: nowrap;
 }
 
-/* HEADER CON IMAGEN */
-.header {
-  position: relative;
-  text-align: center;
-  padding: 220px 20px 120px;
-  overflow: hidden;
+/* HERO (IGUAL QUE INDEX) */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
 }
 
-.header::before{
+.hero::before{
   content:"";
   position:absolute;
   inset:0;
-  background:url('Imagen perito bitácora.png') center 25% no-repeat;
-  background-size:120%;
-  opacity:0.30;
-  z-index:-1;
+  background:url('Imagen perito bitácora.png') center 20% no-repeat;
+  background-size:130%;
+  opacity:0.85;
 }
 
-/* TEXTO */
-.header h1 {
-  font-size: 42px;
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(10,15,28,0.75);
 }
 
-.header p {
-  color: #94a3b8;
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:800px;
+}
+
+.hero h1{
+  font-size:42px;
+}
+
+.hero p{
+  color:#94a3b8;
 }
 
 /* CONTENEDOR */
 .container {
   max-width: 1000px;
   margin: auto;
-  padding: 20px;
+  padding: 40px 20px;
 }
 
 /* DESTACADO */
@@ -164,12 +177,13 @@ h1, h2 {
     font-size:13px;
   }
 
-  .header{
-    padding:140px 20px 60px;
+  .hero h1{
+    font-size:28px;
   }
 
-  .header::before{
+  .hero::before{
     background-size:160%;
+    background-position:center 15%;
   }
 
   .card {
@@ -188,6 +202,7 @@ h1, h2 {
 
 <body>
 
+<!-- NAV -->
 <div class="nav">
   <a href="index.html">Inicio</a>
   <a href="bitacora.html">Bitácora profesional</a>
@@ -195,11 +210,15 @@ h1, h2 {
   <a href="contacto.html">Contacto</a>
 </div>
 
-<div class="header">
-  <h1>Bitácora profesional de arte y peritaje</h1>
-  <p>Análisis, investigaciones y aportes en arte</p>
-</div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Bitácora profesional de arte y peritaje</h1>
+    <p>Análisis, investigaciones y aportes en arte</p>
+  </div>
+</section>
 
+<!-- CONTENIDO -->
 <div class="container">
 
 <div class="destacado">
