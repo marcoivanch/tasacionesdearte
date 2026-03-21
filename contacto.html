@@ -129,6 +129,7 @@ button{
   text-align:center;
   margin-top:20px;
   color:#25D366;
+  font-size:15px;
 }
 
 /* WHATSAPP */
@@ -188,16 +189,16 @@ button{
     <div class="field">
       <label>Documento de identidad</label>
       <div class="radio-group">
-        <label><input type="radio" name="Tipo de documento" value="DNI" required> DNI</label>
-        <label><input type="radio" name="Tipo de documento" value="RUC"> RUC</label>
-        <label><input type="radio" name="Tipo de documento" value="Pasaporte"> Pasaporte</label>
-        <label><input type="radio" name="Tipo de documento" value="CE"> CE</label>
+        <label><input type="radio" name="TipoDocumento" value="DNI" required> DNI</label>
+        <label><input type="radio" name="TipoDocumento" value="RUC"> RUC</label>
+        <label><input type="radio" name="TipoDocumento" value="Pasaporte"> Pasaporte</label>
+        <label><input type="radio" name="TipoDocumento" value="CE"> CE</label>
       </div>
     </div>
 
     <div class="field">
       <label>Número de documento</label>
-      <input type="text" name="Numero de documento" required>
+      <input type="text" id="doc" name="NumeroDocumento" required>
     </div>
 
     <div class="field">
@@ -212,7 +213,7 @@ button{
 
     <div class="field">
       <label>Tipo de solicitud</label>
-      <select name="Tipo de solicitud">
+      <select name="TipoSolicitud">
         <option>Consulta profesional (diagnóstico)</option>
         <option>Peritaje de obra de arte</option>
         <option>Tasación de obra de arte</option>
@@ -238,7 +239,6 @@ button{
 
 </div>
 
-<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/51930046681">
 WhatsApp
 </a>
@@ -246,8 +246,25 @@ WhatsApp
 <script>
 const form = document.getElementById('form');
 const success = document.getElementById('successMessage');
+const doc = document.getElementById('doc');
 
-form.addEventListener('submit', function(){
+form.addEventListener('submit', function(e){
+
+  const tipo = document.querySelector('input[name="TipoDocumento"]:checked');
+
+  if(tipo){
+    if(tipo.value === "DNI" && doc.value.length !== 8){
+      alert("El DNI debe tener 8 dígitos");
+      e.preventDefault();
+      return;
+    }
+    if(tipo.value === "RUC" && doc.value.length !== 11){
+      alert("El RUC debe tener 11 dígitos");
+      e.preventDefault();
+      return;
+    }
+  }
+
   setTimeout(() => {
     form.style.display = 'none';
     success.style.display = 'block';
