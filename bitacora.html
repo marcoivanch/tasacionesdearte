@@ -48,7 +48,6 @@ h1, h2 {
   display:flex;
   align-items:center;
   justify-content:center;
-  text-align:center;
   position:relative;
 }
 
@@ -72,14 +71,18 @@ h1, h2 {
   position:relative;
   z-index:2;
   max-width:800px;
+  text-align:left;
 }
 
 .hero h1{
   font-size:42px;
+  line-height:1.2;
+  margin:0;
 }
 
 .hero p{
   color:#94a3b8;
+  margin-top:10px;
 }
 
 /* CONTENEDOR */
@@ -177,6 +180,15 @@ h1, h2 {
     font-size:13px;
   }
 
+  .hero{
+    align-items:center;
+    justify-content:center;
+  }
+
+  .hero-content{
+    text-align:left;
+  }
+
   .hero h1{
     font-size:28px;
   }
@@ -213,7 +225,11 @@ h1, h2 {
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <h1>Bitácora profesional de arte y peritaje</h1>
+    <h1>
+      Bitácora<br>
+      profesional<br>
+      de arte y peritaje
+    </h1>
     <p>Análisis, investigaciones y aportes en arte</p>
   </div>
 </section>
