@@ -14,17 +14,42 @@ body{
   font-family:'Inter',sans-serif;
   background:#0a0f1c;
   color:#e2e8f0;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
-  text-align:center;
 }
 
-/* CONTENEDOR */
+/* NAV (igual que index) */
+.nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:18px;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  background:rgba(10,15,28,0.85);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+.nav a{
+  color:#cbd5f5;
+  text-decoration:none;
+  font-size:14px;
+  white-space:nowrap;
+}
+
+/* CONTENEDOR GENERAL */
+.wrapper{
+  padding-top:100px;
+  padding-bottom:40px;
+  display:flex;
+  justify-content:center;
+}
+
+/* CONTENIDO */
 .container{
   max-width:600px;
-  padding:30px;
+  padding:20px;
+  text-align:center;
 }
 
 /* IMAGEN */
@@ -70,7 +95,6 @@ p{
   font-size:14px;
 }
 
-/* BOTÓN SECUNDARIO */
 .btn2{
   display:inline-block;
   margin-top:10px;
@@ -82,44 +106,87 @@ p{
   text-decoration:none;
   font-size:14px;
 }
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .nav{
+    gap:15px;
+    padding:12px;
+    overflow-x:auto;
+    justify-content:flex-start;
+  }
+
+  .nav a{
+    font-size:13px;
+  }
+
+  .wrapper{
+    padding-top:90px;
+  }
+
+  .img{
+    width:140px;
+    height:140px;
+  }
+
+  h1{
+    font-size:20px;
+  }
+
+  p{
+    font-size:14px;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<!-- NAV -->
+<div class="nav">
+  <a href="index.html">Inicio</a>
+  <a href="bitacora.html">Bitácora profesional</a>
+  <a href="ranking.html">Mercado del arte</a>
+  <a href="contacto.html">Contacto</a>
+</div>
 
-  <!-- FOTO -->
-  <img src="secretaria.jpg" class="img">
+<div class="wrapper">
 
-  <!-- MENSAJE -->
-  <h1>Mensaje enviado correctamente</h1>
+  <div class="container">
 
-  <p>
-    Su mensaje se envió correctamente. Nos pondremos en contacto a la brevedad.
-  </p>
+    <!-- FOTO -->
+    <img src="secretaria.jpg" class="img">
 
-  <p>
-    El Perito de Arte Marco Cabrera agradece su preferencia.
-  </p>
+    <!-- MENSAJE -->
+    <h1>Mensaje enviado correctamente</h1>
 
-  <!-- FIRMA -->
-  <div class="firma">
-    Dominik Chumbile Romero<br>
-    Secretaria
+    <p>
+      Su mensaje se envió correctamente. Nos pondremos en contacto a la brevedad.
+    </p>
+
+    <p>
+      El Perito de Arte Marco Cabrera agradece su preferencia.
+    </p>
+
+    <!-- FIRMA -->
+    <div class="firma">
+      Dominik Chumbile Romero<br>
+      Secretaria
+    </div>
+
+    <!-- BOTÓN WHATSAPP -->
+    <a href="https://wa.me/51930046681" class="btn">
+      Contactar por WhatsApp
+    </a>
+
+    <!-- VOLVER -->
+    <br>
+    <a href="index.html" class="btn2">
+      Volver al inicio
+    </a>
+
   </div>
-
-  <!-- BOTÓN WHATSAPP -->
-  <br>
-  <a href="https://wa.me/51930046681" class="btn">
-    Contactar por WhatsApp
-  </a>
-
-  <!-- VOLVER -->
-  <br>
-  <a href="index.html" class="btn2">
-    Volver al inicio
-  </a>
 
 </div>
 
