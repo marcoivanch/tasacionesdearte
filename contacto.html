@@ -104,6 +104,14 @@ textarea{
   resize:vertical;
 }
 
+/* RADIO */
+.radio-group{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  font-size:14px;
+}
+
 /* BOTÓN */
 button{
   margin-top:10px;
@@ -161,16 +169,34 @@ button{
     La información proporcionada será tratada de forma confidencial.
   </p>
 
-  <!-- FORMULARIO REAL -->
   <form id="form" action="https://formsubmit.co/radiarte@hotmail.com,marcoivanbitel@gmail.com,oficina@tasacionesdearte.org.es" method="POST">
 
-    <!-- CONFIG -->
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="table">
 
     <div class="field">
       <label>Nombre del solicitante</label>
       <input type="text" name="Nombre" required>
+    </div>
+
+    <div class="field">
+      <label>Nacionalidad</label>
+      <input type="text" name="Nacionalidad" required>
+    </div>
+
+    <div class="field">
+      <label>Documento de identidad</label>
+      <div class="radio-group">
+        <label><input type="radio" name="Tipo de documento" value="DNI" required> DNI</label>
+        <label><input type="radio" name="Tipo de documento" value="RUC"> RUC</label>
+        <label><input type="radio" name="Tipo de documento" value="Pasaporte"> Pasaporte</label>
+        <label><input type="radio" name="Tipo de documento" value="CE"> CE</label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Número de documento</label>
+      <input type="text" name="Número de documento" required>
     </div>
 
     <div class="field">
@@ -211,7 +237,6 @@ button{
 
 </div>
 
-<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/51930046681">
 WhatsApp
 </a>
