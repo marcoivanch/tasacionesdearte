@@ -47,8 +47,9 @@ h1, h2 {
   height:100vh;
   display:flex;
   align-items:center;
-  justify-content:center;
+  justify-content:flex-start; /* 👈 CAMBIO CLAVE */
   position:relative;
+  padding-left:8%; /* 👈 margen tipo editorial */
 }
 
 .hero::before{
@@ -70,7 +71,7 @@ h1, h2 {
 .hero-content{
   position:relative;
   z-index:2;
-  max-width:800px;
+  max-width:500px; /* 👈 más estrecho para no invadir rostro */
   text-align:left;
 }
 
@@ -181,12 +182,13 @@ h1, h2 {
   }
 
   .hero{
-    align-items:center;
     justify-content:center;
+    padding-left:20px;
+    padding-right:20px;
   }
 
   .hero-content{
-    text-align:left;
+    max-width:100%;
   }
 
   .hero h1{
