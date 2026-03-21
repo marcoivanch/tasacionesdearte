@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Consulta profesional | Tasación de obras de arte</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:#0a0f1c;
+  color:#e2e8f0;
+}
+
+/* NAV */
+.nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:18px;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  background:rgba(10,15,28,0.85);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+.nav a{
+  color:#cbd5f5;
+  text-decoration:none;
+  font-size:14px;
+}
+
+/* CONTENEDOR */
+.container{
+  max-width:720px;
+  margin:120px auto 60px;
+  padding:20px;
+}
+
+/* TITULO */
+h1{
+  text-align:center;
+  font-weight:500;
+  margin-bottom:10px;
+}
+
+.sub{
+  text-align:center;
+  color:#94a3b8;
+  margin-bottom:25px;
+  line-height:1.5;
+}
+
+/* DISCLAIMER */
+.disclaimer{
+  text-align:center;
+  font-size:13px;
+  color:#64748b;
+  margin-bottom:40px;
+  line-height:1.6;
+}
+
+/* FORM */
+form{
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+}
+
+/* BLOQUES */
+.field{
+  display:flex;
+  flex-direction:column;
+}
+
+label{
+  font-size:13px;
+  color:#cbd5f5;
+  margin-bottom:6px;
+}
+
+/* INPUTS */
+input, select, textarea{
+  width:100%;
+  padding:14px;
+  border-radius:10px;
+  border:1px solid rgba(148,163,184,0.2);
+  background:#020617;
+  color:#e2e8f0;
+  font-size:14px;
+  transition:0.2s;
+}
+
+input:focus, select:focus, textarea:focus{
+  outline:none;
+  border-color:#25D366;
+}
+
+/* TEXTAREA */
+textarea{
+  min-height:140px;
+  resize:vertical;
+}
+
+/* BOTÓN */
+button{
+  margin-top:10px;
+  padding:15px;
+  border:none;
+  border-radius:30px;
+  background:#25D366;
+  color:white;
+  font-size:15px;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+button:hover{
+  opacity:0.9;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:#25D366;
+  color:white;
+  padding:14px 18px;
+  border-radius:50px;
+  text-decoration:none;
+  font-size:14px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .container{
+    margin-top:100px;
+  }
+
+  h1{
+    font-size:24px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<div class="nav">
+  <a href="index.html">Inicio</a>
+  <a href="bitacora.html">Bitácora técnica</a>
+  <a href="ranking.html">Mercado del arte</a>
+</div>
+
+<!-- CONTENIDO -->
+<div class="container">
+
+  <h1>Consulta profesional</h1>
+
+  <p class="sub">
+    Inicie el proceso mediante una consulta preliminar. Esta instancia permite evaluar el caso y definir el alcance del servicio.
+  </p>
+
+  <p class="disclaimer">
+    El envío de este formulario tiene carácter informativo y no genera obligación contractual.
+    La información proporcionada será tratada de forma confidencial.
+  </p>
+
+  <form action="mailto:oficina@tasacionesdearte.org.es" method="POST" enctype="text/plain">
+
+    <div class="field">
+      <label>Nombre del solicitante</label>
+      <input type="text" name="nombre" required>
+    </div>
+
+    <div class="field">
+      <label>Email</label>
+      <input type="email" name="email" required>
+    </div>
+
+    <div class="field">
+      <label>Celular</label>
+      <input type="text" name="celular">
+    </div>
+
+    <div class="field">
+      <label>Tipo de solicitud</label>
+      <select name="tipo">
+        <option>Consulta profesional (diagnóstico)</option>
+        <option>Peritaje de obra de arte</option>
+        <option>Tasación de obra de arte</option>
+        <option>Asesoría / Consultoría</option>
+        <option>Información instituciones públicas</option>
+        <option>Información sector privado</option>
+        <option>Otro</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Mensaje</label>
+      <textarea name="mensaje" placeholder="Describa brevemente el caso, tipo de obra, finalidad de la tasación, etc."></textarea>
+    </div>
+
+    <button type="submit">Enviar consulta</button>
+
+  </form>
+
+</div>
+
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/51930046681">
+WhatsApp
+</a>
+
+</body>
+</html>
