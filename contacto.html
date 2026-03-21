@@ -109,7 +109,6 @@ textarea{
   display:flex;
   flex-direction:column;
   gap:8px;
-  font-size:14px;
 }
 
 /* BOTÓN */
@@ -132,7 +131,7 @@ button{
   color:#25D366;
 }
 
-/* WHATSAPP FLOAT */
+/* WHATSAPP */
 .whatsapp{
   position:fixed;
   bottom:25px;
@@ -169,10 +168,12 @@ button{
     La información proporcionada será tratada de forma confidencial.
   </p>
 
-  <form id="form" action="https://formsubmit.co/radiarte@hotmail.com,marcoivanbitel@gmail.com,oficina@tasacionesdearte.org.es" method="POST">
+  <form id="form" action="https://formsubmit.co/radiarte@hotmail.com" method="POST">
 
+    <!-- CONFIG -->
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_cc" value="marcoivanbitel@gmail.com,oficina@tasacionesdearte.org.es">
 
     <div class="field">
       <label>Nombre del solicitante</label>
@@ -196,7 +197,7 @@ button{
 
     <div class="field">
       <label>Número de documento</label>
-      <input type="text" name="Número de documento" required>
+      <input type="text" name="Numero de documento" required>
     </div>
 
     <div class="field">
@@ -237,6 +238,7 @@ button{
 
 </div>
 
+<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/51930046681">
 WhatsApp
 </a>
@@ -249,7 +251,7 @@ form.addEventListener('submit', function(){
   setTimeout(() => {
     form.style.display = 'none';
     success.style.display = 'block';
-  }, 1000);
+  }, 1200);
 });
 </script>
 
