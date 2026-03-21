@@ -73,7 +73,6 @@ form{
   gap:22px;
 }
 
-/* BLOQUES */
 .field{
   display:flex;
   flex-direction:column;
@@ -85,7 +84,6 @@ label{
   margin-bottom:6px;
 }
 
-/* INPUTS */
 input, select, textarea{
   width:100%;
   padding:14px;
@@ -94,7 +92,6 @@ input, select, textarea{
   background:#020617;
   color:#e2e8f0;
   font-size:14px;
-  transition:0.2s;
 }
 
 input:focus, select:focus, textarea:focus{
@@ -102,7 +99,6 @@ input:focus, select:focus, textarea:focus{
   border-color:#25D366;
 }
 
-/* TEXTAREA */
 textarea{
   min-height:140px;
   resize:vertical;
@@ -118,11 +114,14 @@ button{
   color:white;
   font-size:15px;
   cursor:pointer;
-  transition:0.2s;
 }
 
-button:hover{
-  opacity:0.9;
+/* MENSAJE */
+.success{
+  display:none;
+  text-align:center;
+  margin-top:20px;
+  color:#25D366;
 }
 
 /* WHATSAPP FLOAT */
@@ -137,17 +136,6 @@ button:hover{
   text-decoration:none;
   font-size:14px;
 }
-
-/* MOBILE */
-@media(max-width:768px){
-  .container{
-    margin-top:100px;
-  }
-
-  h1{
-    font-size:24px;
-  }
-}
 </style>
 </head>
 
@@ -160,7 +148,6 @@ button:hover{
   <a href="ranking.html">Mercado del arte</a>
 </div>
 
-<!-- CONTENIDO -->
 <div class="container">
 
   <h1>Consulta profesional</h1>
@@ -174,26 +161,31 @@ button:hover{
     La información proporcionada será tratada de forma confidencial.
   </p>
 
-  <form action="mailto:oficina@tasacionesdearte.org.es" method="POST" enctype="text/plain">
+  <!-- FORMULARIO REAL -->
+  <form id="form" action="https://formsubmit.co/radiarte@hotmail.com,marcoivanbitel@gmail.com,oficina@tasacionesdearte.org.es" method="POST">
+
+    <!-- CONFIG -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
 
     <div class="field">
       <label>Nombre del solicitante</label>
-      <input type="text" name="nombre" required>
+      <input type="text" name="Nombre" required>
     </div>
 
     <div class="field">
       <label>Email</label>
-      <input type="email" name="email" required>
+      <input type="email" name="Email" required>
     </div>
 
     <div class="field">
       <label>Celular</label>
-      <input type="text" name="celular">
+      <input type="text" name="Celular">
     </div>
 
     <div class="field">
       <label>Tipo de solicitud</label>
-      <select name="tipo">
+      <select name="Tipo de solicitud">
         <option>Consulta profesional (diagnóstico)</option>
         <option>Peritaje de obra de arte</option>
         <option>Tasación de obra de arte</option>
@@ -206,12 +198,16 @@ button:hover{
 
     <div class="field">
       <label>Mensaje</label>
-      <textarea name="mensaje" placeholder="Describa brevemente el caso, tipo de obra, finalidad de la tasación, etc."></textarea>
+      <textarea name="Mensaje"></textarea>
     </div>
 
     <button type="submit">Enviar consulta</button>
 
   </form>
+
+  <div class="success" id="successMessage">
+    Mensaje enviado correctamente.
+  </div>
 
 </div>
 
@@ -219,6 +215,18 @@ button:hover{
 <a class="whatsapp" href="https://wa.me/51930046681">
 WhatsApp
 </a>
+
+<script>
+const form = document.getElementById('form');
+const success = document.getElementById('successMessage');
+
+form.addEventListener('submit', function(){
+  setTimeout(() => {
+    form.style.display = 'none';
+    success.style.display = 'block';
+  }, 1000);
+});
+</script>
 
 </body>
 </html>
