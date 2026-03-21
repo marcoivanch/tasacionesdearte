@@ -58,7 +58,6 @@ h1{
   line-height:1.5;
 }
 
-/* DISCLAIMER */
 .disclaimer{
   text-align:center;
   font-size:13px;
@@ -106,17 +105,24 @@ textarea{
   resize:vertical;
 }
 
-/* RADIO (CORREGIDO) */
+/* RADIO */
 .radio-group{
   display:flex;
   flex-direction:column;
   gap:12px;
 }
 
+/* 🔴 CORRECCIÓN EXACTA */
 .radio-group label{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  position:relative;
+  padding-right:30px;
+}
+
+.radio-group input[type="radio"]{
+  position:absolute;
+  right:0;
+  top:50%;
+  transform:translateY(-50%);
 }
 
 /* BOTÓN */
@@ -203,22 +209,10 @@ button{
     <div class="field">
       <label>Documento de identidad</label>
       <div class="radio-group">
-        <label>
-          DNI
-          <input type="radio" name="TipoDocumento" value="DNI" required>
-        </label>
-        <label>
-          RUC
-          <input type="radio" name="TipoDocumento" value="RUC">
-        </label>
-        <label>
-          Pasaporte
-          <input type="radio" name="TipoDocumento" value="Pasaporte">
-        </label>
-        <label>
-          CE
-          <input type="radio" name="TipoDocumento" value="CE">
-        </label>
+        <label>DNI <input type="radio" name="TipoDocumento" value="DNI" required></label>
+        <label>RUC <input type="radio" name="TipoDocumento" value="RUC"></label>
+        <label>Pasaporte <input type="radio" name="TipoDocumento" value="Pasaporte"></label>
+        <label>CE <input type="radio" name="TipoDocumento" value="CE"></label>
       </div>
     </div>
 
