@@ -106,16 +106,17 @@ textarea{
   resize:vertical;
 }
 
-/* RADIO (SOLO AJUSTE DE POSICIÓN) */
+/* RADIO (CORREGIDO) */
 .radio-group{
   display:flex;
   flex-direction:column;
-  gap:8px;
+  gap:12px;
 }
 
-.radio-group input[type="radio"]{
-  position:relative;
-  top:3px; /* 🔴 AQUÍ SE BAJA EL PUNTO */
+.radio-group label{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
 /* BOTÓN */
@@ -161,6 +162,7 @@ button{
 
 <body>
 
+<!-- NAV -->
 <div class="nav">
   <a href="index.html">Inicio</a>
   <a href="bitacora.html">Bitácora profesional</a>
@@ -181,9 +183,10 @@ button{
     La información proporcionada será tratada de forma confidencial.
   </p>
 
-  <form action="https://formsubmit.co/radiarte@hotmail.com" method="POST">
+  <form id="form" action="https://formsubmit.co/radiarte@hotmail.com" method="POST">
 
     <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_cc" value="marcoivanbitel@gmail.com,oficina@tasacionesdearte.org.es">
     <input type="hidden" name="_next" value="https://tasacionesdearte.org.pe/gracias.html">
 
@@ -200,16 +203,28 @@ button{
     <div class="field">
       <label>Documento de identidad</label>
       <div class="radio-group">
-        <label><input type="radio" name="TipoDocumento" value="DNI" required> DNI</label>
-        <label><input type="radio" name="TipoDocumento" value="RUC"> RUC</label>
-        <label><input type="radio" name="TipoDocumento" value="Pasaporte"> Pasaporte</label>
-        <label><input type="radio" name="TipoDocumento" value="CE"> CE</label>
+        <label>
+          DNI
+          <input type="radio" name="TipoDocumento" value="DNI" required>
+        </label>
+        <label>
+          RUC
+          <input type="radio" name="TipoDocumento" value="RUC">
+        </label>
+        <label>
+          Pasaporte
+          <input type="radio" name="TipoDocumento" value="Pasaporte">
+        </label>
+        <label>
+          CE
+          <input type="radio" name="TipoDocumento" value="CE">
+        </label>
       </div>
     </div>
 
     <div class="field">
       <label>Número de documento</label>
-      <input type="text" name="NumeroDocumento" required>
+      <input type="text" id="doc" name="NumeroDocumento" required>
     </div>
 
     <div class="field">
@@ -220,6 +235,19 @@ button{
     <div class="field">
       <label>Celular</label>
       <input type="text" name="Celular">
+    </div>
+
+    <div class="field">
+      <label>Tipo de solicitud</label>
+      <select name="TipoSolicitud">
+        <option>Consulta profesional (diagnóstico)</option>
+        <option>Peritaje de obra de arte</option>
+        <option>Tasación de obra de arte</option>
+        <option>Asesoría / Consultoría</option>
+        <option>Información instituciones públicas</option>
+        <option>Información sector privado</option>
+        <option>Otro</option>
+      </select>
     </div>
 
     <div class="field">
@@ -236,6 +264,30 @@ button{
 <a class="whatsapp" href="https://wa.me/51930046681">
 WhatsApp
 </a>
+
+<script>
+const form = document.getElementById('form');
+const doc = document.getElementById('doc');
+
+form.addEventListener('submit', function(e){
+
+  const tipo = document.querySelector('input[name="TipoDocumento"]:checked');
+
+  if(tipo){
+    if(tipo.value === "DNI" && doc.value.length !== 8){
+      alert("El DNI debe tener 8 dígitos");
+      e.preventDefault();
+      return;
+    }
+    if(tipo.value === "RUC" && doc.value.length !== 11){
+      alert("El RUC debe tener 11 dígitos");
+      e.preventDefault();
+      return;
+    }
+  }
+
+});
+</script>
 
 </body>
 </html>
