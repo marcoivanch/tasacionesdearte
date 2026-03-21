@@ -176,6 +176,9 @@ button{
     <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_cc" value="marcoivanbitel@gmail.com,oficina@tasacionesdearte.org.es">
 
+    <!-- 🔴 AQUÍ ESTÁ LA CORRECCIÓN -->
+    <input type="hidden" name="_next" value="https://tasacionesdearte.org.pe/gracias.html">
+
     <div class="field">
       <label>Nombre del solicitante</label>
       <input type="text" name="Nombre" required>
@@ -265,10 +268,6 @@ form.addEventListener('submit', function(e){
     }
   }
 
-  setTimeout(() => {
-    form.style.display = 'none';
-    success.style.display = 'block';
-  }, 1200);
 });
 </script>
 
