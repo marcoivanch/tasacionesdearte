@@ -21,7 +21,7 @@ h1, h2 {
   font-family: 'Playfair Display', serif;
 }
 
-/* NAV */
+/* NAV (CORREGIDO) */
 .nav {
   position: fixed;
   top: 0;
@@ -30,7 +30,7 @@ h1, h2 {
   display: flex;
   justify-content: center;
   gap: 30px;
-  background: rgba(10,15,28,0.7);
+  background: rgba(10,15,28,0.85);
   backdrop-filter: blur(10px);
   z-index: 1000;
 }
@@ -39,6 +39,7 @@ h1, h2 {
   color: #cbd5f5;
   text-decoration: none;
   font-size: 14px;
+  white-space: nowrap;
 }
 
 /* HEADER */
@@ -138,6 +139,18 @@ h1, h2 {
 
 /* RESPONSIVE */
 @media(max-width:768px){
+
+  .nav{
+    gap:15px;
+    padding:12px;
+    overflow-x:auto;
+    justify-content:flex-start;
+  }
+
+  .nav a{
+    font-size:13px;
+  }
+
   .card {
     flex-direction: column;
     align-items: flex-start;
@@ -158,6 +171,7 @@ h1, h2 {
   <a href="index.html">Inicio</a>
   <a href="bitacora.html">Bitácora profesional</a>
   <a href="ranking.html">Mercado del arte</a>
+  <a href="contacto.html">Contacto</a>
 </div>
 
 <div class="header">
@@ -192,10 +206,8 @@ h1, h2 {
 <div class="indice">
   <h2>Desempeño profesional</h2>
 
-  <!-- BOGOTÁ 1 -->
   <div class="card">
     <img src="foto bogota 1.png">
-
     <div class="card-content">
       <h3>Preliminares del proceso de valoración</h3>
       <p>Conferencia internacional en Bogotá como representante del Perú en el VI Congreso Nacional de Avaluadores.</p>
@@ -203,10 +215,8 @@ h1, h2 {
     </div>
   </div>
 
-  <!-- BOGOTÁ 2 -->
   <div class="card">
     <img src="foto bogota 2.png">
-
     <div class="card-content">
       <h3>Valoración económica de las obras de arte</h3>
       <p>Exposición técnica sobre metodología y criterios de valoración en el contexto del mercado y la normativa.</p>
@@ -214,10 +224,8 @@ h1, h2 {
     </div>
   </div>
 
-  <!-- FUNERALES -->
   <div class="card">
     <img src="Conferencia Pinacoteca 2025.png">
-
     <div class="card-content">
       <h3>Los funerales de Atahualpa</h3>
       <p>Análisis histórico y técnico presentado en la Pinacoteca Municipal Ignacio Merino.</p>
@@ -225,10 +233,8 @@ h1, h2 {
     </div>
   </div>
 
-  <!-- AYACUCHO -->
   <div class="card">
     <img src="Conferencia en Bellas Artes 2024.png">
-
     <div class="card-content">
       <h3>La capitulación de Ayacucho</h3>
       <p>Estudio comparativo de versiones atribuidas a Daniel Hernández.</p>
