@@ -89,6 +89,27 @@ body{
   text-decoration:none;
 }
 
+/* REDES (DEBAJO DEL BOTÓN) */
+.redes{
+  margin-top:15px;
+  display:flex;
+  justify-content:center;
+  gap:14px;
+}
+
+.redes a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:32px;
+  height:32px;
+  background:#020617;
+  border-radius:6px;
+  color:#94a3b8;
+  text-decoration:none;
+  font-size:14px;
+}
+
 /* SECCIONES */
 .section{
   max-width:1000px;
@@ -125,7 +146,6 @@ img{
   text-align:center;
 }
 
-/* LINK REGISTRO */
 a.registro{
   color:#94a3b8;
   text-decoration:none;
@@ -135,7 +155,6 @@ a.registro:hover{
   color:#cbd5f5;
 }
 
-/* CORREO */
 a.correo{
   color:#94a3b8;
   text-decoration:none;
@@ -145,7 +164,7 @@ a.correo:hover{
   color:#cbd5f5;
 }
 
-/* FLOAT */
+/* WHATSAPP */
 .whatsapp{
   position:fixed;
   bottom:25px;
@@ -157,7 +176,7 @@ a.correo:hover{
   text-decoration:none;
 }
 
-/* MOBILE FIX SOLO NAV + HERO */
+/* MOBILE */
 @media(max-width:768px){
 
   .nav{
@@ -175,7 +194,6 @@ a.correo:hover{
     font-size:30px;
   }
 
-  /* 🔧 AJUSTE SOLO PARA IMAGEN EN MÓVIL */
   .hero::before{
     background-size:cover;
     background-position:center;
@@ -206,8 +224,20 @@ a.correo:hover{
     <a class="btn" href="contacto.html">
       Solicitar consulta profesional
     </a>
+
+    <!-- REDES AQUÍ -->
+    <div class="redes">
+      <a href="https://www.instagram.com/tasadordearte.lima/" target="_blank">📷</a>
+      <a href="https://www.facebook.com/profile.php?id=61552761304153" target="_blank">f</a>
+      <a href="https://x.com/MarcoIvnCabrer1" target="_blank">X</a>
+      <a href="https://www.youtube.com/@marcoivanch" target="_blank">▶</a>
+      <a href="https://www.tiktok.com/@tasadordearte" target="_blank">♪</a>
+    </div>
+
   </div>
 </section>
+
+<!-- TODO TU CONTENIDO ORIGINAL SIGUE IGUAL -->
 
 <!-- INICIO DEL SERVICIO -->
 <section class="section">
