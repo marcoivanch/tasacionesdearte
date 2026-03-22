@@ -89,6 +89,55 @@ body{
   text-decoration:none;
 }
 
+/* REDES DESKTOP */
+.redes-hero{
+  margin-top:20px;
+  display:flex;
+  justify-content:center;
+  gap:16px;
+}
+
+.redes-hero a{
+  color:#94a3b8;
+  text-decoration:none;
+  font-size:13px;
+}
+
+.redes-hero a:hover{
+  color:#cbd5f5;
+}
+
+/* REDES MOBILE */
+.redes-float{
+  position:fixed;
+  left:10px;
+  top:50%;
+  transform:translateY(-50%);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  z-index:999;
+}
+
+.redes-float a{
+  color:#94a3b8;
+  font-size:12px;
+  text-decoration:none;
+}
+
+/* ocultar según dispositivo */
+@media(min-width:769px){
+  .redes-float{
+    display:none;
+  }
+}
+
+@media(max-width:768px){
+  .redes-hero{
+    display:none;
+  }
+}
+
 /* SECCIONES */
 .section{
   max-width:1000px;
@@ -125,7 +174,6 @@ img{
   text-align:center;
 }
 
-/* LINK REGISTRO */
 a.registro{
   color:#94a3b8;
   text-decoration:none;
@@ -135,7 +183,6 @@ a.registro:hover{
   color:#cbd5f5;
 }
 
-/* CORREO */
 a.correo{
   color:#94a3b8;
   text-decoration:none;
@@ -145,7 +192,7 @@ a.correo:hover{
   color:#cbd5f5;
 }
 
-/* FLOAT */
+/* WHATSAPP */
 .whatsapp{
   position:fixed;
   bottom:25px;
@@ -175,7 +222,6 @@ a.correo:hover{
     font-size:30px;
   }
 
-  /* 🔧 AJUSTE SOLO PARA IMAGEN EN MÓVIL */
   .hero::before{
     background-size:cover;
     background-position:center;
@@ -186,6 +232,15 @@ a.correo:hover{
 </head>
 
 <body>
+
+<!-- REDES MOBILE -->
+<div class="redes-float">
+  <a href="https://www.instagram.com/tasadordearte.lima/" target="_blank">IG</a>
+  <a href="https://www.facebook.com/profile.php?id=61552761304153" target="_blank">FB</a>
+  <a href="https://x.com/MarcoIvnCabrer1" target="_blank">X</a>
+  <a href="https://www.youtube.com/@marcoivanch" target="_blank">YT</a>
+  <a href="https://www.tiktok.com/@tasadordearte" target="_blank">TT</a>
+</div>
 
 <!-- NAV -->
 <div class="nav">
@@ -206,8 +261,20 @@ a.correo:hover{
     <a class="btn" href="contacto.html">
       Solicitar consulta profesional
     </a>
+
+    <!-- REDES DESKTOP -->
+    <div class="redes-hero">
+      <a href="https://www.instagram.com/tasadordearte.lima/" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61552761304153" target="_blank">Facebook</a>
+      <a href="https://x.com/MarcoIvnCabrer1" target="_blank">X</a>
+      <a href="https://www.youtube.com/@marcoivanch" target="_blank">YouTube</a>
+      <a href="https://www.tiktok.com/@tasadordearte" target="_blank">TikTok</a>
+    </div>
+
   </div>
 </section>
+
+<!-- TODO TU CONTENIDO ORIGINAL SIGUE IGUAL DESDE AQUÍ -->
 
 <!-- INICIO DEL SERVICIO -->
 <section class="section">
@@ -318,7 +385,7 @@ a.correo:hover{
   </a>
 </section>
 
-<!-- FLOAT -->
+<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/51930046681">
 WhatsApp
 </a>
