@@ -99,7 +99,6 @@ body{
 
 .redes-hero a{
   color:#94a3b8;
-  transition:0.2s;
 }
 
 .redes-hero a:hover{
@@ -112,7 +111,7 @@ body{
   fill:currentColor;
 }
 
-/* FLOAT MOBILE REDES */
+/* FLOAT MOBILE */
 .redes-float{
   position:fixed;
   left:10px;
@@ -213,18 +212,14 @@ a.registro:hover, a.correo:hover{
     background-size:cover;
   }
 
-}
-
-/* OCULTAR FLOAT EN DESKTOP */
-@media(min-width:769px){
-  .redes-float{
+  .redes-hero{
     display:none;
   }
 }
 
-/* OCULTAR HERO ICONOS EN MOBILE */
-@media(max-width:768px){
-  .redes-hero{
+/* DESKTOP */
+@media(min-width:769px){
+  .redes-float{
     display:none;
   }
 }
@@ -243,25 +238,11 @@ a.registro:hover, a.correo:hover{
 
 <!-- REDES FLOAT MOBILE -->
 <div class="redes-float">
-  <a href="https://www.instagram.com/tasadordearte.lima/" target="_blank">
-    <svg viewBox="0 0 24 24"><path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm5 4.5A5.5 5.5 0 1 1 6.5 12 5.51 5.51 0 0 1 12 6.5z"/></svg>
-  </a>
-
-  <a href="https://www.facebook.com/profile.php?id=61552761304153" target="_blank">
-    <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.5 9.87v-6.99H8.1V12h2.4V9.8c0-2.37 1.4-3.68 3.55-3.68z"/></svg>
-  </a>
-
-  <a href="https://x.com/MarcoIvnCabrer1" target="_blank">
-    <svg viewBox="0 0 24 24"><path d="M18.9 2H21l-6.6 7.5L22 22h-6.8l-5.3-6.9L3.7 22H1.6l7-8L2 2h7l4.8 6.3z"/></svg>
-  </a>
-
-  <a href="https://www.youtube.com/@marcoivanch" target="_blank">
-    <svg viewBox="0 0 24 24"><path d="M23.5 6.2a2.8 2.8 0 0 0-2-2C19.8 3.7 12 3.7 12 3.7s-7.8 0-9.5.5z"/></svg>
-  </a>
-
-  <a href="https://www.tiktok.com/@tasadordearte" target="_blank">
-    <svg viewBox="0 0 24 24"><path d="M12.5 2h3a5 5 0 0 0 5 5v3a8 8 0 0 1-5-1.5V16z"/></svg>
-  </a>
+  <a href="https://www.instagram.com/tasadordearte.lima/" target="_blank">IG</a>
+  <a href="https://www.facebook.com/profile.php?id=61552761304153" target="_blank">FB</a>
+  <a href="https://x.com/MarcoIvnCabrer1" target="_blank">X</a>
+  <a href="https://www.youtube.com/@marcoivanch" target="_blank">YT</a>
+  <a href="https://www.tiktok.com/@tasadordearte" target="_blank">TT</a>
 </div>
 
 <!-- HERO -->
@@ -276,40 +257,48 @@ a.registro:hover, a.correo:hover{
       Solicitar consulta profesional
     </a>
 
-    <!-- ICONOS DESKTOP -->
-<div class="redes-hero">
+    <div class="redes-hero">
+      <a href="https://www.instagram.com/tasadordearte.lima/" target="_blank">IG</a>
+      <a href="https://www.facebook.com/profile.php?id=61552761304153" target="_blank">FB</a>
+      <a href="https://x.com/MarcoIvnCabrer1" target="_blank">X</a>
+      <a href="https://www.youtube.com/@marcoivanch" target="_blank">YT</a>
+      <a href="https://www.tiktok.com/@tasadordearte" target="_blank">TT</a>
+    </div>
 
-  <a href="https://www.instagram.com/tasadordearte.lima/" target="_blank">
-    <svg viewBox="0 0 24 24">
-      <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm5 4.5A5.5 5.5 0 1 1 6.5 12 5.5 5.5 0 0 1 12 6.5zm6.5-.75a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0z"/>
-    </svg>
+  </div>
+</section>
+
+<!-- INICIO DEL SERVICIO -->
+<section class="section">
+  <div class="card">
+    <h2>Inicio del servicio</h2>
+    <p>La tasación de obras de arte se inicia mediante una consulta profesional previa.</p>
+  </div>
+</section>
+
+<!-- PERFIL -->
+<section class="section">
+  <div class="grid grid-2">
+    <div>
+      <h2>Marco Iván Cabrera Hernández</h2>
+      <p>Licenciado en Arte</p>
+      <p>Magíster en Gestión Pública</p>
+    </div>
+    <div>
+      <img src="Marco Cabrera 2026.jfif">
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="section contacto">
+  <h2>Contacto profesional</h2>
+  <p><strong>oficina@tasacionesdearte.org.es</strong></p>
+  <p><strong>+51 930 046 681</strong></p>
+
+  <a class="btn" href="contacto.html">
+    Solicitar consulta
   </a>
-
-  <a href="https://www.facebook.com/profile.php?id=61552761304153" target="_blank">
-    <svg viewBox="0 0 24 24">
-      <path d="M22 12a10 10 0 1 0-11.5 9.87v-6.99H8.1V12h2.4V9.8c0-2.37 1.4-3.68 3.55-3.68 1.03 0 2.1.18 2.1.18v2.3h-1.18c-1.16 0-1.52.72-1.52 1.46V12h2.6l-.42 2.88h-2.18v6.99A10 10 0 0 0 22 12z"/>
-    </svg>
-  </a>
-
-  <a href="https://x.com/MarcoIvnCabrer1" target="_blank">
-    <svg viewBox="0 0 24 24">
-      <path d="M18.244 2H21l-6.6 7.5L22 22h-6.828l-5.35-6.87L3.7 22H1l7.1-8.1L2 2h6.828l4.85 6.3L18.244 2z"/>
-    </svg>
-  </a>
-
-  <a href="https://www.youtube.com/@marcoivanch" target="_blank">
-    <svg viewBox="0 0 24 24">
-      <path d="M23.5 6.2a2.8 2.8 0 0 0-2-2C19.8 3.7 12 3.7 12 3.7s-7.8 0-9.5.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 0 12a29 29 0 0 0 .5 5.8 2.8 2.8 0 0 0 2 2c1.7.5 9.5.5 9.5.5s7.8 0 9.5-.5a2.8 2.8 0 0 0 2-2A29 29 0 0 0 24 12a29 29 0 0 0-.5-5.8zM9.75 15.5v-7l6 3.5-6 3.5z"/>
-    </svg>
-  </a>
-
-  <a href="https://www.tiktok.com/@tasadordearte" target="_blank">
-    <svg viewBox="0 0 24 24">
-      <path d="M12.5 2h3a5 5 0 0 0 5 5v3a8 8 0 0 1-5-1.5V16a6 6 0 1 1-6-6c.3 0 .6 0 .9.1v3.1a3 3 0 1 0 1.1 2.3V2z"/>
-    </svg>
-  </a>
-
-</div>
 </section>
 
 <!-- WHATSAPP -->
