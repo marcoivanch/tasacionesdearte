@@ -6,7 +6,7 @@
 
 <title>Bitácora técnica | Tasaciones de Arte</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -15,10 +15,6 @@ body {
   font-family: 'Inter', sans-serif;
   background: #0a0f1c;
   color: #e2e8f0;
-}
-
-h1, h2 {
-  font-family: 'Playfair Display', serif;
 }
 
 /* NAV */
@@ -39,7 +35,6 @@ h1, h2 {
   color: #cbd5f5;
   text-decoration: none;
   font-size: 14px;
-  white-space: nowrap;
 }
 
 /* HERO */
@@ -47,9 +42,9 @@ h1, h2 {
   height:100vh;
   display:flex;
   align-items:center;
-  justify-content:flex-start; /* 👈 CAMBIO CLAVE */
+  justify-content:flex-start;
   position:relative;
-  padding-left:8%; /* 👈 margen tipo editorial */
+  padding-left:8%;
 }
 
 .hero::before{
@@ -71,7 +66,7 @@ h1, h2 {
 .hero-content{
   position:relative;
   z-index:2;
-  max-width:500px; /* 👈 más estrecho para no invadir rostro */
+  max-width:500px;
   text-align:left;
 }
 
@@ -79,11 +74,42 @@ h1, h2 {
   font-size:42px;
   line-height:1.2;
   margin:0;
+  letter-spacing:-0.5px;
 }
 
 .hero p{
   color:#94a3b8;
   margin-top:10px;
+}
+
+/* BOTÓN */
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 24px;
+  border-radius:30px;
+  background:#25D366;
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+}
+
+/* REDES */
+.redes{
+  margin-top:12px;
+  display:flex;
+  gap:12px;
+}
+
+.redes a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:32px;
+  height:32px;
+  background:#020617;
+  border-radius:6px;
+  color:#94a3b8;
 }
 
 /* CONTENEDOR */
@@ -106,11 +132,6 @@ h1, h2 {
   width: 100%;
   border-radius: 10px;
   margin: 20px 0;
-}
-
-/* ÍNDICE */
-.indice h2 {
-  margin-bottom: 30px;
 }
 
 /* TARJETAS */
@@ -150,7 +171,7 @@ h1, h2 {
 
 /* WHATSAPP */
 .whatsapp {
-  position: fixed !important;
+  position: fixed;
   bottom: 25px;
   right: 25px;
   background: #25D366;
@@ -158,33 +179,14 @@ h1, h2 {
   padding: 14px 18px;
   border-radius: 50px;
   text-decoration: none;
-  z-index: 9999;
-}
-
-.footer {
-  text-align: center;
-  padding: 40px;
-  color: #64748b;
 }
 
 /* RESPONSIVE */
 @media(max-width:768px){
 
-  .nav{
-    gap:15px;
-    padding:12px;
-    overflow-x:auto;
-    justify-content:flex-start;
-  }
-
-  .nav a{
-    font-size:13px;
-  }
-
   .hero{
     justify-content:center;
-    padding-left:20px;
-    padding-right:20px;
+    padding:20px;
   }
 
   .hero-content{
@@ -195,9 +197,10 @@ h1, h2 {
     font-size:28px;
   }
 
+  /* MEJORA ROSTRO */
   .hero::before{
-    background-size:140%;
-    background-position:center 15%;
+    background-size:115%;
+    background-position:center 10%;
   }
 
   .card {
@@ -216,7 +219,6 @@ h1, h2 {
 
 <body>
 
-<!-- NAV -->
 <div class="nav">
   <a href="index.html">Inicio</a>
   <a href="bitacora.html">Bitácora profesional</a>
@@ -224,19 +226,32 @@ h1, h2 {
   <a href="contacto.html">Contacto</a>
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
+
     <h1>
       Bitácora<br>
       profesional<br>
       de arte y peritaje
     </h1>
+
     <p>Análisis, investigaciones y aportes en arte</p>
+
+    <a class="btn" href="contacto.html">
+      Solicitar consulta profesional
+    </a>
+
+    <div class="redes">
+      <a href="https://www.instagram.com/tasadordearte.lima/" target="_blank">📷</a>
+      <a href="https://www.facebook.com/profile.php?id=61552761304153" target="_blank">f</a>
+      <a href="https://x.com/MarcoIvnCabrer1" target="_blank">X</a>
+      <a href="https://www.youtube.com/@marcoivanch" target="_blank">▶</a>
+      <a href="https://www.tiktok.com/@tasadordearte" target="_blank">♪</a>
+    </div>
+
   </div>
 </section>
 
-<!-- CONTENIDO -->
 <div class="container">
 
 <div class="destacado">
@@ -300,10 +315,6 @@ h1, h2 {
 
 </div>
 
-</div>
-
-<div class="footer">
-© 2026 Tasaciones de Arte
 </div>
 
 <a class="whatsapp" href="https://wa.me/51930046681">
