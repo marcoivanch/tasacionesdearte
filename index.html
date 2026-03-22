@@ -6,10 +6,6 @@
 
 <title>Tasación profesional de obras de arte en Lima</title>
 
-<!-- MEJORA SEO (no rompe nada) -->
-<meta name="description" content="Tasación profesional de obras de arte en Lima. Informes técnicos con fines legales, contables y patrimoniales.">
-<meta name="robots" content="index, follow">
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <style>
@@ -82,7 +78,7 @@ body{
   color:#94a3b8;
 }
 
-/* BOTÓN (SE MANTIENE IGUAL → va a contacto) */
+/* BOTÓN */
 .btn{
   display:inline-block;
   margin-top:25px;
@@ -129,6 +125,7 @@ img{
   text-align:center;
 }
 
+/* LINK REGISTRO */
 a.registro{
   color:#94a3b8;
   text-decoration:none;
@@ -138,6 +135,7 @@ a.registro:hover{
   color:#cbd5f5;
 }
 
+/* CORREO */
 a.correo{
   color:#94a3b8;
   text-decoration:none;
@@ -147,7 +145,7 @@ a.correo:hover{
   color:#cbd5f5;
 }
 
-/* FLOAT (este SÍ va a WhatsApp) */
+/* FLOAT */
 .whatsapp{
   position:fixed;
   bottom:25px;
@@ -159,7 +157,7 @@ a.correo:hover{
   text-decoration:none;
 }
 
-/* MOBILE */
+/* MOBILE FIX SOLO NAV + HERO */
 @media(max-width:768px){
 
   .nav{
@@ -176,13 +174,20 @@ a.correo:hover{
   .hero h1{
     font-size:30px;
   }
+
+  /* 🔧 AJUSTE SOLO PARA IMAGEN EN MÓVIL */
+  .hero::before{
+    background-size:cover;
+    background-position:center;
+  }
+
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV (SIN CAMBIOS) -->
+<!-- NAV -->
 <div class="nav">
   <a href="index.html">Inicio</a>
   <a href="bitacora.html">Bitácora profesional</a>
@@ -198,7 +203,6 @@ a.correo:hover{
     <p>Informes técnicos sustentados en normativa y criterios de mercado</p>
     <p>La tasación requiere inspección directa del bien</p>
 
-    <!-- SE MANTIENE A CONTACTO -->
     <a class="btn" href="contacto.html">
       Solicitar consulta profesional
     </a>
@@ -236,18 +240,18 @@ a.correo:hover{
         </a>
       </p>
       <p>
-        Perito N°<a class="registro" href="https://www.datosabiertos.gob.pe/dataset/registro-de-peritos-adscritos-al-mvcs" target="_blank">62</a>
+        Perito N°<a class="registro" href="https://www.datosabiertos.gob.pe/dataset/registro-de-peritos-adscritos-al-mvcs?utm_source=chatgpt.com" target="_blank">62</a>
       </p>
     </div>
     <div>
-      <img src="Marco Cabrera 2026.jfif" alt="Perito tasador de arte en Lima">
+      <img src="Marco Cabrera 2026.jfif">
     </div>
   </div>
 </section>
 
 <!-- OBJETO -->
 <section class="section">
-  <img src="informes técnicos de tasación.png" alt="Informes técnicos de tasación">
+  <img src="informes técnicos de tasación.png">
   <div class="card">
     <h2>Objeto del servicio</h2>
     <p>
@@ -261,7 +265,7 @@ a.correo:hover{
 <section class="section">
   <div class="grid grid-2">
     <div>
-      <img src="Acción.png" alt="Evaluación pericial de obra de arte">
+      <img src="Acción.png">
     </div>
     <div>
       <h2>Ejercicio pericial</h2>
@@ -275,7 +279,7 @@ a.correo:hover{
 
 <!-- EQUIPO -->
 <section class="section">
-  <img src="Equipo de trabajo.png" alt="Equipo de trabajo en tasación">
+  <img src="Equipo de trabajo.png">
 </section>
 
 <!-- METODOLOGÍA -->
@@ -314,7 +318,7 @@ a.correo:hover{
   </a>
 </section>
 
-<!-- FLOAT → WHATSAPP (único que va a WA) -->
+<!-- FLOAT -->
 <a class="whatsapp" href="https://wa.me/51930046681">
 WhatsApp
 </a>
