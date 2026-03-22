@@ -89,15 +89,15 @@ body{
   text-decoration:none;
 }
 
-/* REDES MOBILE (CORREGIDO) */
+/* REDES LIMPIAS (MÓVIL) */
 .redes-float{
   position:fixed;
-  left:10px;
+  left:8px;
   top:50%;
   transform:translateY(-50%);
   display:flex;
   flex-direction:column;
-  gap:10px;
+  gap:8px;
   z-index:999;
 }
 
@@ -105,16 +105,15 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  width:30px;
-  height:30px;
+  width:26px;
+  height:26px;
   background:#020617;
   border-radius:6px;
-  font-size:13px;
+  font-size:12px;
   color:#94a3b8;
   text-decoration:none;
 }
 
-/* ocultar en desktop */
 @media(min-width:769px){
   .redes-float{
     display:none;
@@ -207,7 +206,7 @@ a.registro:hover, a.correo:hover{
 
 <body>
 
-<!-- REDES MOBILE (YA CORREGIDO) -->
+<!-- REDES (DISCRETAS) -->
 <div class="redes-float">
   <a href="https://www.instagram.com/tasadordearte.lima/" target="_blank">📷</a>
   <a href="https://www.facebook.com/profile.php?id=61552761304153" target="_blank">f</a>
@@ -228,7 +227,6 @@ a.registro:hover, a.correo:hover{
 <section class="hero">
   <div class="hero-content">
     <h1>Tasación profesional de obras de arte en Lima</h1>
-
     <p>Informes técnicos sustentados en normativa y criterios de mercado</p>
     <p>La tasación requiere inspección directa del bien</p>
 
@@ -238,4 +236,72 @@ a.registro:hover, a.correo:hover{
   </div>
 </section>
 
-<!-- TODO TU CONTENIDO ORIGINAL COMPLETO -->
+<!-- INICIO DEL SERVICIO -->
+<section class="section">
+  <div class="card">
+    <h2>Inicio del servicio</h2>
+    <p>
+    La tasación de obras de arte se inicia mediante una consulta profesional previa, 
+    destinada a definir el alcance del servicio y las condiciones de intervención.
+    </p>
+    <p>
+    El envío de imágenes o fotografías no constituye, por sí solo, un elemento suficiente para la realización de una tasación.
+    </p>
+    <p style="color:#94a3b8;">
+    La solicitud de consultas o informes no implica obligación de contratación ni compromiso alguno por parte del solicitante.
+    </p>
+  </div>
+</section>
+
+<!-- PERFIL -->
+<section class="section">
+  <div class="grid grid-2">
+    <div>
+      <h2>Marco Iván Cabrera Hernández</h2>
+      <p>Licenciado en Arte</p>
+      <p>Magíster en Gestión Pública</p>
+    </div>
+    <div>
+      <img src="Marco Cabrera 2026.jfif">
+    </div>
+  </div>
+</section>
+
+<!-- OBJETO -->
+<section class="section">
+  <img src="informes técnicos de tasación.png">
+</section>
+
+<!-- EJERCICIO -->
+<section class="section">
+  <div class="grid grid-2">
+    <div>
+      <img src="Acción.png">
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPO -->
+<section class="section">
+  <img src="Equipo de trabajo.png">
+</section>
+
+<!-- CONTACTO -->
+<section class="section contacto">
+  <h2>Contacto profesional</h2>
+
+  <p><strong><a class="correo" href="mailto:oficina@tasacionesdearte.org.es">oficina@tasacionesdearte.org.es</a></strong></p>
+  <p><strong>+51 930 046 681</strong></p>
+
+  <a class="btn" href="contacto.html">
+    Solicitar consulta
+  </a>
+</section>
+
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/51930046681">
+WhatsApp
+</a>
+
+</body>
+</html>
