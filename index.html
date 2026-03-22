@@ -89,6 +89,51 @@ body{
   text-decoration:none;
 }
 
+/* ICONOS HERO (desktop) */
+.redes-hero{
+  margin-top:20px;
+  display:flex;
+  justify-content:center;
+  gap:18px;
+}
+
+.redes-hero a{
+  color:#94a3b8;
+  transition:0.2s;
+}
+
+.redes-hero a:hover{
+  color:#cbd5f5;
+}
+
+.redes-hero svg{
+  width:18px;
+  height:18px;
+  fill:currentColor;
+}
+
+/* FLOAT MOBILE REDES */
+.redes-float{
+  position:fixed;
+  left:10px;
+  top:50%;
+  transform:translateY(-50%);
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  z-index:999;
+}
+
+.redes-float a{
+  color:#94a3b8;
+}
+
+.redes-float svg{
+  width:18px;
+  height:18px;
+  fill:currentColor;
+}
+
 /* SECCIONES */
 .section{
   max-width:1000px;
@@ -125,27 +170,16 @@ img{
   text-align:center;
 }
 
-/* LINK REGISTRO */
-a.registro{
+a.registro, a.correo{
   color:#94a3b8;
   text-decoration:none;
 }
 
-a.registro:hover{
+a.registro:hover, a.correo:hover{
   color:#cbd5f5;
 }
 
-/* CORREO */
-a.correo{
-  color:#94a3b8;
-  text-decoration:none;
-}
-
-a.correo:hover{
-  color:#cbd5f5;
-}
-
-/* FLOAT */
+/* WHATSAPP */
 .whatsapp{
   position:fixed;
   bottom:25px;
@@ -157,7 +191,7 @@ a.correo:hover{
   text-decoration:none;
 }
 
-/* MOBILE FIX SOLO NAV + HERO */
+/* MOBILE */
 @media(max-width:768px){
 
   .nav{
@@ -175,12 +209,24 @@ a.correo:hover{
     font-size:30px;
   }
 
-  /* 🔧 AJUSTE SOLO PARA IMAGEN EN MÓVIL */
   .hero::before{
     background-size:cover;
-    background-position:center;
   }
 
+}
+
+/* OCULTAR FLOAT EN DESKTOP */
+@media(min-width:769px){
+  .redes-float{
+    display:none;
+  }
+}
+
+/* OCULTAR HERO ICONOS EN MOBILE */
+@media(max-width:768px){
+  .redes-hero{
+    display:none;
+  }
 }
 </style>
 </head>
@@ -195,6 +241,29 @@ a.correo:hover{
   <a href="contacto.html">Contacto</a>
 </div>
 
+<!-- REDES FLOAT MOBILE -->
+<div class="redes-float">
+  <a href="https://www.instagram.com/tasadordearte.lima/" target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm5 4.5A5.5 5.5 0 1 1 6.5 12 5.51 5.51 0 0 1 12 6.5z"/></svg>
+  </a>
+
+  <a href="https://www.facebook.com/profile.php?id=61552761304153" target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.5 9.87v-6.99H8.1V12h2.4V9.8c0-2.37 1.4-3.68 3.55-3.68z"/></svg>
+  </a>
+
+  <a href="https://x.com/MarcoIvnCabrer1" target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M18.9 2H21l-6.6 7.5L22 22h-6.8l-5.3-6.9L3.7 22H1.6l7-8L2 2h7l4.8 6.3z"/></svg>
+  </a>
+
+  <a href="https://www.youtube.com/@marcoivanch" target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M23.5 6.2a2.8 2.8 0 0 0-2-2C19.8 3.7 12 3.7 12 3.7s-7.8 0-9.5.5z"/></svg>
+  </a>
+
+  <a href="https://www.tiktok.com/@tasadordearte" target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M12.5 2h3a5 5 0 0 0 5 5v3a8 8 0 0 1-5-1.5V16z"/></svg>
+  </a>
+</div>
+
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
@@ -206,119 +275,34 @@ a.correo:hover{
     <a class="btn" href="contacto.html">
       Solicitar consulta profesional
     </a>
-  </div>
-</section>
 
-<!-- INICIO DEL SERVICIO -->
-<section class="section">
-  <div class="card">
-    <h2>Inicio del servicio</h2>
-    <p>
-    La tasación de obras de arte se inicia mediante una consulta profesional previa, 
-    destinada a definir el alcance del servicio y las condiciones de intervención.
-    </p>
-    <p>
-    El envío de imágenes o fotografías no constituye, por sí solo, un elemento suficiente para la realización de una tasación.
-    </p>
-    <p style="color:#94a3b8;">
-    La solicitud de consultas o informes no implica obligación de contratación ni compromiso alguno por parte del solicitante.
-    </p>
-  </div>
-</section>
+    <!-- ICONOS DESKTOP -->
+    <div class="redes-hero">
+      <a href="https://www.instagram.com/tasadordearte.lima/" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10z"/></svg>
+      </a>
 
-<!-- PERFIL -->
-<section class="section">
-  <div class="grid grid-2">
-    <div>
-      <h2>Marco Iván Cabrera Hernández</h2>
-      <p>Licenciado en Arte</p>
-      <p>Magíster en Gestión Pública</p>
-      <p>
-        Perito tasador de arte 
-        <a class="registro" href="https://www.gob.pe/institucion/vivienda/normas-legales/1896604-025-2021-vivienda-vmcs-dgprcs" target="_blank">
-        registro
-        </a>
-      </p>
-      <p>
-        Perito N°<a class="registro" href="https://www.datosabiertos.gob.pe/dataset/registro-de-peritos-adscritos-al-mvcs?utm_source=chatgpt.com" target="_blank">62</a>
-      </p>
+      <a href="https://www.facebook.com/profile.php?id=61552761304153" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.5 9.87v-6.99H8.1z"/></svg>
+      </a>
+
+      <a href="https://x.com/MarcoIvnCabrer1" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M18.9 2H21l-6.6 7.5z"/></svg>
+      </a>
+
+      <a href="https://www.youtube.com/@marcoivanch" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M23.5 6.2a2.8 2.8 0 0 0-2-2z"/></svg>
+      </a>
+
+      <a href="https://www.tiktok.com/@tasadordearte" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M12.5 2h3a5 5 0 0 0 5 5z"/></svg>
+      </a>
     </div>
-    <div>
-      <img src="Marco Cabrera 2026.jfif">
-    </div>
+
   </div>
 </section>
 
-<!-- OBJETO -->
-<section class="section">
-  <img src="informes técnicos de tasación.png">
-  <div class="card">
-    <h2>Objeto del servicio</h2>
-    <p>
-    Elaboración de informes técnicos de tasación con fines legales,
-    contables y patrimoniales.
-    </p>
-  </div>
-</section>
-
-<!-- EJERCICIO -->
-<section class="section">
-  <div class="grid grid-2">
-    <div>
-      <img src="Acción.png">
-    </div>
-    <div>
-      <h2>Ejercicio pericial</h2>
-      <p>
-      Evaluación mediante inspección directa,
-      análisis material y de mercado.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- EQUIPO -->
-<section class="section">
-  <img src="Equipo de trabajo.png">
-</section>
-
-<!-- METODOLOGÍA -->
-<section class="section">
-  <div class="card">
-    <h2>Metodología</h2>
-    <p>
-    Aplicación del Reglamento Nacional de Tasaciones
-    y criterios de valor razonable.
-    </p>
-  </div>
-</section>
-
-<!-- USOS -->
-<section class="section">
-  <div class="card">
-    <h2>¿Cuándo se requiere una tasación?</h2>
-    <p>Compra y venta</p>
-    <p>Herencias y sucesiones</p>
-    <p>Seguros</p>
-    <p>Contabilidad pública (en el marco de las NICSP)</p>
-    <p>Procesos judiciales</p>
-    <p>Auditorías patrimoniales</p>
-  </div>
-</section>
-
-<!-- CONTACTO -->
-<section class="section contacto">
-  <h2>Contacto profesional</h2>
-
-  <p><strong><a class="correo" href="mailto:oficina@tasacionesdearte.org.es">oficina@tasacionesdearte.org.es</a></strong></p>
-  <p><strong>+51 930 046 681</strong></p>
-
-  <a class="btn" href="contacto.html">
-    Solicitar consulta
-  </a>
-</section>
-
-<!-- FLOAT -->
+<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/51930046681">
 WhatsApp
 </a>
