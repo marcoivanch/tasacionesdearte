@@ -47,10 +47,9 @@ h1, h2 {
   height:100vh;
   display:flex;
   align-items:center;
-  justify-content:center; /* CLAVE */
+  justify-content:flex-start;
   position:relative;
-  padding-left:20px;
-  padding-right:20px;
+  padding-left:8%;
 }
 
 .hero::before{
@@ -76,11 +75,11 @@ h1, h2 {
 
   display:flex;
   flex-direction:column;
-  align-items:center;   /* ESTE es el cambio clave */
-  text-align:center;    /* ESTE también */
+  align-items:flex-start;
+  text-align:left;
 }
 
-/* H1 en sans-serif */
+/* H1 sans-serif */
 .hero h1{
   font-family: 'Inter', sans-serif;
   font-size:42px;
@@ -102,8 +101,6 @@ h1, h2 {
   background:#25D366;
   color:#fff;
   text-decoration:none;
-
-  align-self:flex-start; /* alinea con redes */
 }
 
 /* REDES */
@@ -111,7 +108,6 @@ h1, h2 {
   margin-top:15px;
   display:flex;
   gap:14px;
-  justify-content:flex-start; /* mismo eje que botón */
 }
 
 .redes a{
@@ -217,10 +213,6 @@ h1, h2 {
     justify-content:flex-start;
   }
 
-  .nav a{
-    font-size:13px;
-  }
-
   .hero{
     justify-content:center;
     padding-left:20px;
@@ -228,16 +220,8 @@ h1, h2 {
   }
 
   .hero-content{
-    max-width:100%;
-  }
-
-  .hero h1{
-    font-size:28px;
-  }
-
-  .hero::before{
-    background-size:140%;
-    background-position:center 15%;
+    align-items:center;
+    text-align:center;
   }
 
   .card {
@@ -301,7 +285,7 @@ h1, h2 {
 
       <a href="https://www.youtube.com/@marcoivanch" target="_blank">
         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M23 7s-.2-1.5-.8-2.2c-.7-.8-1.5-.8-1.9-.9C17.7 3.5 12 3.5 12 3.5h0s-5.7 0-8.3.4c-.4 0-1.2 0-1.9.9C1.2 5.5 1 7 1 7S.8 8.7.8 10.4v1.2C.8 13.3 1 15 1 15s.2 1.5.8 2.2c.7.8 1.7.8 2.1.9 1.5.1 6.1.4 8.1.4 0 0 5.7 0 8.3-.4.4 0 1.2 0 1.9-.9.6-.7.8-2.2.8-2.2s.2-1.7.2-3.4v-1.2C23.2 8.7 23 7 23 7zM10 14V8l5 3-5 3z"/>
+          <path d="M23 7s-.2-1.5-.8-2.2c-.7-.8-1.5-.8-1.9-.9C17.7 3.5 12 3.5 12 3.5s-5.7 0-8.3.4c-.4 0-1.2 0-1.9.9C1.2 5.5 1 7 1 7S.8 8.7.8 10.4v1.2C.8 13.3 1 15 1 15s.2 1.5.8 2.2c.7.8 1.7.8 2.1.9 1.5.1 6.1.4 8.1.4s5.7 0 8.3-.4c.4 0 1.2 0 1.9-.9.6-.7.8-2.2.8-2.2s.2-1.7.2-3.4v-1.2C23.2 8.7 23 7 23 7zM10 14V8l5 3-5 3z"/>
         </svg>
       </a>
 
