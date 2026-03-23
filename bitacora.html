@@ -47,9 +47,10 @@ h1, h2 {
   height:100vh;
   display:flex;
   align-items:center;
-  justify-content:flex-start;
+  justify-content:center; /* CLAVE */
   position:relative;
-  padding-left:8%;
+  padding-left:20px;
+  padding-right:20px;
 }
 
 .hero::before{
@@ -72,11 +73,11 @@ h1, h2 {
   position:relative;
   z-index:2;
   max-width:500px;
-  text-align:left;
 
   display:flex;
   flex-direction:column;
-  align-items:flex-start; /* eje visual consistente */
+  align-items:center;   /* ESTE es el cambio clave */
+  text-align:center;    /* ESTE también */
 }
 
 /* H1 en sans-serif */
