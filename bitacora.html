@@ -73,9 +73,13 @@ h1, h2 {
   z-index:2;
   max-width:500px;
   text-align:left;
+
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start; /* eje visual consistente */
 }
 
-/* CAMBIO: H1 en sans-serif */
+/* H1 en sans-serif */
 .hero h1{
   font-family: 'Inter', sans-serif;
   font-size:42px;
@@ -97,6 +101,8 @@ h1, h2 {
   background:#25D366;
   color:#fff;
   text-decoration:none;
+
+  align-self:flex-start; /* alinea con redes */
 }
 
 /* REDES */
@@ -104,7 +110,7 @@ h1, h2 {
   margin-top:15px;
   display:flex;
   gap:14px;
-  justify-content: center; /* CAMBIO: centrado */
+  justify-content:flex-start; /* mismo eje que botón */
 }
 
 .redes a{
