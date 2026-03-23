@@ -57,7 +57,7 @@ h1, h2 {
   position:absolute;
   inset:0;
   background:url('Imagen perito bitácora.png') center center no-repeat;
-  background-size:cover; /* CORREGIDO */
+  background-size:cover; /* 🔧 FIX imagen */
   opacity:0.85;
 }
 
@@ -214,19 +214,21 @@ h1, h2 {
   }
 
   .hero{
-    justify-content:flex-start; /* CORREGIDO */
+    justify-content:flex-start;
     padding-left:20px;
     padding-right:20px;
+    padding-bottom:80px; /* 🔧 baja contenido */
+    align-items:flex-end; /* 🔧 posiciona abajo */
+  }
+
+  .hero-content{
+    align-items:flex-start;
+    text-align:left;
   }
 
   .hero::before{
     background-position:center;
-    background-size:cover; /* CORREGIDO */
-  }
-
-  .hero-content{
-    align-items:flex-start; /* CORREGIDO */
-    text-align:left;        /* CORREGIDO */
+    background-size:cover;
   }
 
   .card {
