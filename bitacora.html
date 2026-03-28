@@ -213,4 +213,191 @@ h1, h2 {
   right: 25px;
   background: #25D366;
   color: white;
-  padding: 14px 1
+  padding: 14px 18px;
+  border-radius: 50px;
+  text-decoration: none;
+  z-index: 9999;
+}
+
+.footer {
+  text-align: center;
+  padding: 40px;
+  color: #64748b;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+  .nav{
+    gap:15px;
+    padding:12px;
+    overflow-x:auto;
+    justify-content:flex-start;
+  }
+
+  .hero{
+    justify-content:flex-start;
+    padding-left:20px;
+    padding-right:20px;
+    padding-bottom:80px; /* 🔧 baja contenido */
+    align-items:flex-end; /* 🔧 posiciona abajo */
+  }
+
+  .hero-content{
+    align-items:flex-start;
+    text-align:left;
+  }
+
+  .hero::before{
+    background-position:center;
+    background-size:cover;
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="nav">
+  <a href="index.html">Inicio</a>
+  <a href="bitacora.html">Bitácora profesional</a>
+  <a href="ranking.html">Mercado del arte</a>
+  <a href="contacto.html">Contacto</a>
+</div>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>
+      Bitácora<br>
+      profesional<br>
+      de arte y peritaje
+    </h1>
+
+    <p>Análisis, investigaciones y aportes en arte</p>
+
+    <a class="btn" href="contacto.html">
+      Solicitar consulta profesional
+    </a>
+
+    <div class="redes">
+
+      <a href="https://www.instagram.com/tasadordearte.lima/" target="_blank">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10z"/>
+        </svg>
+      </a>
+
+      <a href="https://www.facebook.com/profile.php?id=61552761304153" target="_blank">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M13 22v-8h3l1-4h-4V7c0-1 .3-2 2-2h2V1h-3c-3 0-5 2-5 5v3H6v4h3v8h4z"/>
+        </svg>
+      </a>
+
+      <a href="https://x.com/MarcoIvnCabrer1" target="_blank">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M18 2h3l-7 8 8 12h-6l-5-7-6 7H2l8-9-8-11h6l4 6 6-6z"/>
+        </svg>
+      </a>
+
+      <a href="https://www.youtube.com/@marcoivanch" target="_blank">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M23 7s-.2-1.5-.8-2.2c-.7-.8-1.5-.8-1.9-.9C17.7 3.5 12 3.5 12 3.5s-5.7 0-8.3.4c-.4 0-1.2 0-1.9.9C1.2 5.5 1 7 1 7S.8 8.7.8 10.4v1.2C.8 13.3 1 15 1 15s.2 1.5.8 2.2c.7.8 1.7.8 2.1.9 1.5.1 6.1.4 8.1.4s5.7 0 8.3-.4c.4 0 1.2 0 1.9-.9.6-.7.8-2.2.8-2.2s.2-1.7.2-3.4v-1.2C23.2 8.7 23 7 23 7zM10 14V8l5 3-5 3z"/>
+        </svg>
+      </a>
+
+      <a href="https://www.tiktok.com/@tasadordearte" target="_blank">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M16 1c1.1 1.3 2.6 2.2 4 2.4v3c-1.7-.1-3.3-.7-4.6-1.7v7.4c0 3.5-2.9 6.4-6.4 6.4S2.6 15.6 2.6 12.1 5.5 5.7 9 5.7c.3 0 .6 0 .9.1v3.2c-.3-.1-.6-.2-.9-.2-1.8 0-3.3 1.5-3.3 3.3S7.2 15.4 9 15.4s3.3-1.5 3.3-3.3V1h3.7z"/>
+        </svg>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<div class="container">
+
+<div class="destacado">
+  <h2 class="arquitectonico-sans">Gestión en la tasación de obras de arte para aranceles de importación</h2>
+
+  <img src="Exposición de resultados.png">
+
+  <p>Investigación aplicada sobre valoración de bienes culturales en el sistema aduanero.</p>
+  <p>Propuesta de criterios técnicos para mejorar la precisión en la determinación de valor.</p>
+
+  <p>
+    <a href="https://repositorio.ucv.edu.pe/handle/20.500.12692/124165" target="_blank">
+    Ver investigación completa
+    </a>
+  </p>
+</div>
+
+<div class="indice">
+  <h2 class="arquitectonico-sans-linea">Contribución académica en la metodología de tasación</h2>
+
+  <div class="card">
+    <img src="foto bogota 1.png">
+    <div class="card-content">
+      <h3>Preliminares del process de valoración</h3>
+      <p>Conferencia internacional en Bogotá como representante del Perú en el VI Congreso Nacional de Avaluadores.</p>
+      <a href="bitacora-bogota-1.html">Ver conferencia</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="foto bogota 2.png">
+    <div class="card-content">
+      <h3>Valoración económica de las obras de arte</h3>
+      <p>Exposición técnica sobre metodología y criterios de valoración en el contexto del mercado y la normativa.</p>
+      <a href="bitacora-bogota-2.html">Ver conferencia</a>
+    </div>
+  </div>
+
+
+  
+  <h2 class="arquitectonico-sans-linea">Aporte profesional para la historia del arte</h2>
+  
+  <div class="card">
+    <img src="Conferencia Pinacoteca 2025.png">
+    <div class="card-content">
+      <h3>Los funerales de Atahualpa</h3>
+      <p>Análisis histórico y técnico presentado en la Pinacoteca Municipal Ignacio Merino.</p>
+      <a href="bitacora-funerales.html">Ver análisis completo</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="Conferencia en Bellas Artes 2024.png">
+    <div class="card-content">
+      <h3>La capitulación de Ayacucho</h3>
+      <p>Estudio comparativo de versiones atribuidas a Daniel Hernández.</p>
+      <a href="bitacora-capitulacion.html">Ver análisis completo</a>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+<div class="footer">
+© 2026 Tasaciones de Arte
+</div>
+
+<a class="whatsapp" href="https://wa.me/51930046681">
+WhatsApp
+</a>
+
+</body>
+</html>
