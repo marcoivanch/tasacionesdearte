@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- ANTI-CACHE -->
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
@@ -13,7 +12,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-/* ESTE CSS YA NO SE GUARDA EN CACHÉ */
 :root {
   --primary-gold:#c5a059;
   --bg-dark:#0a0f1c;
@@ -28,8 +26,10 @@ body {
   font-family:'Inter',sans-serif;
   background:var(--bg-dark);
   color:var(--text-main);
+  overflow-x: hidden;
 }
 
+/* MENÚ ESCRITORIO (Centrado y elegante) */
 .nav {
   position:fixed;
   top:0;
@@ -49,53 +49,17 @@ body {
   font-size:13px;
   letter-spacing:1px;
   text-transform:uppercase;
+  transition: 0.3s;
 }
 
-.hamburger {
-  display:none;
-  position:fixed;
-  top:18px;
-  right:20px;
-  width:32px;
-  height:24px;
-  z-index:1100;
-  cursor:pointer;
+.nav a:hover { color: var(--primary-gold); }
+
+/* OCULTAR ELEMENTOS MÓVILES EN ESCRITORIO */
+.hamburger, .menu-movil {
+  display: none;
 }
 
-.hamburger span {
-  display:block;
-  height:3px;
-  background:#fff;
-  margin:5px 0;
-  border-radius:2px;
-}
-
-.menu-movil {
-  position:fixed;
-  top:0;
-  right:-260px;
-  width:260px;
-  height:100vh;
-  background:rgba(10,15,28,0.95);
-  backdrop-filter:blur(12px);
-  padding:80px 30px;
-  display:flex;
-  flex-direction:column;
-  gap:25px;
-  transition:0.4s ease;
-  z-index:1090;
-}
-
-.menu-movil a {
-  color:#fff;
-  text-decoration:none;
-  font-size:16px;
-  letter-spacing:1px;
-  text-transform:uppercase;
-}
-
-.menu-movil.activo { right:0; }
-
+/* HERO SECTION (Ajustada para ocupar todo el espacio) */
 .hero {
   height:100vh;
   display:flex;
@@ -118,7 +82,7 @@ body {
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(90deg,var(--bg-dark) 20%,transparent 100%);
+  background:linear-gradient(90deg,var(--bg-dark) 25%,transparent 100%);
 }
 
 .hero-content {
@@ -128,21 +92,13 @@ body {
 }
 
 .titulo-desktop {
-  font-family:'Inter',sans-serif;
   font-weight:700;
   font-size:clamp(32px,5vw,52px);
   line-height:1.1;
   margin:0;
 }
 
-.titulo-mobile {
-  display:none;
-  font-family:'Inter',sans-serif;
-  font-weight:700;
-  font-size:34px;
-  line-height:1.15;
-  margin:0;
-}
+.titulo-mobile { display:none; }
 
 .btn {
   display:inline-block;
@@ -157,7 +113,10 @@ body {
   text-transform:uppercase;
   font-size:13px;
   letter-spacing:1px;
+  transition: 0.3s;
 }
+
+.btn:hover { background: var(--accent-green); color: #000; }
 
 .fila-redes-academicas {
   display:flex;
@@ -174,13 +133,16 @@ body {
   display:flex;
   align-items:center;
   justify-content:center;
-  border:1px solid rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.15);
+  text-decoration: none;
+  transition: 0.3s;
 }
+
+.icono-academico:hover { border-color: var(--primary-gold); transform: translateY(-3px); }
 
 .icono-texto {
   color:#fff;
-  font-family:'Inter',sans-serif;
-  font-size:16px;
+  font-size:14px;
   font-weight:600;
 }
 
@@ -205,7 +167,6 @@ body {
 }
 
 .indice h2 {
-  font-family:'Inter',sans-serif;
   font-weight:300;
   font-size:24px;
   text-transform:uppercase;
@@ -230,7 +191,10 @@ body {
   margin-bottom:20px;
   background:rgba(255,255,255,0.02);
   border-radius:8px;
+  transition: 0.3s;
 }
+
+.card:hover { background: rgba(255,255,255,0.05); }
 
 .card-img-wrapper {
   overflow:hidden;
@@ -267,13 +231,62 @@ body {
   align-items:center;
   justify-content:center;
   z-index:1000;
+  transition: 0.3s;
 }
 
+.whatsapp:hover { transform: scale(1.1); }
+
+/* --- RESPONSIVE / MÓVIL --- */
 @media(max-width:768px){
   .nav { display:none; }
-  .hamburger { display:block; }
+  
+  .hamburger { 
+    display:block; 
+    position:fixed;
+    top:18px;
+    right:20px;
+    width:32px;
+    height:24px;
+    z-index:1100;
+    cursor:pointer;
+  }
+  
+  .hamburger span {
+    display:block;
+    height:3px;
+    background:#fff;
+    margin:5px 0;
+    border-radius:2px;
+  }
+
+  .menu-movil {
+    display:flex;
+    position:fixed;
+    top:0;
+    right:-260px;
+    width:260px;
+    height:100vh;
+    background:rgba(10,15,28,0.98);
+    backdrop-filter:blur(12px);
+    padding:80px 30px;
+    flex-direction:column;
+    gap:25px;
+    transition:0.4s ease;
+    z-index:1090;
+  }
+
+  .menu-movil.activo { right:0; }
+
+  .menu-movil a {
+    color:#fff;
+    text-decoration:none;
+    font-size:16px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+  }
+
   .titulo-desktop { display:none; }
-  .titulo-mobile { display:block; margin-top:38px; }
+  .titulo-mobile { display:block; margin-top:38px; font-size: 34px; font-weight: 700; line-height: 1.15; }
   .card { flex-direction:column; padding:20px; }
   .card-img-wrapper { width:100%; height:200px; }
 }
@@ -293,10 +306,10 @@ function toggleMenu(){
 </div>
 
 <div class="menu-movil">
-  <a href="index.html">Inicio</a>
-  <a href="bitacora.html">Bitácora</a>
-  <a href="ranking.html">Mercado</a>
-  <a href="contacto.html">Contacto</a>
+  <a href="index.html" onclick="toggleMenu()">Inicio</a>
+  <a href="bitacora.html" onclick="toggleMenu()">Bitácora</a>
+  <a href="ranking.html" onclick="toggleMenu()">Mercado</a>
+  <a href="contacto.html" onclick="toggleMenu()">Contacto</a>
 </div>
 
 <div class="nav">
@@ -310,7 +323,7 @@ function toggleMenu(){
   <div class="hero-content">
     <h1 class="titulo-desktop">Bitácora Profesional<br>de Arte y Peritaje</h1>
     <h1 class="titulo-mobile">Bitácora<br>Profesional<br>de Arte y<br>Peritaje</h1>
-    <p style="color:var(--primary-gold);font-weight:600;">MARCO CABRERA - PERITO REGISTRADO</p>
+    <p style="color:var(--primary-gold);font-weight:600; letter-spacing: 1px;">MARCO CABRERA - PERITO REGISTRADO</p>
     <p>Metodología en Peritaje de Arte e Investigaciones Académicas.</p>
     <a class="btn" href="contacto.html">Consultoría Especializada</a>
 
@@ -329,7 +342,7 @@ function toggleMenu(){
   <article class="destacado">
     <h2>Gestión en la tasación de obras de arte</h2>
     <p style="color:var(--primary-gold);font-weight:600;">Tesis de Maestría en Gestión Pública (2023)</p>
-    <img src="Tesis UCV.png" alt="">
+    <img src="Tesis UCV.png" alt="Tesis Marco Cabrera">
     <p>"Análisis sobre la tasación para aranceles de importación en la Aduana de Lima".</p>
     <a class="btn" href="https://repositorio.ucv.edu.pe/handle/20.500.12692/124165" target="_blank">Leer Investigación</a>
   </article>
@@ -338,40 +351,40 @@ function toggleMenu(){
     <h2>Metodología de Tasación</h2>
 
     <article class="card">
-      <div class="card-img-wrapper"><img src="foto bogota 1.png" alt=""></div>
+      <div class="card-img-wrapper"><img src="foto bogota 1.png" alt="Conferencia Bogotá"></div>
       <div class="card-content">
         <h3>Preliminares del proceso de valoración</h3>
         <p>VI Congreso Nacional de Avaluadores, Bogotá. Representación oficial del Perú.</p>
-        <a href="bitacora-bogota-1.html">Explorar Conferencia →</a>
+        <a href="bitacora-bogota-1.html" style="color: var(--primary-gold); text-decoration: none;">Explorar Conferencia →</a>
       </div>
     </article>
 
     <article class="card">
-      <div class="card-img-wrapper"><img src="foto bogota 2.png" alt=""></div>
+      <div class="card-img-wrapper"><img src="foto bogota 2.png" alt="Valuación Técnica"></div>
       <div class="card-content">
         <h3>Valoración económica técnica</h3>
         <p>Exposición sobre criterios normativos y métricas del mercado de arte contemporáneo.</p>
-        <a href="bitacora-bogota-2.html">Explorar Conferencia →</a>
+        <a href="bitacora-bogota-2.html" style="color: var(--primary-gold); text-decoration: none;">Explorar Conferencia →</a>
       </div>
     </article>
 
     <h2>Historia del Arte & Peritaje</h2>
 
     <article class="card">
-      <div class="card-img-wrapper"><img src="Conferencia Pinacoteca 2025.png" alt=""></div>
+      <div class="card-img-wrapper"><img src="Conferencia Pinacoteca 2025.png" alt="Análisis Atahualpa"></div>
       <div class="card-content">
         <h3>"Los funerales de Atahualpa"</h3>
         <p>Análisis técnico-histórico en la Pinacoteca Municipal Ignacio Merino (2025).</p>
-        <a href="bitacora-funerales.html">Ver Análisis →</a>
+        <a href="bitacora-funerales.html" style="color: var(--primary-gold); text-decoration: none;">Ver Análisis →</a>
       </div>
     </article>
 
     <article class="card">
-      <div class="card-img-wrapper"><img src="Conferencia en Bellas Artes 2024.png" alt=""></div>
+      <div class="card-img-wrapper"><img src="Conferencia en Bellas Artes 2024.png" alt="Análisis Ayacucho"></div>
       <div class="card-content">
         <h3>"La capitulación de Ayacucho"</h3>
         <p>Estudio de atribución y variantes de la obra de Daniel Hernández.</p>
-        <a href="bitacora-capitulacion.html">Ver Análisis →</a>
+        <a href="bitacora-capitulacion.html" style="color: var(--primary-gold); text-decoration: none;">Ver Análisis →</a>
       </div>
     </article>
   </div>
