@@ -90,7 +90,7 @@ body{
   text-decoration:none;
 }
 
-/* REDES (DEBAJO DEL BOTÓN) */
+/* REDES */
 .redes{
   margin-top:15px;
   display:flex;
@@ -147,21 +147,12 @@ img{
   text-align:center;
 }
 
-a.registro{
+a.registro, a.correo{
   color:#94a3b8;
   text-decoration:none;
 }
 
-a.registro:hover{
-  color:#cbd5f5;
-}
-
-a.correo{
-  color:#94a3b8;
-  text-decoration:none;
-}
-
-a.correo:hover{
+a.registro:hover, a.correo:hover{
   color:#cbd5f5;
 }
 
@@ -177,36 +168,41 @@ a.correo:hover{
   text-decoration:none;
 }
 
+/* ESTILO PARA EL ICONO DE INFORMACIÓN (DEFINICIÓN) */
+.info-icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: #475569;
+  color: #fff !important;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 12px;
+  line-height: 18px;
+  font-family: serif;
+  font-style: italic;
+  margin-left: 6px;
+  vertical-align: middle;
+  text-decoration: none !important;
+}
+
 /* MOBILE */
 @media(max-width:768px){
-
   .nav{
     gap:15px;
     padding:12px;
     overflow-x:auto;
     justify-content:flex-start;
   }
-
-  .nav a{
-    font-size:13px;
-  }
-
-  .hero h1{
-    font-size:30px;
-  }
-
-  .hero::before{
-    background-size:cover;
-    background-position:center;
-  }
-
+  .nav a{ font-size:13px; }
+  .hero h1{ font-size:30px; }
+  .hero::before{ background-size:cover; background-position:center; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <div class="nav">
   <a href="index.html">Inicio</a>
   <a href="bitacora.html">Bitácora profesional</a>
@@ -214,73 +210,48 @@ a.correo:hover{
   <a href="contacto.html">Contacto</a>
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
     <h1>Tasador de obras de arte en Lima</h1>
-
     <p>Informes técnicos sustentados en normativa y criterios de mercado</p>
     <p>La tasación requiere inspección directa del bien</p>
+    <a class="btn" href="contacto.html">Solicitar consulta profesional</a>
 
-    <a class="btn" href="contacto.html">
-      Solicitar consulta profesional
-    </a>
-
-    <!-- REDES AQUÍ -->
-<div class="redes">
-
-  <a href="https://www.instagram.com/tasadordearte.lima/" target="_blank" aria-label="Instagram">
-    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10zm6.5-.8a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4zM12 9a3 3 0 100 6 3 3 0 000-6z"/>
-    </svg>
-  </a>
-
-  <a href="https://www.facebook.com/profile.php?id=61552761304153" target="_blank" aria-label="Facebook">
-    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M13 22v-8h3l1-4h-4V7c0-1 .3-2 2-2h2V1h-3c-3 0-5 2-5 5v3H6v4h3v8h4z"/>
-    </svg>
-  </a>
-
-  <a href="https://x.com/MarcoIvnCabrer1" target="_blank" aria-label="X">
-    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M18 2h3l-7 8 8 12h-6l-5-7-6 7H2l8-9-8-11h6l4 6 6-6z"/>
-    </svg>
-  </a>
-
-  <a href="https://www.youtube.com/@marcoivanch" target="_blank" aria-label="YouTube">
-    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M23 7s-.2-1.5-.8-2.2c-.7-.8-1.5-.8-1.9-.9C17.7 3.5 12 3.5 12 3.5h0s-5.7 0-8.3.4c-.4 0-1.2 0-1.9.9C1.2 5.5 1 7 1 7S.8 8.7.8 10.4v1.2C.8 13.3 1 15 1 15s.2 1.5.8 2.2c.7.8 1.7.8 2.1.9 1.5.1 6.1.4 8.1.4 0 0 5.7 0 8.3-.4.4 0 1.2 0 1.9-.9.6-.7.8-2.2.8-2.2s.2-1.7.2-3.4v-1.2C23.2 8.7 23 7 23 7zM10 14V8l5 3-5 3z"/>
-    </svg>
-  </a>
-
-  <a href="https://www.tiktok.com/@tasadordearte" target="_blank" aria-label="TikTok">
-    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M16 1c1.1 1.3 2.6 2.2 4 2.4v3c-1.7-.1-3.3-.7-4.6-1.7v7.4c0 3.5-2.9 6.4-6.4 6.4S2.6 15.6 2.6 12.1 5.5 5.7 9 5.7c.3 0 .6 0 .9.1v3.2c-.3-.1-.6-.2-.9-.2-1.8 0-3.3 1.5-3.3 3.3S7.2 15.4 9 15.4s3.3-1.5 3.3-3.3V1h3.7z"/>
-    </svg>
-  </a>
-
-</div>
-
+    <div class="redes">
+      <a href="https://www.instagram.com/tasadordearte.lima/" target="_blank" aria-label="Instagram">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10zm6.5-.8a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4zM12 9a3 3 0 100 6 3 3 0 000-6z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61552761304153" target="_blank" aria-label="Facebook">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M13 22v-8h3l1-4h-4V7c0-1 .3-2 2-2h2V1h-3c-3 0-5 2-5 5v3H6v4h3v8h4z"/></svg>
+      </a>
+      <a href="https://x.com/MarcoIvnCabrer1" target="_blank" aria-label="X">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h3l-7 8 8 12h-6l-5-7-6 7H2l8-9-8-11h6l4 6 6-6z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@marcoivanch" target="_blank" aria-label="YouTube">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23 7s-.2-1.5-.8-2.2c-.7-.8-1.5-.8-1.9-.9C17.7 3.5 12 3.5 12 3.5h0s-5.7 0-8.3.4c-.4 0-1.2 0-1.9.9C1.2 5.5 1 7 1 7S.8 8.7.8 10.4v1.2C.8 13.3 1 15 1 15s.2 1.5.8 2.2c.7.8 1.7.8 2.1.9 1.5.1 6.1.4 8.1.4 0 0 5.7 0 8.3-.4.4 0 1.2 0 1.9-.9.6-.7.8-2.2.8-2.2s.2-1.7.2-3.4v-1.2C23.2 8.7 23 7 23 7zM10 14V8l5 3-5 3z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@tasadordearte" target="_blank" aria-label="TikTok">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 1c1.1 1.3 2.6 2.2 4 2.4v3c-1.7-.1-3.3-.7-4.6-1.7v7.4c0 3.5-2.9 6.4-6.4 6.4S2.6 15.6 2.6 12.1 5.5 5.7 9 5.7c.3 0 .6 0 .9.1v3.2c-.3-.1-.6-.2-.9-.2-1.8 0-3.3 1.5-3.3 3.3S7.2 15.4 9 15.4s3.3-1.5 3.3-3.3V1h3.7z"/></svg>
+      </a>
+    </div>
   </div>
 </section>
 
-<!-- TODO TU CONTENIDO ORIGINAL SIGUE IGUAL -->
-
-<!-- INICIO DEL SERVICIO -->
 <section class="section">
   <div class="card">
     <h2>Inicio del servicio</h2>
     <p>
-    La tasación de obras de arte inicia con la consulta profesional previa 
-    destinada a definir el alcance del servicio.
+      La tasación de obras de arte inicia con la 
+      <a href="consulta_profesional.html" style="color:#cbd5f5; text-decoration:underline;"><b>consulta profesional previa</b></a>
+      <a href="consulta_profesional.html" class="info-icon" title="¿Qué es la consulta profesional?">i</a> 
+      destinada a definir el alcance del servicio.
     </p>
     <p style="color:#94a3b8;">
-    Solicitar la consulta no implica obligación de contratación ni compromiso alguno por parte del solicitante.
+      Solicitar la consulta no implica obligación de contratación ni compromiso alguno por parte del solicitante.
     </p>
   </div>
 </section>
 
-<!-- PERFIL -->
 <section class="section">
   <div class="grid grid-2">
     <div>
@@ -289,65 +260,43 @@ a.correo:hover{
       <p>Magíster en Gestión Pública</p>
       <p>
         Perito tasador de arte 
-        <a class="registro" href="https://www.gob.pe/institucion/vivienda/normas-legales/1896604-025-2021-vivienda-vmcs-dgprcs" target="_blank">
-        registro
-        </a>
+        <a class="registro" href="https://www.gob.pe/institucion/vivienda/normas-legales/1896604-025-2021-vivienda-vmcs-dgprcs" target="_blank">registro</a>
       </p>
       <p>
         Perito N°<a class="registro" href="https://www.datosabiertos.gob.pe/dataset/registro-de-peritos-adscritos-al-mvcs?utm_source=chatgpt.com" target="_blank">62</a>
       </p>
     </div>
-    <div>
-      <img src="Marco Cabrera 2026.jfif">
-    </div>
+    <div><img src="Marco Cabrera 2026.jfif"></div>
   </div>
 </section>
 
-<!-- OBJETO -->
 <section class="section">
   <img src="informes técnicos de tasación.png">
   <div class="card">
     <h2>Objeto del servicio</h2>
-    <p>
-    Elaboración de informes técnicos de tasación con fines legales,
-    contables y patrimoniales.
-    </p>
+    <p>Elaboración de informes técnicos de tasación con fines legales, contables y patrimoniales.</p>
   </div>
 </section>
 
-<!-- EJERCICIO -->
 <section class="section">
   <div class="grid grid-2">
-    <div>
-      <img src="Acción.png">
-    </div>
+    <div><img src="Acción.png"></div>
     <div>
       <h2>Ejercicio pericial</h2>
-      <p>
-      Evaluación mediante inspección directa,
-      análisis material y de mercado.
-      </p>
+      <p>Evaluación mediante inspección directa, análisis material y de mercado.</p>
     </div>
   </div>
 </section>
 
-<!-- EQUIPO -->
-<section class="section">
-  <img src="Equipo de trabajo.png">
-</section>
+<section class="section"><img src="Equipo de trabajo.png"></section>
 
-<!-- METODOLOGÍA -->
 <section class="section">
   <div class="card">
     <h2>Metodología</h2>
-    <p>
-    Aplicación del Reglamento Nacional de Tasaciones
-    y criterios de valor razonable.
-    </p>
+    <p>Aplicación del Reglamento Nacional de Tasaciones y criterios de valor razonable.</p>
   </div>
 </section>
 
-<!-- USOS -->
 <section class="section">
   <div class="card">
     <h2>¿Cuándo se requiere una tasación?</h2>
@@ -360,22 +309,14 @@ a.correo:hover{
   </div>
 </section>
 
-<!-- CONTACTO -->
 <section class="section contacto">
   <h2>Contacto profesional</h2>
-
   <p><strong><a class="correo" href="mailto:oficina@tasacionesdearte.org.es">oficina@tasacionesdearte.org.es</a></strong></p>
   <p><strong>+51 930 046 681</strong></p>
-
-  <a class="btn" href="contacto.html">
-    Solicitar consulta
-  </a>
+  <a class="btn" href="contacto.html">Solicitar consulta</a>
 </section>
 
-<!-- FLOAT -->
-<a class="whatsapp" href="https://wa.me/51930046681">
-WhatsApp
-</a>
+<a class="whatsapp" href="https://wa.me/51930046681">WhatsApp</a>
 
 </body>
 </html>
