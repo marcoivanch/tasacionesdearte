@@ -130,6 +130,7 @@ h1, h2, h3 {
 
 /* =========================================================================
    NUEVOS ESTILOS PARA LA SECCIÓN ACADÉMICA (ALTA GAMA)
+   CORRECCIÓN: Secciones específicas para móvil y desktop.
    ========================================================================= */
 
 /* Contenedor principal que agrupa ambas filas */
@@ -323,19 +324,27 @@ h1, h2, h3 {
 /* RESPONSIVE */
 @media(max-width:768px){
   .hero { padding-left: 5%; height: 70vh; }
-  .card { flex-direction: column; padding: 20px; }
-  .card-img-wrapper { width: 100%; height: 200px; }
+  .card { flex-direction: column; padding: 20px; gap: 15px; } /* Ajuste gap móvil */
+  .card-img-wrapper { width: 100%; height: auto; aspect-ratio: 3/2; } /* Ajuste imagen móvil */
   .nav { gap: 15px; font-size: 11px; }
-  /* Ajuste Responsivo para la sección académica */
+
+  /* Ajuste Responsivo para la sección académica - CORRECCIÓN */
   .redes-con-academicos {
     align-items: center; /* Centrado en móviles */
     width: 100%;
   }
   .fila-redes-sociales,
   .fila-redes-academicas {
-    justify-content: center;
+    justify-content: center; /* Centrado interno */
     width: 100%;
-    gap: 12px;
+    gap: 10px; /* Gap más pequeño para móvil */
+    flex-wrap: wrap; /* Permite que los iconos bajen si no caben */
+  }
+  /* Iconos más pequeños en móvil para que quepan */
+  .fila-redes-sociales a,
+  .fila-redes-academicas a {
+    width: 32px;
+    height: 32px;
   }
 }
 </style>
