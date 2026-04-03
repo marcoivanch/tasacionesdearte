@@ -168,22 +168,37 @@ a.registro:hover, a.correo:hover{
   text-decoration:none;
 }
 
-/* ESTILO PARA EL ICONO DE INFORMACIÓN (DEFINICIÓN) */
+/* --- ACTUALIZACIÓN DE DISEÑO DE ALTA GAMA --- */
+/* NUEVO: ESTILO PARA EL ICONO DE INFORMACIÓN COMO SUPERÍNDICE SUTIL */
 .info-icon {
   display: inline-block;
-  width: 18px;
-  height: 18px;
-  background: #475569;
-  color: #fff !important;
+  width: 14px;  /* Tamaño reducido a la mitad */
+  height: 14px; /* Tamaño reducido a la mitad */
+  background: rgba(71, 85, 105, 0.4); /* Fondo más tenue y sutil */
+  color: rgba(226, 232, 240, 0.7) !important; /* Texto i más fino y claro */
   border-radius: 50%;
   text-align: center;
-  font-size: 12px;
-  line-height: 18px;
+  font-size: 10px; /* Fuente minúscula */
+  line-height: 14px; /* Centrado vertical perfecto */
   font-family: serif;
   font-style: italic;
-  margin-left: 6px;
-  vertical-align: middle;
+  font-weight: 300;
+  
+  /* Comportamiento de Superíndice Técnico */
+  position: relative;
+  top: -8px; /* Eleva el icono sobre la línea de texto */
+  margin-left: 1px; /* Espaciado mínimo y elegante */
+  
   text-decoration: none !important;
+  transition: all 0.2s ease;
+  vertical-align: baseline; /* Alineación base para el top negativo */
+}
+
+/* Efecto hover elegante */
+.info-icon:hover {
+  background: rgba(71, 85, 105, 0.8);
+  color: #fff !important;
+  transform: translateY(-1px);
 }
 
 /* MOBILE */
@@ -242,8 +257,7 @@ a.registro:hover, a.correo:hover{
     <h2>Inicio del servicio</h2>
     <p>
       La tasación de obras de arte inicia con la 
-      <a href="consulta_profesional.html" style="color:#cbd5f5; text-decoration:underline;"><b>consulta profesional previa</b></a>
-      <a href="consulta_profesional.html" class="info-icon" title="¿Qué es la consulta profesional?">i</a> 
+      <a href="consulta_profesional.html" style="color:#cbd5f5; text-decoration:underline; font-weight:500;">consulta profesional previa</a><a href="consulta_profesional.html" class="info-icon" title="¿Qué es la consulta profesional?">i</a> 
       destinada a definir el alcance del servicio.
     </p>
     <p style="color:#94a3b8;">
