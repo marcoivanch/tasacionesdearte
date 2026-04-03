@@ -19,6 +19,7 @@
   --text-main:#e2e8f0;
   --text-dim:#94a3b8;
   --accent-green:#25D366;
+  --deep-gold: #9d7d3d; /* Un dorado más profundo para el botón */
 }
 
 body {
@@ -29,7 +30,7 @@ body {
   overflow-x: hidden;
 }
 
-/* MENÚ ESCRITORIO (Centrado y elegante) */
+/* MENÚ ESCRITORIO */
 .nav {
   position:fixed;
   top:0;
@@ -59,7 +60,7 @@ body {
   display: none;
 }
 
-/* HERO SECTION (Ajustada para ocupar todo el espacio) */
+/* HERO SECTION */
 .hero {
   height:100vh;
   display:flex;
@@ -219,22 +220,40 @@ body {
   color:#475569;
 }
 
+/* --- NUEVO BOTÓN DE WHATSAPP (ESTILO DE LUJO) --- */
 .whatsapp {
   position:fixed;
-  bottom:25px;
-  right:25px;
-  background:var(--accent-green);
-  width:60px;
-  height:60px;
-  border-radius:50%;
+  bottom:30px;
+  right:30px;
+  /* Usamos un degradado sutil de dorados en lugar del verde brillante */
+  background: linear-gradient(135deg, var(--deep-gold), var(--primary-gold));
+  width: 55px; /* Un poco más discreto */
+  height: 55px;
+  border-radius: 50%;
   display:flex;
   align-items:center;
   justify-content:center;
   z-index:1000;
-  transition: 0.3s;
+  transition: all 0.4s ease-in-out;
+  /* Añadimos una sombra refinada para dar profundidad */
+  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+  /* Un borde sutil que lo separa del fondo */
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.whatsapp:hover { transform: scale(1.1); }
+.whatsapp:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(197, 160, 89, 0.5);
+  /* El degradado se invierte sutilmente al pasar el cursor */
+  background: linear-gradient(135deg, var(--primary-gold), var(--deep-gold));
+}
+
+/* El icono también es blanco, limpio, sin el fondo verde */
+.whatsapp svg {
+  width: 28px;
+  height: 28px;
+  fill: #fff;
+}
 
 /* --- RESPONSIVE / MÓVIL --- */
 @media(max-width:768px){
@@ -289,6 +308,18 @@ body {
   .titulo-mobile { display:block; margin-top:38px; font-size: 34px; font-weight: 700; line-height: 1.15; }
   .card { flex-direction:column; padding:20px; }
   .card-img-wrapper { width:100%; height:200px; }
+
+  /* Ajustamos el botón para móvil, quizás un poco más arriba si estorba */
+  .whatsapp {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+  }
+  .whatsapp svg {
+    width: 24px;
+    height: 24px;
+  }
 }
 </style>
 
@@ -394,8 +425,8 @@ function toggleMenu(){
   © 2026 TASACIONES DE ARTE | MARCO CABRERA - PERITO REGISTRADO
 </footer>
 
-<a class="whatsapp" href="https://wa.me/51930046681" target="_blank">
-  <svg width="30" height="30" fill="white" viewBox="0 0 24 24">
+<a class="whatsapp" href="https://wa.me/51930046681" target="_blank" title="Contactar por WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24">
     <path d="M12.031 6.172c-2.135 0-4.141.832-5.645 2.337s-2.337 3.511-2.337 5.645c0 2.053.774 3.978 2.179 5.464l-.513 1.884 1.94-.509c1.42 1.258 3.256 1.954 5.161 1.954l.015.001c2.135 0 4.141-.832 5.645-2.337s2.337-3.51 2.337-5.645c0-2.135-.832-4.141-2.337-5.645s-3.51-2.337-5.645-2.337z"/>
   </svg>
 </a>
