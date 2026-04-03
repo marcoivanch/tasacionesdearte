@@ -9,7 +9,7 @@
 <meta http-equiv="Expires" content="0" />
 
 <title>Bitácora técnica | Tasaciones de Arte</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -18,7 +18,7 @@
   --card-bg:#0d1425;
   --text-main:#e2e8f0;
   --text-dim:#94a3b8;
-  --accent-green:#25D366; /* Verde oficial */
+  --accent-green:#25D366;
 }
 
 body {
@@ -29,7 +29,7 @@ body {
   overflow-x: hidden;
 }
 
-/* MENÚ ESCRITORIO */
+/* --- NAVEGACIÓN ESCRITORIO --- */
 .nav {
   position:fixed;
   top:0;
@@ -54,12 +54,10 @@ body {
 
 .nav a:hover { color: var(--primary-gold); }
 
-/* OCULTAR ELEMENTOS MÓVILES EN ESCRITORIO */
-.hamburger, .menu-movil {
-  display: none;
-}
+/* OCULTOS EN ESCRITORIO */
+.hamburger, .menu-movil { display: none; }
 
-/* HERO SECTION */
+/* --- HERO SECTION --- */
 .hero {
   height:100vh;
   display:flex;
@@ -85,19 +83,9 @@ body {
   background:linear-gradient(90deg,var(--bg-dark) 25%,transparent 100%);
 }
 
-.hero-content {
-  position:relative;
-  z-index:2;
-  max-width:600px;
-}
+.hero-content { position:relative; z-index:2; max-width:600px; }
 
-.titulo-desktop {
-  font-weight:700;
-  font-size:clamp(32px,5vw,52px);
-  line-height:1.1;
-  margin:0;
-}
-
+.titulo-desktop { font-weight:700; font-size:clamp(32px,5vw,52px); line-height:1.1; margin:0; }
 .titulo-mobile { display:none; }
 
 .btn {
@@ -118,186 +106,88 @@ body {
 
 .btn:hover { background: var(--accent-green); color: #000; }
 
-.fila-redes-academicas {
-  display:flex;
-  gap:16px;
-  flex-wrap:wrap;
-  margin-top:25px;
-}
+.fila-redes-academicas { display:flex; gap:16px; flex-wrap:wrap; margin-top:25px; }
 
 .icono-academico {
-  width:42px;
-  height:42px;
-  border-radius:50%;
-  background:#000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border:1px solid rgba(255,255,255,0.15);
-  text-decoration: none;
+  width:42px; height:42px; border-radius:50%; background:#000;
+  display:flex; align-items:center; justify-content:center;
+  border:1px solid rgba(255,255,255,0.15); text-decoration: none;
   transition: 0.3s;
 }
 
 .icono-academico:hover { border-color: var(--primary-gold); transform: translateY(-3px); }
 
-.icono-texto {
-  color:#fff;
-  font-size:14px;
-  font-weight:600;
-}
+.icono-texto { color:#fff; font-size:14px; font-weight:600; }
 
-.container {
-  max-width:1100px;
-  margin:auto;
-  padding:80px 20px;
-}
+/* --- CUERPO DE LA BITÁCORA --- */
+.container { max-width:1100px; margin:auto; padding:80px 20px; }
 
 .destacado {
-  background:var(--card-bg);
-  border:1px solid rgba(255,255,255,0.05);
-  border-radius:4px;
-  padding:40px;
-  margin-bottom:80px;
+  background:var(--card-bg); border:1px solid rgba(255,255,255,0.05);
+  border-radius:4px; padding:40px; margin-bottom:80px;
 }
 
-.destacado img {
-  width:100%;
-  border-radius:2px;
-  margin:25px 0;
-}
+.destacado img { width:100%; border-radius:2px; margin:25px 0; }
 
 .indice h2 {
-  font-weight:300;
-  font-size:24px;
-  text-transform:uppercase;
-  letter-spacing:2px;
-  margin:60px 0 30px 0;
-  display:flex;
-  align-items:center;
-  gap:20px;
+  font-weight:300; font-size:24px; text-transform:uppercase;
+  letter-spacing:2px; margin:60px 0 30px 0; display:flex; align-items:center; gap:20px;
 }
 
-.indice h2::after {
-  content:"";
-  flex:1;
-  height:1px;
-  background:rgba(255,255,255,0.1);
-}
+.indice h2::after { content:""; flex:1; height:1px; background:rgba(255,255,255,0.1); }
 
 .card {
-  display:flex;
-  gap:30px;
-  padding:35px;
-  margin-bottom:20px;
-  background:rgba(255,255,255,0.02);
-  border-radius:8px;
+  display:flex; gap:30px; padding:35px; margin-bottom:20px;
+  background:rgba(255,255,255,0.02); border-radius:8px;
   transition: 0.3s;
 }
 
 .card:hover { background: rgba(255,255,255,0.05); }
 
-.card-img-wrapper {
-  overflow:hidden;
-  border-radius:4px;
-  width:180px;
-  height:120px;
-  flex-shrink:0;
-}
+.card-img-wrapper { overflow:hidden; border-radius:4px; width:180px; height:120px; flex-shrink:0; }
+.card img { width:100%; height:100%; object-fit:cover; }
 
-.card img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
+.footer { text-align:center; padding:60px; font-size:12px; color:#475569; text-transform:uppercase; }
 
-.footer {
-  text-align:center;
-  padding:60px;
-  font-size:12px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:#475569;
-}
-
-/* --- BOTÓN WHATSAPP OFICIAL --- */
+/* --- WHATSAPP --- */
 .whatsapp {
-  position:fixed;
-  bottom:30px;
-  right:30px;
-  background: #25D366; /* Verde oficial */
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:1000;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position:fixed; bottom:30px; right:30px; background:#25D366;
+  width:60px; height:60px; border-radius:50%; display:flex;
+  align-items:center; justify-content:center; z-index:1000;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-.whatsapp:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
-}
+.whatsapp svg { width:35px; height:35px; fill:#fff; }
 
-.whatsapp svg {
-  width: 35px;
-  height: 35px;
-  fill: #fff;
-}
-
-/* --- RESPONSIVE / MÓVIL --- */
+/* --- AJUSTES MÓVIL --- */
 @media(max-width:768px){
   .nav { display:none; }
   
   .hamburger { 
-    display:block; 
-    position:fixed;
-    top:18px;
-    right:20px;
-    width:32px;
-    height:24px;
-    z-index:1100;
-    cursor:pointer;
+    display:block; position:fixed; top:20px; right:20px; 
+    width:35px; height:30px; z-index:2000; cursor:pointer; 
   }
   
-  .hamburger span {
-    display:block;
-    height:3px;
-    background:#fff;
-    margin:5px 0;
-    border-radius:2px;
-  }
+  .hamburger span { display:block; height:3px; background:#fff; margin:6px 0; border-radius:2px; }
 
   .menu-movil {
-    display:flex;
-    position:fixed;
-    top:0;
-    right:-260px;
-    width:260px;
-    height:100vh;
-    background:rgba(10,15,28,0.98);
-    backdrop-filter:blur(12px);
-    padding:80px 30px;
-    flex-direction:column;
-    gap:25px;
-    transition:0.4s ease;
-    z-index:1090;
+    display: flex; position: fixed; top: 0; right: -100%; 
+    width: 280px; height: 100vh; background: rgba(10, 21, 40, 0.98);
+    backdrop-filter: blur(15px); padding: 100px 40px; flex-direction: column;
+    gap: 30px; transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1900; box-shadow: -10px 0 30px rgba(0,0,0,0.5);
   }
 
-  .menu-movil.activo { right:0; }
+  .menu-movil.activo { right: 0; }
 
   .menu-movil a {
-    color:#fff;
-    text-decoration:none;
-    font-size:16px;
-    letter-spacing:1px;
-    text-transform:uppercase;
+    color:#fff; text-decoration:none; font-size:18px;
+    letter-spacing:2px; text-transform:uppercase; font-weight: 600;
   }
 
   .titulo-desktop { display:none; }
-  .titulo-mobile { display:block; margin-top:38px; font-size: 34px; font-weight: 700; line-height: 1.15; }
+  .titulo-mobile { display:block; font-size: 32px; font-weight: 700; line-height: 1.2; margin-bottom: 10px; }
+  
   .card { flex-direction:column; padding:20px; }
   .card-img-wrapper { width:100%; height:200px; }
 }
@@ -332,8 +222,8 @@ function toggleMenu(){
 
 <section class="hero">
   <div class="hero-content">
-    <h1 class="titulo-desktop">Bitácora<br>Profesional<br>de Arte y<br>Peritaje</h1>
-    <h1 class="titulo-mobile">Bitácora<br>Profesional<br>de Arte y<br>Peritaje</h1>
+    <h1 class="titulo-desktop">Bitácora Profesional<br>de Arte y Peritaje</h1>
+    <h1 class="titulo-mobile">Bitácora Profesional<br>de Arte y Peritaje</h1>
     <p style="color:var(--primary-gold);font-weight:600; letter-spacing: 1px;">MARCO CABRERA - PERITO REGISTRADO</p>
     <p>Metodología en Peritaje de Arte e Investigaciones Académicas.</p>
     <a class="btn" href="contacto.html">Consultoría Especializada</a>
@@ -362,7 +252,7 @@ function toggleMenu(){
     <h2>Metodología de Tasación</h2>
 
     <article class="card">
-      <div class="card-img-wrapper"><img src="foto bogota 1.png" alt="Conferencia Bogotá"></div>
+      <div class="card-img-wrapper"><img src="foto bogota 1.png" alt="Bogotá"></div>
       <div class="card-content">
         <h3>Preliminares del proceso de valoración</h3>
         <p>VI Congreso Nacional de Avaluadores, Bogotá. Representación oficial del Perú.</p>
@@ -382,7 +272,7 @@ function toggleMenu(){
     <h2>Historia del Arte & Peritaje</h2>
 
     <article class="card">
-      <div class="card-img-wrapper"><img src="Conferencia Pinacoteca 2025.png" alt="Análisis Atahualpa"></div>
+      <div class="card-img-wrapper"><img src="Conferencia Pinacoteca 2025.png" alt="Atahualpa"></div>
       <div class="card-content">
         <h3>"Los funerales de Atahualpa"</h3>
         <p>Análisis técnico-histórico en la Pinacoteca Municipal Ignacio Merino (2025).</p>
@@ -391,7 +281,7 @@ function toggleMenu(){
     </article>
 
     <article class="card">
-      <div class="card-img-wrapper"><img src="Conferencia en Bellas Artes 2024.png" alt="Análisis Ayacucho"></div>
+      <div class="card-img-wrapper"><img src="Conferencia en Bellas Artes 2024.png" alt="Ayacucho"></div>
       <div class="card-content">
         <h3>"La capitulación de Ayacucho"</h3>
         <p>Estudio de atribución y variantes de la obra de Daniel Hernández.</p>
