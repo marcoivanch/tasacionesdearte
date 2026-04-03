@@ -50,8 +50,7 @@ body{
 
 .hero::before{
   content:"";
-  position:absolute;
-  inset:0;
+  position:absolute; inset:0;
   background:url('Encuadernado.png') center no-repeat;
   background-size:130%;
   opacity:0.85;
@@ -59,8 +58,7 @@ body{
 
 .hero::after{
   content:"";
-  position:absolute;
-  inset:0;
+  position:absolute; inset:0;
   background:rgba(10,15,28,0.75);
 }
 
@@ -166,42 +164,37 @@ a.registro:hover, a.correo:hover{
   padding:14px 18px;
   border-radius:50px;
   text-decoration:none;
+  z-index: 1001;
 }
 
-/* --- ACTUALIZACIÓN DE DISEÑO DE ALTA GAMA --- */
-/* NUEVO: ESTILO PARA EL ICONO DE INFORMACIÓN COMO SUPERÍNDICE SUTIL */
+/* --- ESTILO ICONO DEFINICIÓN (ESCRITORIO) --- */
 .info-icon {
   display: inline-block;
-  width: 14px;  /* Tamaño reducido a la mitad */
-  height: 14px; /* Tamaño reducido a la mitad */
-  background: rgba(71, 85, 105, 0.4); /* Fondo más tenue y sutil */
-  color: rgba(226, 232, 240, 0.7) !important; /* Texto i más fino y claro */
+  width: 14px;
+  height: 14px;
+  background: rgba(71, 85, 105, 0.4);
+  color: rgba(226, 232, 240, 0.7) !important;
   border-radius: 50%;
   text-align: center;
-  font-size: 10px; /* Fuente minúscula */
-  line-height: 14px; /* Centrado vertical perfecto */
+  font-size: 10px;
+  line-height: 14px;
   font-family: serif;
   font-style: italic;
   font-weight: 300;
-  
-  /* Comportamiento de Superíndice Técnico */
   position: relative;
-  top: -8px; /* Eleva el icono sobre la línea de texto */
-  margin-left: 1px; /* Espaciado mínimo y elegante */
-  
+  top: -8px;
+  margin-left: 1px;
   text-decoration: none !important;
   transition: all 0.2s ease;
-  vertical-align: baseline; /* Alineación base para el top negativo */
+  vertical-align: baseline;
 }
 
-/* Efecto hover elegante */
 .info-icon:hover {
   background: rgba(71, 85, 105, 0.8);
   color: #fff !important;
-  transform: translateY(-1px);
 }
 
-/* MOBILE */
+/* MOBILE Y AJUSTES ESPECÍFICOS PARA EL ICONO */
 @media(max-width:768px){
   .nav{
     gap:15px;
@@ -212,6 +205,17 @@ a.registro:hover, a.correo:hover{
   .nav a{ font-size:13px; }
   .hero h1{ font-size:30px; }
   .hero::before{ background-size:cover; background-position:center; }
+
+  /* AJUSTE EXCLUSIVO PARA MÓVIL: ICONO MÁS PEQUEÑO Y REPOSICIONADO */
+  .info-icon {
+    width: 11px; /* Aún más pequeño */
+    height: 11px;
+    font-size: 8px;
+    line-height: 11px;
+    top: -6px; /* Ajuste de altura para no forzar el salto de línea */
+    margin-left: 0px;
+    background: rgba(71, 85, 105, 0.6); /* Un poco más de contraste por el tamaño */
+  }
 }
 </style>
 </head>
