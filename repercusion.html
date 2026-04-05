@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Repercusión Académica | Tasaciones de Arte</title>
+<title>Repercusión Académica Premium | Tasaciones de Arte</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -13,6 +13,7 @@
   --card-bg:#0d1425;
   --text-main:#e2e8f0;
   --text-dim:#94a3b8;
+  --white: #ffffff;
 }
 
 body {
@@ -21,9 +22,10 @@ body {
   background:var(--bg-dark);
   color:var(--text-main);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* --- NAVEGACIÓN (Igual a bitacora.html) --- */
+/* --- NAVEGACIÓN (Estilo Bitácora) --- */
 .nav {
   position:fixed;
   top:0;
@@ -32,35 +34,144 @@ body {
   display:flex;
   justify-content:center;
   gap:40px;
-  background:rgba(10,15,28,0.9);
+  background:rgba(10,15,28,0.85);
   backdrop-filter:blur(15px);
   z-index:1000;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
-.nav a { color:#cbd5f5; text-decoration:none; font-size:13px; letter-spacing:1px; text-transform:uppercase; transition: 0.3s; }
+.nav a { color:#cbd5f5; text-decoration:none; font-size:13px; letter-spacing:1px; text-transform:uppercase; transition: 0.3s; font-weight: 600;}
 .nav a:hover { color: var(--primary-gold); }
 
-/* --- CONTENIDO --- */
-.container { max-width:900px; margin:auto; padding:120px 20px 80px 20px; }
+/* --- HERO PREMIUM (IMPACTO EDITORIAL) --- */
+.hero-repercusión {
+  height: 80vh; /* Un poco más bajo que el de bitácora para enfocar el video */
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
 
-.header-seccion { border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 40px; padding-bottom: 20px; }
-.header-seccion h1 { font-size: 32px; margin-bottom: 10px; color: #fff; }
-.subtitulo { color: var(--primary-gold); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 14px; }
+.hero-repercusión::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Imagen de fondo de alta calidad: Casona de San Marcos (Patrimonio) */
+  background: url('https://upload.wikimedia.org/wikipedia/commons/e/e0/Casona_de_San_Marcos_-_Interior.jpg') center/cover no-repeat;
+  opacity: 0.35; /* Mucho más sutil para que el texto resalte */
+  filter: grayscale(30%) brightness(0.7);
+}
 
-.descripcion-tesis { font-size: 17px; color: var(--text-dim); margin-bottom: 50px; }
-.descripcion-tesis b { color: var(--text-main); }
+.hero-repercusión::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Degradado para integrar la imagen con el fondo oscuro y guiar la vista */
+  background: linear-gradient(180deg, rgba(10,15,28,0) 50%, var(--bg-dark) 100%);
+}
 
-/* --- CONTENEDOR DE VIDEO --- */
-.video-wrapper {
+.hero-content-repercusión {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.subtitulo-premium {
+  color: var(--primary-gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: clamp(14px, 2vw, 16px);
+  margin-bottom: 15px;
+  display: inline-block;
+  border-bottom: 2px solid var(--primary-gold);
+  padding-bottom: 5px;
+}
+
+.titulo-editorial {
+  font-weight: 700;
+  font-size: clamp(36px, 6vw, 64px); /* Impacto visual masivo */
+  line-height: 1.05;
+  margin: 0;
+  color: var(--white);
+  text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.institucion-destacada {
+    font-size: clamp(18px, 3vw, 24px);
+    color: var(--text-main);
+    font-weight: 300;
+    margin-top: 20px;
+    letter-spacing: 1px;
+}
+
+/* --- CONTENIDO PRINCIPAL --- */
+.container-premium { 
+  max-width: 900px; 
+  margin: auto; 
+  padding: 60px 20px; /* Reducido el padding superior por el hero */
+  position: relative;
+  z-index: 3;
+}
+
+/* --- BLOQUE DE TEXTO DESTACADO (Estilo Revista) --- */
+.bloque-editorial {
+  background: var(--card-bg);
+  border-left: 4px solid var(--primary-gold);
+  padding: 40px;
+  border-radius: 4px;
+  margin-bottom: 60px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.descripcion-tesis-premium { 
+  font-size: 19px; /* Un poco más grande para lectura premium */
+  color: var(--text-dim); 
+  margin: 0;
+  font-weight: 300;
+}
+
+.descripcion-tesis-premium b { color: var(--white); font-weight: 600; }
+.descripcion-tesis-premium i { color: var(--primary-gold); font-style: normal; font-weight: 600;}
+
+/* --- CONTENEDOR DE VIDEO PREMIUM --- */
+.seccion-video {
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.titulo-conferencia-video {
+    color: var(--white);
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.metodologia-tag {
+    color: var(--primary-gold);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    display: block;
+}
+
+.video-wrapper-premium {
   position: relative;
   padding-bottom: 56.25%; /* Relación 16:9 */
   height: 0;
   overflow: hidden;
   border-radius: 8px;
   background: #000;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-  margin-bottom: 40px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.5); /* Sombra más profunda */
+  border: 2px solid rgba(197, 160, 89, 0.2); /* Borde dorado sutil */
 }
-.video-wrapper iframe {
+.video-wrapper-premium iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -69,21 +180,44 @@ body {
   border: 0;
 }
 
-.back-link {
+/* --- BOTÓN VOLVER (Estilo Bitácora) --- */
+.back-link-premium {
   display: inline-block;
-  color: var(--primary-gold);
+  color: var(--white);
   text-decoration: none;
   font-weight: 600;
   margin-top: 20px;
   transition: 0.3s;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px;
 }
-.back-link:hover { text-decoration: underline; }
+.back-link-premium:hover { 
+    border-color: var(--primary-gold);
+    color: var(--primary-gold);
+    background: rgba(197, 160, 89, 0.05);
+}
 
-.footer { text-align:center; padding:60px; font-size:12px; color:#475569; text-transform:uppercase; }
+/* --- FOOTER (Estilo Bitácora) --- */
+.footer { text-align:center; padding:60px; font-size:12px; color:#475569; text-transform:uppercase; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 40px;}
 
+/* --- AJUSTES MÓVIL --- */
 @media(max-width:768px){
-    .nav { gap: 15px; }
-    .header-seccion h1 { font-size: 24px; }
+    .nav { gap: 15px; padding: 15px; }
+    .nav a { font-size: 11px; }
+    
+    .hero-repercusión { height: 60vh; }
+    .hero-content-repercusión { padding: 0 15px; }
+    .titulo-editorial { font-size: 32px; }
+    .institucion-destacada { font-size: 16px; }
+
+    .bloque-editorial { padding: 25px; margin-bottom: 40px; }
+    .descripcion-tesis-premium { font-size: 16px; }
+    
+    .titulo-conferencia-video { font-size: 22px; }
 }
 </style>
 </head>
@@ -96,34 +230,43 @@ body {
   <a href="contacto.html">Contacto</a>
 </div>
 
-<div class="container">
-  <div class="header-seccion">
-    <p class="subtitulo">Repercusión e Impacto Académico</p>
-    <h1>Ciclo de Conferencias "Temas de Arte" - UNMSM</h1>
+<section class="hero-repercusión">
+  <div class="hero-content-repercusión">
+    <p class="subtitulo-premium">Repercusión e Impacto</p>
+    <h1 class="titulo-editorial">Ciclo de Conferencias<br>"Temas de Arte"</h1>
+    <p class="institucion-destacada">Escuela Profesional de Arte – UNMSM</p>
   </div>
+</section>
 
-  <div class="descripcion-tesis">
-    <p>
-      Tras la sustentación de la tesis de maestría <b>"Análisis sobre la tasación para aranceles de importación en la Aduana de Lima"</b>, la importancia de los hallazgos metodológicos motivó una invitación especial por parte de la <b>Escuela Profesional de Arte de la Universidad Nacional Mayor de San Marcos</b>.
+<div class="container-premium">
+  
+  <article class="bloque-editorial">
+    <p class="descripcion-tesis-premium">
+      Tras la sustentación de la tesis de maestría <b>"Análisis sobre la tasación para aranceles de importación en la Aduana de Lima"</b>, la importancia de los hallazgos metodológicos motivó una invitación especial por parte de la <b>Universidad Nacional Mayor de San Marcos</b>.
     </p>
-    <p>
+    <br>
+    <p class="descripcion-tesis-premium">
       En este prestigioso espacio académico, reservado para investigadores con grado de maestría y trayectoria destacada, se expuso la conferencia titulada: 
-      <br><br>
-      <i style="color: var(--text-main);">"Universalidad problemática y metodología en la tasación de obras de arte: El Perú, la CAN y países de la región"</i>.
+      <i>"Universalidad problemática y metodología en la tasación de obras de arte: El Perú, la CAN y países de la región"</i>.
     </p>
-  </div>
+  </article>
 
-  <div class="video-wrapper">
-    <iframe 
-      src="https://www.youtube.com/embed/uHyuN-lNDyA?start=34" 
-      title="Conferencia Marco Cabrera UNMSM" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      allowfullscreen>
-    </iframe>
-  </div>
+  <section class="seccion-video">
+    <span class="metodologia-tag">Metodología Aplicada</span>
+    <h2 class="titulo-conferencia-video">Vea la conferencia completa</h2>
+    
+    <div class="video-wrapper-premium">
+      <iframe 
+        src="https://www.youtube.com/embed/uHyuN-lNDyA?start=34" 
+        title="Conferencia Marco Cabrera UNMSM" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
 
   <p style="text-align: center;">
-    <a href="bitacora.html" class="back-link">← Volver a la Bitácora Técnica</a>
+    <a href="bitacora.html" class="back-link-premium">← Volver a la Bitácora Técnica</a>
   </p>
 </div>
 
