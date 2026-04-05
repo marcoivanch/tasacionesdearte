@@ -3,15 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maestro en Gestión Pública | Tesis y Repercusión | Tasaciones de Arte</title>
+<title>Repercusión Académica Premium | Tasaciones de Arte</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --primary-gold:#c5a059; /* Tu dorado de marca */
-  --text-gold-aged: #bfa571; /* Oro envejecido para texto sobre oscuro */
-  --bg-dark:#0a0f1c; /* Fondo de la bitácora */
-  --bg-green-deep: #05140f; /* Verde oscuro profundo para áreas destacadas */
+  --primary-gold:#c5a059;
+  --bg-dark:#0a0f1c;
   --card-bg:#0d1425;
   --text-main:#e2e8f0;
   --text-dim:#94a3b8;
@@ -44,52 +42,41 @@ body {
 .nav a { color:#cbd5f5; text-decoration:none; font-size:13px; letter-spacing:1px; text-transform:uppercase; transition: 0.3s; font-weight: 600;}
 .nav a:hover { color: var(--primary-gold); }
 
-/* --- HERO REVOLUCIONARIO: EL DIPLOMA (VERDE OSCURO PROFUNDO) --- */
-.hero-diploma {
-  height: 90vh; /* Alto impacto visual */
+/* --- HERO PREMIUM (IMPACTO EDITORIAL) --- */
+.hero-repercusión {
+  height: 80vh; 
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
-  background-color: #000; /* Fondo base negro para profundidad */
+  background: #000;
 }
 
-.hero-diploma::before {
+.hero-repercusión::before {
   content: "";
   position: absolute;
   inset: 0;
-  /* TU DIPLOMA AJUSTADO: https://tasacionesdearte.org.pe/diploma-marco-premium-verde.jpg */
-  background: url('diploma-marco-premium-verde.jpg') center/cover no-repeat;
-  opacity: 0.8; /* Alta opacidad para que se aprecie el detalle del oro y papel */
+  /* Imagen de fondo de alta calidad: Casona de San Marcos */
+  background: url('https://upload.wikimedia.org/wikipedia/commons/e/e0/Casona_de_San_Marcos_-_Interior.jpg') center/cover no-repeat;
+  opacity: 0.35; 
+  filter: grayscale(30%) brightness(0.7);
 }
 
-/* Degradados para integrar el diploma sombrío con el fondo de la página */
-.hero-diploma::after {
+.hero-repercusión::after {
   content: "";
   position: absolute;
   inset: 0;
-  /* Degradado sutil a negro para profundidad y para integrar con el body */
-  background: linear-gradient(180deg, rgba(10,15,28,0) 60%, var(--bg-dark) 100%);
+  /* Degradado para integrar la imagen con el fondo oscuro y guiar la vista */
+  background: linear-gradient(180deg, rgba(10,15,28,0) 50%, var(--bg-dark) 100%);
 }
 
-.hero-content-diploma {
+.hero-content-repercusión {
   position: relative;
   z-index: 2;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
-  text-align: left; /* Alineación editorial a la izquierda */
-  padding-top: 100px; /* Espacio para el menú */
-}
-
-.titulo-editorial-diploma {
-  font-weight: 700;
-  font-size: clamp(32px, 5vw, 56px); /* Impacto masivo */
-  line-height: 1.1;
-  margin: 0;
-  color: var(--white);
-  text-shadow: 0 4px 15px rgba(0,0,0,0.8); /* Sombra fuerte para legibilidad */
-  max-width: 600px;
+  text-align: center;
 }
 
 .subtitulo-premium {
@@ -98,76 +85,70 @@ body {
   text-transform: uppercase;
   letter-spacing: 3px;
   font-size: clamp(14px, 2vw, 16px);
-  margin-top: 20px;
-  display: block;
+  margin-bottom: 15px;
+  display: inline-block;
+  border-bottom: 2px solid var(--primary-gold);
+  padding-bottom: 5px;
+}
+
+.titulo-editorial {
+  font-weight: 700;
+  font-size: clamp(36px, 6vw, 64px); 
+  line-height: 1.05;
+  margin: 0;
+  color: var(--white);
+  text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.institucion-destacada {
+    font-size: clamp(18px, 3vw, 24px);
+    color: var(--text-main);
+    font-weight: 300;
+    margin-top: 20px;
+    letter-spacing: 1px;
 }
 
 /* --- CONTENIDO PRINCIPAL --- */
 .container-premium { 
-  max-width: 1000px; 
+  max-width: 900px; 
   margin: auto; 
   padding: 60px 20px;
   position: relative;
   z-index: 3;
 }
 
-/* --- SECCIÓN DETALLE TESIS (FONDO VERDE PROFUNDO) --- */
-.seccion-tesis-verde {
-  background: var(--bg-green-deep); /* FONDO VERDE OSCURO PROFUNDO */
-  padding: 60px;
-  border-radius: 8px;
-  border: 1px solid rgba(197, 160, 89, 0.1); /* Borde dorado muy sutil */
-  margin-bottom: 80px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-  display: grid;
-  grid-template-columns: 1fr 2fr; /* Texto izquierda, detalles derecha */
-  gap: 40px;
-  align-items: start;
+/* --- BLOQUE DE TEXTO DESTACADO (Estilo Revista) --- */
+.bloque-editorial {
+  background: var(--card-bg);
+  border-left: 4px solid var(--primary-gold);
+  padding: 40px;
+  border-radius: 4px;
+  margin-bottom: 60px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-.tesis-intro h2 {
-    color: var(--white);
-    font-size: 24px;
-    margin-bottom: 20px;
-    letter-spacing: 0.5px;
-}
-
-.tesis-detalles p {
-  font-size: 18px;
-  color: var(--text-dim);
-  margin-bottom: 1.5em;
+.descripcion-tesis-premium { 
+  font-size: 19px; 
+  color: var(--text-dim); 
+  margin: 0;
   font-weight: 300;
 }
 
-.tesis-detalles b { color: var(--white); font-weight: 600; }
-.tesis-detalles i { color: var(--text-gold-aged); font-style: normal; font-weight: 600;}
+.descripcion-tesis-premium b { color: var(--white); font-weight: 600; }
+.descripcion-tesis-premium i { color: var(--primary-gold); font-style: normal; font-weight: 600;}
 
-/* Botón estilo Bitácora, ajustado para fondo verde */
-.btn-tesis {
-    display: inline-block;
-    padding: 14px 28px;
-    background: transparent;
-    border: 1px solid var(--text-gold-aged);
-    color: var(--text-gold-aged);
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 1px;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.btn-tesis:hover {
-    background: var(--primary-gold);
-    color: #000;
-    border-color: var(--primary-gold);
-}
-
-/* --- SECCIÓN VIDEO (Impacto UNMSM) --- */
+/* --- CONTENEDOR DE VIDEO PREMIUM --- */
 .seccion-video {
-    margin-bottom: 100px;
+    margin-bottom: 80px;
     text-align: center;
+}
+
+.titulo-conferencia-video {
+    color: var(--white);
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
 }
 
 .metodologia-tag {
@@ -175,20 +156,9 @@ body {
     font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 15px;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
     display: block;
-}
-
-.titulo-conferencia-video {
-    color: var(--white);
-    font-size: 32px;
-    font-weight: 600;
-    margin-bottom: 40px;
-    letter-spacing: 0.5px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .video-wrapper-premium {
@@ -198,8 +168,8 @@ body {
   overflow: hidden;
   border-radius: 8px;
   background: #000;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.6); /* Sombra más profunda */
-  border: 1px solid rgba(197, 160, 89, 0.2); /* Borde dorado sutil */
+  box-shadow: 0 25px 50px rgba(0,0,0,0.5); 
+  border: 2px solid rgba(197, 160, 89, 0.2); 
 }
 .video-wrapper-premium iframe {
   position: absolute;
@@ -213,7 +183,7 @@ body {
 /* --- BOTÓN VOLVER (Estilo Bitácora) --- */
 .back-link-premium {
   display: inline-block;
-  color: var(--text-dim);
+  color: var(--white);
   text-decoration: none;
   font-weight: 600;
   margin-top: 20px;
@@ -221,9 +191,14 @@ body {
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  padding: 10px 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px;
 }
 .back-link-premium:hover { 
+    border-color: var(--primary-gold);
     color: var(--primary-gold);
+    background: rgba(197, 160, 89, 0.05);
 }
 
 /* --- FOOTER (Estilo Bitácora) --- */
@@ -234,15 +209,15 @@ body {
     .nav { gap: 15px; padding: 15px; }
     .nav a { font-size: 11px; }
     
-    .hero-diploma { height: 70vh; }
-    .hero-content-diploma { text-align: center; padding-top: 80px;}
-    .titulo-editorial-diploma { font-size: 28px; margin: auto;}
-    .subtitulo-premium { font-size: 12px; letter-spacing: 2px;}
+    .hero-repercusión { height: 60vh; }
+    .hero-content-repercusión { padding: 0 15px; }
+    .titulo-editorial { font-size: 32px; }
+    .institucion-destacada { font-size: 16px; }
 
-    .seccion-tesis-verde { grid-template-columns: 1fr; padding: 30px; gap: 20px;}
-    .tesis-detalles p { font-size: 16px; }
+    .bloque-editorial { padding: 25px; margin-bottom: 40px; }
+    .descripcion-tesis-premium { font-size: 16px; }
     
-    .titulo-conferencia-video { font-size: 24px; }
+    .titulo-conferencia-video { font-size: 22px; }
 }
 </style>
 </head>
@@ -255,34 +230,30 @@ body {
   <a href="contacto.html">Contacto</a>
 </div>
 
-<section class="hero-diploma">
-  <div class="hero-content-diploma">
-    <h1 class="titulo-editorial-diploma">Marco Iván Cabrera Hernández</h1>
-    <span class="subtitulo-premium">Maestro en Gestión Pública</span>
+<section class="hero-repercusión">
+  <div class="hero-content-repercusión">
+    <p class="subtitulo-premium">Repercusión e Impacto</p>
+    <h1 class="titulo-editorial">Ciclo de Conferencias<br>"Temas de Arte"</h1>
+    <p class="institucion-destacada">Escuela Profesional de Arte – UNMSM</p>
   </div>
 </section>
 
 <div class="container-premium">
   
-  <article class="seccion-tesis-verde">
-    <div class="tesis-intro">
-        <h2>Investigación<br>de Impacto</h2>
-        <a class="btn-tesis" href="https://repositorio.ucv.edu.pe/handle/20.500.12692/124165" target="_blank">Leer Tesis Completa</a>
-    </div>
-    <div class="tesis-detalles">
-        <p>
-          El grado académico de Maestro en Gestión Pública fue conferido tras la sustentación exitosa de la tesis: 
-          <i>"Análisis sobre la tasación para aranceles de importación en la Aduana de Lima"</i> (UCV, 2023).
-        </p>
-        <p>
-          La rigurosidad metodológica y los hallazgos de esta investigación sobre la valoración de activos motivaron la invitación especial de la <b>Escuela Profesional de Arte de la Universidad Nacional Mayor de San Marcos</b> para exponer sus repercusiones en el Ciclo de Conferencias "Temas de Arte".
-        </p>
-    </div>
+  <article class="bloque-editorial">
+    <p class="descripcion-tesis-premium">
+      Tras la sustentación de la tesis de maestría <b>"Análisis sobre la tasación para aranceles de importación en la Aduana de Lima"</b>, la importancia de los hallazgos metodológicos motivó una invitación especial por parte de la <b>Universidad Nacional Mayor de San Marcos</b>.
+    </p>
+    <br>
+    <p class="descripcion-tesis-premium">
+      En este prestigioso espacio académico, reservado para investigadores con grado de maestría y trayectoria destacada, se expuso la conferencia titulada: 
+      <i>"Universalidad problemática y metodología en la tasación de obras de arte: El Perú, la CAN y países de la región"</i>.
+    </p>
   </article>
 
   <section class="seccion-video">
-    <span class="metodologia-tag">Repercusión UNMSM</span>
-    <h2 class="titulo-conferencia-video">Universalidad Problemática y Metodología en la Tasación de Obras de Arte</h2>
+    <span class="metodologia-tag">Metodología Aplicada</span>
+    <h2 class="titulo-conferencia-video">Vea la conferencia completa</h2>
     
     <div class="video-wrapper-premium">
       <iframe 
