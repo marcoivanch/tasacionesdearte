@@ -26,14 +26,12 @@ body{
   gap:30px;
   background:rgba(10,15,28,0.85);
   backdrop-filter:blur(10px);
-  z-index:1000;
 }
 
 .nav a{
   color:#cbd5f5;
   text-decoration:none;
   font-size:14px;
-  white-space:nowrap;
 }
 
 .container{
@@ -42,26 +40,7 @@ body{
   padding:20px;
 }
 
-h1{
-  text-align:center;
-  font-weight:500;
-  margin-bottom:10px;
-}
-
-.sub{
-  text-align:center;
-  color:#94a3b8;
-  margin-bottom:25px;
-  line-height:1.5;
-}
-
-.disclaimer{
-  text-align:center;
-  font-size:13px;
-  color:#64748b;
-  margin-bottom:40px;
-  line-height:1.6;
-}
+h1{text-align:center;}
 
 form{
   display:flex;
@@ -76,57 +55,33 @@ form{
 
 label{
   font-size:13px;
-  color:#cbd5f5;
   margin-bottom:6px;
 }
 
 input, select, textarea{
-  width:100%;
   padding:14px;
   border-radius:10px;
-  border:1px solid rgba(148,163,184,0.2);
   background:#020617;
   color:#e2e8f0;
-  font-size:14px;
-}
-
-input:focus, select:focus, textarea:focus{
-  outline:none;
-  border-color:#25D366;
+  border:1px solid rgba(148,163,184,0.2);
 }
 
 textarea{
   min-height:140px;
-  resize:vertical;
 }
 
 .radio-group{
   display:flex;
   flex-direction:column;
-  gap:12px;
-}
-
-.radio-group label{
-  position:relative;
-  padding-right:30px;
-}
-
-.radio-group input[type="radio"]{
-  position:absolute;
-  right:0;
-  top:50%;
-  transform:translateY(-50%);
+  gap:10px;
 }
 
 button{
-  margin-top:10px;
   padding:15px;
   border:none;
   border-radius:30px;
   background:#25D366;
   color:white;
-  font-size:15px;
-  cursor:pointer;
 }
 
 .whatsapp{
@@ -134,24 +89,9 @@ button{
   bottom:25px;
   right:25px;
   background:#25D366;
-  color:white;
-  padding:14px 18px;
+  padding:14px;
   border-radius:50px;
-  text-decoration:none;
-  font-size:14px;
-}
-
-@media(max-width:768px){
-  .nav{
-    gap:15px;
-    padding:12px;
-    overflow-x:auto;
-    justify-content:flex-start;
-  }
-
-  .nav a{
-    font-size:13px;
-  }
+  color:white;
 }
 </style>
 </head>
@@ -167,176 +107,212 @@ button{
 
 <div class="container">
 
-  <h1>Formulario de consulta</h1>
+<h1>Formulario de consulta</h1>
 
-  <p class="sub">
-    Complete el siguiente Formualrio como primer paso para el asesoramiento profesional.
-  </p>
+<form id="form" action="https://formsubmit.co/radiarte@hotmail.com" method="POST" enctype="multipart/form-data">
 
-  <p class="disclaimer">
-    El envío de este formulario tiene carácter informativo y no genera obligación contractual.
-  </p>
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_next" value="https://tasacionesdearte.org.pe/gracias.html">
 
-  <form id="form" action="https://formsubmit.co/radiarte@hotmail.com" method="POST" enctype="multipart/form-data">
+<!-- NOMBRE -->
+<div class="field">
+<label>Nombre del solicitante</label>
+<input type="text" name="Nombre" required>
+</div>
 
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_cc" value="marcoivanbitel@gmail.com,oficina@tasacionesdearte.org.es">
-    <input type="hidden" name="_next" value="https://tasacionesdearte.org.pe/gracias.html">
+<!-- NACIONALIDAD -->
+<div class="field">
+<label>Nacionalidad</label>
+<select id="nacionalidad" name="Nacionalidad" required>
+<option value="">Seleccione</option>
+<option value="Peru">Perú</option>
+<option value="Extranjero">Extranjero</option>
+</select>
+</div>
 
-    <div class="field">
-      <label>Nombre del solicitante</label>
-      <input type="text" name="Nombre" required>
-    </div>
+<!-- BLOQUE PERÚ -->
+<div id="bloquePeru" style="display:none;">
 
-    <div class="field">
-      <label>Nacionalidad</label>
-      <select name="Nacionalidad" id="nacionalidad" required>
-        <option value="">Seleccione</option>
-        <option value="Peru">Perú</option>
-        <option value="Extranjero">Extranjero</option>
-      </select>
-    </div>
+<div class="field">
+<label>Ubicación</label>
+<select id="regionTipo" name="TipoRegion">
+<option value="">Seleccione</option>
+<option value="Lima Metropolitana">Lima Metropolitana</option>
+<option value="Lima Provincias">Lima Provincias</option>
+<option value="Región">Otras regiones</option>
+</select>
+</div>
 
-    <!-- BLOQUE PERÚ -->
-    <div id="bloquePeru" style="display:none;">
+<div class="field" id="distritosLima" style="display:none;">
+<label>Distrito</label>
+<select name="DistritoLima">
+<option>Miraflores</option>
+<option>San Isidro</option>
+<option>Surco</option>
+<option>La Molina</option>
+<option>Otros</option>
+</select>
+</div>
 
-      <div class="field">
-        <label>Ubicación en Perú</label>
-        <select id="regionTipo" name="TipoRegion">
-          <option value="">Seleccione</option>
-          <option value="Lima Metropolitana">Lima Metropolitana</option>
-          <option value="Lima Provincias">Lima Provincias</option>
-          <option value="Región">Otras regiones</option>
-        </select>
-      </div>
+<div class="field" id="limaProvincias" style="display:none;">
+<label>Provincia</label>
+<select name="ProvinciaLima">
+<option>Cañete</option>
+<option>Huaral</option>
+<option>Barranca</option>
+</select>
+</div>
 
-      <div class="field" id="distritosLima" style="display:none;">
-        <label>Distrito</label>
-        <select name="DistritoLima">
-          <option>Miraflores</option>
-          <option>San Isidro</option>
-          <option>Santiago de Surco</option>
-          <option>La Molina</option>
-          <option>San Borja</option>
-          <option>Jesús María</option>
-          <option>Magdalena</option>
-          <option>Otros</option>
-        </select>
-      </div>
+<div class="field" id="regionesPeru" style="display:none;">
+<label>Región</label>
+<select name="RegionPeru">
+<option>Arequipa</option>
+<option>Cusco</option>
+<option>Piura</option>
+<option>Otros</option>
+</select>
+</div>
 
-      <div class="field" id="limaProvincias" style="display:none;">
-        <label>Provincia</label>
-        <select name="ProvinciaLima">
-          <option>Cañete</option>
-          <option>Huaral</option>
-          <option>Barranca</option>
-          <option>Otros</option>
-        </select>
-      </div>
+</div>
 
-      <div class="field" id="regionesPeru" style="display:none;">
-        <label>Región</label>
-        <select name="RegionPeru">
-          <option>Arequipa</option>
-          <option>Cusco</option>
-          <option>Piura</option>
-          <option>La Libertad</option>
-          <option>Otros</option>
-        </select>
-      </div>
+<!-- EXTRANJERO -->
+<div id="bloqueExtranjero" style="display:none;">
+<div class="field">
+<label>País</label>
+<select name="PaisExtranjero">
+<option>Estados Unidos</option>
+<option>España</option>
+<option>Argentina</option>
+<option>Chile</option>
+<option>Otro</option>
+</select>
+</div>
+</div>
 
-    </div>
+<!-- DOCUMENTO -->
+<div class="field">
+<label>Documento de identidad</label>
+<div class="radio-group">
+<label>DNI <input type="radio" name="TipoDocumento" value="DNI" required></label>
+<label>RUC <input type="radio" name="TipoDocumento" value="RUC"></label>
+<label>Pasaporte <input type="radio" name="TipoDocumento" value="Pasaporte"></label>
+<label>CE <input type="radio" name="TipoDocumento" value="CE"></label>
+</div>
+</div>
 
-    <!-- EXTRANJERO -->
-    <div id="bloqueExtranjero" style="display:none;">
-      <div class="field">
-        <label>País</label>
-        <select name="PaisExtranjero">
-          <option>Estados Unidos</option>
-          <option>España</option>
-          <option>México</option>
-          <option>Argentina</option>
-          <option>Chile</option>
-          <option>Colombia</option>
-          <option>Otro</option>
-        </select>
-      </div>
-    </div>
+<div class="field">
+<label>Número de documento</label>
+<input type="text" id="doc" name="NumeroDocumento" required>
+</div>
 
-    <div class="field">
-      <label>Email</label>
-      <input type="email" name="Email" placeholder="ejemplo@correo.com" required>
-    </div>
+<!-- EMAIL -->
+<div class="field">
+<label>Email</label>
+<input type="email" name="Email" placeholder="ejemplo@correo.com" required>
+</div>
 
-    <div class="field">
-      <label>Celular</label>
-      <div style="display:flex; gap:10px;">
-        <select name="CodigoPais">
-          <option value="+51" selected>+51 Perú</option>
-          <option value="+1">+1 USA</option>
-          <option value="+34">+34 España</option>
-        </select>
+<!-- CELULAR -->
+<div class="field">
+<label>Celular</label>
+<div style="display:flex; gap:10px;">
+<select name="CodigoPais">
+<option value="+51" selected>+51 Perú</option>
+<option value="+1">+1 USA</option>
+<option value="+34">+34 España</option>
+</select>
 
-        <input type="tel" name="Celular" pattern="[0-9]{9}" maxlength="9" placeholder="999999999" required>
-      </div>
-    </div>
+<input type="tel" name="Celular" pattern="[0-9]{9}" maxlength="9" placeholder="999999999" required>
+</div>
+</div>
 
-    <div class="field">
-      <label>Mensaje</label>
-      <textarea name="Mensaje"></textarea>
-    </div>
+<!-- TIPO SOLICITUD -->
+<div class="field">
+<label>Tipo de solicitud</label>
+<select name="TipoSolicitud">
+<option>Consulta profesional (diagnóstico)</option>
+<option>Peritaje de obra de arte</option>
+<option>Tasación de obra de arte</option>
+<option>Asesoría / Consultoría</option>
+<option>Información instituciones públicas</option>
+<option>Información sector privado</option>
+<option>Otro</option>
+</select>
+</div>
 
-    <div class="field">
-      <label>Envío de imágenes (opcional)</label>
-      <input type="file" name="Imagenes" accept=".jpg,.png,.jpeg" multiple>
-    </div>
+<!-- MENSAJE -->
+<div class="field">
+<label>Mensaje</label>
+<textarea name="Mensaje"></textarea>
+</div>
 
-    <button type="submit">Enviar Formulario</button>
+<!-- IMÁGENES -->
+<div class="field">
+<label>Envío de imágenes (opcional)</label>
+<input type="file" name="Imagenes" multiple>
+</div>
 
-  </form>
+<button type="submit">Enviar Formulario</button>
+
+</form>
 
 </div>
 
 <a class="whatsapp" href="https://wa.me/51930046681">WhatsApp</a>
 
 <script>
+// VALIDACIÓN DOCUMENTO
 const form = document.getElementById('form');
 const doc = document.getElementById('doc');
 
+form.addEventListener('submit', function(e){
+  const tipo = document.querySelector('input[name="TipoDocumento"]:checked');
+
+  if(tipo){
+    if(tipo.value === "DNI" && doc.value.length !== 8){
+      alert("El DNI debe tener 8 dígitos");
+      e.preventDefault();
+    }
+    if(tipo.value === "RUC" && doc.value.length !== 11){
+      alert("El RUC debe tener 11 dígitos");
+      e.preventDefault();
+    }
+  }
+});
+
+// LÓGICA NACIONALIDAD
 const nacionalidad = document.getElementById('nacionalidad');
 const bloquePeru = document.getElementById('bloquePeru');
 const bloqueExtranjero = document.getElementById('bloqueExtranjero');
 
-const regionTipo = document.getElementById('regionTipo');
-const distritosLima = document.getElementById('distritosLima');
-const limaProvincias = document.getElementById('limaProvincias');
-const regionesPeru = document.getElementById('regionesPeru');
-
-nacionalidad.addEventListener('change', () => {
+nacionalidad.addEventListener('change', ()=>{
   bloquePeru.style.display = 'none';
   bloqueExtranjero.style.display = 'none';
 
   if(nacionalidad.value === 'Peru'){
     bloquePeru.style.display = 'block';
-  } else {
+  } else if(nacionalidad.value === 'Extranjero'){
     bloqueExtranjero.style.display = 'block';
   }
 });
 
-regionTipo.addEventListener('change', () => {
-  distritosLima.style.display = 'none';
-  limaProvincias.style.display = 'none';
-  regionesPeru.style.display = 'none';
+// SUBREGIONES
+const regionTipo = document.getElementById('regionTipo');
+const distritosLima = document.getElementById('distritosLima');
+const limaProvincias = document.getElementById('limaProvincias');
+const regionesPeru = document.getElementById('regionesPeru');
 
-  if(regionTipo.value === 'Lima Metropolitana'){
-    distritosLima.style.display = 'block';
-  }
-  else if(regionTipo.value === 'Lima Provincias'){
-    limaProvincias.style.display = 'block';
-  }
-  else if(regionTipo.value === 'Región'){
-    regionesPeru.style.display = 'block';
+regionTipo.addEventListener('change', ()=>{
+  distritosLima.style.display='none';
+  limaProvincias.style.display='none';
+  regionesPeru.style.display='none';
+
+  if(regionTipo.value==="Lima Metropolitana"){
+    distritosLima.style.display='block';
+  }else if(regionTipo.value==="Lima Provincias"){
+    limaProvincias.style.display='block';
+  }else{
+    regionesPeru.style.display='block';
   }
 });
 </script>
