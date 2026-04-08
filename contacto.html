@@ -112,7 +112,6 @@ textarea{
   gap:12px;
 }
 
-/* 🔴 CORRECCIÓN EXACTA */
 .radio-group label{
   position:relative;
   padding-right:30px;
@@ -168,7 +167,6 @@ button{
 
 <body>
 
-<!-- NAV -->
 <div class="nav">
   <a href="index.html">Inicio</a>
   <a href="bitacora.html">Bitácora profesional</a>
@@ -189,7 +187,7 @@ button{
     La información proporcionada será tratada de forma confidencial.
   </p>
 
-  <form id="form" action="https://formsubmit.co/radiarte@hotmail.com" method="POST">
+  <form id="form" action="https://formsubmit.co/radiarte@hotmail.com" method="POST" enctype="multipart/form-data">
 
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="table">
@@ -223,12 +221,32 @@ button{
 
     <div class="field">
       <label>Email</label>
-      <input type="email" name="Email" required>
+      <input type="email" name="Email" placeholder="ejemplo@correo.com" required>
     </div>
 
     <div class="field">
       <label>Celular</label>
-      <input type="text" name="Celular">
+      <div style="display:flex; gap:10px;">
+        <select name="CodigoPais" required>
+          <option value="+51" selected>🇵🇪 +51 Perú</option>
+          <option value="+1">🇺🇸 +1 EE.UU.</option>
+          <option value="+34">🇪🇸 +34 España</option>
+          <option value="+52">🇲🇽 +52 México</option>
+          <option value="+54">🇦🇷 +54 Argentina</option>
+          <option value="+56">🇨🇱 +56 Chile</option>
+          <option value="+57">🇨🇴 +57 Colombia</option>
+          <option value="+593">🇪🇨 +593 Ecuador</option>
+          <option value="+55">🇧🇷 +55 Brasil</option>
+        </select>
+
+        <input 
+          type="tel" 
+          name="Celular" 
+          placeholder="999999999"
+          pattern="[0-9]{9}" 
+          maxlength="9"
+          required>
+      </div>
     </div>
 
     <div class="field">
@@ -247,6 +265,18 @@ button{
     <div class="field">
       <label>Mensaje</label>
       <textarea name="Mensaje"></textarea>
+    </div>
+
+    <div class="field">
+      <label>Envío de imágenes (opcional)</label>
+      <input 
+        type="file" 
+        name="Imagenes" 
+        accept=".jpg,.jpeg,.png,.webp"
+        multiple>
+      <small style="color:#64748b; font-size:12px; margin-top:5px;">
+        Archivos admitidos: JPG, PNG, WEBP. Tamaño máximo recomendado: 5MB por archivo.
+      </small>
     </div>
 
     <button type="submit">Enviar Formulario</button>
