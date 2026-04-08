@@ -9,7 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-/* (TODO TU CSS ORIGINAL SIN CAMBIOS) */
 body{
   margin:0;
   font-family:'Inter',sans-serif;
@@ -17,6 +16,7 @@ body{
   color:#e2e8f0;
 }
 
+/* NAV */
 .nav{
   position:fixed;
   top:0;
@@ -37,21 +37,52 @@ body{
   white-space:nowrap;
 }
 
+/* CONTENEDOR */
 .container{
   max-width:720px;
   margin:120px auto 60px;
   padding:20px;
 }
 
-h1{text-align:center;}
+/* TITULO */
+h1{
+  text-align:center;
+  font-weight:500;
+  margin-bottom:10px;
+}
 
+.sub{
+  text-align:center;
+  color:#94a3b8;
+  margin-bottom:25px;
+  line-height:1.5;
+}
+
+.disclaimer{
+  text-align:center;
+  font-size:13px;
+  color:#64748b;
+  margin-bottom:40px;
+  line-height:1.6;
+}
+
+/* FORM */
 form{
   display:flex;
   flex-direction:column;
   gap:22px;
 }
 
-.field{display:flex;flex-direction:column;}
+.field{
+  display:flex;
+  flex-direction:column;
+}
+
+label{
+  font-size:13px;
+  color:#cbd5f5;
+  margin-bottom:6px;
+}
 
 input, select, textarea{
   width:100%;
@@ -60,8 +91,39 @@ input, select, textarea{
   border:1px solid rgba(148,163,184,0.2);
   background:#020617;
   color:#e2e8f0;
+  font-size:14px;
 }
 
+input:focus, select:focus, textarea:focus{
+  outline:none;
+  border-color:#25D366;
+}
+
+textarea{
+  min-height:140px;
+  resize:vertical;
+}
+
+/* RADIO */
+.radio-group{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.radio-group label{
+  position:relative;
+  padding-right:30px;
+}
+
+.radio-group input[type="radio"]{
+  position:absolute;
+  right:0;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+/* BOTÓN */
 button{
   margin-top:10px;
   padding:15px;
@@ -69,13 +131,14 @@ button{
   border-radius:30px;
   background:#25D366;
   color:white;
+  font-size:15px;
+  cursor:pointer;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV ORIGINAL -->
 <div class="nav">
   <a href="index.html">Inicio</a>
   <a href="bitacora.html">Bitácora profesional</a>
@@ -88,7 +151,13 @@ button{
 <h1>Formulario de consulta</h1>
 
 <p class="sub">
-Complete el siguiente formulario como primer paso para el asesoramiento profesional.
+Complete el siguiente Formulario como primer paso para el asesoramiento profesional. 
+Una vez enviada la información le aparecerá un mensaje de confirmación.
+</p>
+
+<p class="disclaimer">
+El envío de este formulario tiene carácter informativo y no genera obligación contractual.
+La información proporcionada será tratada de forma confidencial.
 </p>
 
 <form id="form" action="https://formsubmit.co/radiarte@hotmail.com" method="POST" enctype="multipart/form-data">
@@ -113,7 +182,7 @@ Complete el siguiente formulario como primer paso para el asesoramiento profesio
 </select>
 </div>
 
-<!-- BLOQUE PERÚ -->
+<!-- PERÚ -->
 <div id="bloquePeru" style="display:none;">
 
 <div class="field">
@@ -152,7 +221,6 @@ Complete el siguiente formulario como primer paso para el asesoramiento profesio
 <option>La Victoria</option>
 <option>Lince</option>
 <option>Breña</option>
-<option>Otros</option>
 </select>
 </div>
 
@@ -207,23 +275,27 @@ Complete el siguiente formulario como primer paso para el asesoramiento profesio
 <div id="bloqueExtranjero" style="display:none;">
 <div class="field">
 <label>País</label>
-<input list="paises" id="paisInput" name="Pais">
-<datalist id="paises">
-<option value="Estados Unidos">
-<option value="España">
-<option value="México">
-<option value="Argentina">
-<option value="Chile">
-<option value="Colombia">
-<option value="Francia">
-<option value="Italia">
-<option value="Alemania">
-<option value="Otros">
-</datalist>
+<select name="Pais">
+<option>Argentina</option>
+<option>Brasil</option>
+<option>Chile</option>
+<option>Colombia</option>
+<option>México</option>
+<option>Estados Unidos</option>
+<option>Canadá</option>
+<option>España</option>
+<option>Francia</option>
+<option>Italia</option>
+<option>Alemania</option>
+<option>Portugal</option>
+<option>Reino Unido</option>
+<option>Suiza</option>
+<option>Otros</option>
+</select>
 </div>
 </div>
 
-<!-- DOCUMENTO (INTACTO) -->
+<!-- DOCUMENTO -->
 <div class="field">
 <label>Documento de identidad</label>
 <div class="radio-group">
@@ -248,33 +320,28 @@ Complete el siguiente formulario como primer paso para el asesoramiento profesio
 <!-- CELULAR -->
 <div class="field">
 <label>Celular</label>
+<div style="display:flex; gap:10px;">
+<select name="CodigoPais">
+<option>+51 Perú</option>
+<option>+1 USA</option>
+<option>+34 España</option>
+<option>+52 México</option>
+<option>+54 Argentina</option>
+<option>+55 Brasil</option>
+<option>+56 Chile</option>
+<option>+57 Colombia</option>
+<option>+44 Reino Unido</option>
+<option>+33 Francia</option>
+<option>+49 Alemania</option>
+</select>
 <input type="tel" name="Celular" required>
 </div>
-
-<!-- TIPO SOLICITUD (INTACTO) -->
-<div class="field">
-<label>Tipo de solicitud</label>
-<select name="TipoSolicitud">
-<option>Consulta profesional (diagnóstico)</option>
-<option>Peritaje de obra de arte</option>
-<option>Tasación de obra de arte</option>
-<option>Asesoría / Consultoría</option>
-<option>Información instituciones públicas</option>
-<option>Información sector privado</option>
-<option>Otro</option>
-</select>
 </div>
 
 <!-- MENSAJE -->
 <div class="field">
 <label>Mensaje</label>
 <textarea name="Mensaje"></textarea>
-</div>
-
-<!-- IMÁGENES -->
-<div class="field">
-<label>Envío de imágenes (opcional)</label>
-<input type="file" name="Imagenes" multiple>
 </div>
 
 <button type="submit">Enviar Formulario</button>
@@ -284,49 +351,68 @@ Complete el siguiente formulario como primer paso para el asesoramiento profesio
 </div>
 
 <script>
-// TU VALIDACIÓN ORIGINAL
-const form = document.getElementById('form');
-const doc = document.getElementById('doc');
 
-form.addEventListener('submit', function(e){
-  const tipo = document.querySelector('input[name="TipoDocumento"]:checked');
+// VALIDACIÓN RUC REAL
+function validarRUC(ruc){
+if(!/^[0-9]{11}$/.test(ruc)) return false;
+const f=[5,4,3,2,7,6,5,4,3,2];
+let s=0;
+for(let i=0;i<10;i++) s+=ruc[i]*f[i];
+let r=11-(s%11);
+if(r==10) r=0;
+if(r==11) r=1;
+return r==ruc[10];
+}
 
-  if(tipo){
-    if(tipo.value === "DNI" && doc.value.length !== 8){
-      alert("El DNI debe tener 8 dígitos");
-      e.preventDefault();
-    }
-    if(tipo.value === "RUC" && doc.value.length !== 11){
-      alert("El RUC debe tener 11 dígitos");
-      e.preventDefault();
-    }
-  }
+// VALIDACIÓN FORM
+const form=document.getElementById('form');
+const doc=document.getElementById('doc');
+
+form.addEventListener('submit',function(e){
+const tipo=document.querySelector('input[name="TipoDocumento"]:checked');
+
+if(tipo){
+if(tipo.value==="DNI" && doc.value.length!==8){
+alert("DNI debe tener 8 dígitos"); e.preventDefault();
+}
+if(tipo.value==="RUC" && !validarRUC(doc.value)){
+alert("RUC inválido"); e.preventDefault();
+}
+}
 });
 
-// BLOQUES DINÁMICOS
-const nacionalidad = document.getElementById('nacionalidad');
-const bloquePeru = document.getElementById('bloquePeru');
-const bloqueExtranjero = document.getElementById('bloqueExtranjero');
+// BLOQUES
+const nacionalidad=document.getElementById('nacionalidad');
+const bloquePeru=document.getElementById('bloquePeru');
+const bloqueExtranjero=document.getElementById('bloqueExtranjero');
 
-nacionalidad.addEventListener('change', ()=>{
-  bloquePeru.style.display='none';
-  bloqueExtranjero.style.display='none';
+nacionalidad.addEventListener('change',function(){
+bloquePeru.style.display='none';
+bloqueExtranjero.style.display='none';
 
-  if(nacionalidad.value==='Peru'){
-    bloquePeru.style.display='block';
-  } else {
-    bloqueExtranjero.style.display='block';
-  }
+if(this.value==="Peru") bloquePeru.style.display='block';
+if(this.value==="Extranjero") bloqueExtranjero.style.display='block';
 });
 
-// AUTO PAÍS
+// SUBNIVELES
+document.getElementById('regionTipo').addEventListener('change',function(){
+document.getElementById('distritosLima').style.display='none';
+document.getElementById('limaProvincias').style.display='none';
+document.getElementById('regionesPeru').style.display='none';
+
+if(this.value==="Lima Metropolitana") document.getElementById('distritosLima').style.display='block';
+if(this.value==="Lima Provincias") document.getElementById('limaProvincias').style.display='block';
+if(this.value==="Regiones del Perú") document.getElementById('regionesPeru').style.display='block';
+});
+
+// IP
 fetch('https://ipapi.co/json/')
-.then(res=>res.json())
-.then(data=>{
-  const paisInput=document.getElementById('paisInput');
-  if(paisInput && !paisInput.value){
-    paisInput.value=data.country_name;
-  }
+.then(r=>r.json())
+.then(d=>{
+if(d.country_name!=="Peru"){
+nacionalidad.value="Extranjero";
+bloqueExtranjero.style.display="block";
+}
 });
 </script>
 
