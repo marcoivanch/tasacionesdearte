@@ -16,7 +16,6 @@ body{
   color:#e2e8f0;
 }
 
-/* NAV */
 .nav{
   position:fixed;
   top:0;
@@ -37,14 +36,12 @@ body{
   white-space:nowrap;
 }
 
-/* CONTENEDOR */
 .container{
   max-width:720px;
   margin:120px auto 60px;
   padding:20px;
 }
 
-/* TITULO */
 h1{
   text-align:center;
   font-weight:500;
@@ -66,7 +63,6 @@ h1{
   line-height:1.6;
 }
 
-/* FORM */
 form{
   display:flex;
   flex-direction:column;
@@ -84,7 +80,6 @@ label{
   margin-bottom:6px;
 }
 
-/* INPUTS */
 input, select, textarea{
   width:100%;
   padding:14px;
@@ -105,7 +100,6 @@ textarea{
   resize:vertical;
 }
 
-/* RADIO */
 .radio-group{
   display:flex;
   flex-direction:column;
@@ -124,7 +118,6 @@ textarea{
   transform:translateY(-50%);
 }
 
-/* BOTÓN */
 button{
   margin-top:10px;
   padding:15px;
@@ -136,7 +129,6 @@ button{
   cursor:pointer;
 }
 
-/* WHATSAPP */
 .whatsapp{
   position:fixed;
   bottom:25px;
@@ -149,7 +141,6 @@ button{
   font-size:14px;
 }
 
-/* MOBILE NAV */
 @media(max-width:768px){
   .nav{
     gap:15px;
@@ -179,12 +170,11 @@ button{
   <h1>Formulario de consulta</h1>
 
   <p class="sub">
-    Complete el siguiente Formualrio como primer paso para el asesoramiento profesional. Una vez enviada la información le aparecerá un mensaje de confirmación, posteriormente el perito se comunicará.
+    Complete el siguiente Formualrio como primer paso para el asesoramiento profesional.
   </p>
 
   <p class="disclaimer">
     El envío de este formulario tiene carácter informativo y no genera obligación contractual.
-    La información proporcionada será tratada de forma confidencial.
   </p>
 
   <form id="form" action="https://formsubmit.co/radiarte@hotmail.com" method="POST" enctype="multipart/form-data">
@@ -201,22 +191,77 @@ button{
 
     <div class="field">
       <label>Nacionalidad</label>
-      <input type="text" name="Nacionalidad" required>
+      <select name="Nacionalidad" id="nacionalidad" required>
+        <option value="">Seleccione</option>
+        <option value="Peru">Perú</option>
+        <option value="Extranjero">Extranjero</option>
+      </select>
     </div>
 
-    <div class="field">
-      <label>Documento de identidad</label>
-      <div class="radio-group">
-        <label>DNI <input type="radio" name="TipoDocumento" value="DNI" required></label>
-        <label>RUC <input type="radio" name="TipoDocumento" value="RUC"></label>
-        <label>Pasaporte <input type="radio" name="TipoDocumento" value="Pasaporte"></label>
-        <label>CE <input type="radio" name="TipoDocumento" value="CE"></label>
+    <!-- BLOQUE PERÚ -->
+    <div id="bloquePeru" style="display:none;">
+
+      <div class="field">
+        <label>Ubicación en Perú</label>
+        <select id="regionTipo" name="TipoRegion">
+          <option value="">Seleccione</option>
+          <option value="Lima Metropolitana">Lima Metropolitana</option>
+          <option value="Lima Provincias">Lima Provincias</option>
+          <option value="Región">Otras regiones</option>
+        </select>
       </div>
+
+      <div class="field" id="distritosLima" style="display:none;">
+        <label>Distrito</label>
+        <select name="DistritoLima">
+          <option>Miraflores</option>
+          <option>San Isidro</option>
+          <option>Santiago de Surco</option>
+          <option>La Molina</option>
+          <option>San Borja</option>
+          <option>Jesús María</option>
+          <option>Magdalena</option>
+          <option>Otros</option>
+        </select>
+      </div>
+
+      <div class="field" id="limaProvincias" style="display:none;">
+        <label>Provincia</label>
+        <select name="ProvinciaLima">
+          <option>Cañete</option>
+          <option>Huaral</option>
+          <option>Barranca</option>
+          <option>Otros</option>
+        </select>
+      </div>
+
+      <div class="field" id="regionesPeru" style="display:none;">
+        <label>Región</label>
+        <select name="RegionPeru">
+          <option>Arequipa</option>
+          <option>Cusco</option>
+          <option>Piura</option>
+          <option>La Libertad</option>
+          <option>Otros</option>
+        </select>
+      </div>
+
     </div>
 
-    <div class="field">
-      <label>Número de documento</label>
-      <input type="text" id="doc" name="NumeroDocumento" required>
+    <!-- EXTRANJERO -->
+    <div id="bloqueExtranjero" style="display:none;">
+      <div class="field">
+        <label>País</label>
+        <select name="PaisExtranjero">
+          <option>Estados Unidos</option>
+          <option>España</option>
+          <option>México</option>
+          <option>Argentina</option>
+          <option>Chile</option>
+          <option>Colombia</option>
+          <option>Otro</option>
+        </select>
+      </div>
     </div>
 
     <div class="field">
@@ -227,39 +272,14 @@ button{
     <div class="field">
       <label>Celular</label>
       <div style="display:flex; gap:10px;">
-        <select name="CodigoPais" required>
-          <option value="+51" selected>🇵🇪 +51 Perú</option>
-          <option value="+1">🇺🇸 +1 EE.UU.</option>
-          <option value="+34">🇪🇸 +34 España</option>
-          <option value="+52">🇲🇽 +52 México</option>
-          <option value="+54">🇦🇷 +54 Argentina</option>
-          <option value="+56">🇨🇱 +56 Chile</option>
-          <option value="+57">🇨🇴 +57 Colombia</option>
-          <option value="+593">🇪🇨 +593 Ecuador</option>
-          <option value="+55">🇧🇷 +55 Brasil</option>
+        <select name="CodigoPais">
+          <option value="+51" selected>+51 Perú</option>
+          <option value="+1">+1 USA</option>
+          <option value="+34">+34 España</option>
         </select>
 
-        <input 
-          type="tel" 
-          name="Celular" 
-          placeholder="999999999"
-          pattern="[0-9]{9}" 
-          maxlength="9"
-          required>
+        <input type="tel" name="Celular" pattern="[0-9]{9}" maxlength="9" placeholder="999999999" required>
       </div>
-    </div>
-
-    <div class="field">
-      <label>Tipo de solicitud</label>
-      <select name="TipoSolicitud">
-        <option>Consulta profesional (diagnóstico)</option>
-        <option>Peritaje de obra de arte</option>
-        <option>Tasación de obra de arte</option>
-        <option>Asesoría / Consultoría</option>
-        <option>Información instituciones públicas</option>
-        <option>Información sector privado</option>
-        <option>Otro</option>
-      </select>
     </div>
 
     <div class="field">
@@ -269,14 +289,7 @@ button{
 
     <div class="field">
       <label>Envío de imágenes (opcional)</label>
-      <input 
-        type="file" 
-        name="Imagenes" 
-        accept=".jpg,.jpeg,.png,.webp"
-        multiple>
-      <small style="color:#64748b; font-size:12px; margin-top:5px;">
-        Archivos admitidos: JPG, PNG, WEBP. Tamaño máximo recomendado: 5MB por archivo.
-      </small>
+      <input type="file" name="Imagenes" accept=".jpg,.png,.jpeg" multiple>
     </div>
 
     <button type="submit">Enviar Formulario</button>
@@ -285,31 +298,46 @@ button{
 
 </div>
 
-<a class="whatsapp" href="https://wa.me/51930046681">
-WhatsApp
-</a>
+<a class="whatsapp" href="https://wa.me/51930046681">WhatsApp</a>
 
 <script>
 const form = document.getElementById('form');
 const doc = document.getElementById('doc');
 
-form.addEventListener('submit', function(e){
+const nacionalidad = document.getElementById('nacionalidad');
+const bloquePeru = document.getElementById('bloquePeru');
+const bloqueExtranjero = document.getElementById('bloqueExtranjero');
 
-  const tipo = document.querySelector('input[name="TipoDocumento"]:checked');
+const regionTipo = document.getElementById('regionTipo');
+const distritosLima = document.getElementById('distritosLima');
+const limaProvincias = document.getElementById('limaProvincias');
+const regionesPeru = document.getElementById('regionesPeru');
 
-  if(tipo){
-    if(tipo.value === "DNI" && doc.value.length !== 8){
-      alert("El DNI debe tener 8 dígitos");
-      e.preventDefault();
-      return;
-    }
-    if(tipo.value === "RUC" && doc.value.length !== 11){
-      alert("El RUC debe tener 11 dígitos");
-      e.preventDefault();
-      return;
-    }
+nacionalidad.addEventListener('change', () => {
+  bloquePeru.style.display = 'none';
+  bloqueExtranjero.style.display = 'none';
+
+  if(nacionalidad.value === 'Peru'){
+    bloquePeru.style.display = 'block';
+  } else {
+    bloqueExtranjero.style.display = 'block';
   }
+});
 
+regionTipo.addEventListener('change', () => {
+  distritosLima.style.display = 'none';
+  limaProvincias.style.display = 'none';
+  regionesPeru.style.display = 'none';
+
+  if(regionTipo.value === 'Lima Metropolitana'){
+    distritosLima.style.display = 'block';
+  }
+  else if(regionTipo.value === 'Lima Provincias'){
+    limaProvincias.style.display = 'block';
+  }
+  else if(regionTipo.value === 'Región'){
+    regionesPeru.style.display = 'block';
+  }
 });
 </script>
 
