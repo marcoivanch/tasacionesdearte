@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Área de Clientes | Acceso Restringido</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --primary-gold:#c5a059;
+      --bg-dark:#0a0f1c;
+      --card-bg:#0d1425;
+      --text-main:#e2e8f0;
+      --text-dim:#94a3b8;
+      --danger:#f97373;
+    }
+    body {
+      margin:0;
+      font-family:'Inter',sans-serif;
+      background:var(--bg-dark);
+      color:var(--text-main);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:100vh;
+    }
+    .wrapper {
+      max-width:420px;
+      width:100%;
+      background:var(--card-bg);
+      border:1px solid rgba(255,255,255,0.06);
+      border-radius:6px;
+      padding:32px 28px 26px;
+      box-shadow:0 18px 45px rgba(0,0,0,0.55);
+    }
+    h1 {
+      margin:0 0 8px;
+      font-size:22px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+    .sub {
+      margin:0 0 18px;
+      font-size:13px;
+      color:var(--text-dim);
+    }
+    .badge {
+      display:inline-block;
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      color:var(--primary-gold);
+      border:1px solid var(--primary-gold);
+      padding:4px 8px;
+      border-radius:999px;
+      margin-bottom:14px;
+    }
+    label {
+      display:block;
+      font-size:12px;
+      margin-bottom:4px;
+      color:var(--text-dim);
+    }
+    input {
+      width:100%;
+      padding:10px 11px;
+      border-radius:4px;
+      border:1px solid rgba(148,163,184,0.4);
+      background:#020617;
+      color:var(--text-main);
+      font-size:14px;
+      margin-bottom:14px;
+      box-sizing:border-box;
+    }
+    input:focus {
+      outline:none;
+      border-color:var(--primary-gold);
+    }
+    .hint {
+      font-size:11px;
+      color:var(--text-dim);
+      margin-bottom:14px;
+    }
+    .btn {
+      width:100%;
+      padding:11px 0;
+      border-radius:4px;
+      border:none;
+      background:var(--primary-gold);
+      color:#000;
+      font-weight:600;
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      cursor:pointer;
+    }
+    .btn:disabled {
+      opacity:0.4;
+      cursor:not-allowed;
+    }
+    .legal {
+      margin-top:14px;
+      font-size:10px;
+      color:var(--text-dim);
+      line-height:1.4;
+    }
+    .error {
+      margin-top:8px;
+      font-size:11px;
+      color:var(--danger);
+      display:none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+  <span class="badge">Acceso restringido</span>
+  <h1>Área de Clientes</h1>
+  <p class="sub">Identificación previa para acceso a expedientes y documentación técnica.</p>
+
+  <form id="form-identificacion">
+    <label for="dni">DNI</label>
+    <input type="text" id="dni" maxlength="12" autocomplete="off" placeholder="Ingrese su DNI">
+
+    <label for="celular">Celular</label>
+    <input type="tel" id="celular" maxlength="15" autocomplete="off" placeholder="Ingrese su número de contacto">
+
+    <p class="hint">Esta identificación no sustituye su clave personal. Es el primer filtro de seguridad.</p>
+
+    <button type="submit" class="btn">Continuar</button>
+    <p class="error" id="error-msg">Complete ambos campos para continuar.</p>
+  </form>
+
+  <p class="legal">
+    El acceso a esta zona es personal e intransferible. Todo intento de ingreso queda registrado
+    con fecha, hora y dirección IP para fines de trazabilidad y seguridad institucional.
+  </p>
+</div>
+
+<script>
+  document.getElementById('form-identificacion').addEventListener('submit', function(e){
+    e.preventDefault();
+    const dni = document.getElementById('dni').value.trim();
+    const cel = document.getElementById('celular').value.trim();
+    const error = document.getElementById('error-msg');
+
+    if(!dni || !cel){
+      error.style.display = 'block';
+      return;
+    }
+
+    error.style.display = 'none';
+
+    // FUTURO: aquí se validará contra tu base de datos.
+    // Por ahora, solo simulamos el paso a la segunda puerta:
+    window.location.href = 'clientes-acceso.html';
+  });
+</script>
+
+</body>
+</html>
