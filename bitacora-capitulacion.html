@@ -6,152 +6,218 @@
 
 <title>La capitulación de Ayacucho | Bitácora técnica</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- TIPOGRAFÍA -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- METADATOS BÁSICOS -->
+<meta name="description" content="Análisis técnico e histórico de la conferencia sobre La capitulación de Ayacucho.">
+<meta property="og:title" content="La capitulación de Ayacucho | Bitácora técnica">
+<meta property="og:type" content="article">
 
 <style>
-
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #0a0f1c;
-  color: #e2e8f0;
+:root {
+  --primary-gold:#c5a059;
+  --bg-dark:#0a0f1c;
+  --card-bg:#0d1425;
+  --text-main:#e2e8f0;
+  --text-dim:#94a3b8;
+  --accent-green:#25D366;
 }
 
-h1, h2 {
-  font-family: 'Playfair Display', serif;
+body {
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--bg-dark);
+  color:var(--text-main);
+  overflow-x:hidden;
 }
 
 /* NAV */
 .nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 18px;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  background: rgba(10,15,28,0.7);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:18px;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  background:rgba(10,15,28,0.85);
+  backdrop-filter:blur(10px);
+  z-index:1000;
 }
 
-/* HEADER */
-.header {
-  text-align: center;
-  padding: 140px 20px 60px;
+.nav a {
+  color:#cbd5f5;
+  text-decoration:none;
+  font-size:14px;
+  white-space:nowrap;
 }
 
-.header h1 {
-  font-size: 40px;
+/* HERO */
+.hero {
+  height:60vh;
+  display:flex;
+  align-items:center;
+  position:relative;
+  padding-left:8%;
+  overflow:hidden;
 }
 
-.header p {
-  color: #94a3b8;
+.hero::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url('Conferencia en Bellas Artes 2024.png') center/cover no-repeat;
+  opacity:0.55;
+  filter:brightness(1.1);
+}
+
+.hero::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,var(--bg-dark) 25%,transparent 100%);
+}
+
+.hero-content {
+  position:relative;
+  z-index:2;
+  max-width:600px;
+}
+
+.hero-title {
+  font-weight:700;
+  font-size:clamp(32px,5vw,52px);
+  line-height:1.1;
+  margin:0;
+}
+
+.hero-sub {
+  color:var(--primary-gold);
+  font-weight:600;
+  letter-spacing:1px;
+  margin-top:15px;
 }
 
 /* CONTENIDO */
 .container {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
+  max-width:900px;
+  margin:auto;
+  padding:60px 20px;
 }
 
 img {
-  width: 100%;
-  border-radius: 10px;
-  margin: 25px 0;
+  width:100%;
+  border-radius:6px;
+  margin:25px 0;
 }
 
 p {
-  line-height: 1.7;
-  color: #cbd5f5;
+  line-height:1.7;
+  color:#cbd5f5;
 }
 
-/* VIDEO */
+/* VIDEO RESPONSIVO */
 .video {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  margin-top: 30px;
+  position:relative;
+  padding-bottom:56.25%;
+  height:0;
+  margin-top:30px;
 }
 
 .video iframe {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border: none;
+  position:absolute;
+  width:100%;
+  height:100%;
+  border:none;
 }
 
-/* BOTÓN VOLVER */
+/* VOLVER */
 .volver {
-  margin-top: 40px;
-  display: inline-block;
-  color: #94a3b8;
-  text-decoration: none;
+  margin-top:40px;
+  display:inline-block;
+  color:var(--primary-gold);
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* FOOTER */
+.footer {
+  text-align:center;
+  padding:60px;
+  font-size:12px;
+  color:#475569;
+  text-transform:uppercase;
 }
 
 /* WHATSAPP */
 .whatsapp {
-  position: fixed !important;
-  bottom: 25px;
-  right: 25px;
-  background: #25D366;
-  color: white;
-  padding: 14px 18px;
-  border-radius: 50px;
-  text-decoration: none;
-  z-index: 9999;
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  background:#25D366;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:1000;
+  box-shadow:0 4px 12px rgba(0,0,0,0.3);
 }
 
-.footer {
-  text-align: center;
-  padding: 40px;
-  color: #64748b;
+.whatsapp svg {
+  width:35px;
+  height:35px;
+  fill:#fff;
 }
-
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <div class="nav">
   <a href="index.html">Inicio</a>
-  <a href="bitacora.html">Bitácora técnica</a>
+  <a href="bitacora.html">Bitácora profesional</a>
   <a href="ranking.html">Mercado del arte</a>
+  <a href="contacto.html">Contacto</a>
 </div>
 
-<div class="header">
-  <h1>La capitulación de Ayacucho</h1>
-  <p>Análisis técnico e histórico</p>
-</div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="hero-title">La capitulación de Ayacucho</h1>
+    <p class="hero-sub">Análisis técnico e histórico</p>
+  </div>
+</section>
 
+<!-- CONTENIDO -->
 <div class="container">
 
-<img src="Conferencia en Bellas Artes 2024.png">
+  <img src="Conferencia en Bellas Artes 2024.png" alt="Conferencia en Bellas Artes 2024">
 
-<p>
-Conferencia desarrollada en la Escuela Nacional Superior Autónoma de Bellas Artes del Perú.
-</p>
+  <p>
+  Conferencia desarrollada en la Escuela Nacional Superior Autónoma de Bellas Artes del Perú.
+  </p>
 
-<p>
-Análisis comparativo de versiones atribuidas a Daniel Hernández, con énfasis en aspectos técnicos, documentales y de atribución.
-</p>
+  <p>
+  Análisis comparativo de versiones atribuidas a Daniel Hernández, con énfasis en aspectos técnicos, documentales y de atribución.
+  </p>
 
-<div class="video">
-  <iframe src="https://www.youtube.com/embed/FRfvo0eD6wQ" allowfullscreen></iframe>
+  <div class="video">
+    <iframe src="https://www.youtube.com/embed/FRfvo0eD6wQ" allowfullscreen></iframe>
+  </div>
+
+  <a class="volver" href="bitacora.html">← Volver a bitácora</a>
+
 </div>
 
-<a class="volver" href="bitacora.html">← Volver a bitácora</a>
+<!-- FOOTER -->
+<footer class="footer">
+  © 2026 TASACIONES DE ARTE | MARCO CABRERA - PERITO REGISTRADO
+</footer>
 
-</div>
-
-<div class="footer">
-© 2026 Tasaciones de Arte
-</div>
-
-<a class="whatsapp" href="https://wa.me/51930046681">
-WhatsApp
-</a>
-
-</body>
-</html>
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/51930046681" target="_blank" aria-label="WhatsApp">
+  <svg width="35" height="35" viewBox="0 0 24 24">
