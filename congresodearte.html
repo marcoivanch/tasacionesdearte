@@ -1,1 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Conferencia | Tasaciones de Arte</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary-gold:#c5a059;
+  --bg-dark:#0a0f1c;
+  --card-bg:#0d1425;
+  --text-main:#e2e8f0;
+  --text-dim:#94a3b8;
+  --accent-green:#25D366;
+}
+
+body {
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--bg-dark);
+  color:var(--text-main);
+  overflow-x:hidden;
+}
+
+/* NAV UNIFICADO */
+.nav {
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:18px;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  background:rgba(10,15,28,0.85);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+.nav a {
+  color:#cbd5f5;
+  text-decoration:none;
+  font-size:14px;
+  white-space:nowrap;
+}
+
+@media(max-width:768px){
+  .nav{
+    gap:15px;
+    padding:12px;
+    overflow-x:auto;
+    justify-content:flex-start;
+  }
+  .nav a{ font-size:13px; }
+}
+
+/* HERO */
+.hero {
+  height:60vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  text-align:center;
+  padding:0 20px;
+}
+
+.hero::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url('assets/bitacora/flayer_IV_congreso.jpg') center/cover no-repeat;
+  opacity:0.25;
+  filter:blur(3px);
+}
+
+.hero-content {
+  position:relative;
+  z-index:2;
+  max-width:800px;
+}
+
+.hero h1 {
+  font-size:clamp(32px,5vw,52px);
+  font-weight:700;
+  margin:0;
+}
+
+.container {
+  max-width:1100px;
+  margin:auto;
+  padding:80px 20px;
+}
+
+.section-title {
+  font-size:26px;
+  font-weight:300;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  margin:60px 0 20px 0;
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.section-title::after {
+  content:"";
+  flex:1;
+  height:1px;
+  background:rgba(255,255,255,0.1);
+}
+
+.flyer {
+  width:100%;
+  border-radius:6px;
+  margin:25px 0;
+}
+
+.pdf-viewer {
+  width:100%;
+  height:600px;
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:6px;
+  margin-top:20px;
+}
+
+.video-wrapper {
+  margin-top:40px;
+  display:flex;
+  justify-content:center;
+}
+
+.video-wrapper iframe {
+  width:100%;
+  max-width:900px;
+  height:500px;
+  border:none;
+  border-radius:6px;
+}
+
+.footer {
+  text-align:center;
+  padding:60px;
+  font-size:12px;
+  color:#475569;
+  text-transform:uppercase;
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav">
+  <a href="index.html">Inicio</a>
+  <a href="bitacora.html">Bitácora profesional</a>
+  <a href="ranking.html">Mercado del arte</a>
+  <a href="contacto.html">Contacto</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Conferencia Académica</h1>
+    <p style="color:var(--primary-gold); font-weight:600; margin-top:10px;">
+      IV Congreso Internacional de Arte Peruano – UNMSM (2021)
+    </p>
+  </div>
+</section>
+
+<div class="container">
+
+  <!-- CONTEXTO -->
+  <h2 class="section-title">Contexto Institucional</h2>
+  <p>
+    Ponencia presentada en el <strong>IV Congreso Internacional de Arte Peruano</strong>, organizado por la 
+    Facultad de Letras y Ciencias Humanas de la Universidad Nacional Mayor de San Marcos. 
+    El evento reunió a especialistas nacionales e internacionales para discutir enfoques contemporáneos 
+    sobre arte, patrimonio y metodologías de análisis.
+  </p>
+  <p>
+    La exposición <em>“Las tasaciones de arte (en el Perú). De la práctica idiosincrática al proceso reglamentario”</em> 
+    desarrolla un marco técnico para comprender la tasación de bienes culturales en el país, articulando criterios 
+    metodológicos, administrativos y normativos. La ponencia se integra dentro de una línea de investigación 
+    sostenida que aborda la valoración de arte desde una perspectiva institucional y comparada.
+  </p>
+
+  <!-- FLYER GENERAL -->
+  <h2 class="section-title">Flyer del Congreso</h2>
+  <img src="assets/bitacora/flayer_IV_congreso.jpg" class="flyer" alt="Flyer Congreso General">
+
+  <!-- FLYER PERSONAL -->
+  <h2 class="section-title">Participación del Ponente</h2>
+  <img src="assets/bitacora/IV-congreso_Marco.jpg" class="flyer" alt="Flyer Ponencia Marco Cabrera">
+
+  <!-- RESUMEN TÉCNICO -->
+  <h2 class="section-title">Resumen Técnico</h2>
+  <p>
+    La ponencia examina la evolución de las tasaciones de arte en el Perú, desde prácticas empíricas 
+    y dispersas hasta la necesidad de procesos reglamentados que integren criterios verificables. 
+    Se propone un enfoque que combina:
+  </p>
+  <ul>
+    <li>criterios administrativos aplicados a la valoración,</li>
+    <li>lecturas normativas comparadas,</li>
+    <li>métricas del mercado del arte,</li>
+    <li>y análisis técnico de bienes culturales.</li>
+  </ul>
+  <p>
+    Este marco preliminar anticipa desarrollos posteriores en la estandarización de procesos de tasación, 
+    consolidando una línea de investigación que se proyecta hacia ámbitos académicos y profesionales.
+  </p>
+
+  <!-- CERTIFICADO -->
+  <h2 class="section-title">Certificado Oficial</h2>
+  <embed src="assets/bitacora/IV-congreso_certificado.pdf" type="application/pdf" class="pdf-viewer">
+
+  <!-- VIDEO -->
+  <h2 class="section-title">Registro en Video</h2>
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/3EAZP670dFQ" 
+      title="Las tasaciones de arte (en el Perú). De la práctica idiosincrática al proceso reglamentario."
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+</div>
+
+<footer class="footer">
+  © 2026 TASACIONES DE ARTE | MARCO CABRERA - PERITO REGISTRADO
+</footer>
+
+</body>
+</html>
 
