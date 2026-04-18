@@ -29,7 +29,7 @@ body {
   overflow-x:hidden;
 }
 
-/* NAV UNIFICADO (idéntico a ranking/contacto) */
+/* NAV UNIFICADO */
 .nav {
   position:fixed;
   top:0;
@@ -50,7 +50,7 @@ body {
   white-space:nowrap;
 }
 
-/* NAV MÓVIL SIN HAMBURGUESA */
+/* NAV MÓVIL */
 @media(max-width:768px){
   .nav{
     gap:15px;
@@ -58,13 +58,10 @@ body {
     overflow-x:auto;
     justify-content:flex-start;
   }
-
-  .nav a{
-    font-size:13px;
-  }
+  .nav a{ font-size:13px; }
 }
 
-/* --- HERO --- */
+/* HERO */
 .hero {
   height:100vh;
   display:flex;
@@ -124,7 +121,7 @@ body {
 .icono-academico:hover { border-color:var(--primary-gold); transform:translateY(-3px); }
 .icono-texto { color:#fff; font-size:14px; font-weight:600; }
 
-/* --- CONTENIDO --- */
+/* CONTENIDO */
 .container { max-width:1100px; margin:auto; padding:80px 20px; }
 
 .destacado {
@@ -163,7 +160,7 @@ body {
 
 .whatsapp svg { width:35px; height:35px; fill:#fff; }
 
-/* --- AJUSTES MÓVIL HERO --- */
+/* MÓVIL */
 @media(max-width:768px){
   .titulo-desktop { display:none; }
   .titulo-mobile { display:block; font-size:32px; font-weight:700; line-height:1.1; margin-bottom:10px; }
@@ -175,11 +172,11 @@ body {
 </head>
 <body>
 
-<!-- NAV UNIFICADO -->
+<!-- NAV ACTUALIZADO -->
 <div class="nav">
   <a href="index.html">Inicio</a>
   <a href="bitacora.html">Bitácora profesional</a>
-  <a href="ranking.html">Mercado del arte</a>
+  <a href="servicio.html">Servicio de Tasación</a>
   <a href="contacto.html">Contacto</a>
 </div>
 
@@ -211,7 +208,6 @@ body {
     <img src="Tesis UCV.png" alt="Tesis Marco Cabrera">
     <p>"Análisis sobre la tasación para aranceles de importación en la Aduana de Lima".</p>
 
-    <!-- ÚNICO BOTÓN NUEVO -->
     <a class="btn" href="tesis-ucv.html">Ver investigación</a>
   </article>
 
