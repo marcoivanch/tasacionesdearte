@@ -1,1 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Conferencia | Temas de Arte</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary-gold:#c5a059;
+  --bg-dark:#0a0f1c;
+  --glass-bg:rgba(255,255,255,0.05);
+  --glass-border:rgba(255,255,255,0.12);
+  --text-main:#e2e8f0;
+  --text-dim:#94a3b8;
+}
+
+body {
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--bg-dark);
+  color:var(--text-main);
+  overflow-x:hidden;
+}
+
+/* NAV */
+.nav {
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:18px;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  background:rgba(10,15,28,0.85);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+.nav a {
+  color:#cbd5f5;
+  text-decoration:none;
+  font-size:14px;
+  white-space:nowrap;
+}
+
+/* HERO */
+.hero {
+  height:55vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  text-align:center;
+  padding:0 20px;
+}
+
+.hero::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url('assets/bitacora/flayer_ IV_congreso.jpg') center/cover no-repeat;
+  opacity:0.22;
+  filter:blur(4px);
+}
+
+.hero-content {
+  position:relative;
+  z-index:2;
+  max-width:800px;
+}
+
+.hero h1 {
+  font-size:clamp(32px,5vw,52px);
+  font-weight:700;
+  margin:0;
+  color:var(--primary-gold);
+}
+
+.container {
+  max-width:1000px;
+  margin:auto;
+  padding:80px 20px;
+}
+
+/* VIDEO CARD */
+.video-card {
+  background:var(--glass-bg);
+  border:1px solid var(--glass-border);
+  backdrop-filter:blur(12px);
+  border-radius:14px;
+  padding:40px;
+  margin-bottom:60px;
+}
+
+.video-card iframe {
+  width:100%;
+  height:520px;
+  border-radius:12px;
+  border:none;
+}
+
+.video-card p {
+  color:var(--text-dim);
+  margin-bottom:25px;
+  font-size:15px;
+  line-height:1.6;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .video-card iframe {
+    height:260px;
+  }
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav">
+  <a href="index.html">Inicio</a>
+  <a href="bitacora.html">Bitácora profesional</a>
+  <a href="ranking.html">Mercado del arte</a>
+  <a href="contacto.html">Contacto</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Conferencia</h1>
+    <p style="color:#e2e8f0; margin-top:10px; font-weight:300;">
+      Temas de Arte – Universalidad problemática en la tasación de obras de arte
+    </p>
+  </div>
+</section>
+
+<div class="container">
+
+  <!-- VIDEO CARD -->
+  <div class="video-card">
+    <p>
+      Registro audiovisual de la conferencia <em>“Universalidad problemática en la tasación de obras de arte”</em>, 
+      presentada por el Mg. Marco Cabrera dentro del ciclo <strong>Temas de Arte</strong>.
+    </p>
+
+    <iframe 
+      src="https://www.youtube.com/embed/uHyuN-lNDyA"
+      title="Temas de Arte: Universalidad problemática ... en la tasación de obras de arte, Mg. Marco Cabrera"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+</div>
+
+</body>
+</html>
 
