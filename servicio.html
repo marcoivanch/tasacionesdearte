@@ -1,179 +1,208 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Servicio de Tasación</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #0b0c10;
-      color: #f5f5f5;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 16px 60px;
-    }
+<title>Servicio de Tasación</title>
 
-    .hero {
-      max-width: 1100px;
-      width: 100%;
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 32px;
-      align-items: center;
-      margin-bottom: 40px;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-    .hero-text h1 {
-      font-size: 2.4rem;
-      line-height: 1.2;
-      margin: 0 0 12px;
-    }
+<style>
+body{
+  margin:0;
+  font-family: 'Inter', sans-serif;
+  background:#0a0f1c;
+  color:#e2e8f0;
+}
 
-    .hero-text p {
-      margin: 0 0 20px;
-      font-size: 1.05rem;
-      color: #d0d0d0;
-    }
+/* NAV */
+.nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:18px;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  background:rgba(10,15,28,0.85);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
 
-    .hero-button {
-      display: inline-block;
-      padding: 10px 22px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.25);
-      background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-      color: #f5f5f5;
-      text-decoration: none;
-      font-size: 0.95rem;
-      backdrop-filter: blur(14px);
-    }
+.nav a{
+  color:#cbd5f5;
+  text-decoration:none;
+  font-size:14px;
+  white-space:nowrap;
+}
 
-    .hero-photo {
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: radial-gradient(circle at top left, rgba(255,255,255,0.12), rgba(0,0,0,0.9));
-    }
+/* HERO */
+.hero{
+  padding-top:120px;
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  gap:40px;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  padding-bottom:60px;
+}
 
-    .hero-photo img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
+.hero-text h1{
+  font-size:38px;
+  font-weight:600;
+  margin-bottom:10px;
+}
 
-    .section-title {
-      max-width: 1100px;
-      width: 100%;
-      font-size: 1.4rem;
-      margin: 10px auto 18px;
-    }
+.hero-text p{
+  color:#94a3b8;
+  line-height:1.5;
+}
 
-    .cards {
-      max-width: 1100px;
-      width: 100%;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-    }
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:14px 26px;
+  border-radius:30px;
+  background:#25D366;
+  color:#fff;
+  text-decoration:none;
+}
 
-    .card {
-      border-radius: 16px;
-      padding: 16px 18px;
-      background: radial-gradient(circle at top left, rgba(255,255,255,0.12), rgba(0,0,0,0.9));
-      border: 1px solid rgba(255,255,255,0.14);
-      backdrop-filter: blur(14px);
-    }
+.hero-photo img{
+  width:100%;
+  border-radius:14px;
+  border:1px solid rgba(148,163,184,0.15);
+}
 
-    .card-question {
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
+/* SECCIONES */
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:60px 20px;
+}
 
-    .card-answer {
-      font-size: 0.95rem;
-      color: #d4d4d4;
-    }
+.section h2{
+  margin-bottom:20px;
+}
 
-    @media (max-width: 800px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-  </style>
+.cards{
+  display:grid;
+  gap:25px;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.card{
+  background:#020617;
+  border:1px solid rgba(148,163,184,0.15);
+  border-radius:12px;
+  padding:25px;
+}
+
+.card-question{
+  font-weight:600;
+  margin-bottom:8px;
+}
+
+.card-answer{
+  color:#94a3b8;
+  font-size:15px;
+  line-height:1.45;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+}
+</style>
 </head>
+
 <body>
-  <main class="page">
-    <section class="hero">
-      <div class="hero-text">
-        <h1>Hablemos de tu obra.</h1>
-        <p>
-          Estoy aquí para ayudarte a tomar decisiones seguras en el mercado del arte:
-          aclarar dudas, evitar riesgos y darle un valor técnico y jurídico sólido a tus obras.
-        </p>
-        <a href="contacto.html" class="hero-button">Quiero consultar sobre mi obra</a>
+
+<!-- NAV ACTUALIZADO -->
+<div class="nav">
+  <a href="index.html">Inicio</a>
+  <a href="bitacora.html">Bitácora profesional</a>
+  <a href="servicio.html">Servicio de Tasación</a>
+  <a href="contacto.html">Contacto</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Hablemos de tu obra</h1>
+    <p>
+      Te ayudo a tomar decisiones seguras en el mercado del arte: aclarar dudas, evitar riesgos
+      y obtener un valor técnico y jurídico sólido para tus obras.
+    </p>
+    <a class="btn" href="contacto.html">Consultar sobre mi obra</a>
+  </div>
+
+  <div class="hero-photo">
+    <img src="assets/servicios/Conversando.jpg" alt="Marco Iván conversando con el cliente">
+  </div>
+</section>
+
+<!-- PREGUNTAS -->
+<section class="section">
+  <h2>Lo que más me preguntan mis clientes</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-question">¿Cuánto cuesta una tasación de arte?</div>
+      <div class="card-answer">
+        Depende del tipo de obra y del uso del informe (compra/venta, seguros, herencias,
+        litigios, aduanas). Primero reviso tu caso y te explico con transparencia qué incluye el servicio.
       </div>
-      <div class="hero-photo">
-        <img src="assets/servicios/Conversando.jpg" alt="Marco Iván conversando con el cliente">
+    </div>
+
+    <div class="card">
+      <div class="card-question">¿Qué necesito para empezar una tasación?</div>
+      <div class="card-answer">
+        Fotografías claras, medidas, técnica, estado de conservación y cualquier documento que tengas.
+        Si no cuentas con todo, igual puedo orientarte.
       </div>
-    </section>
+    </div>
 
-    <h2 class="section-title">Lo que más me preguntan mis clientes</h2>
+    <div class="card">
+      <div class="card-question">¿Cómo sé si mi obra es original?</div>
+      <div class="card-answer">
+        Analizo técnica, procedencia, materiales y trazabilidad. No todo se puede afirmar al 100%, pero sí
+        puedo indicarte qué es verificable, qué es probable y qué no tiene sustento.
+      </div>
+    </div>
 
-    <section class="cards">
-      <article class="card">
-        <div class="card-question">¿Cuánto cuesta una tasación de arte?</div>
-        <div class="card-answer">
-          El costo depende del tipo de obra y del uso del informe (compra/venta, seguros, herencias,
-          litigios, aduanas). Primero reviso tu caso y te explico con transparencia qué incluye el servicio.
-        </div>
-      </article>
+    <div class="card">
+      <div class="card-question">¿Para qué sirve una tasación profesional?</div>
+      <div class="card-answer">
+        Para tomar decisiones informadas: comprar o vender con criterio, asegurar obras, ordenar herencias,
+        sustentar valores ante notarios, jueces o aduanas y evitar fraudes.
+      </div>
+    </div>
 
-      <article class="card">
-        <div class="card-question">¿Qué necesito para empezar una tasación?</div>
-        <div class="card-answer">
-          Normalmente trabajo con fotografías claras, medidas, técnica, estado de conservación y cualquier
-          documento o antecedente que tengas. Si no cuentas con todo, igual puedo orientarte sobre cómo avanzar.
-        </div>
-      </article>
+    <div class="card">
+      <div class="card-question">¿Cómo sé si puedo confiar en el tasador?</div>
+      <div class="card-answer">
+        Un tasador serio trabaja con metodología, trazabilidad, informes escritos y responsabilidad técnica.
+        Mi trabajo queda documentado y puede ser contrastado en el tiempo.
+      </div>
+    </div>
 
-      <article class="card">
-        <div class="card-question">¿Cómo sé si mi obra es original?</div>
-        <div class="card-answer">
-          Analizo la obra desde lo técnico, documental y de mercado. No todo se puede afirmar al 100%, pero sí
-          puedo indicarte qué es verificable, qué es probable y qué no tiene sustento.
-        </div>
-      </article>
+    <div class="card">
+      <div class="card-question">¿Qué pasa si importo o exporto una obra sin tasación?</div>
+      <div class="card-answer">
+        Puedes enfrentar observaciones, retenciones o diferencias de valor en aduanas. Una tasación técnica
+        reduce riesgos y deja claro el sustento del valor declarado.
+      </div>
+    </div>
 
-      <article class="card">
-        <div class="card-question">¿Para qué sirve una tasación profesional?</div>
-        <div class="card-answer">
-          Sirve para tomar decisiones informadas: comprar o vender con criterio, asegurar obras, ordenar herencias,
-          sustentar valores ante notarios, jueces o aduanas y evitar sobreprecios o fraudes.
-        </div>
-      </article>
+  </div>
+</section>
 
-      <article class="card">
-        <div class="card-question">¿Cómo sé si puedo confiar en el tasador?</div>
-        <div class="card-answer">
-          Un tasador serio trabaja con metodología, trazabilidad, informes escritos y responsabilidad técnica.
-          Mi trabajo queda documentado y puede ser contrastado en el tiempo.
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-question">¿Qué pasa si importo o exporto una obra sin tasación?</div>
-        <div class="card-answer">
-          Puedes enfrentar observaciones, retenciones o diferencias de valor en aduanas. Una tasación técnica
-          reduce riesgos y deja claro el sustento del valor declarado.
-        </div>
-      </article>
-    </section>
-  </main>
 </body>
 </html>
