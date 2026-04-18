@@ -1,1 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Investigación | Tesis UCV</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary-gold:#c5a059;
+  --bg-dark:#0a0f1c;
+  --glass-bg:rgba(255,255,255,0.05);
+  --glass-border:rgba(255,255,255,0.12);
+  --text-main:#e2e8f0;
+  --text-dim:#94a3b8;
+}
+
+body {
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--bg-dark);
+  color:var(--text-main);
+  overflow-x:hidden;
+}
+
+/* NAV */
+.nav {
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:18px;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  background:rgba(10,15,28,0.85);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+.nav a {
+  color:#cbd5f5;
+  text-decoration:none;
+  font-size:14px;
+  white-space:nowrap;
+}
+
+/* HERO */
+.hero {
+  height:55vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  text-align:center;
+  padding:0 20px;
+}
+
+.hero::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url('Tesis UCV.png') center/cover no-repeat;
+  opacity:0.22;
+  filter:blur(4px);
+}
+
+.hero-content {
+  position:relative;
+  z-index:2;
+  max-width:800px;
+}
+
+.hero h1 {
+  font-size:clamp(32px,5vw,52px);
+  font-weight:700;
+  margin:0;
+  color:var(--primary-gold);
+}
+
+.container {
+  max-width:1100px;
+  margin:auto;
+  padding:80px 20px;
+}
+
+/* GLASS CARD */
+.card {
+  background:var(--glass-bg);
+  border:1px solid var(--glass-border);
+  backdrop-filter:blur(12px);
+  border-radius:14px;
+  padding:35px;
+  margin-bottom:50px;
+}
+
+.card h2 {
+  margin:0 0 15px 0;
+  font-weight:600;
+  font-size:26px;
+  color:var(--primary-gold);
+}
+
+.card p {
+  margin:0 0 18px 0;
+  color:var(--text-dim);
+  line-height:1.6;
+}
+
+.btn {
+  display:inline-block;
+  margin-top:10px;
+  padding:14px 28px;
+  border-radius:4px;
+  background:transparent;
+  border:1px solid var(--primary-gold);
+  color:var(--primary-gold);
+  font-weight:600;
+  text-decoration:none;
+  font-size:13px;
+  letter-spacing:1px;
+  transition:0.3s;
+}
+
+.btn:hover {
+  background:var(--primary-gold);
+  color:#000;
+}
+
+/* VIDEO */
+.video iframe {
+  width:100%;
+  height:420px;
+  border-radius:10px;
+  border:none;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .video iframe {
+    height:240px;
+  }
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav">
+  <a href="index.html">Inicio</a>
+  <a href="bitacora.html">Bitácora profesional</a>
+  <a href="ranking.html">Mercado del arte</a>
+  <a href="contacto.html">Contacto</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Investigación</h1>
+    <p style="color:#e2e8f0; margin-top:10px; font-weight:300;">
+      Tesis de Maestría en Gestión Pública – UCV (2023)
+    </p>
+  </div>
+</section>
+
+<div class="container">
+
+  <!-- CARD PRINCIPAL -->
+  <div class="card">
+    <h2>Gestión en la tasación de obras de arte</h2>
+    <p>
+      <strong>“Análisis sobre la tasación para aranceles de importación en la Aduana de Lima”.</strong><br><br>
+      Investigación desarrollada en el marco de la Maestría en Gestión Pública, centrada en los procesos
+      técnicos y administrativos que intervienen en la valoración de obras de arte para fines aduaneros.
+    </p>
+
+    <a class="btn" href="https://repositorio.ucv.edu.pe/handle/20.500.12692/124165" target="_blank">
+      Leer investigación (Repositorio UCV)
+    </a>
+  </div>
+
+  <!-- ANTECEDENTE -->
+  <div class="card">
+    <h2>Antecedente relacionado</h2>
+    <p>
+      Antes de la elaboración formal de la tesis, los primeros desarrollos metodológicos fueron presentados
+      en el <strong>IV Congreso Internacional de Arte Peruano – UNMSM (2021)</strong>, donde se expusieron los
+      fundamentos iniciales sobre tasación y procesos reglamentarios.
+    </p>
+
+    <a class="btn" href="congresodearte.html">Ver ponencia del Congreso</a>
+  </div>
+
+  <!-- DERIVACIÓN / IMPACTO -->
+  <div class="card">
+    <h2>Derivación e impacto académico</h2>
+    <p>
+      Tras la sustentación y validación universitaria de la tesis, la <strong>Escuela de Arte de la UNMSM</strong>
+      invitó al autor a participar en el ciclo <em>Temas de Arte</em>, espacio reservado para investigaciones
+      y tesistas de alto nivel. La conferencia profundiza en los aportes conceptuales derivados de la tesis.
+    </p>
+
+    <a class="btn" href="conferenciadearte.html">Ver conferencia</a>
+  </div>
+
+</div>
+
+</body>
+</html>
 
