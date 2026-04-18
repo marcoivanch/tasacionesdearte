@@ -11,7 +11,7 @@
 :root {
   --primary-gold:#c5a059;
   --bg-dark:#0a0f1c;
-  --glass-bg:rgba(255,255,255,0.06);
+  --glass-bg:rgba(255,255,255,0.05);
   --glass-border:rgba(255,255,255,0.12);
   --text-main:#e2e8f0;
   --text-dim:#94a3b8;
@@ -98,7 +98,7 @@ body {
 }
 
 .card img {
-  width:260px;
+  width:220px;
   border-radius:10px;
   opacity:0.95;
 }
@@ -123,10 +123,10 @@ body {
 /* PDF */
 .pdf-frame {
   width:100%;
-  height:480px;
+  height:360px;
   border-radius:10px;
   border:1px solid var(--glass-border);
-  margin-top:15px;
+  object-fit:contain;
 }
 
 /* VIDEO */
@@ -172,27 +172,7 @@ body {
 
 <div class="container">
 
-  <!-- CARD 1 – CONTEXTO -->
-  <div class="card">
-    <div class="card-content">
-      <h3>Contexto institucional</h3>
-      <p>
-        Ponencia presentada en el <strong>IV Congreso Internacional de Arte Peruano</strong>, organizado por la 
-        Facultad de Letras y Ciencias Humanas de la Universidad Nacional Mayor de San Marcos. 
-      </p>
-      <p>
-        La exposición <em>“Las tasaciones de arte (en el Perú). De la práctica idiosincrática al proceso reglamentario”</em> 
-        desarrolla un marco técnico para comprender la valoración de bienes culturales en el país, integrando 
-        criterios administrativos, normativos y comparativos.
-      </p>
-      <p>
-        La presentación se inserta en una línea de trabajo sostenida que articula análisis institucional, 
-        lectura crítica de procesos y construcción metodológica.
-      </p>
-    </div>
-  </div>
-
-  <!-- CARD 2 – FLYER GENERAL -->
+  <!-- CARD 1 – FLYER GENERAL (DESPUÉS DEL HERO) -->
   <div class="card">
     <img src="assets/bitacora/flayer_ IV_congreso.jpg" alt="Flyer Congreso General">
     <div class="card-content">
@@ -204,7 +184,7 @@ body {
     </div>
   </div>
 
-  <!-- CARD 3 – FLYER PERSONAL -->
+  <!-- CARD 2 – FLYER PERSONAL -->
   <div class="card">
     <img src="assets/bitacora/IV-congreso_Marco.jpg" alt="Flyer Ponencia Marco Cabrera">
     <div class="card-content">
@@ -213,6 +193,21 @@ body {
         Afiche de la participación del ponente, destacando la propuesta metodológica sobre tasaciones 
         de arte en el Perú y su tránsito hacia procesos reglamentarios.
       </p>
+    </div>
+  </div>
+
+  <!-- CARD 3 – VIDEO (CONFERENCIA) -->
+  <div class="card video-card">
+    <div class="card-content">
+      <h3>Conferencia</h3>
+      <p>
+        Registro completo de la ponencia presentada en el congreso.
+      </p>
+      <iframe src="https://www.youtube.com/embed/3EAZP670dFQ"
+        title="Las tasaciones de arte (en el Perú). De la práctica idiosincrática al proceso reglamentario."
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
     </div>
   </div>
 
@@ -225,21 +220,6 @@ body {
         en el congreso internacional.
       </p>
       <embed src="assets/bitacora/IV-congreso_certificado.pdf" type="application/pdf" class="pdf-frame">
-    </div>
-  </div>
-
-  <!-- CARD 5 – VIDEO -->
-  <div class="card video-card">
-    <div class="card-content">
-      <h3>Registro en video</h3>
-      <p>
-        Grabación completa de la ponencia presentada en el congreso.
-      </p>
-      <iframe src="https://www.youtube.com/embed/3EAZP670dFQ"
-        title="Las tasaciones de arte (en el Perú). De la práctica idiosincrática al proceso reglamentario."
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
     </div>
   </div>
 
