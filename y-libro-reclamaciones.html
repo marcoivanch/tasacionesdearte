@@ -129,20 +129,14 @@ footer{
     Conforme a la normativa peruana de protección al consumidor, se pone a disposición de los usuarios el presente Libro de Reclamaciones virtual para registrar reclamos o quejas relacionados con el servicio profesional de tasación.
   </p>
 
-  <form id="formReclamo" action="https://formsubmit.co/marcoivanbitel@gmail.com" method="POST" enctype="multipart/form-data">
-
-    <!-- CONFIGURACIÓN -->
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_next" value="https://tasacionesdearte.org.pe/gracias.html">
+  <!-- FORMULARIO -->
+  <form id="formReclamo">
 
     <h2>Datos del consumidor</h2>
-
-    <input type="text" name="Nombre completo" placeholder="Nombre completo" required>
+    <input type="text" id="nombre" placeholder="Nombre completo" required>
 
     <h2>Documento de identidad</h2>
-
-    <select id="tipoDoc" name="TipoDocumento" required>
+    <select id="tipoDoc" required>
       <option value="">Seleccione tipo de documento</option>
       <option value="DNI">DNI</option>
       <option value="RUC">RUC</option>
@@ -150,23 +144,20 @@ footer{
       <option value="CE">Carné de Extranjería</option>
     </select>
 
-    <input type="text" id="numeroDoc" name="NumeroDocumento" placeholder="Número de documento" required>
+    <input type="text" id="numeroDoc" placeholder="Número de documento" required>
 
     <h2>Correo electrónico</h2>
-    <input type="email" name="Correo electrónico" placeholder="ejemplo@correo.com" required>
+    <input type="email" id="correo" placeholder="ejemplo@correo.com" required>
 
     <h2>Tipo de registro</h2>
-    <select name="Tipo de registro" required>
+    <select id="tipoRegistro" required>
       <option value="">Seleccione una opción</option>
       <option value="Reclamo">Reclamo</option>
       <option value="Queja">Queja</option>
     </select>
 
     <h2>Descripción del reclamo</h2>
-    <textarea id="descripcion" name="Descripción" placeholder="Describa el motivo del reclamo o queja (mínimo 100 caracteres)" required></textarea>
-
-    <h2>Adjuntar archivo (opcional)</h2>
-    <input type="file" name="Adjunto" accept=".jpg,.jpeg,.png,.pdf">
+    <textarea id="descripcion" placeholder="Describa el motivo del reclamo o queja (mínimo 100 caracteres)" required></textarea>
 
     <button type="submit">Enviar registro</button>
 
@@ -201,46 +192,49 @@ function validarRUC(ruc){
   return r==ruc[10];
 }
 
-const form=document.getElementById('formReclamo');
-const tipoDoc=document.getElementById('tipoDoc');
-const numeroDoc=document.getElementById('numeroDoc');
-const descripcion=document.getElementById('descripcion');
+const form = document.getElementById('formReclamo');
+const tipoDoc = document.getElementById('tipoDoc');
+const numeroDoc = document.getElementById('numeroDoc');
+const descripcion = document.getElementById('descripcion');
 
-form.addEventListener('submit',function(e){
+const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbyyrq2vxR0A3GpCAlNgXIKOfPLB5ppTQRtKQYneayLm1ZASKSFjNRpGCUV_5shvTUkD6w/exec";
 
-  const tipo=tipoDoc.value;
-  const num=numeroDoc.value.trim();
+form.addEventListener('submit', async function(e){
+  e.preventDefault();
 
-  // VALIDACIÓN DOCUMENTOS
-  if(tipo==="DNI" && !/^[0-9]{8}$/.test(num)){
-    alert("El DNI debe tener exactamente 8 dígitos.");
-    e.preventDefault(); return;
+  const tipo = tipoDoc.value;
+  const num = numeroDoc.value.trim();
+
+  if(tipo==="DNI" && !/^[0-9]{8}$/.test(num)) return alert("El DNI debe tener exactamente 8 dígitos.");
+  if(tipo==="RUC" && !validarRUC(num)) return alert("El RUC ingresado no es válido.");
+  if(tipo==="Pasaporte" && num.length < 6) return alert("El Pasaporte debe tener al menos 6 caracteres.");
+  if(tipo==="CE" && num.length < 9) return alert("El Carné de Extranjería debe tener al menos 9 caracteres.");
+  if(descripcion.value.trim().length < 100) return alert("La descripción debe tener al menos 100 caracteres.");
+
+  const data = {
+    nombre: document.getElementById('nombre').value,
+    documento: num,
+    correo: document.getElementById('correo').value,
+    telefono: "",
+    tipo: document.getElementById('tipoRegistro').value,
+    detalle: descripcion.value.trim()
+  };
+
+  const res = await fetch(WEBAPP_URL, {
+    method: "POST",
+    body: JSON.stringify(data)
+  });
+
+  const json = await res.json();
+
+  if(json.status === "ok"){
+    alert("Su reclamo ha sido registrado correctamente.");
+    window.location.href = "gracias.html";
+  } else {
+    alert("Hubo un error al registrar el reclamo.");
   }
-
-  if(tipo==="RUC" && !validarRUC(num)){
-    alert("El RUC ingresado no es válido.");
-    e.preventDefault(); return;
-  }
-
-  if(tipo==="Pasaporte" && num.length < 6){
-    alert("El Pasaporte debe tener al menos 6 caracteres.");
-    e.preventDefault(); return;
-  }
-
-  if(tipo==="CE" && num.length < 9){
-    alert("El Carné de Extranjería debe tener al menos 9 caracteres.");
-    e.preventDefault(); return;
-  }
-
-  // VALIDACIÓN DESCRIPCIÓN
-  if(descripcion.value.trim().length < 100){
-    alert("La descripción del reclamo debe tener al menos 100 caracteres.");
-    e.preventDefault(); return;
-  }
-
 });
 </script>
 
 </body>
 </html>
-
