@@ -46,7 +46,7 @@ body{
   letter-spacing:0.3px;
 }
 
-/* HERO INSTITUCIONAL */
+/* HERO */
 .hero{
   height:100vh;
   background:url('assets/servicios/Conversando.jpg') center no-repeat;
@@ -55,6 +55,7 @@ body{
   display:flex;
   align-items:center;
   padding:0 40px;
+  z-index:1;
 }
 
 .hero::before{
@@ -62,6 +63,7 @@ body{
   position:absolute;
   inset:0;
   background:rgba(10,15,28,0.75);
+  z-index:0;
 }
 
 .hero-content{
@@ -131,42 +133,63 @@ body{
   border:1px solid var(--border);
   border-radius:12px;
   padding:25px;
+  cursor:pointer;
 }
 
 .card-question{
   font-weight:600;
   margin-bottom:8px;
-  cursor:pointer;
-  position:relative;
-  padding-right:20px;
+  color:#e2e8f0;
 }
 
-.card-question::after{
-  content:"+";
-  position:absolute;
-  right:0;
-  top:0;
-  font-weight:600;
-  color:#38bdf8;
-}
-
-.accordion.active .card-question::after{
-  content:"–";
-}
-
-.card-answer{
-  color:var(--text-soft);
-  font-size:15px;
-  line-height:1.45;
+/* TARJETA SUPERPUESTA */
+.respuesta-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.65);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:5000;
+  backdrop-filter:blur(4px);
   display:none;
-  margin-top:10px;
 }
 
-.accordion.active .card-answer{
-  display:block;
+.respuesta-box{
+  background:#0f172a;
+  border:1px solid rgba(148,163,184,0.25);
+  border-radius:14px;
+  padding:30px;
+  max-width:480px;
+  width:90%;
+  color:#e2e8f0;
+  box-shadow:0 0 25px rgba(0,0,0,0.4);
 }
 
-/* WHATSAPP INSTITUCIONAL */
+.respuesta-box h3{
+  margin-top:0;
+  margin-bottom:12px;
+  font-size:20px;
+  color:#c5a059;
+}
+
+.respuesta-box p{
+  color:#94a3b8;
+  line-height:1.55;
+}
+
+.cerrar-btn{
+  margin-top:20px;
+  padding:10px 20px;
+  background:#1e293b;
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:8px;
+  color:#e2e8f0;
+  cursor:pointer;
+  font-size:14px;
+}
+
+/* WHATSAPP */
 .whatsapp{
   position:fixed;
   bottom:25px;
@@ -191,11 +214,17 @@ body{
 /* FOOTER */
 footer{
   text-align:center;
-  padding:45px 0;
+  padding:40px 0;
   color:#64748b;
   font-size:14px;
   letter-spacing:0.5px;
   margin-top:40px;
+}
+
+footer a{
+  color:#888;
+  text-decoration:none;
+  margin:0 8px;
 }
 
 /* RESPONSIVE */
@@ -238,52 +267,40 @@ footer{
 
   <div class="cards">
 
-    <!-- TODAS TUS PREGUNTAS ORIGINALES -->
-    <!-- (No se modificó contenido) -->
-
-    <div class="card accordion">
+    <div class="card" data-respuesta="Depende del tipo de obra y del uso del informe (compra/venta, seguros, herencias, litigios, aduanas). Primero reviso tu caso y te explico con transparencia qué incluye el servicio.">
       <div class="card-question">¿Cuánto cuesta una tasación de arte?</div>
-      <div class="card-answer">Depende del tipo de obra y del uso del informe (compra/venta, seguros, herencias, litigios, aduanas). Primero reviso tu caso y te explico con transparencia qué incluye el servicio.</div>
     </div>
 
-    <div class="card accordion">
+    <div class="card" data-respuesta="Fotografías claras, medidas, técnica, estado de conservación y cualquier documento que tengas. Si no cuentas con todo, igual puedo orientarte.">
       <div class="card-question">¿Qué necesito para empezar una tasación?</div>
-      <div class="card-answer">Fotografías claras, medidas, técnica, estado de conservación y cualquier documento que tengas. Si no cuentas con todo, igual puedo orientarte.</div>
     </div>
 
-    <div class="card accordion">
+    <div class="card" data-respuesta="Analizo técnica, procedencia, materiales y trazabilidad. No todo se puede afirmar al 100%, pero sí puedo indicarte qué es verificable, qué es probable y qué no tiene sustento.">
       <div class="card-question">¿Cómo sé si mi obra es original?</div>
-      <div class="card-answer">Analizo técnica, procedencia, materiales y trazabilidad. No todo se puede afirmar al 100%, pero sí puedo indicarte qué es verificable, qué es probable y qué no tiene sustento.</div>
     </div>
 
-    <div class="card accordion">
+    <div class="card" data-respuesta="Para tomar decisiones informadas: comprar o vender con criterio, asegurar obras, ordenar herencias, sustentar valores ante notarios, jueces o aduanas y evitar fraudes.">
       <div class="card-question">¿Para qué sirve una tasación profesional?</div>
-      <div class="card-answer">Para tomar decisiones informadas: comprar o vender con criterio, asegurar obras, ordenar herencias, sustentar valores ante notarios, jueces o aduanas y evitar fraudes.</div>
     </div>
 
-    <div class="card accordion">
+    <div class="card" data-respuesta="Un tasador serio trabaja con metodología, trazabilidad, informes escritos y responsabilidad técnica. Mi trabajo queda documentado y puede ser contrastado en el tiempo.">
       <div class="card-question">¿Cómo sé si puedo confiar en el tasador?</div>
-      <div class="card-answer">Un tasador serio trabaja con metodología, trazabilidad, informes escritos y responsabilidad técnica. Mi trabajo queda documentado y puede ser contrastado en el tiempo.</div>
     </div>
 
-    <div class="card accordion">
+    <div class="card" data-respuesta="Puedes enfrentar observaciones, retenciones o diferencias de valor en aduanas. Una tasación técnica reduce riesgos y deja claro el sustento del valor declarado.">
       <div class="card-question">¿Qué pasa si importo o exporto una obra sin tasación?</div>
-      <div class="card-answer">Puedes enfrentar observaciones, retenciones o diferencias de valor en aduanas. Una tasación técnica reduce riesgos y deja claro el sustento del valor declarado.</div>
     </div>
 
-    <div class="card accordion">
+    <div class="card" data-respuesta="Una tasación profesional toma entre 3 y 7 días útiles según el tipo de bien, la condición de autenticidad y la documentación.">
       <div class="card-question">¿Cuál es el tiempo o la duración de una tasación?</div>
-      <div class="card-answer">Una tasación profesional toma entre 3 y 7 días útiles según el tipo de bien, la condición de autenticidad y la documentación.</div>
     </div>
 
-    <div class="card accordion">
+    <div class="card" data-respuesta="Debe ser profesional titulado en Arte (SUNEDU) y contar con registro de perito tasador definitivamente para encargos administrativos y públicos.">
       <div class="card-question">¿Qué requisitos debo exigir al tasador?</div>
-      <div class="card-answer">Debe ser profesional titulado en Arte (SUNEDU) y contar con registro de perito tasador definitivamente para encargos administrativos y públicos.</div>
     </div>
 
-    <div class="card accordion">
+    <div class="card" data-respuesta="Un informe técnico de tasación o documento acreditado con el valor económico del bien, firmado por el perito acreditado.">
       <div class="card-question">¿Cuál es el producto que recibo al hacer una tasación?</div>
-      <div class="card-answer">Un informe técnico de tasación o documento acreditado con el valor económico del bien, firmado por el perito acreditado.</div>
     </div>
 
   </div>
@@ -295,7 +312,6 @@ footer{
 
   <div class="cards">
 
-    <!-- Tus cards originales, estilizadas automáticamente por el sistema -->
     <div class="card"><div style="font-size:34px;font-weight:600;color:#38bdf8;">MEF</div><div style="color:#94a3b8;margin-top:8px;">Ministerio de Economía y Finanzas</div><div style="color:#64748b;margin-top:6px;">Bienes culturales muebles</div></div>
 
     <div class="card"><div style="font-size:34px;font-weight:600;color:#38bdf8;">ADUANAS</div><div style="color:#94a3b8;margin-top:8px;">Importadores y Operadores de Aduana Aérea</div><div style="color:#64748b;margin-top:6px;">Arte contemporáneo</div></div>
@@ -323,26 +339,39 @@ footer{
 </a>
 
 <!-- FOOTER -->
-<footer style="text-align:center; padding:40px 0; color:#64748b; font-size:14px;">
+<footer>
   © 2026 TASACIONES DE ARTE | MARCO CABRERA – PERITO REGISTRADO
-   <br><br>
+  <br><br>
 
-  <a href="y-aviso-legal.html" style="color:#888; text-decoration:none; margin:0 8px;">
-    Aviso Legal
-  </a> · 
-
-  <a href="y-politicadeprivacidad.html" style="color:#888; text-decoration:none; margin:0 8px;">
-    Política de Privacidad
-  </a> · 
-
-  <a href="y-politica-cookies.html" style="color:#888; text-decoration:none; margin:0 8px;">
-    Política de Cookies
-  </a> · 
-
-  <a href="y-libro-reclamaciones.html" style="color:#888; text-decoration:none; margin:0 8px;">
-    Libro de Reclamaciones
-  </a>
+  <a href="y-aviso-legal.html">Aviso Legal</a> · 
+  <a href="y-politicadeprivacidad.html">Política de Privacidad</a> · 
+  <a href="y-politica-cookies.html">Política de Cookies</a> · 
+  <a href="y-libro-reclamaciones.html">Libro de Reclamaciones</a>
 </footer>
+
+<!-- SCRIPT TARJETA SUPERPUESTA -->
+<script>
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('click', () => {
+    const texto = card.getAttribute('data-respuesta');
+    document.getElementById('respuestaTexto').innerHTML = texto;
+    document.getElementById('respuestaOverlay').style.display = 'flex';
+  });
+});
+
+function cerrarRespuesta(){
+  document.getElementById('respuestaOverlay').style.display = 'none';
+}
+</script>
+
+<!-- OVERLAY -->
+<div class="respuesta-overlay" id="respuestaOverlay">
+  <div class="respuesta-box">
+    <h3>Respuesta</h3>
+    <p id="respuestaTexto"></p>
+    <button class="cerrar-btn" onclick="cerrarRespuesta()">Cerrar</button>
+  </div>
+</div>
 
 </body>
 </html>
