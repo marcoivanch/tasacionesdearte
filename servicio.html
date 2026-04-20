@@ -6,14 +6,23 @@
 
 <title>Servicio de Tasación</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+:root{
+  --gold:#c5a059;
+  --bg:#0a1220;
+  --card:#020617;
+  --text:#e2e8f0;
+  --text-soft:#94a3b8;
+  --border:rgba(148,163,184,0.15);
+}
+
 body{
   margin:0;
-  font-family: 'Inter', sans-serif;
-  background:#0a1220;
-  color:#e2e8f0;
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
 }
 
 /* NAV */
@@ -21,10 +30,10 @@ body{
   position:fixed;
   top:0;
   width:100%;
-  padding:18px;
+  padding:18px 30px;
   display:flex;
   justify-content:center;
-  gap:30px;
+  gap:40px;
   background:rgba(10,15,28,0.85);
   backdrop-filter:blur(10px);
   z-index:1000;
@@ -34,59 +43,81 @@ body{
   color:#cbd5f5;
   text-decoration:none;
   font-size:14px;
-  white-space:nowrap;
+  letter-spacing:0.3px;
 }
 
-/* HERO */
+/* HERO INSTITUCIONAL */
 .hero{
-  padding-top:120px;
-  max-width:1100px;
-  margin:auto;
-  display:grid;
-  gap:40px;
-  grid-template-columns:1fr 1fr;
+  height:78vh;
+  background:url('assets/servicios/Conversando.jpg') center/cover no-repeat;
+  position:relative;
+  display:flex;
   align-items:center;
-  padding-bottom:60px;
+  padding:0 40px;
 }
 
-.hero-text h1{
-  font-size:38px;
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to right, rgba(10,15,28,0.92) 0%, rgba(10,15,28,0.7) 40%, rgba(10,15,28,0.2) 100%);
+}
+
+.hero-content{
+  position:relative;
+  max-width:600px;
+}
+
+.hero h1{
+  font-size:46px;
   font-weight:600;
-  margin-bottom:10px;
+  margin-bottom:12px;
 }
 
-.hero-text p{
-  color:#94a3b8;
-  line-height:1.5;
+.hero p{
+  color:var(--text-soft);
+  line-height:1.55;
+  font-size:17px;
+  max-width:520px;
 }
 
-.btn{
+.btn-primary{
   display:inline-block;
-  margin-top:25px;
-  padding:14px 26px;
+  margin-top:28px;
+  padding:14px 28px;
   border-radius:30px;
   background:#25D366;
-  color:#fff;
+  color:white;
   text-decoration:none;
+  font-weight:500;
 }
 
-.hero-photo img{
-  width:100%;
-  border-radius:14px;
-  border:1px solid rgba(148,163,184,0.15);
+.btn-secondary{
+  display:inline-block;
+  margin-left:14px;
+  padding:14px 28px;
+  border-radius:30px;
+  background:rgba(255,255,255,0.12);
+  color:white;
+  text-decoration:none;
+  border:1px solid rgba(255,255,255,0.25);
 }
 
 /* SECCIONES */
 .section{
   max-width:1100px;
   margin:auto;
-  padding:60px 20px;
+  padding:70px 20px;
 }
 
 .section h2{
-  margin-bottom:20px;
+  margin-bottom:25px;
+  font-size:26px;
+  font-weight:600;
+  color:var(--gold);
 }
 
+/* CARDS */
 .cards{
   display:grid;
   gap:25px;
@@ -94,8 +125,8 @@ body{
 }
 
 .card{
-  background:#020617;
-  border:1px solid rgba(148,163,184,0.15);
+  background:var(--card);
+  border:1px solid var(--border);
   border-radius:12px;
   padding:25px;
 }
@@ -103,31 +134,12 @@ body{
 .card-question{
   font-weight:600;
   margin-bottom:8px;
-}
-
-.card-answer{
-  color:#94a3b8;
-  font-size:15px;
-  line-height:1.45;
-}
-
-/* ACORDEÓN */
-.accordion .card-answer{
-  display:none;
-  margin-top:10px;
-}
-
-.accordion.active .card-answer{
-  display:block;
-}
-
-.accordion .card-question{
   cursor:pointer;
   position:relative;
   padding-right:20px;
 }
 
-.accordion .card-question::after{
+.card-question::after{
   content:"+";
   position:absolute;
   right:0;
@@ -140,24 +152,58 @@ body{
   content:"–";
 }
 
-/* WHATSAPP */
+.card-answer{
+  color:var(--text-soft);
+  font-size:15px;
+  line-height:1.45;
+  display:none;
+  margin-top:10px;
+}
+
+.accordion.active .card-answer{
+  display:block;
+}
+
+/* WHATSAPP INSTITUCIONAL */
 .whatsapp{
   position:fixed;
   bottom:25px;
   right:25px;
+  width:58px;
+  height:58px;
   background:#25D366;
-  color:white;
-  padding:14px 18px;
-  border-radius:50px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   text-decoration:none;
   z-index:1001;
+  box-shadow:0 0 12px rgba(0,0,0,0.35);
+}
+
+.whatsapp svg{
+  width:28px;
+  fill:white;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:45px 0;
+  color:#64748b;
+  font-size:14px;
+  letter-spacing:0.5px;
+  margin-top:40px;
 }
 
 /* RESPONSIVE */
 @media(max-width:900px){
   .hero{
-    grid-template-columns:1fr;
-    text-align:center;
+    height:auto;
+    padding:120px 20px 80px;
+  }
+  .hero h1{
+    font-size:36px;
   }
 }
 </style>
@@ -165,27 +211,22 @@ body{
 
 <body>
 
-<!-- NAV OFICIAL -->
+<!-- NAV -->
 <div class="nav">
   <a href="index.html">Inicio</a>
-  <a href="bitacora.html">Bitácora profesional</a>
   <a href="servicio.html">Servicio de Tasación</a>
+  <a href="bitacora.html">Bitácora profesional</a>
   <a href="contacto.html">Contacto</a>
 </div>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-text">
+  <div class="hero-content">
     <h1>Hablemos de tu obra</h1>
-    <p>
-      Te ayudo a tomar decisiones seguras en el mercado del arte: aclarar dudas, evitar riesgos
-      y obtener un valor técnico y jurídico sólido para tus obras.
-    </p>
-    <a class="btn" href="contacto.html">Formulario de consulta</a>
-  </div>
+    <p>Te ayudo a tomar decisiones seguras en el mercado del arte: aclarar dudas, evitar riesgos y obtener un valor técnico y jurídico sólido para tus obras.</p>
 
-  <div class="hero-photo">
-    <img src="assets/servicios/Conversando.jpg" alt="Marco Iván conversando con el cliente">
+    <a class="btn-primary" href="contacto.html">Formulario de consulta</a>
+    <a class="btn-secondary" href="https://wa.me/51930046681">WhatsApp inmediato</a>
   </div>
 </section>
 
@@ -195,73 +236,52 @@ body{
 
   <div class="cards">
 
+    <!-- TODAS TUS PREGUNTAS ORIGINALES -->
+    <!-- (No se modificó contenido) -->
+
     <div class="card accordion">
       <div class="card-question">¿Cuánto cuesta una tasación de arte?</div>
-      <div class="card-answer">
-        Depende del tipo de obra y del uso del informe (compra/venta, seguros, herencias,
-        litigios, aduanas). Primero reviso tu caso y te explico con transparencia qué incluye el servicio.
-      </div>
+      <div class="card-answer">Depende del tipo de obra y del uso del informe (compra/venta, seguros, herencias, litigios, aduanas). Primero reviso tu caso y te explico con transparencia qué incluye el servicio.</div>
     </div>
 
     <div class="card accordion">
       <div class="card-question">¿Qué necesito para empezar una tasación?</div>
-      <div class="card-answer">
-        Fotografías claras, medidas, técnica, estado de conservación y cualquier documento que tengas.
-        Si no cuentas con todo, igual puedo orientarte.
-      </div>
+      <div class="card-answer">Fotografías claras, medidas, técnica, estado de conservación y cualquier documento que tengas. Si no cuentas con todo, igual puedo orientarte.</div>
     </div>
 
     <div class="card accordion">
       <div class="card-question">¿Cómo sé si mi obra es original?</div>
-      <div class="card-answer">
-        Analizo técnica, procedencia, materiales y trazabilidad. No todo se puede afirmar al 100%, pero sí
-        puedo indicarte qué es verificable, qué es probable y qué no tiene sustento.
-      </div>
+      <div class="card-answer">Analizo técnica, procedencia, materiales y trazabilidad. No todo se puede afirmar al 100%, pero sí puedo indicarte qué es verificable, qué es probable y qué no tiene sustento.</div>
     </div>
 
     <div class="card accordion">
       <div class="card-question">¿Para qué sirve una tasación profesional?</div>
-      <div class="card-answer">
-        Para tomar decisiones informadas: comprar o vender con criterio, asegurar obras, ordenar herencias,
-        sustentar valores ante notarios, jueces o aduanas y evitar fraudes.
-      </div>
+      <div class="card-answer">Para tomar decisiones informadas: comprar o vender con criterio, asegurar obras, ordenar herencias, sustentar valores ante notarios, jueces o aduanas y evitar fraudes.</div>
     </div>
 
     <div class="card accordion">
       <div class="card-question">¿Cómo sé si puedo confiar en el tasador?</div>
-      <div class="card-answer">
-        Un tasador serio trabaja con metodología, trazabilidad, informes escritos y responsabilidad técnica.
-        Mi trabajo queda documentado y puede ser contrastado en el tiempo.
-      </div>
+      <div class="card-answer">Un tasador serio trabaja con metodología, trazabilidad, informes escritos y responsabilidad técnica. Mi trabajo queda documentado y puede ser contrastado en el tiempo.</div>
     </div>
 
     <div class="card accordion">
       <div class="card-question">¿Qué pasa si importo o exporto una obra sin tasación?</div>
-      <div class="card-answer">
-        Puedes enfrentar observaciones, retenciones o diferencias de valor en aduanas. Una tasación técnica
-        reduce riesgos y deja claro el sustento del valor declarado.
-      </div>
+      <div class="card-answer">Puedes enfrentar observaciones, retenciones o diferencias de valor en aduanas. Una tasación técnica reduce riesgos y deja claro el sustento del valor declarado.</div>
     </div>
 
     <div class="card accordion">
       <div class="card-question">¿Cuál es el tiempo o la duración de una tasación?</div>
-      <div class="card-answer">
-        Una tasación profesional toma entre 3 y 7 días útiles según el tipo de bien, la condición de autenticidad y la documentación.
-      </div>
+      <div class="card-answer">Una tasación profesional toma entre 3 y 7 días útiles según el tipo de bien, la condición de autenticidad y la documentación.</div>
     </div>
 
     <div class="card accordion">
       <div class="card-question">¿Qué requisitos debo exigir al tasador?</div>
-      <div class="card-answer">
-        Debe ser profesional titulado en Arte (SUNEDU) y contar con registro de perito tasador definitivamente para encargos administrativos y públicos.
-      </div>
+      <div class="card-answer">Debe ser profesional titulado en Arte (SUNEDU) y contar con registro de perito tasador definitivamente para encargos administrativos y públicos.</div>
     </div>
-    
+
     <div class="card accordion">
       <div class="card-question">¿Cuál es el producto que recibo al hacer una tasación?</div>
-      <div class="card-answer">
-        Un informe técnico de tasación o documento acreditado con el valor económico del bien, firmado por el perito acreditado.
-      </div>
+      <div class="card-answer">Un informe técnico de tasación o documento acreditado con el valor económico del bien, firmado por el perito acreditado.</div>
     </div>
 
   </div>
@@ -269,119 +289,50 @@ body{
 
 <!-- RELACIÓN DE CLIENTES -->
 <section class="section">
-  <h2 style="margin-bottom:35px;">Relación de clientes</h2>
+  <h2>Relación de clientes</h2>
 
-  <div style="
-    display:grid;
-    gap:28px;
-    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-  ">
+  <div class="cards">
 
-    <div class="card" style="padding:26px; border:1px solid rgba(56,189,248,0.25);">
-      <div style="font-size:34px; font-weight:600; color:#38bdf8;">MEF</div>
-      <div style="color:#94a3b8; font-size:15px; margin-top:8px;">
-        Ministerio de Economía y Finanzas
-      </div>
-      <div style="color:#64748b; font-size:14px; margin-top:6px;">
-        Bienes culturales muebles
-      </div>
-    </div>
+    <!-- Tus cards originales, estilizadas automáticamente por el sistema -->
+    <div class="card"><div style="font-size:34px;font-weight:600;color:#38bdf8;">MEF</div><div style="color:#94a3b8;margin-top:8px;">Ministerio de Economía y Finanzas</div><div style="color:#64748b;margin-top:6px;">Bienes culturales muebles</div></div>
 
-    <div class="card" style="padding:26px; border:1px solid rgba(56,189,248,0.25);">
-      <div style="font-size:34px; font-weight:600; color:#38bdf8;">ADUANAS</div>
-      <div style="color:#94a3b8; font-size:15px; margin-top:8px;">
-        Importadores y Operadores de Aduana Aérea
-      </div>
-      <div style="color:#64748b; font-size:14px; margin-top:6px;">
-        Arte contemporáneo
-      </div>
-    </div>
+    <div class="card"><div style="font-size:34px;font-weight:600;color:#38bdf8;">ADUANAS</div><div style="color:#94a3b8;margin-top:8px;">Importadores y Operadores de Aduana Aérea</div><div style="color:#64748b;margin-top:6px;">Arte contemporáneo</div></div>
 
-    <div class="card" style="padding:26px; border:1px solid rgba(56,189,248,0.25);">
-      <div style="font-size:34px; font-weight:600; color:#38bdf8;">MVCS</div>
-      <div style="color:#94a3b8; font-size:15px; margin-top:8px;">
-        Ministerio de Vivienda, Construcción y Saneamiento
-      </div>
-      <div style="color:#64748b; font-size:14px; margin-top:6px;">
-        Tasaciones de arte oficiales
-      </div>
-    </div>
+    <div class="card"><div style="font-size:34px;font-weight:600;color:#38bdf8;">MVCS</div><div style="color:#94a3b8;margin-top:8px;">Ministerio de Vivienda, Construcción y Saneamiento</div><div style="color:#64748b;margin-top:6px;">Tasaciones de arte oficiales</div></div>
 
-    <div class="card" style="padding:26px; border:1px solid rgba(56,189,248,0.25);">
-      <div style="font-size:34px; font-weight:600; color:#38bdf8;">ICA</div>
-      <div style="color:#94a3b8; font-size:15px; margin-top:8px;">
-        Club Centro Social Ica
-      </div>
-      <div style="color:#64748b; font-size:14px; margin-top:6px;">
-        Colección artística S. XX
-      </div>
-    </div>
+    <div class="card"><div style="font-size:34px;font-weight:600;color:#38bdf8;">ICA</div><div style="color:#94a3b8;margin-top:8px;">Club Centro Social Ica</div><div style="color:#64748b;margin-top:6px;">Colección artística S. XX</div></div>
 
-    <div class="card" style="padding:26px; border:1px solid rgba(56,189,248,0.25);">
-      <div style="font-size:34px; font-weight:600; color:#38bdf8;">ATU</div>
-      <div style="color:#94a3b8; font-size:15px; margin-top:8px;">
-        Autoridad de Transporte Urbano de Lima y Callao
-      </div>
-      <div style="color:#64748b; font-size:14px; margin-top:6px;">
-        Monumentos patrimoniales
-      </div>
-    </div>
+    <div class="card"><div style="font-size:34px;font-weight:600;color:#38bdf8;">ATU</div><div style="color:#94a3b8;margin-top:8px;">Autoridad de Transporte Urbano de Lima y Callao</div><div style="color:#64748b;margin-top:6px;">Monumentos patrimoniales</div></div>
 
-    <div class="card" style="padding:26px; border:1px solid rgba(56,189,248,0.25);">
-      <div style="font-size:34px; font-weight:600; color:#38bdf8;">DP</div>
-      <div style="color:#94a3b8; font-size:15px; margin-top:8px;">
-        Despacho Presidencial
-      </div>
-      <div style="color:#64748b; font-size:14px; margin-top:6px;">
-        Colección patrimonial
-      </div>
-    </div>
+    <div class="card"><div style="font-size:34px;font-weight:600;color:#38bdf8;">DP</div><div style="color:#94a3b8;margin-top:8px;">Despacho Presidencial</div><div style="color:#64748b;margin-top:6px;">Colección patrimonial</div></div>
 
-    <div class="card" style="padding:26px; border:1px solid rgba(56,189,248,0.25);">
-      <div style="font-size:34px; font-weight:600; color:#38bdf8;">BNP</div>
-      <div style="color:#94a3b8; font-size:15px; margin-top:8px;">
-        Biblioteca Nacional del Perú
-      </div>
-      <div style="color:#64748b; font-size:14px; margin-top:6px;">
-        Metodología de tasación
-      </div>
-    </div>
+    <div class="card"><div style="font-size:34px;font-weight:600;color:#38bdf8;">BNP</div><div style="color:#94a3b8;margin-top:8px;">Biblioteca Nacional del Perú</div><div style="color:#64748b;margin-top:6px;">Metodología de tasación</div></div>
 
-    <div class="card" style="padding:26px; border:1px solid rgba(56,189,248,0.25);">
-      <div style="font-size:34px; font-weight:600; color:#38bdf8;">PRIVADOS</div>
-      <div style="color:#94a3b8; font-size:15px; margin-top:8px;">
-        Clientes privados nacionales e internacionales
-      </div>
-    </div>
+    <div class="card"><div style="font-size:34px;font-weight:600;color:#38bdf8;">PRIVADOS</div><div style="color:#94a3b8;margin-top:8px;">Clientes privados nacionales e internacionales</div></div>
 
-    <div class="card" style="padding:26px; border:1px solid rgba(56,189,248,0.25);">
-      <div style="font-size:34px; font-weight:600; color:#38bdf8;">BNP</div>
-      <div style="color:#94a3b8; font-size:15px; margin-top:8px;">
-        Tecni Incas (Colombia)
-      </div>
-      <div style="color:#64748b; font-size:14px; margin-top:6px;">
-        Docencia Internacional en Tasación de Arte
-      </div>
-    </div>
+    <div class="card"><div style="font-size:34px;font-weight:600;color:#38bdf8;">BNP</div><div style="color:#94a3b8;margin-top:8px;">Tecni Incas (Colombia)</div><div style="color:#64748b;margin-top:6px;">Docencia Internacional en Tasación de Arte</div></div>
 
   </div>
 </section>
 
 <!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/51930046681">WhatsApp</a>
+<a class="whatsapp" href="https://wa.me/51930046681">
+  <svg viewBox="0 0 32 32"><path d="M16.001 2.667c-7.364 0-13.334 5.97-13.334 13.333 0 2.353.614 4.65 1.782 6.667l-1.885 6.885 7.052-1.854c1.94 1.06 4.13 1.62 6.385 1.62h.001c7.364 0 13.334-5.97 13.334-13.333S23.365 2.667 16.001 2.667zm0 24c-1.96 0-3.875-.52-5.56-1.5l-.398-.23-4.188 1.103 1.12-4.09-.26-.42c-1.08-1.74-1.65-3.74-1.65-5.863 0-6.04 4.917-10.957 10.957-10.957 6.04 0 10.957 4.917 10.957 10.957 0 6.04-4.917 10.957-10.957 10.957zm5.637-8.457c-.307-.153-1.82-.897-2.103-.997-.28-.103-.487-.153-.693.153-.207.307-.793.997-.973 1.203-.18.207-.36.23-.667.077-.307-.153-1.297-.477-2.47-1.52-.913-.813-1.53-1.813-1.707-2.12-.18-.307-.02-.473.133-.626.137-.137.307-.36.46-.54.153-.18.204-.307.307-.513.103-.207.05-.383-.026-.537-.077-.153-.693-1.667-.95-2.28-.25-.6-.503-.52-.693-.53-.18-.01-.383-.01-.59-.01-.207 0-.54.077-.82.383-.28.307-1.077 1.053-1.077 2.563 0 1.51 1.103 2.967 1.257 3.173.153.207 2.173 3.32 5.263 4.653.737.317 1.31.507 1.76.65.74.236 1.413.203 1.947.123.594-.088 1.82-.743 2.08-1.46.257-.717.257-1.33.18-1.46-.077-.13-.28-.207-.587-.36z"/></svg>
+</a>
 
-<!-- FOOTER INSTITUCIONAL -->
-<footer style="text-align:center; padding:40px 0; color:#64748b; font-size:14px;">
+<!-- FOOTER -->
+<footer style="text-align:center; padding:45px 0; color:#64748b; font-size:14px; letter-spacing:0.5px;">
+
+  <div style="margin-bottom:18px;">
+    <a href="aviso-legal.html" style="color:#94a3b8; text-decoration:none; margin:0 12px;">Aviso Legal</a>
+    <a href="privacidad.html" style="color:#94a3b8; text-decoration:none; margin:0 12px;">Política de Privacidad</a>
+    <a href="cookies.html" style="color:#94a3b8; text-decoration:none; margin:0 12px;">Política de Cookies</a>
+    <a href="libro-reclamaciones.html" style="color:#94a3b8; text-decoration:none; margin:0 12px;">Libro de Reclamaciones</a>
+  </div>
+
   © 2026 TASACIONES DE ARTE | MARCO CABRERA – PERITO REGISTRADO
-</footer>
 
-<script>
-document.querySelectorAll('.accordion .card-question').forEach(q => {
-  q.addEventListener('click', () => {
-    q.parentElement.classList.toggle('active');
-  });
-});
-</script>
+</footer>
 
 </body>
 </html>
