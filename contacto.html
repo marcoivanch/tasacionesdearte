@@ -14,12 +14,13 @@
     font-family: 'Inter', sans-serif;
   }
 
-  /* HEADER UNIFICADO */
+  /* MENU SUPERIOR UNIFICADO */
   .menu-superior {
     width: 100%;
     padding: 22px 0;
     position: relative;
     z-index: 100;
+    background: #ffffff;
   }
 
   .menu-nav {
@@ -33,46 +34,55 @@
   }
 
   .menu-nav a {
-    color: #ffffff;
+    color: #000000;
     text-decoration: none;
   }
 
-  /* HERO UNIFICADO (AÚN SIN IMAGEN, SOLO ESTRUCTURA) */
-  .hero {
-    position: relative;
-    width: 100%;
-    height: 420px;
-    background-size: cover;
-    background-position: center;
+  /* FORMULARIO */
+  .container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+
+  .field {
+    margin-bottom: 20px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
   }
 
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
+  label {
+    font-weight: 500;
+    margin-bottom: 6px;
   }
 
-  .hero-content {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    color: #ffffff;
+  input, select, textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
   }
 
-  .hero-content h1 {
-    font-size: 48px;
-    font-weight: 600;
-    margin: 0;
+  textarea {
+    height: 120px;
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    background: #25D366;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
   }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER UNIFICADO -->
+<!-- MENU SUPERIOR -->
 <header class="menu-superior">
   <nav class="menu-nav">
     <a href="index.html">Inicio</a>
@@ -82,6 +92,7 @@
   </nav>
 </header>
 
+<!-- FORMULARIO -->
 <div class="container">
 
 <h1>Formulario de consulta</h1>
@@ -170,7 +181,6 @@ La información proporcionada será tratada de forma confidencial.
 <option>Huachipa</option>
 <option>El Agustino</option>
 <option>Callao/Distritos</option>
-
 </select>
 </div>
 
@@ -302,8 +312,6 @@ La información proporcionada será tratada de forma confidencial.
 </div>
 
 <script>
-
-// VALIDACIÓN RUC REAL
 function validarRUC(ruc){
 if(!/^[0-9]{11}$/.test(ruc)) return false;
 const f=[5,4,3,2,7,6,5,4,3,2];
@@ -315,7 +323,6 @@ if(r==11) r=1;
 return r==ruc[10];
 }
 
-// VALIDACIÓN FORM
 const form=document.getElementById('form');
 const doc=document.getElementById('doc');
 
@@ -332,7 +339,6 @@ alert("RUC inválido"); e.preventDefault();
 }
 });
 
-// BLOQUES
 const nacionalidad=document.getElementById('nacionalidad');
 const bloquePeru=document.getElementById('bloquePeru');
 const bloqueExtranjero=document.getElementById('bloqueExtranjero');
@@ -345,7 +351,6 @@ if(this.value==="Peru") bloquePeru.style.display='block';
 if(this.value==="Extranjero") bloqueExtranjero.style.display='block';
 });
 
-// SUBNIVELES
 document.getElementById('regionTipo').addEventListener('change',function(){
 document.getElementById('distritosLima').style.display='none';
 document.getElementById('limaProvincias').style.display='none';
@@ -356,7 +361,6 @@ if(this.value==="Lima Provincias") document.getElementById('limaProvincias').sty
 if(this.value==="Regiones del Perú") document.getElementById('regionesPeru').style.display='block';
 });
 
-// IP
 fetch('https://ipapi.co/json/')
 .then(r=>r.json())
 .then(d=>{
@@ -367,7 +371,6 @@ bloqueExtranjero.style.display="block";
 });
 </script>
 
-<!-- FOOTER INSTITUCIONAL -->
 <footer style="text-align:center; padding:40px 0; color:#64748b; font-size:14px;">
   © 2026 TASACIONES DE ARTE | MARCO CABRERA – PERITO REGISTRADO
    <br><br>
@@ -388,6 +391,6 @@ bloqueExtranjero.style.display="block";
     Libro de Reclamaciones
   </a>
 </footer>
-  
+
 </body>
 </html>
