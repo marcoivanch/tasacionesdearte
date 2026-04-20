@@ -9,147 +9,78 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-body{
-  margin:0;
-  font-family:'Inter',sans-serif;
-  background:
-    linear-gradient(rgba(10,15,28,0.85), rgba(10,15,28,0.85)),
-    url('iStock-1198427623.jpg');
-  background-size: cover;
-  background-position: center 25%;
-  background-attachment:fixed;
-  color:#e2e8f0;
-}
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+  }
 
-/* NAV */
-.nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  padding:18px;
-  display:flex;
-  justify-content:center;
-  gap:30px;
-  background:rgba(10,15,28,0.85);
-  backdrop-filter:blur(10px);
-  z-index:1000;
-}
+  /* HEADER UNIFICADO */
+  .menu-superior {
+    width: 100%;
+    padding: 22px 0;
+    position: relative;
+    z-index: 100;
+  }
 
-.nav a{
-  color:#cbd5f5;
-  text-decoration:none;
-  font-size:14px;
-  white-space:nowrap;
-}
+  .menu-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 32px;
+    font-size: 16px;
+    font-weight: 500;
+  }
 
-/* CONTENEDOR */
-.container{
-  max-width:720px;
-  margin:120px auto 60px;
-  padding:20px;
-}
+  .menu-nav a {
+    color: #ffffff;
+    text-decoration: none;
+  }
 
-/* TITULO */
-h1{
-  text-align:center;
-  font-weight:500;
-  margin-bottom:10px;
-}
+  /* HERO UNIFICADO (AÚN SIN IMAGEN, SOLO ESTRUCTURA) */
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+  }
 
-.sub{
-  text-align:center;
-  color:#94a3b8;
-  margin-bottom:25px;
-  line-height:1.5;
-}
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+  }
 
-.disclaimer{
-  text-align:center;
-  font-size:13px;
-  color:#64748b;
-  margin-bottom:40px;
-  line-height:1.6;
-}
+  .hero-content {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    color: #ffffff;
+  }
 
-/* FORM */
-form{
-  display:flex;
-  flex-direction:column;
-  gap:22px;
-}
-
-.field{
-  display:flex;
-  flex-direction:column;
-}
-
-label{
-  font-size:13px;
-  color:#cbd5f5;
-  margin-bottom:6px;
-}
-
-input, select, textarea{
-  width:100%;
-  padding:14px;
-  border-radius:10px;
-  border:1px solid rgba(148,163,184,0.2);
-  background:#020617;
-  color:#e2e8f0;
-  font-size:14px;
-}
-
-input:focus, select:focus, textarea:focus{
-  outline:none;
-  border-color:#25D366;
-}
-
-textarea{
-  min-height:140px;
-  resize:vertical;
-}
-
-/* RADIO */
-.radio-group{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-}
-
-.radio-group label{
-  position:relative;
-  padding-right:30px;
-}
-
-.radio-group input[type="radio"]{
-  position:absolute;
-  right:0;
-  top:50%;
-  transform:translateY(-50%);
-}
-
-/* BOTÓN */
-button{
-  margin-top:10px;
-  padding:15px;
-  border:none;
-  border-radius:30px;
-  background:#25D366;
-  color:white;
-  font-size:15px;
-  cursor:pointer;
-}
+  .hero-content h1 {
+    font-size: 48px;
+    font-weight: 600;
+    margin: 0;
+  }
 </style>
 </head>
 
 <body>
 
-<div class="nav">
-  <a href="index.html">Inicio</a>
-  <a href="bitacora.html">Bitácora profesional</a>
-  <a href="servicio.html">Servicio de Tasación</a>
-  <a href="contacto.html">Contacto</a>
-</div>
+<!-- HEADER UNIFICADO -->
+<header class="menu-superior">
+  <nav class="menu-nav">
+    <a href="index.html">Inicio</a>
+    <a href="servicio.html">Servicio de Tasación</a>
+    <a href="bitacora.html">Bitácora profesional</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+</header>
 
 <div class="container">
 
