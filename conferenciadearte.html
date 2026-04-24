@@ -48,10 +48,25 @@ body {
   white-space: nowrap;
 }
 
-/* HEADER */
+/* HEADER CON FOTO */
 .header {
+  position: relative;
   text-align: center;
-  padding: 150px 20px 40px;
+  padding: 150px 20px 60px;
+  background: url('assets/bitacora/flayer_IV_congreso.jpg') center/cover no-repeat;
+}
+
+.header::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(10,15,28,0.70);
+}
+
+.header h1,
+.header p {
+  position:relative;
+  z-index:1;
 }
 
 .header h1 {
@@ -191,7 +206,7 @@ img {
   </p>
 </div>
 
-<!-- SECCIONES CON TU TEXTO EXACTO -->
+<!-- SECCIONES CON TU TEXTO -->
 
 <div class="section">
   <h2>1. Marco teórico y dimensión económica del arte</h2>
