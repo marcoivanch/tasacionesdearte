@@ -5,169 +5,252 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Conferencia | Temas de Arte</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+
 :root {
-  --primary-gold:#c5a059;
   --bg-dark:#0a0f1c;
-  --glass-bg:rgba(255,255,255,0.05);
-  --glass-border:rgba(255,255,255,0.12);
+  --bg-card:#0f1628;
   --text-main:#e2e8f0;
   --text-dim:#94a3b8;
+  --gold:#c5a059;
+  --border:rgba(255,255,255,0.08);
 }
 
+/* BASE */
 body {
-  margin:0;
-  font-family:'Inter',sans-serif;
-  background:var(--bg-dark);
-  color:var(--text-main);
-  overflow-x:hidden;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-main);
 }
 
 /* NAV */
 .nav {
-  position:fixed;
-  top:0;
-  width:100%;
-  padding:18px;
-  display:flex;
-  justify-content:center;
-  gap:30px;
-  background:rgba(10,15,28,0.85);
-  backdrop-filter:blur(10px);
-  z-index:1000;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  background: rgba(10,15,28,0.85);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
 }
 
 .nav a {
-  color:#cbd5f5;
-  text-decoration:none;
-  font-size:14px;
-  white-space:nowrap;
+  color: #cbd5f5;
+  text-decoration: none;
+  font-size: 14px;
+  white-space: nowrap;
 }
 
-/* HERO */
-.hero {
-  height:55vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-  text-align:center;
-  padding:0 20px;
+/* HEADER */
+.header {
+  text-align: center;
+  padding: 150px 20px 40px;
 }
 
-.hero::before {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:url('assets/bitacora/flayer_IV_congreso.jpg') center/cover no-repeat;
-  opacity:0.22;
-  filter:blur(4px);
+.header h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+  color: var(--gold);
+  font-weight: 600;
 }
 
-.hero-content {
-  position:relative;
-  z-index:2;
-  max-width:800px;
+.header p {
+  color: var(--text-dim);
+  font-size: 16px;
 }
 
-.hero h1 {
-  font-size:clamp(32px,5vw,52px);
-  font-weight:700;
-  margin:0;
-  color:var(--primary-gold);
-}
-
+/* CONTENEDOR */
 .container {
-  max-width:1000px;
-  margin:auto;
-  padding:80px 20px;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
 }
 
-/* VIDEO CARD */
-.video-card {
-  background:var(--glass-bg);
-  border:1px solid var(--glass-border);
-  backdrop-filter:blur(12px);
-  border-radius:14px;
-  padding:40px;
-  margin-bottom:60px;
+/* FICHA */
+.ficha {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 28px;
+  border-radius: 12px;
+  margin-bottom: 50px;
 }
 
-.video-card iframe {
-  width:100%;
-  height:520px;
-  border-radius:12px;
-  border:none;
+.ficha p {
+  margin: 6px 0;
+  line-height: 1.6;
 }
 
-.video-card p {
-  color:var(--text-dim);
-  margin-bottom:25px;
-  font-size:15px;
-  line-height:1.6;
+.ficha a {
+  color: var(--gold);
+  text-decoration: none;
 }
 
-/* MOBILE */
-@media(max-width:768px){
-  .video-card iframe {
-    height:260px;
-  }
+/* SECCIONES */
+.section {
+  margin-bottom: 45px;
 }
+
+.section h2 {
+  font-size: 26px;
+  margin-bottom: 12px;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.section p {
+  color: var(--text-main);
+  line-height: 1.75;
+}
+
+/* IMAGEN */
+img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 30px 0;
+  border: 1px solid var(--border);
+}
+
+/* VIDEO */
+.video {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  margin-top: 30px;
+}
+
+.video iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* VOLVER */
+.volver {
+  margin-top: 40px;
+  display: inline-block;
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 50px;
+  color: #64748b;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
 </style>
-
 </head>
+
 <body>
 
 <!-- NAV -->
 <div class="nav">
   <a href="index.html">Inicio</a>
-  <a href="servicio.html">Servicio de Tasación</a>
   <a href="bitacora.html">Bitácora profesional</a>
+  <a href="servicio.html">Servicio de Tasación</a>
   <a href="contacto.html">Contacto</a>
 </div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Conferencia</h1>
-    <p style="color:#e2e8f0; margin-top:10px; font-weight:300;">
-      Temas de Arte – Universalidad problemática en la tasación de obras de arte
-    </p>
-  </div>
-</section>
+<!-- HEADER -->
+<div class="header">
+  <h1>Temas de Arte</h1>
+  <p>Universalidad problemática en la tasación de obras de arte</p>
+</div>
 
 <div class="container">
 
-  <!-- FLYER DE LA CONFERENCIA -->
-  <div class="video-card" style="text-align:center; padding:30px;">
-    <img 
-      src="assets/bitacora/flyer Temas de arte.png" 
-      alt="Flyer Temas de Arte - Conferencia Marco Cabrera"
-      style="width:100%; max-width:520px; border-radius:12px; margin-bottom:20px;">
-    
-    <p style="color:var(--text-dim); font-size:14px; margin-top:10px;">
-      Afiche oficial del ciclo <strong>Temas de Arte</strong>, donde se presentó la conferencia 
-      “Universalidad problemática en la tasación de obras de arte”.
-    </p>
-  </div>
+<!-- FICHA -->
+<div class="ficha">
+  <p><strong>Ponente:</strong> Mg. Marco Iván Cabrera Hernández</p>
+  <p><strong>Especialidad:</strong> Perito Tasador de Arte – MVCS N° 62</p>
+  <p><strong>Evento:</strong> Ciclo académico “Temas de Arte”</p>
+  <p><strong>Organiza:</strong> Escuela de Arte – Universidad Nacional Mayor de San Marcos</p>
+  <p><strong>Fecha:</strong> Noviembre de 2023</p>
+</div>
 
-  <!-- VIDEO CARD -->
-  <div class="video-card">
-    <p>
-      Registro audiovisual de la conferencia <em>“Universalidad problemática en la tasación de obras de arte”</em>, 
-      presentada por el Mg. Marco Cabrera dentro del ciclo <strong>Temas de Arte</strong>.
-    </p>
+<!-- FLYER -->
+<img src="assets/bitacora/flyer Temas de arte.png" alt="Flyer Temas de Arte">
 
-    <iframe 
-      src="https://www.youtube.com/embed/uHyuN-lNDyA"
-      title="Temas de Arte: Universalidad problemática ... en la tasación de obras de arte, Mg. Marco Cabrera"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen>
-    </iframe>
-  </div>
+<!-- SECCIONES BASADAS EN TU ANÁLISIS -->
 
+<div class="section">
+  <h2>1. Marco teórico y dimensión económica del arte</h2>
+  <p>
+    La conferencia plantea una premisa disruptiva: el arte como objeto de estudio económico. 
+    Se explica la “antinaturalidad” del mercado del arte, donde la antigüedad y el desgaste no 
+    generaría depreciación, sino revalorización. Este comportamiento exige metodologías basadas en 
+    normas técnicas y no en apreciaciones subjetivas.
+  </p>
+</div>
+
+<div class="section">
+  <h2>2. Tasación y aranceles de importación</h2>
+  <p>
+    Se desarrolla la problemática del Canal Rojo en la aduana aérea del Perú, donde las obras 
+    ingresan a revisión obligatoria. La normativa de la Comunidad Andina de Naciones (CAN) 
+    establece la intervención del perito como tercero neutral para establecer el valor razonable.
+  </p>
+</div>
+
+<div class="section">
+  <h2>3. Metodología y protocolo de inspección</h2>
+  <p>
+    El análisis distingue la labor del tasador profesional del experto tradicional. Se detalla 
+    el uso de instrumental adecuado, microscopía digital y metrología calibrada. La medición se 
+    realiza bajo supervisión profesional, garantizando evidencia reproducible y trazable.
+  </p>
+</div>
+
+<div class="section">
+  <h2>4. Rigor normativo: RNT y MVCS</h2>
+  <p>
+    Se aclara por qué la competencia normativa para las obras de arte, al ser bienes muebles, 
+    recaería en el Reglamento Nacional de Tasaciones que define el Valor Similar Nuevo (VSN) y 
+    el Factor de Depreciación.
+  </p>
+</div>
+
+<div class="section">
+  <h2>5. Realidad del mercado y ética pericial</h2>
+  <p>
+    La conferencia aborda la diferencia entre valor artístico y valor económico, sustentando la 
+    tasación en ventas verificables, obras testigo y registros formales. Se rechaza la especulación 
+    y se enfatiza la responsabilidad ética del perito en la protección del patrimonio.
+  </p>
+</div>
+
+<!-- VIDEO -->
+<div class="video">
+  <iframe src="https://www.youtube.com/embed/uHyuN-lNDyA" allowfullscreen></iframe>
+</div>
+
+<div class="section">
+  <h2>Conclusión técnica</h2>
+  <p>
+    La exposición consolida una metodología científica para la tasación en el Perú, posicionando 
+    al Licenciado en Arte como el profesional idóneo para liderar procesos valuatorios con rigor 
+    técnico, normativo y administrativo.
+  </p>
+</div>
+
+<a class="volver" href="bitacora.html">← Volver a bitácora</a>
+
+</div>
+
+<div class="footer">
+© 2026 Tasaciones de Arte
 </div>
 
 </body>
