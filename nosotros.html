@@ -1,80 +1,172 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros | Tasaciones de Arte</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Tipografía Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<title>Nosotros | Tasaciones de Arte</title>
 
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 40px 20px;
-            background: #f4f4f4;
-            color: #222;
-            line-height: 1.6;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-        .container {
-            max-width: 780px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 14px;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-        }
+<style>
+body{
+  margin:0;
+  font-family:'Inter', sans-serif;
+  background:#0a1220;
+  color:#e2e8f0;
+}
 
-        h1 {
-            font-size: 30px;
-            font-weight: 600;
-            margin-bottom: 25px;
-            text-align: center;
-            color: #1a1a1a;
-        }
+/* NAV — igual al index */
+.nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:18px;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  background:rgba(10,15,28,0.85);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
 
-        p {
-            font-size: 17px;
-            margin-bottom: 18px;
-        }
+.nav a{
+  color:#cbd5f5;
+  text-decoration:none;
+  font-size:14px;
+  white-space:nowrap;
+}
 
-        .sello {
-            display: block;
-            margin: 0 auto 30px auto;
-            max-width: 180px;
-            opacity: 0.95;
-        }
-    </style>
+/* SECCIÓN */
+.section{
+  max-width:1000px;
+  margin:auto;
+  padding:120px 20px 80px 20px;
+}
+
+/* CARD — igual al index */
+.card{
+  background:#020617;
+  border:1px solid rgba(148,163,184,0.15);
+  border-radius:12px;
+  padding:40px;
+}
+
+/* IMAGEN DEL SELLO */
+.sello{
+  display:block;
+  margin:0 auto 30px auto;
+  max-width:180px;
+  opacity:0.95;
+  border-radius:12px;
+}
+
+/* TÍTULO */
+h1{
+  text-align:center;
+  font-size:32px;
+  font-weight:600;
+  margin-bottom:25px;
+  color:#e2e8f0;
+}
+
+/* PÁRRAFOS */
+p{
+  font-size:17px;
+  color:#cbd5f5;
+  line-height:1.7;
+  margin-bottom:20px;
+}
+
+/* FOOTER — igual al index */
+footer{
+  margin-top:80px;
+  padding:40px 20px;
+  text-align:center;
+  color:#64748b;
+  font-size:14px;
+  border-top:1px solid rgba(148,163,184,0.15);
+}
+
+/* WHATSAPP — igual al index */
+.whatsapp{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:#25D366;
+  color:white;
+  padding:14px 18px;
+  border-radius:50px;
+  text-decoration:none;
+  z-index:1001;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .nav{
+    gap:15px;
+    padding:12px;
+    overflow-x:auto;
+    justify-content:flex-start;
+  }
+  h1{ font-size:26px; }
+  .card{ padding:28px; }
+}
+</style>
 </head>
 
 <body>
-    <div class="container">
 
-        <img src="nosotros/sello magister.png" alt="Sello Magíster" class="sello">
+<!-- NAV -->
+<div class="nav">
+  <a href="../index.html">Inicio</a>
+  <a href="../servicio.html">Servicio de Tasación</a>
+  <a href="../bitacora.html">Bitácora profesional</a>
+  <a href="../contacto.html">Contacto</a>
+</div>
 
-        <h1>Nosotros</h1>
+<!-- CONTENIDO -->
+<div class="section">
+  <div class="card">
 
-        <p>
-            Somos la Oficina Profesional <strong>“Tasaciones de Arte”</strong>, el despacho virtual del Licenciado en Arte 
-            <strong>Marco Iván Cabrera Hernández</strong>, quien cuenta además con una <strong>Maestría en Gestión Pública</strong>. 
-            Ambos grados —título profesional y posgrado— se encuentran debidamente registrados en <strong>SUNEDU</strong>.
-        </p>
+    <img src="sello magister.png" class="sello" alt="Sello Magíster">
 
-        <p>
-            Nuestra oficina se dedica a brindar el <strong>servicio profesional de tasación de obras de arte y bienes culturales</strong>, 
-            incluyendo bienes patrimoniales, entregando el <strong>Informe Técnico de Tasación</strong> correspondiente conforme a 
-            metodología, normativa y estándares vigentes.
-        </p>
+    <h1>Nosotros</h1>
 
-        <p>
-            Adicionalmente, Marco Iván Cabrera Hernández cuenta con <strong>inscripción oficial en la nómina de peritos adscritos 
-            al Ministerio de Vivienda, Construcción y Saneamiento (MVCS)</strong>. Ha sido el <strong>primer perito de arte</strong> 
-            inscrito en dicha nómina y, desde el año 2021 hasta la fecha (abril de 2026), continúa siendo el 
-            <strong>único perito Licenciado en Arte registrado</strong>, figurando actualmente como el <strong>Perito N.º 62</strong>.
-        </p>
+    <p>
+      Somos la Oficina Profesional <strong>“Tasaciones de Arte”</strong>, el despacho virtual del Licenciado en Arte 
+      <strong>Marco Iván Cabrera Hernández</strong>, quien cuenta además con una <strong>Maestría en Gestión Pública</strong>. 
+      Ambos grados —título profesional y posgrado— se encuentran debidamente registrados en <strong>SUNEDU</strong>.
+    </p>
 
-    </div>
+    <p>
+      Nuestra oficina se dedica a brindar el <strong>servicio profesional de tasación de obras de arte y bienes culturales</strong>, 
+      incluyendo bienes patrimoniales, entregando el <strong>Informe Técnico de Tasación</strong> correspondiente conforme a 
+      metodología, normativa y estándares vigentes.
+    </p>
+
+    <p>
+      Adicionalmente, Marco Iván Cabrera Hernández cuenta con <strong>inscripción oficial en la nómina de peritos adscritos 
+      al Ministerio de Vivienda, Construcción y Saneamiento (MVCS)</strong>. Ha sido el <strong>primer perito de arte</strong> 
+      inscrito en dicha nómina y, desde el año 2021 hasta la fecha (abril de 2026), continúa siendo el 
+      <strong>único perito Licenciado en Arte registrado</strong>, figurando actualmente como el <strong>Perito N.º 62</strong>.
+    </p>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 TASACIONES DE ARTE | MARCO CABRERA – PERITO REGISTRADO
+  <br><br>
+
+  <a href="../y-aviso-legal.html" style="color:#888; text-decoration:none; margin:0 8px;">Aviso Legal</a> · 
+  <a href="../y-politicadeprivacidad.html" style="color:#888; text-decoration:none; margin:0 8px;">Política de Privacidad</a> · 
+  <a href="../y-politica-cookies.html" style="color:#888; text-decoration:none; margin:0 8px;">Política de Cookies</a> · 
+  <a href="../y-libro-reclamaciones.html" style="color:#888; text-decoration:none; margin:0 8px;">Libro de Reclamaciones</a>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/51930046681">WhatsApp</a>
+
 </body>
 </html>
