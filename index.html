@@ -128,27 +128,26 @@ body{
   gap:30px;
 }
 
-/* ENLACES INSTITUCIONALES (Inscripción, 62, SUNEDU) */
+/* ENLACES INSTITUCIONALES */
 a.inscripción,
 a.registro,
 a.SUNEDU {
-  color:#cbd5f5;          /* color institucional suave */
-  text-decoration:none;   /* sin subrayado */
+  color:#cbd5f5;
+  text-decoration:none;
 }
 
 a.inscripción:hover,
 a.registro:hover,
 a.SUNEDU:hover {
-  color:#ffffff;          /* aclarado elegante */
+  color:#ffffff;
 }
 
 a.inscripción:visited,
 a.registro:visited,
 a.SUNEDU:visited {
-  color:#cbd5f5;          /* evita el morado del navegador */
+  color:#cbd5f5;
 }
 
-  
 @media(min-width:768px){
   .grid-2{
     grid-template-columns:1fr 1fr;
@@ -236,9 +235,52 @@ a.registro:hover, a.correo:hover{
     background: rgba(71, 85, 105, 0.6);
   }
 }
+
+/* MODALES */
+.ver {
+  color: #cbd5f5;
+  font-size: 13px;
+  margin-left: 6px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  background: #1e293b;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 60%;
+  max-width: 700px;
+  text-align: center;
+}
+
+.modal-content img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.close {
+  color: #cbd5f5;
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
 </style>
 
-<!-- ⭐ SCHEMA JSON-LD (invisible, técnico, correcto) -->
+<!-- ⭐ SCHEMA JSON-LD -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -262,7 +304,7 @@ a.registro:hover, a.correo:hover{
 
 <body>
 
-<!-- NAV ACTUALIZADO -->
+<!-- NAV -->
 <div class="nav">
   <a href="index.html">Inicio</a>
   <a href="servicio.html">Servicio de Tasación</a>
@@ -274,7 +316,6 @@ a.registro:hover, a.correo:hover{
   <div class="hero-content">
     <h1>Tasador de obras de arte</h1> 
     <p>Determinación del valor económico de las obras de arte, bienes culturales y patrimoniales.</p>
- 
 
     <p style="margin-top:18px;">
       <a href="servicio.html" style="color:#cbd5f5; text-decoration:underline; font-size:14px;">
@@ -332,17 +373,17 @@ a.registro:hover, a.correo:hover{
 
         <p>
           Licenciado en Arte 
-          <a class="ver" href="assets/index/titulo_profesional.pdf" target="_blank">ver</a>
+          <span class="ver" onclick="openModal('titulo')">ver</span>
         </p>
 
         <p>
           Magíster en Gestión Pública 
-          <a class="ver" href="assets/index/Grado en Gestión Pública.pdf" target="_blank">ver</a>
+          <span class="ver" onclick="openModal('grado')">ver</span>
         </p>
 
         <p>
           Título profesional habilitado en SUNEDU 
-          <a class="ver" href="assets/index/SUNEDU Títulos.pdf" target="_blank">ver</a>
+          <span class="ver" onclick="openModal('sunedu')">ver</span>
         </p>
 
         <p>
@@ -367,6 +408,28 @@ a.registro:hover, a.correo:hover{
     </p>
   </div>
 </section>
+
+<!-- MODALES -->
+<div id="modal-titulo" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('titulo')">&times;</span>
+    <img src="assets/index/Titulo Profesional anverso.jpg">
+  </div>
+</div>
+
+<div id="modal-grado" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('grado')">&times;</span>
+    <img src="assets/index/Grado en Gestión Pública 1.jpg">
+  </div>
+</div>
+
+<div id="modal-sunedu" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('sunedu')">&times;</span>
+    <img src="assets/index/SUNEDU_page-0001 (1).jpg">
+  </div>
+</div>
 
 <section class="section">
   <img src="assets/index/informes técnicos de tasación.png">
