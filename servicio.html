@@ -25,7 +25,7 @@ body{
   color:var(--text);
 }
 
-/* NAV */
+/* NAV — corregido para igualar Inicio y Bitácora */
 .nav{
   position:fixed;
   top:0;
@@ -33,7 +33,7 @@ body{
   padding:18px;
   display:flex;
   justify-content:center;
-  gap:30px;
+  gap:20px; /* antes 30px */
   background:rgba(10,15,28,0.85);
   backdrop-filter:blur(10px);
   z-index:1000;
@@ -46,11 +46,9 @@ body{
   white-space:nowrap;
 }
 
-/* HERO */
+/* HERO — corregido para igualar Inicio y Bitácora */
 .hero{
   height:100vh;
-  background:url('assets/servicios/Conversando.jpg') center no-repeat;
-  background-size:130%;
   position:relative;
   display:flex;
   align-items:center;
@@ -58,12 +56,24 @@ body{
   z-index:1;
 }
 
+/* Capa de imagen (igual que en index y bitácora) */
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(10,15,28,0.75);
+  background:url('assets/servicios/Conversando.jpg') center no-repeat;
+  background-size:130%;
+  opacity:0.85;
   z-index:0;
+}
+
+/* Capa de oscurecimiento (igual que en index y bitácora) */
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(10,15,28,0.75);
+  z-index:1;
 }
 
 .hero-content{
@@ -238,11 +248,21 @@ footer a{
   }
 }
 
-/* AJUSTE PARA QUE EL HERO SE VEA IGUAL QUE EN INDEX EN MÓVIL */
+/* NAV móvil — igual que Inicio y Bitácora */
 @media(max-width:768px){
-  .hero{
-    background-size:cover !important;
-    background-position:center !important;
+  .nav{
+    gap:15px;
+    padding:12px;
+    overflow-x:auto;
+    justify-content:flex-start;
+  }
+}
+
+/* HERO móvil — igual que Inicio y Bitácora */
+@media(max-width:768px){
+  .hero::before{
+    background-size:cover;
+    background-position:center;
   }
 }
 </style>
