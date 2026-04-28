@@ -238,6 +238,29 @@ body{
   .hero h1{
     font-size:36px;
   }
+
+  <style>
+  /* … tu CSS … */
+
+  .whatsapp-float {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    width: 62px;
+    height: 62px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    z-index: 9999;
+  }
+
+  .whatsapp-float img {
+    width: 36px;
+    height: 36px;
+  }
 }
 </style>
 </head>
@@ -562,7 +585,10 @@ body{
   </a>
 </footer>
   
-<a class="whatsapp" href="https://wa.me/51930046681">WhatsApp</a>
+<a href="https://wa.me/51930046681" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+  <img src="img/whatsapp.svg" alt="WhatsApp">
+</a>
+
 
 <script>
 function openModal(id) {
