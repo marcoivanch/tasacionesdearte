@@ -4,21 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>¿Cuánto cuesta tasar una obra de arte en Perú? | Tasación profesional</title>
+<title>The Ten Most Expensive Peruvian Paintings (Updated — June 2025)</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
-body {
-  margin:0;
-  font-family:'Inter',sans-serif;
-  background:#0a0f1c;
-  color:#e2e8f0;
+:root{
+  --gold:#c5a059;
+  --bg:#0a1220;
+  --card:#020617;
+  --text:#e2e8f0;
+  --text-soft:#94a3b8;
+  --border:rgba(148,163,184,0.15);
 }
 
-/* NAV CORREGIDO */
-.nav {
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* NAV */
+.nav{
   position:fixed;
   top:0;
   width:100%;
@@ -31,74 +39,191 @@ body {
   z-index:1000;
 }
 
-.nav a {
+.nav a{
   color:#cbd5f5;
   text-decoration:none;
   font-size:14px;
   white-space:nowrap;
 }
 
-.header {
-  text-align:center;
-  padding:140px 20px 60px;
+/* HERO */
+.hero{
+  height:100vh;
+  position:relative;
+  display:flex;
+  align-items:center;
+  padding:0 40px;
+  z-index:1;
 }
 
-.header h1 {
-  font-family:'Playfair Display',serif;
-  font-size:40px;
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url('assets/servicios/FDC N1 b.jpg') center no-repeat;
+  background-size:130%;
+  opacity:0.85;
+  z-index:0;
 }
 
-.container {
-  max-width:900px;
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(10,15,28,0.75);
+  z-index:1;
+}
+
+.hero-content{
+  position:relative;
+  max-width:650px;
+  z-index:2;
+}
+
+.hero h1{
+  font-size:46px;
+  font-weight:600;
+  margin-bottom:12px;
+}
+
+.hero p{
+  color:var(--text-soft);
+  line-height:1.55;
+  font-size:17px;
+  max-width:520px;
+}
+
+/* SECCIONES */
+.section{
+  max-width:1100px;
   margin:auto;
-  padding:20px;
-  line-height:1.8;
+  padding:70px 20px;
 }
 
-h2 {
-  font-family:'Playfair Display',serif;
-  margin-top:40px;
+.section h2{
+  margin-bottom:25px;
+  font-size:26px;
+  font-weight:600;
+  color:var(--gold);
 }
 
-p {
-  color:#cbd5f5;
+/* NOTA METODOLÓGICA */
+.nota{
+  max-width:1100px;
+  margin:80px auto 40px;
+  padding:0 20px;
+  line-height:1.6;
+  color:var(--text-soft);
 }
 
-.cta {
-  margin-top:40px;
-  text-align:center;
-}
-
-.btn {
+.nota a{
   display:inline-block;
-  margin-top:15px;
-  background:#25D366;
+  margin-top:18px;
+  padding:12px 22px;
+  border-radius:8px;
+  background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.25);
   color:white;
-  padding:14px 22px;
-  border-radius:30px;
   text-decoration:none;
+  font-size:14px;
 }
 
-.footer {
+/* RANKING */
+.ranking{
+  max-width:1100px;
+  margin:40px auto 80px;
+  padding:0 20px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.card-rank{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:25px;
+  cursor:pointer;
+  display:flex;
+  gap:25px;
+  align-items:center;
+}
+
+.card-rank .puesto{
+  font-size:42px;
+  font-weight:600;
+  color:var(--gold);
+  width:60px;
   text-align:center;
-  padding:40px;
-  color:#64748b;
 }
 
-/* WHATSAPP */
-.whatsapp{
+.card-rank h3{
+  margin:0;
+  font-size:20px;
+  color:var(--text);
+}
+
+.card-rank p{
+  margin:4px 0;
+  color:var(--text-soft);
+}
+
+.card-rank .valor{
+  color:var(--gold);
+  font-weight:500;
+}
+
+/* MODALES */
+.modal{
   position:fixed;
-  bottom:25px;
-  right:25px;
-  background:#25D366;
-  color:white;
-  padding:14px 18px;
-  border-radius:50px;
-  text-decoration:none;
-  z-index:9999;
+  inset:0;
+  background:rgba(0,0,0,0.65);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:5000;
+  backdrop-filter:blur(4px);
 }
 
-/* MOBILE NAV */
+.modal-box{
+  background:#0f172a;
+  border:1px solid rgba(148,163,184,0.25);
+  border-radius:14px;
+  padding:30px;
+  max-width:520px;
+  width:90%;
+  color:#e2e8f0;
+  box-shadow:0 0 25px rgba(0,0,0,0.4);
+}
+
+.modal-box h2{
+  margin-top:0;
+  color:var(--gold);
+}
+
+.modal-box a{
+  display:inline-block;
+  margin-top:18px;
+  padding:12px 22px;
+  border-radius:8px;
+  background:#1e293b;
+  border:1px solid rgba(255,255,255,0.25);
+  color:white;
+  text-decoration:none;
+}
+
+.cerrar-btn{
+  margin-top:20px;
+  padding:10px 20px;
+  background:#1e293b;
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:8px;
+  color:#e2e8f0;
+  cursor:pointer;
+  font-size:14px;
+}
+
+/* RESPONSIVE */
 @media(max-width:768px){
   .nav{
     gap:15px;
@@ -106,80 +231,389 @@ p {
     overflow-x:auto;
     justify-content:flex-start;
   }
+  .hero{
+    height:auto;
+    padding:120px 20px 80px;
+  }
+  .hero h1{
+    font-size:36px;
+  }
 
-  .nav a{
-    font-size:13px;
+  <style>
+  /* … tu CSS … */
+
+  .whatsapp-float {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    width: 62px;
+    height: 62px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    z-index: 9999;
+  }
+
+  .whatsapp-float img {
+    width: 36px;
+    height: 36px;
   }
 }
-
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <div class="nav">
   <a href="index.html">Inicio</a>
+  <a href="servicio.html">Servicio de Tasación</a>
   <a href="bitacora.html">Bitácora profesional</a>
-  <a href="ranking.html">Mercado del arte</a>
   <a href="contacto.html">Contacto</a>
 </div>
 
-<div class="header">
-  <h1>¿Cuánto cuesta tasar una obra de arte en Perú?</h1>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>RANKING: Las 10 pinturas peruanas más caras</h1>
+    <p>Observación: La categoría “pinturas peruanas” se define por criterio de autoría (nacionalidad del artista), independientemente del lugar de producción, la iconografía o la trayectoria comercial de la obra.</p>
+    <p>Valores actualizados a marzo de 2026. Ranking técnico derivado y actualizado a partir del artículo con Depósito Legal Nº 2026‑04426.</p>
+  </div>
+</section>
+
+<!-- NOTA METODOLÓGICA -->
+<div class="nota">
+  <p><strong>Nota metodológica (actualización marzo 2026):</strong><br>
+  El presente ranking está basado en el artículo <em>“Las diez pinturas más caras peruanas (Actualización junio 2025)”</em>,
+  cuyo Depósito Legal en la Biblioteca Nacional del Perú es <strong>Nº 2026‑04426</strong>. Los valores han sido actualizados
+  aplicando exclusivamente el criterio de <strong>inflación acumulada</strong> entre junio 2025 y marzo 2026, utilizando el
+  índice CPI‑U del Bureau of Labor Statistics (BLS) de los Estados Unidos.</p>
+
+  <p>Este cuadro constituye un <strong>insumo informativo</strong>. Un peritaje técnico incorpora además criterios hedonísticos,
+  atributos intrínsecos de la obra, estado de conservación, procedencia, rareza y demanda histórica, que <strong>no forman parte</strong>
+  de este ranking.</p>
+
+  <a href="https://www.researchgate.net/publication/395194172_The_Ten_Most_Expensive_Peruvian_Paintings" target="_blank">
+    Leer artículo completo en ResearchGate
+  </a>
 </div>
 
-<div class="container">
+<!-- RANKING -->
+<section class="ranking">
 
-<p>
-El costo de una tasación de obras de arte en Perú no es un valor fijo, ya que depende de diversos factores técnicos, documentales y del propósito del informe.
-</p>
+  <!-- 1 -->
+  <div class="card-rank" onclick="abrirModal('m1')">
+    <div class="puesto">1</div>
+    <div>
+      <h3>Federico del Campo</h3>
+      <p><em>The Grand Canal, Venice</em></p>
+      <p class="valor">US$ 1,028,541.10 (marzo 2026)</p>
+      <p>18/04/2008 — Sotheby’s</p>
+    </div>
+  </div>
 
-<h2>Factores que determinan el costo</h2>
+  <!-- 2 -->
+  <div class="card-rank" onclick="abrirModal('m2')">
+    <div class="puesto">2</div>
+    <div>
+      <h3>Tilsa Tsuchiya</h3>
+      <p><em>Tristán e Isolda</em></p>
+      <p class="valor">US$ 973,324.31 (marzo 2026)</p>
+      <p>18/05/2022 — Sotheby’s</p>
+    </div>
+  </div>
 
-<p>
-El valor del servicio depende principalmente de la naturaleza de la obra, su autenticidad, estado de conservación, documentación disponible y el tipo de análisis requerido.
-</p>
+  <!-- 3 -->
+  <div class="card-rank" onclick="abrirModal('m3')">
+    <div class="puesto">3</div>
+    <div>
+      <h3>Federico del Campo</h3>
+      <p><em>A View of the Grand Canal with Palazzo Cavalli‑Franchetti</em></p>
+      <p class="valor">US$ 915,737.08 (marzo 2026)</p>
+      <p>18/05/2016 — Sotheby’s</p>
+    </div>
+  </div>
 
-<p>
-No es lo mismo una evaluación referencial que un informe técnico con validez legal para procesos judiciales o patrimoniales.
-</p>
+  <!-- 4 -->
+  <div class="card-rank" onclick="abrirModal('m4')">
+    <div class="puesto">4</div>
+    <div>
+      <h3>Luis de Riaño</h3>
+      <p><em>Arcángel San Miguel</em></p>
+      <p class="valor">US$ 616,237.28 (marzo 2026)</p>
+      <p>30/07/2020 — Christie’s</p>
+    </div>
+  </div>
 
-<h2>Diferencia entre tasación y peritaje</h2>
+  <!-- 5 -->
+  <div class="card-rank" onclick="abrirModal('m5')">
+    <div class="puesto">5</div>
+    <div>
+      <h3>Federico del Campo</h3>
+      <p><em>The Doge’s Palace and Santa Maria della Salute</em></p>
+      <p class="valor">US$ 570,008.59 (marzo 2026)</p>
+      <p>12/06/2012 — Christie’s</p>
+    </div>
+  </div>
 
-<p>
-Una tasación informal puede ofrecer un valor aproximado, mientras que un peritaje técnico implica metodología, análisis documental y respaldo normativo.
-</p>
+  <!-- 6 -->
+  <div class="card-rank" onclick="abrirModal('m6')">
+    <div class="puesto">6</div>
+    <div>
+      <h3>Federico del Campo</h3>
+      <p><em>The Ca d’Oro, Venice</em></p>
+      <p class="valor">US$ 538,536.89 (marzo 2026)</p>
+      <p>04/11/2010 — Sotheby’s</p>
+    </div>
+  </div>
 
-<p>
-Este último es requerido en contextos legales, seguros o procesos institucionales.
-</p>
+  <!-- 7 -->
+  <div class="card-rank" onclick="abrirModal('m7')">
+    <div class="puesto">7</div>
+    <div>
+      <h3>Federico del Campo</h3>
+      <p><em>Gondoliers on the Grand Canal</em></p>
+      <p class="valor">US$ 480,967.22 (marzo 2026)</p>
+      <p>03/11/2015 — Sotheby’s</p>
+    </div>
+  </div>
 
-<h2>¿Cuándo se necesita una tasación profesional?</h2>
+  <!-- 8 -->
+  <div class="card-rank" onclick="abrirModal('m8')">
+    <div class="puesto">8</div>
+    <div>
+      <h3>Federico del Campo</h3>
+      <p><em>The Grand Canal, Venizia</em></p>
+      <p class="valor">US$ 462,716.97 (marzo 2026)</p>
+      <p>28/04/2014 — Christie’s</p>
+    </div>
+  </div>
 
-<p>Procesos de herencia o sucesión.</p>
-<p>Seguros de obras de arte.</p>
-<p>Procesos judiciales.</p>
-<p>Compra o venta de obras.</p>
+  <!-- 9 -->
+  <div class="card-rank" onclick="abrirModal('m9')">
+    <div class="puesto">9</div>
+    <div>
+      <h3>Tilsa Tsuchiya</h3>
+      <p><em>Mujer volando</em></p>
+      <p class="valor">US$ 443,590.73 (marzo 2026)</p>
+      <p>30/05/2013 — Christie’s</p>
+    </div>
+  </div>
 
-<h2>Consideración final</h2>
+  <!-- 10 -->
+  <div class="card-rank" onclick="abrirModal('m10')">
+    <div class="puesto">10</div>
+    <div>
+      <h3>Escuela de Jacinto Carbajal</h3>
+      <p><em>La aparición de la Virgen de Caima</em></p>
+      <p class="valor">US$ 434,215.91 (marzo 2026)</p>
+      <p>09/12/2024 — Coutau‑Bégarie</p>
+    </div>
+  </div>
 
-<p>
-Cada caso requiere una evaluación específica, por lo que el costo se determina en función del alcance del servicio.
-</p>
+</section>
 
-<div class="cta">
-  <p>Consulta directa con perito de arte en Lima</p>
-  <a class="btn" href="contacto.html">Solicitar evaluación</a>
+<!-- MODALES COMPLETOS (1–10) -->
+<div id="m1" class="modal">
+  <div class="modal-box">
+    <h2>Puesto 1 — Federico del Campo</h2>
+    <h3><em>The Grand Canal, Venice</em></h3>
+    <p><strong>Precio original:</strong> US$ 685,000.00</p>
+    <p><strong>Fecha de venta:</strong> 18/04/2008</p>
+    <p><strong>Casa de subasta:</strong> Sotheby’s</p>
+    <p><strong>Valor actualizado (marzo 2026):</strong> US$ 1,028,541.10</p>
+    <a href="https://www.sothebys.com/en/auctions/ecatalogue/2008/19th-century-european-art-including-the-orientalist-sale-n08431/lot.9.html" target="_blank">Ver subasta</a>
+    <button class="cerrar-btn" onclick="cerrarModal('m1')">Cerrar</button>
+  </div>
 </div>
 
+<div id="m2" class="modal">
+  <div class="modal-box">
+    <h2>Puesto 2 — Tilsa Tsuchiya</h2>
+    <h3><em>Tristán e Isolda</em></h3>
+    <p><strong>Precio original:</strong> US$ 882,000.00</p>
+    <p><strong>Fecha de venta:</strong> 18/05/2022</p>
+    <p><strong>Casa de subasta:</strong> Sotheby’s</p>
+    <p><strong>Valor actualizado (marzo 2026):</strong> US$ 973,324.31</p>
+    <a href="https://www.sothebys.com/en/buy/auction/2022/modern-day-auction/tristan-e-isolda" target="_blank">Ver subasta</a>
+    <button class="cerrar-btn" onclick="cerrarModal('m2')">Cerrar</button>
+  </div>
 </div>
 
-<div class="footer">
-© 2026 Tasaciones de Arte
+<div id="m3" class="modal">
+  <div class="modal-box">
+    <h2>Puesto 3 — Federico del Campo</h2>
+    <h3><em>A View of the Grand Canal with Palazzo Cavalli‑Franchetti</em></h3>
+    <p><strong>Precio original:</strong> US$ 682,000.00</p>
+    <p><strong>Fecha de venta:</strong> 18/05/2016</p>
+    <p><strong>Casa de subasta:</strong> Sotheby’s</p>
+    <p><strong>Valor actualizado (marzo 2026):</strong> US$ 915,737.08</p>
+    <a href="https://www.sothebys.com/en/auctions/ecatalogue/2016/19th-century-european-art-n09499/lot.21.html" target="_blank">Ver subasta</a>
+    <button class="cerrar-btn" onclick="cerrarModal('m3')">Cerrar</button>
+  </div>
 </div>
 
-<!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/51930046681">WhatsApp</a>
+<div id="m4" class="modal">
+  <div class="modal-box">
+    <h2>Puesto 4 — Luis de Riaño</h2>
+    <h3><em>Arcángel San Miguel</em></h3>
+    <p><strong>Precio original:</strong> US$ 495,000.00</p>
+    <p><strong>Fecha de venta:</strong> 30/07/2020</p>
+    <p><strong>Casa de subasta:</strong> Christie’s</p>
+    <p><strong>Valor actualizado (marzo 2026):</strong> US$ 616,237.28</p>
+    <a href="https://www.christies.com/en/lot/lot-6275205" target="_blank">Ver subasta</a>
+    <button class="cerrar-btn" onclick="cerrarModal('m4')">Cerrar</button>
+  </div>
+</div>
+
+<div id="m5" class="modal">
+  <div class="modal-box">
+    <h2>Puesto 5 — Federico del Campo</h2>
+    <h3><em>The Doge’s Palace and Santa Maria della Salute</em></h3>
+    <p><strong>Precio original:</strong> £253,250.00</p>
+    <p><strong>Fecha de venta:</strong> 12/06/2012</p>
+    <p><strong>Casa de subasta:</strong> Christie’s</p>
+    <p><strong>Valor actualizado (marzo 2026):</strong> US$ 570,008.59</p>
+    <a href="https://www.christies.com/lot/lot-5576215" target="_blank">Ver subasta</a>
+    <button class="cerrar-btn" onclick="cerrarModal('m5')">Cerrar</button>
+  </div>
+</div>
+
+<div id="m6" class="modal">
+  <div class="modal-box">
+    <h2>Puesto 6 — Federico del Campo</h2>
+    <h3><em>The Ca d’Oro, Venice</em></h3>
+    <p><strong>Precio original:</strong> US$ 386,500.00</p>
+    <p><strong>Fecha de venta:</strong> 04/11/2010</p>
+    <p><strong>Casa de subasta:</strong> Sotheby’s</p>
+    <p><strong>Valor actualizado (marzo 2026):</strong> US$ 538,536.89</p>
+    <a href="https://www.sothebys.com/en/auctions/ecatalogue/2010/19th-century-european-art-n08673/lot.3.html" target="_blank">Ver subasta</a>
+    <button class="cerrar-btn" onclick="cerrarModal('m6')">Cerrar</button>
+  </div>
+</div>
+
+<div id="m7" class="modal">
+  <div class="modal-box">
+    <h2>Puesto 7 — Federico del Campo</h2>
+    <h3><em>Gondoliers on the Grand Canal</em></h3>
+    <p><strong>Precio original:</strong> US$ 382,000.00</p>
+    <p><strong>Fecha de venta:</strong> 03/11/2015</p>
+    <p><strong>Casa de subasta:</strong> Sotheby’s</p>
+    <p><strong>Valor actualizado (marzo 2026):</strong> US$ 480,967.22</p>
+    <a href="https://www.sothebys.com/en/auctions/ecatalogue/2015/19th-century-european-art-n09417/lot.86.html" target="_blank">Ver subasta</a>
+    <button class="cerrar-btn" onclick="cerrarModal('m7')">Cerrar</button>
+  </div>
+</div>
+
+<div id="m8" class="modal">
+  <div class="modal-box">
+    <h2>Puesto 8 — Federico del Campo</h2>
+    <h3><em>The Grand Canal, Venizia</em></h3>
+    <p><strong>Precio original:</strong> US$ 365,000.00</p>
+    <p><strong>Fecha de venta:</strong> 28/04/2014</p>
+    <p><strong>Casa de subasta:</strong> Christie’s</p>
+    <p><strong>Valor actualizado (marzo 2026):</strong> US$ 462,716.97</p>
+    <a href="https://www.christies.com/en/lot/lot-5786684" target="_blank">Ver subasta</a>
+    <button class="cerrar-btn" onclick="cerrarModal('m8')">Cerrar</button>
+  </div>
+</div>
+
+<div id="m9" class="modal">
+  <div class="modal-box">
+    <h2>Puesto 9 — Tilsa Tsuchiya</h2>
+    <h3><em>Mujer volando</em></h3>
+    <p><strong>Precio original:</strong> US$ 339,750.00</p>
+    <p><strong>Fecha de venta:</strong> 30/05/2013</p>
+    <p><strong>Casa de subasta:</strong> Christie’s</p>
+    <p><strong>Valor actualizado (marzo 2026):</strong> US$ 443,590.73</p>
+    <a href="https://www.christies.com/en/lot/lot-5682386" target="_blank">Ver subasta</a>
+    <button class="cerrar-btn" onclick="cerrarModal('m9')">Cerrar</button>
+  </div>
+</div>
+
+<div id="m10" class="modal">
+  <div class="modal-box">
+    <h2>Puesto 10 — Escuela de Jacinto Carbajal</h2>
+    <h3><em>La aparición de la Virgen de Caima</em></h3>
+    <p><strong>Precio original:</strong> € 403,000.00</p>
+    <p><strong>Fecha de venta:</strong> 09/12/2024</p>
+    <p><strong>Casa de subasta:</strong> Coutau‑Bégarie</p>
+    <p><strong>Valor actualizado (marzo 2026):</strong> US$ 434,215.91</p>
+    <a href="https://coutaubegarie.com/recherche?query=jacinto" target="_blank">Ver subasta</a>
+    <button class="cerrar-btn" onclick="cerrarModal('m10')">Cerrar</button>
+  </div>
+</div>
+
+
+<!-- SECCIÓN TEÓRICA -->
+<section class="section">
+  <h2>Contexto y fundamentos del ranking</h2>
+  <p>La elaboración de este ranking responde a la necesidad de contar con una referencia ordenada y verificable sobre los precios más altos alcanzados por pinturas de autores peruanos en subastas internacionales. La información disponible ha sido históricamente fragmentaria, dispersa y, en muchos casos, transmitida sin contraste documental.</p>
+
+  <p>El artículo base sistematiza por primera vez, con criterios homogéneos, un conjunto de ventas relevantes, identificando montos, fechas, casas de subasta, monedas originales y correcciones temporales mediante índices de inflación.</p>
+
+  <h2>Metodología</h2>
+
+  <p>La selección de obras, criterios de inclusión y estructura del ranking responden a una metodología propia.</p>
+  
+  <p>La corrección temporal se realiza tomando como referencia los valores calculados a junio de 2025 en el artículo original, y aplicando un ajuste adicional por inflación acumulada hasta marzo de 2026. Este procedimiento permite comparar montos históricos en términos equivalentes manteniendo, en términos generales, la jerarquía observada.</p>
+
+  <p>No se incorporan en este cuadro variables hedonísticas ni ajustes por rareza, demanda específica, estado de conservación u otros factores propios de una tasación profesional. El criterio único de homogenización es la inflación.</p>
+
+  <h2>Reserva</h2>
+  <p>El presente ranking tiene carácter informativo y no sustituye un informe de tasación. Cualquier decisión patrimonial, contractual, tributaria o judicial debe basarse en un peritaje técnico formal, emitido bajo responsabilidad profesional y con metodología explícita.</p>
+  <p>Esta clasificación constituye un registro de precios históricos en subastas internacionales (ajustados por inflación) y no equivale a una determinación de valor actual de las obras.</p>
+  
+  <h2>Aviso legal</h2>
+  <p>Queda prohibida la reproducción total o parcial de este ranking, incluyendo su estructura, criterios y organización, sin autorización expresa del autor, salvo cita académica debidamente referenciada.</p>
+
+</section>
+
+<!-- FOOTER INSTITUCIONAL -->
+<footer style="text-align:center; padding:40px 0; color:#64748b; font-size:14px;">
+  © 2026 TASACIONES DE ARTE | MARCO CABRERA – PERITO REGISTRADO
+   <br><br>
+
+  <a href="y-aviso-legal.html" style="color:#888; text-decoration:none; margin:0 8px;">
+    Aviso legal
+  </a> · 
+
+  <a href="y-politicadeprivacidad.html" style="color:#888; text-decoration:none; margin:0 8px;">
+    Política de privacidad
+  </a> · 
+
+  <a href="y-politica-cookies.html" style="color:#888; text-decoration:none; margin:0 8px;">
+    Política de cookies
+  </a> · 
+
+  <a href="y-libro-reclamaciones.html" style="color:#888; text-decoration:none; margin:0 8px;">
+    Libro de reclamaciones
+  </a>
+</footer>
+  
+<script>
+function openModal(id) {
+  document.getElementById('modal-' + id).style.display = 'block';
+}
+
+function closeModal(id) {
+  document.getElementById('modal-' + id).style.display = 'none';
+}
+</script>
+  
+
+<!-- SCRIPT MODALES -->
+<script>
+function abrirModal(id){
+  document.getElementById(id).style.display = 'flex';
+}
+function cerrarModal(id){
+  document.getElementById(id).style.display = 'none';
+}
+</script>
 
 </body>
 </html>
