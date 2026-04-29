@@ -277,6 +277,31 @@ a.registro:hover, a.correo:hover{
   float: right;
   font-size: 28px;
   cursor: pointer;
+
+/* TOOLTIP */
+.tooltip {
+  position: relative;
+  cursor: pointer;
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  background-color: #1e293b;
+  color: #cbd5f5;
+  padding: 6px 10px;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 10;
+  top: -5px;
+  left: 20px;
+  white-space: nowrap;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 }
 </style>
 
@@ -350,9 +375,12 @@ a.registro:hover, a.correo:hover{
   <div class="card">
     <h2>Nosotros</h2>
     <p></p>
-      <p>Usted se encuentra en tasacionesdearte.org.pe (antes tasacionesdearte.org.es), oficina virtual del Licenciado 
-      Marco Cabrera.</p>
-       
+      <p>
+        Usted se encuentra en tasacionesdearte.org.pe oficina virtual del Licenciado Marco Cabrera
+        <span class="tooltip">(i)
+          <span class="tooltiptext">antes tasacionesdearte.org.es</span>
+        </span>
+      </p>     
       <p>Si tiene un bien artístico o cultural y necesita conocer su valor comercial (precio), no dude en llamarnos.</p>
       
       <p>Solicite una <a href="consulta_profesional.html" style="color:#cbd5f5; text-decoration:underline; font-weight:500;">consulta</a>.</p>
