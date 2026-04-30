@@ -109,6 +109,69 @@ body {
   }
 }
 
+/* NOTA DEL BIEN CULTURAL */
+.nota-bien {
+  font-size:13px;
+  color:#7c869a;
+  margin:30px 0 -10px 8%;
+  font-family:"Inter",sans-serif;
+  opacity:0.85;
+}
+
+.nota-bien span {
+  color:#9aa4b8;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.nota-bien span:hover {
+  color:var(--primary-gold);
+}
+
+/* MODAL */
+.modal-bg {
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.65);
+  backdrop-filter:blur(4px);
+  z-index:2000;
+}
+
+.modal-card {
+  background:#111827;
+  width:90%;
+  max-width:480px;
+  margin:120px auto;
+  padding:25px 30px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.08);
+  color:#e5e7eb;
+}
+
+.modal-card h3 {
+  margin-top:0;
+  font-size:20px;
+  color:var(--primary-gold);
+}
+
+.modal-card p {
+  font-size:15px;
+  line-height:1.6;
+  color:#cbd5e1;
+}
+
+.cerrar-modal {
+  margin-top:20px;
+  background:var(--primary-gold);
+  border:none;
+  padding:10px 18px;
+  border-radius:4px;
+  cursor:pointer;
+  font-weight:600;
+  color:#000;
+}
+
 /* CONTENEDOR */
 .container {
   max-width:1100px;
@@ -214,9 +277,41 @@ footer a {
   </div>
 </section>
 
+<!-- NOTA DEL BIEN CULTURAL -->
+<p class="nota-bien">
+  Registro Nacional SINAR – MINCUL 
+  <span id="abrirModal">N.º 0000348788</span>
+</p>
+
+<!-- MODAL -->
+<div class="modal-bg" id="modalFicha">
+  <div class="modal-card">
+    <h3>Ficha del Bien Cultural</h3>
+
+    <p><strong>Título:</strong> Vista del Gran Canal de Venecia</p>
+    <p><strong>Autor:</strong> Federico Del Campo</p>
+    <p><strong>Datación:</strong> 1913</p>
+    <p><strong>Clasificación:</strong> Histórico – Artístico</p>
+    <p><strong>Técnica:</strong> Óleo sobre tela</p>
+    <p><strong>Registro:</strong> SINAR – MINCUL N.º 0000348788</p>
+
+    <button class="cerrar-modal" id="cerrarModal">Cerrar</button>
+  </div>
+</div>
+
+<script>
+document.getElementById("abrirModal").onclick = () => {
+  document.getElementById("modalFicha").style.display = "block";
+};
+
+document.getElementById("cerrarModal").onclick = () => {
+  document.getElementById("modalFicha").style.display = "none";
+};
+</script>
+
 <div class="container">
 
-<!-- VIDEO PRINCIPAL (YOUTUBE HORIZONTAL) -->
+<!-- VIDEO PRINCIPAL -->
   <div style="max-width:800px;margin:auto;">
     <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
       <iframe
@@ -228,7 +323,6 @@ footer a {
       </iframe>
     </div>
   </div>
-
 
   <!-- TEXTO EDITORIAL -->
   <div class="texto">
@@ -271,4 +365,3 @@ footer a {
 
 </body>
 </html>
-
