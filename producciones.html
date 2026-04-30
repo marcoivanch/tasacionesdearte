@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Producciones | Tasaciones de Arte</title>
+<title>Producciones académicas y críticas | Tasaciones de Arte</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -57,7 +57,7 @@ body {
   .nav a{ font-size:13px; }
 }
 
-/* HERO — COPIADO EXACTO DE BITÁCORA */
+/* HERO — IGUAL A BITÁCORA */
 .hero {
   height:100vh;
   display:flex;
@@ -116,32 +116,39 @@ body {
   padding:80px 20px;
 }
 
-/* BLOQUES */
+/* CARDS ESTRECHAS (SIN CORTAR FOTOS) */
 .bloque {
   background:var(--card-bg);
   border:1px solid rgba(255,255,255,0.05);
   border-radius:6px;
-  padding:35px;
-  margin-bottom:50px;
-  text-align:center;
+  padding:25px 30px;
+  margin-bottom:35px;
+  display:flex;
+  gap:25px;
+  align-items:flex-start;
 }
 
-/* MINIATURAS REALES */
 .bloque img {
-  width:260px;
+  width:150px;
   height:auto;
   border-radius:4px;
-  margin-bottom:20px;
+  flex-shrink:0;
+}
+
+.bloque-contenido {
+  flex:1;
 }
 
 .bloque h3 {
-  font-size:24px;
-  margin:0 0 10px 0;
+  font-size:22px;
+  margin:0 0 8px 0;
+  text-align:left;
 }
 
 .bloque p {
   color:var(--text-dim);
-  margin-bottom:20px;
+  margin-bottom:15px;
+  text-align:left;
 }
 
 .bloque a {
@@ -149,14 +156,22 @@ body {
   text-decoration:none;
   font-weight:600;
   letter-spacing:0.5px;
+  display:inline-block;
 }
 
 .bloque a:hover { opacity:0.8; }
 
 /* MÓVIL */
 @media(max-width:768px){
-  .bloque { padding:25px; }
-  .bloque img { width:200px; }
+  .bloque {
+    flex-direction:column;
+    padding:20px;
+  }
+  .bloque img {
+    width:100%;
+    max-width:240px;
+    margin:auto;
+  }
   .bloque h3 { font-size:20px; }
   .bloque p { font-size:15px; }
 }
@@ -226,10 +241,10 @@ footer a {
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <h1 class="titulo-desktop">Producciones<br>académicas<br>y críticas</h1>
-    <h1 class="titulo-mobile">Producciones<br>académicas<br>y críticas</h1>
+    <h1 class="titulo-desktop">Producciones<br>académicas y<br>críticas</h1>
+    <h1 class="titulo-mobile">Producciones<br>académicas y<br>críticas</h1>
     <p style="color:var(--primary-gold);font-weight:600; letter-spacing:1px; margin-top:15px;">
-      Material audiovisual y documental
+      Material audiovisual y crítica especializada
     </p>
   </div>
 </section>
@@ -239,17 +254,21 @@ footer a {
   <!-- FEDERICO DEL CAMPO -->
   <div class="bloque">
     <img src="../assets/producciones/FDCminiatura.png" alt="Federico del Campo">
-    <h3>Federico del Campo</h3>
-    <p>Producciones, análisis y material audiovisual.</p>
-    <a href="#">Ver contenido →</a>
+    <div class="bloque-contenido">
+      <h3>Federico del Campo</h3>
+      <p>Producciones, análisis técnico y material audiovisual.</p>
+      <a href="#">Ver contenido →</a>
+    </div>
   </div>
 
   <!-- FRANCISCO GONZÁLEZ GAMARRA -->
   <div class="bloque">
     <img src="../assets/producciones/FGGminiatura.png" alt="Francisco González Gamarra">
-    <h3>Francisco González Gamarra</h3>
-    <p>Material documental y análisis crítico.</p>
-    <a href="#">Ver contenido →</a>
+    <div class="bloque-contenido">
+      <h3>Francisco González Gamarra</h3>
+      <p>Material documental y crítica especializada.</p>
+      <a href="#">Ver contenido →</a>
+    </div>
   </div>
 
 </div>
