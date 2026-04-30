@@ -1,116 +1,227 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Producciones | Tasaciones de Arte</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../assets/css/estilos.css">
+<title>Producciones | Tasaciones de Arte</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        .hero {
-            width: 100%;
-            height: 380px;
-            background-image: url("../assets/producciones/FP.png");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+<style>
+:root {
+  --primary-gold:#c5a059;
+  --bg-dark:#0a0f1c;
+  --card-bg:#0d1425;
+  --text-main:#e2e8f0;
+  --text-dim:#94a3b8;
+  --accent-green:#25D366;
+}
 
-        .contenedor {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+body {
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--bg-dark);
+  color:var(--text-main);
+  overflow-x:hidden;
+}
 
-        h1 {
-            font-size: 42px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
+/* NAV UNIFICADO */
+.nav {
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:18px;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  background:rgba(10,15,28,0.85);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
 
-        .sub {
-            font-size: 20px;
-            color: #555;
-            margin-bottom: 40px;
-        }
+.nav a {
+  color:#cbd5f5;
+  text-decoration:none;
+  font-size:14px;
+  white-space:nowrap;
+}
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
+/* NAV MÓVIL */
+@media(max-width:768px){
+  .nav{
+    gap:15px;
+    padding:12px;
+    overflow-x:auto;
+    justify-content:flex-start;
+  }
+  .nav a{ font-size:13px; }
+}
 
-        .card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            background: #fff;
-        }
+/* CONTENEDOR */
+.container {
+  max-width:1100px;
+  margin:auto;
+  padding:120px 20px 80px 20px;
+}
 
-        .card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-        }
+/* TÍTULO */
+h1 {
+  font-size:42px;
+  font-weight:700;
+  margin-bottom:10px;
+}
 
-        .card h3 {
-            font-size: 22px;
-            margin: 15px;
-        }
+.sub {
+  font-size:18px;
+  color:var(--text-dim);
+  margin-bottom:50px;
+}
 
-        .card p {
-            font-size: 16px;
-            margin: 0 15px 20px 15px;
-            color: #444;
-        }
+/* BLOQUES VERTICALES */
+.bloque {
+  background:var(--card-bg);
+  border:1px solid rgba(255,255,255,0.05);
+  border-radius:6px;
+  padding:35px;
+  margin-bottom:50px;
+}
 
-        .card a {
-            display: block;
-            margin: 0 15px 20px 15px;
-            padding: 10px 15px;
-            background: #000;
-            color: #fff;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 4px;
-        }
+.bloque img {
+  width:100%;
+  height:auto;
+  border-radius:4px;
+  margin-bottom:20px;
+}
 
-        .card a:hover {
-            background: #333;
-        }
-    </style>
+.bloque h3 {
+  font-size:24px;
+  margin:0 0 10px 0;
+}
+
+.bloque p {
+  color:var(--text-dim);
+  margin-bottom:20px;
+}
+
+.bloque a {
+  color:var(--primary-gold);
+  text-decoration:none;
+  font-weight:600;
+  letter-spacing:0.5px;
+}
+
+.bloque a:hover {
+  opacity:0.8;
+}
+
+/* MÓVIL */
+@media(max-width:768px){
+  h1 { font-size:32px; }
+  .bloque { padding:25px; }
+  .bloque h3 { font-size:20px; }
+  .bloque p { font-size:15px; }
+}
+
+/* FOOTER */
+footer {
+  text-align:center;
+  padding:60px 0;
+  color:#64748b;
+  font-size:14px;
+}
+
+footer a {
+  color:#888;
+  text-decoration:none;
+  margin:0 8px;
+}
+
+/* WHATSAPP */
+.whatsapp {
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  background:#25D366;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:1000;
+  box-shadow:0 4px 12px rgba(0,0,0,0.3);
+}
+
+.whatsapp svg {
+  width:35px;
+  height:35px;
+  fill:#fff;
+}
+
+/* WHATSAPP MÓVIL */
+@media(max-width:768px){
+  .whatsapp {
+    width:52px;
+    height:52px;
+    bottom:22px;
+    right:22px;
+  }
+  .whatsapp svg {
+    width:30px;
+    height:30px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-    <div class="hero"></div>
+<!-- NAV -->
+<div class="nav">
+  <a href="../index.html">Inicio</a>
+  <a href="../servicio.html">Servicio de Tasación</a>
+  <a href="../bitacora.html">Bitácora profesional</a>
+  <a href="../ranking.html">Ranking</a>
+  <a href="../contacto.html">Contacto</a>
+</div>
 
-    <div class="contenedor">
-        <h1>Producciones</h1>
-        <div class="sub">Artistas peruanos</div>
+<div class="container">
 
-        <div class="cards">
+  <h1>Producciones</h1>
+  <div class="sub">Artistas peruanos</div>
 
-            <!-- Federico del Campo -->
-            <div class="card">
-                <img src="../assets/producciones/FDCminiatura.png" alt="Federico del Campo">
-                <h3>Federico del Campo</h3>
-                <p>Producciones, análisis y material audiovisual.</p>
-                <a href="#">Ver contenido</a>
-            </div>
+  <!-- FEDERICO DEL CAMPO -->
+  <div class="bloque">
+    <img src="../assets/producciones/FDCminiatura.png" alt="Federico del Campo">
+    <h3>Federico del Campo</h3>
+    <p>Producciones, análisis y material audiovisual.</p>
+    <a href="#">Ver contenido →</a>
+  </div>
 
-            <!-- Francisco González Gamarra -->
-            <div class="card">
-                <img src="../assets/producciones/FGGminiatura.png" alt="Francisco González Gamarra">
-                <h3>Francisco González Gamarra</h3>
-                <p>Material documental y producciones curatoriales.</p>
-                <a href="#">Ver contenido</a>
-            </div>
+  <!-- FRANCISCO GONZÁLEZ GAMARRA -->
+  <div class="bloque">
+    <img src="../assets/producciones/FGGminiatura.png" alt="Francisco González Gamarra">
+    <h3>Francisco González Gamarra</h3>
+    <p>Material documental y producciones curatoriales.</p>
+    <a href="#">Ver contenido →</a>
+  </div>
 
-        </div>
-    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 TASACIONES DE ARTE | MARCO CABRERA – PERITO REGISTRADO
+  <br><br>
+  <a href="../y-aviso-legal.html">Aviso legal</a> ·
+  <a href="../y-politicadeprivacidad.html">Política de privacidad</a> ·
+  <a href="../y-politica-cookies.html">Política de cookies</a> ·
+  <a href="../y-libro-reclamaciones.html">Libro de reclamaciones</a>
+</footer>
+
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/51930046681" target="_blank">
+  <svg width="35" height="35" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.89 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.743-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487c.709.306 1.263.489 1.694.626c.712.226 1.36.194 1.872.118c.571-.085 1.758-.719 2.006-1.413c.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
 
 </body>
 </html>
-
