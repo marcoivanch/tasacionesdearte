@@ -57,36 +57,66 @@ body {
   .nav a{ font-size:13px; }
 }
 
-/* HERO */
+/* HERO — COPIADO EXACTO DE BITÁCORA */
 .hero {
-  width:100%;
-  height:380px;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  position:relative;
+  padding-left:8%;
+  overflow:hidden;
+}
+
+.hero::before {
+  content:"";
+  position:absolute;
+  inset:0;
   background:url('../assets/producciones/FP.png') center/cover no-repeat;
-  margin-top:70px;
-  border-bottom:1px solid rgba(255,255,255,0.08);
+  opacity:0.78;
+  filter:brightness(1.18) contrast(1.05);
+}
+
+.hero::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,var(--bg-dark) 25%,transparent 100%);
+}
+
+.hero-content {
+  position:relative;
+  z-index:2;
+  max-width:600px;
+}
+
+.titulo-desktop {
+  font-weight:700;
+  font-size:clamp(32px,5vw,52px);
+  line-height:1.1;
+  margin:0;
+}
+
+.titulo-mobile { display:none; }
+
+@media(max-width:768px){
+  .titulo-desktop { display:none; }
+  .titulo-mobile {
+    display:block;
+    font-size:32px;
+    font-weight:700;
+    line-height:1.1;
+    margin-bottom:10px;
+  }
 }
 
 /* CONTENEDOR */
 .container {
   max-width:1100px;
   margin:auto;
-  padding:60px 20px 80px 20px;
+  padding:80px 20px;
 }
 
-/* TÍTULO */
-h1 {
-  font-size:42px;
-  font-weight:700;
-  margin-bottom:10px;
-}
-
-.sub {
-  font-size:18px;
-  color:var(--text-dim);
-  margin-bottom:50px;
-}
-
-/* BLOQUES VERTICALES */
+/* BLOQUES */
 .bloque {
   background:var(--card-bg);
   border:1px solid rgba(255,255,255,0.05);
@@ -104,7 +134,6 @@ h1 {
   margin-bottom:20px;
 }
 
-/* TEXTO */
 .bloque h3 {
   font-size:24px;
   margin:0 0 10px 0;
@@ -122,13 +151,10 @@ h1 {
   letter-spacing:0.5px;
 }
 
-.bloque a:hover {
-  opacity:0.8;
-}
+.bloque a:hover { opacity:0.8; }
 
 /* MÓVIL */
 @media(max-width:768px){
-  h1 { font-size:32px; }
   .bloque { padding:25px; }
   .bloque img { width:200px; }
   .bloque h3 { font-size:20px; }
@@ -171,7 +197,6 @@ footer a {
   fill:#fff;
 }
 
-/* WHATSAPP MÓVIL */
 @media(max-width:768px){
   .whatsapp {
     width:52px;
@@ -199,12 +224,17 @@ footer a {
 </div>
 
 <!-- HERO -->
-<div class="hero"></div>
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="titulo-desktop">Producciones<br>Artísticas<br>Peruanas</h1>
+    <h1 class="titulo-mobile">Producciones<br>Artísticas<br>Peruanas</h1>
+    <p style="color:var(--primary-gold);font-weight:600; letter-spacing:1px; margin-top:15px;">
+      Material audiovisual y documental
+    </p>
+  </div>
+</section>
 
 <div class="container">
-
-  <h1>Producciones</h1>
-  <div class="sub">Artistas peruanos</div>
 
   <!-- FEDERICO DEL CAMPO -->
   <div class="bloque">
