@@ -179,21 +179,31 @@ body {
   padding:80px 20px;
 }
 
-/* VIDEO */
-.video {
-  margin:40px 0;
-  border-radius:6px;
-  overflow:hidden;
+/* CARD */
+.card {
+  background:var(--card-bg);
   border:1px solid rgba(255,255,255,0.08);
+  border-radius:10px;
+  padding:25px;
+  margin-bottom:40px;
 }
 
-.video iframe {
+/* VIDEO */
+.video-wrapper {
+  position:relative;
+  padding-bottom:56.25%;
+  height:0;
+  overflow:hidden;
+  border-radius:8px;
+}
+
+.video-wrapper iframe {
+  position:absolute;
+  top:0;
+  left:0;
   width:100%;
-  height:480px;
-}
-
-@media(max-width:768px){
-  .video iframe { height:260px; }
+  height:100%;
+  border:none;
 }
 
 /* TEXTO */
@@ -316,41 +326,49 @@ document.getElementById("cerrarModal").onclick = () => {
 
 <div class="container">
 
-<!-- VIDEO PRINCIPAL -->
-  <div style="max-width:800px;margin:auto;">
-    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-      <iframe
-        src="https://www.youtube.com/embed/FP3xM8_K3Sw"
-        style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
+<!-- TÍTULO DEL VIDEO -->
+<h2 style="font-size:28px;font-weight:700;margin-bottom:25px;color:var(--primary-gold);">
+  Comentario de Arte: Federico Del Campo – Parte 1
+</h2>
 
-  <!-- TEXTO EDITORIAL -->
-  <div class="texto">
+<!-- CARD DEL VIDEO -->
+<div class="card">
+  <div class="video-wrapper">
+    <iframe
+      src="https://www.youtube.com/embed/FP3xM8_K3Sw"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+<!-- CARD DE FICHA TÉCNICA DEL VIDEO -->
+<div class="card">
+  <h3 style="margin-top:0;color:var(--primary-gold);font-size:20px;">Ficha técnica del video</h3>
+
+  <p><strong>Autor:</strong> Marco Iván Cabrera Hernández</p>
+  <p><strong>Producción:</strong> Oficina TasacionesDeArte.org.pe</p>
+  <p><strong>Fecha:</strong> Mayo 2025</p>
+  <p><strong>Lugar:</strong> Lima, Perú</p>
+  <p><strong>Depósito Legal:</strong> 2026-046484</p>
+</div>
+
+<!-- CARD DE DESCRIPCIÓN EDITORIAL -->
+<div class="card">
+  <h3 style="margin-top:0;color:var(--primary-gold);font-size:20px;">Descripción</h3>
+
+  <p class="texto" style="margin-bottom:0;">
     Federico del Campo (1837–1923) constituye uno de los casos más elocuentes de desplazamiento
     histórico en el arte peruano: celebrado en Europa, ignorado en su país. Su obra, centrada en
     Venecia, revela una precisión atmosférica y una comprensión técnica que lo sitúan entre los
     grandes vedutistas del siglo XIX.  
     <br><br>
-    Esta sección reúne análisis, materiales audiovisuales y contenidos académicos orientados a
-    restituir su lugar en la historia del arte peruano, desde una perspectiva crítica y documental,
-    sin ficciones curatoriales ni relatos complacientes.
-    <br><br>
-    En el video —primera entrega de una serie— se examina la tensión entre la importancia real del
-    artista y el relego sistemático que ha sufrido, hasta el punto de quedar prácticamente fuera de
-    la nómina de los pintores peruanos más relevantes. Se revisa, además, cómo este fenómeno ya había
-    sido advertido a inicios del siglo XX por el crítico Teófilo Castillo.
-    <br><br>
-    Este caso permite observar cómo la historia del arte peruano se ha construido sobre una narrativa
-    que no siempre responde a las relevancias efectivas. De allí surgen preguntas sobre la persistencia
-    de esta disfunción, sobre la distancia entre el éxito comercial y la preponderancia de los relatos
-    editoriales, y sobre las razones que mantienen vigente esta brecha. Preguntas que, por ahora,
-    permanecen abiertas.
-  </div>
+    Esta primera entrega examina la tensión entre la importancia real del artista y el relego
+    sistemático que ha sufrido, revisando además cómo este fenómeno ya había sido advertido por
+    Teófilo Castillo a inicios del siglo XX.
+  </p>
+</div>
+
 </div>
 
 <!-- FOOTER -->
