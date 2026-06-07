@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Verificación documental | Tasaciones de Arte</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --gold:#c5a059;
+  --bg:#0a1220;
+  --card:#020617;
+  --text:#e2e8f0;
+  --text-soft:#94a3b8;
+  --border:rgba(148,163,184,0.15);
+  --blue:#38bdf8;
+}
+
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* NAV */
+.nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:18px;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  background:rgba(10,15,28,0.85);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+.nav a{
+  color:#cbd5f5;
+  text-decoration:none;
+  font-size:14px;
+  white-space:nowrap;
+}
+
+/* HERO */
+.hero{
+  min-height:72vh;
+  position:relative;
+  display:flex;
+  align-items:center;
+  padding:120px 40px 80px;
+  z-index:1;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(120deg, rgba(10,18,32,0.90), rgba(10,18,32,0.60)),
+    url('assets/index/Encuadernado.png') center no-repeat;
+  background-size:cover;
+  opacity:0.92;
+  z-index:0;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(10,15,28,0.45);
+  z-index:1;
+}
+
+.hero-content{
+  position:relative;
+  max-width:760px;
+  z-index:2;
+}
+
+.hero h1{
+  font-size:46px;
+  font-weight:600;
+  margin-bottom:12px;
+}
+
+.hero p{
+  color:var(--text-soft);
+  line-height:1.6;
+  font-size:17px;
+  max-width:650px;
+}
+
+.btn-primary{
+  display:inline-block;
+  margin-top:28px;
+  padding:14px 28px;
+  border-radius:30px;
+  background:#25D366;
+  color:white;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.btn-secondary{
+  display:inline-block;
+  margin-left:14px;
+  margin-top:28px;
+  padding:14px 28px;
+  border-radius:30px;
+  background:rgba(255,255,255,0.12);
+  color:white;
+  text-decoration:none;
+  border:1px solid rgba(255,255,255,0.25);
+}
+
+/* SECCIONES */
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:70px 20px;
+}
+
+.section h2{
+  margin-bottom:14px;
+  font-size:26px;
+  font-weight:600;
+  color:var(--gold);
+}
+
+.section-intro{
+  color:var(--text-soft);
+  line-height:1.6;
+  max-width:850px;
+  margin-bottom:30px;
+}
+
+/* TARJETAS */
+.cards{
+  display:grid;
+  gap:25px;
+  grid-template-columns:repeat(auto-fit, minmax(210px, 1fr));
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:28px;
+  cursor:pointer;
+  min-height:145px;
+  transition:transform .2s ease, border-color .2s ease, background .2s ease;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(197,160,89,0.55);
+  background:#071126;
+}
+
+.year{
+  font-size:38px;
+  font-weight:600;
+  color:var(--blue);
+  letter-spacing:.5px;
+}
+
+.card-title{
+  margin-top:10px;
+  color:#e2e8f0;
+  font-weight:500;
+}
+
+.card-sub{
+  margin-top:8px;
+  color:#64748b;
+  font-size:14px;
+  line-height:1.45;
+}
+
+/* BLOQUE INSTITUCIONAL */
+.notice{
+  background:#020617;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:28px;
+  margin-top:45px;
+}
+
+.notice h3{
+  color:var(--gold);
+  margin-top:0;
+}
+
+.notice p{
+  color:var(--text-soft);
+  line-height:1.6;
+}
+
+/* OVERLAY */
+.respuesta-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.65);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:5000;
+  backdrop-filter:blur(4px);
+}
+
+.respuesta-box{
+  background:#0f172a;
+  border:1px solid rgba(148,163,184,0.25);
+  border-radius:14px;
+  padding:32px;
+  max-width:520px;
+  width:90%;
+  color:#e2e8f0;
+  box-shadow:0 0 25px rgba(0,0,0,0.4);
+}
+
+.respuesta-box h3{
+  margin-top:0;
+  margin-bottom:12px;
+  font-size:21px;
+  color:#c5a059;
+}
+
+.respuesta-box p{
+  color:#94a3b8;
+  line-height:1.6;
+}
+
+.cerrar-btn{
+  margin-top:20px;
+  padding:10px 20px;
+  background:#1e293b;
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:8px;
+  color:#e2e8f0;
+  cursor:pointer;
+  font-size:14px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:58px;
+  height:58px;
+  background:#25D366;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  z-index:1001;
+  box-shadow:0 0 12px rgba(0,0,0,0.35);
+}
+
+.whatsapp svg{
+  width:28px;
+  fill:white;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px 0;
+  color:#64748b;
+  font-size:14px;
+  letter-spacing:0.5px;
+  margin-top:40px;
+}
+
+footer a{
+  color:#888;
+  text-decoration:none;
+  margin:0 8px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{
+    min-height:auto;
+    padding:120px 20px 80px;
+  }
+  .hero h1{
+    font-size:34px;
+  }
+}
+
+@media(max-width:768px){
+  .nav{
+    gap:15px;
+    padding:12px;
+    overflow-x:auto;
+    justify-content:flex-start;
+  }
+
+  .btn-secondary{
+    margin-left:0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<div class="nav">
+  <a href="index.html">Inicio</a>
+  <a href="servicio.html">Servicio de Tasación</a>
+  <a href="bitacora.html">Bitácora profesional</a>
+  <a href="ranking.html">Ranking</a>
+  <a href="contacto.html">Contacto</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Verificación documental</h1>
+    <p>
+      Sistema de control para certificados, dictámenes e informes periciales emitidos por la Oficina Profesional de Tasaciones de Arte.
+    </p>
+    <p>
+      La verificación individual de expedientes se realiza únicamente mediante el código QR incorporado en el documento original.
+    </p>
+
+    <a class="btn-primary" href="contacto.html">Solicitar verificación</a>
+    <a class="btn-secondary" href="index.html">Volver al inicio</a>
+  </div>
+</section>
+
+<!-- TARJETAS POR AÑO -->
+<section class="section">
+  <h2>Archivo de certificaciones</h2>
+  <p class="section-intro">
+    Las tarjetas siguientes corresponden a los años de emisión documental. El acceso público no permite consultar expedientes individuales. Para verificar un documento, escanee el código QR impreso en el certificado correspondiente.
+  </p>
+
+  <div class="cards">
+
+    <div class="card" data-year="2015">
+      <div class="year">2015</div>
+      <div class="card-title">Archivo documental</div>
+      <div class="card-sub">Verificación exclusiva mediante QR del certificado.</div>
+    </div>
+
+    <div class="card" data-year="2016">
+      <div class="year">2016</div>
+      <div class="card-title">Archivo documental</div>
+      <div class="card-sub">Verificación exclusiva mediante QR del certificado.</div>
+    </div>
+
+    <div class="card" data-year="2017">
+      <div class="year">2017</div>
+      <div class="card-title">Archivo documental</div>
+      <div class="card-sub">Verificación exclusiva mediante QR del certificado.</div>
+    </div>
+
+    <div class="card" data-year="2018">
+      <div class="year">2018</div>
+      <div class="card-title">Archivo documental</div>
+      <div class="card-sub">Verificación exclusiva mediante QR del certificado.</div>
+    </div>
+
+    <div class="card" data-year="2019">
+      <div class="year">2019</div>
+      <div class="card-title">Archivo documental</div>
+      <div class="card-sub">Verificación exclusiva mediante QR del certificado.</div>
+    </div>
+
+    <div class="card" data-year="2020">
+      <div class="year">2020</div>
+      <div class="card-title">Archivo documental</div>
+      <div class="card-sub">Verificación exclusiva mediante QR del certificado.</div>
+    </div>
+
+    <div class="card" data-year="2021">
+      <div class="year">2021</div>
+      <div class="card-title">Archivo documental</div>
+      <div class="card-sub">Verificación exclusiva mediante QR del certificado.</div>
+    </div>
+
+    <div class="card" data-year="2022">
+      <div class="year">2022</div>
+      <div class="card-title">Archivo documental</div>
+      <div class="card-sub">Verificación exclusiva mediante QR del certificado.</div>
+    </div>
+
+    <div class="card" data-year="2023">
+      <div class="year">2023</div>
+      <div class="card-title">Archivo documental</div>
+      <div class="card-sub">Verificación exclusiva mediante QR del certificado.</div>
+    </div>
+
+    <div class="card" data-year="2024">
+      <div class="year">2024</div>
+      <div class="card-title">Archivo documental</div>
+      <div class="card-sub">Verificación exclusiva mediante QR del certificado.</div>
+    </div>
+
+    <div class="card" data-year="2025">
+      <div class="year">2025</div>
+      <div class="card-title">Archivo documental</div>
+      <div class="card-sub">Verificación exclusiva mediante QR del certificado.</div>
+    </div>
+
+    <div class="card" data-year="2026">
+      <div class="year">2026</div>
+      <div class="card-title">Archivo documental</div>
+      <div class="card-sub">Verificación exclusiva mediante QR del certificado.</div>
+    </div>
+
+  </div>
+
+  <div class="notice">
+    <h3>Acceso restringido</h3>
+    <p>
+      La documentación técnica, anexos, imágenes, análisis y antecedentes de investigación forman parte de expedientes reservados bajo custodia profesional.
+    </p>
+    <p>
+      La Oficina Profesional de Tasaciones de Arte únicamente confirma la autenticidad, estado y vigencia de los documentos emitidos. El acceso al expediente integral requiere autorización del titular o interés legítimo debidamente acreditado.
+    </p>
+  </div>
+</section>
+
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/51930046681">
+  <svg viewBox="0 0 32 32"><path d="M16.001 2.667c-7.364 0-13.334 5.97-13.334 13.333 0 2.353.614 4.65 1.782 6.667l-1.885 6.885 7.052-1.854c1.94 1.06 4.13 1.62 6.385 1.62h.001c7.364 0 13.334-5.97 13.334-13.333S23.365 2.667 16.001 2.667zm0 24c-1.96 0-3.875-.52-5.56-1.5l-.398-.23-4.188 1.103 1.12-4.09-.26-.42c-1.08-1.74-1.65-3.74-1.65-5.863 0-6.04 4.917-10.957 10.957-10.957 6.04 0 10.957 4.917 10.957 10.957 0 6.04-4.917 10.957-10.957 10.957zm5.637-8.457c-.307-.153-1.82-.897-2.103-.997-.28-.103-.487-.153-.693.153-.207.307-.793.997-.973 1.203-.18.207-.36.23-.667.077-.307-.153-1.297-.477-2.47-1.52-.913-.813-1.53-1.813-1.707-2.12-.18-.307-.02-.473.133-.626.137-.137.307-.36.46-.54.153-.18.204-.307.307-.513.103-.207.05-.383-.026-.537-.077-.153-.693-1.667-.95-2.28-.25-.6-.503-.52-.693-.53-.18-.01-.383-.01-.59-.01-.207 0-.54.077-.82.383-.28.307-1.077 1.053-1.077 2.563 0 1.51 1.103 2.967 1.257 3.173.153.207 2.173 3.32 5.263 4.653.737.317 1.31.507 1.76.65.74.236 1.413.203 1.947.123.594-.088 1.82-.743 2.08-1.46.257-.717.257-1.33.18-1.46-.077-.13-.28-.207-.587-.36z"/></svg>
+</a>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 TASACIONES DE ARTE | MARCO CABRERA – PERITO REGISTRADO
+  <br><br>
+
+  <a href="y-aviso-legal.html">Aviso legal</a> · 
+  <a href="y-politicadeprivacidad.html">Política de privacidad</a> · 
+  <a href="y-politica-cookies.html">Política de cookies</a> · 
+  <a href="y-libro-reclamaciones.html">Libro de reclamaciones</a>
+</footer>
+
+<!-- OVERLAY -->
+<div class="respuesta-overlay" id="respuestaOverlay">
+  <div class="respuesta-box">
+    <h3>Verificación protegida</h3>
+    <p id="respuestaTexto"></p>
+    <button class="cerrar-btn" onclick="cerrarRespuesta()">Cerrar</button>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('click', () => {
+    const year = card.getAttribute('data-year');
+    document.getElementById('respuestaTexto').innerHTML =
+      'Para verificar un expediente emitido en el año <strong>' + year + '</strong>, escanee el código QR incorporado en el documento original. La navegación pública no permite acceder a registros individuales ni a expedientes reservados.';
+    document.getElementById('respuestaOverlay').style.display = 'flex';
+  });
+});
+
+function cerrarRespuesta(){
+  document.getElementById('respuestaOverlay').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
