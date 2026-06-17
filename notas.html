@@ -74,22 +74,16 @@ body{
   position:absolute;
   inset:0;
   background:url('assets/bitacora/notas/cabezal.png') center center/cover no-repeat;
-  opacity:1;
-  filter:none;
+  opacity:.55;
+  filter:brightness(.75) contrast(.85) saturate(.85) blur(1.5px);
 }
 
 .hero::after{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(
-    270deg,
-    rgba(10,15,28,.90) 0%,
-    rgba(10,15,28,.55) 20%,
-    rgba(10,15,28,.20) 40%,
-    rgba(10,15,28,.05) 60%,
-    transparent 85%
-  );
+  background:rgba(10,15,28,.35);
+  backdrop-filter:blur(18px);
 }
 
 .hero-content{
