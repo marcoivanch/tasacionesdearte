@@ -74,8 +74,8 @@ body{
   position:absolute;
   inset:0;
   background:url('assets/bitacora/notas/cabezal.png') center center/cover no-repeat;
-  opacity:.90; /* SE VE BIEN */
-  filter:brightness(.90) contrast(.95) saturate(.97); /* SUAVIZADO LEVE SIN BLUR */
+  opacity:.90;
+  filter:brightness(.90) contrast(.95) saturate(.97);
 }
 
 .hero::after{
@@ -90,7 +90,6 @@ body{
     rgba(10,15,28,.05) 75%,
     transparent 100%
   );
-  /* SIN BLUR PARA NO TAPAR TU CARA */
 }
 
 .hero-content{
@@ -294,7 +293,8 @@ footer a{
         del arte.
         </p>
 
-        <a href="nota-david-hockney.html">
+        <!-- AHORA ABRE LA IMAGEN EN TAMAÑO REAL -->
+        <a href="assets/bitacora/notas/D Hockney.jpg" target="_blank">
             Leer nota →
         </a>
 
