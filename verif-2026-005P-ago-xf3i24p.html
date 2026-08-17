@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Documento Verificado | Informe 005P-AGO-2026</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --gold:#c5a059;
+  --bg:#0a1220;
+  --card:#020617;
+  --text:#e2e8f0;
+  --text-soft:#94a3b8;
+  --border:rgba(148,163,184,0.15);
+  --blue:#38bdf8;
+  --green:#10b981;
+}
+
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* NAV */
+.nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:18px;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  background:rgba(10,15,28,0.85);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+.nav a{
+  color:#cbd5f5;
+  text-decoration:none;
+  font-size:14px;
+  white-space:nowrap;
+}
+
+/* HERO */
+.hero{
+  min-height:72vh;
+  position:relative;
+  display:flex;
+  align-items:center;
+  padding:120px 40px 80px;
+  z-index:1;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      120deg,
+      rgba(10,18,32,0.90),
+      rgba(10,18,32,0.60)
+    ),
+    url('assets/index/Encuadernado.png') center no-repeat;
+  background-size:cover;
+  opacity:0.92;
+  z-index:0;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(10,15,28,0.45);
+  z-index:1;
+}
+
+.hero-content{
+  position:relative;
+  max-width:760px;
+  z-index:2;
+}
+
+.estado{
+  display:inline-block;
+  padding:10px 22px;
+  border-radius:30px;
+  background:rgba(16,185,129,0.15);
+  border:1px solid rgba(16,185,129,0.35);
+  color:#34d399;
+  font-weight:600;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-size:46px;
+  font-weight:600;
+  margin-bottom:12px;
+}
+
+.hero h2{
+  color:var(--gold);
+  font-size:32px;
+  font-weight:500;
+  margin-bottom:20px;
+}
+
+.hero p{
+  color:var(--text-soft);
+  line-height:1.6;
+  font-size:17px;
+  max-width:650px;
+}
+
+.credenciales{
+  margin:25px 0;
+  padding:18px 22px;
+  background:rgba(255,255,255,0.08);
+  border-left:4px solid var(--gold);
+  border-radius:10px;
+  display:inline-block;
+}
+
+/* CONTENIDO */
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:70px 20px;
+}
+
+.section h2{
+  margin-bottom:20px;
+  font-size:26px;
+  font-weight:600;
+  color:var(--gold);
+}
+
+.cards{
+  display:grid;
+  gap:25px;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:28px;
+}
+
+.label{
+  color:#64748b;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-bottom:8px;
+}
+
+.valor{
+  font-size:20px;
+  font-weight:600;
+}
+
+.vigente{
+  color:#34d399;
+}
+
+.notice{
+  background:#020617;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:28px;
+  margin-top:45px;
+}
+
+.notice h3{
+  color:var(--gold);
+  margin-top:0;
+}
+
+.notice p{
+  color:var(--text-soft);
+  line-height:1.7;
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:58px;
+  height:58px;
+  background:#25D366;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  z-index:1001;
+  box-shadow:0 0 12px rgba(0,0,0,0.35);
+}
+
+.whatsapp svg{
+  width:28px;
+  fill:white;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px 0;
+  color:#64748b;
+  font-size:14px;
+  letter-spacing:0.5px;
+  margin-top:40px;
+}
+
+footer a{
+  color:#888;
+  text-decoration:none;
+  margin:0 8px;
+}
+
+@media(max-width:900px){
+  .hero{
+    min-height:auto;
+    padding:120px 20px 80px;
+  }
+
+  .hero h1{
+    font-size:34px;
+  }
+
+  .hero h2{
+    font-size:26px;
+  }
+}
+
+@media(max-width:768px){
+
+  .nav{
+    gap:15px;
+    padding:12px;
+    overflow-x:auto;
+    justify-content:flex-start;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="nav">
+  <a href="index.html">Inicio</a>
+  <a href="servicio.html">Servicio de Tasación</a>
+  <a href="bitacora.html">Bitácora profesional</a>
+  <a href="ranking.html">Ranking</a>
+  <a href="contacto.html">Contacto</a>
+</div>
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="estado">
+      ✓ DOCUMENTO VERIFICADO
+    </div>
+
+    <h1>Verificación de Autenticidad Documental</h1>
+
+    <h2>Informe 005P-AGO-2026</h2>
+
+    <p>
+      La presente consulta confirma la autenticidad y vigencia del documento emitido por la Oficina Profesional de Tasaciones de Arte.
+    </p>
+
+    <div class="credenciales">
+      <strong>Marco Iván Cabrera Hernández</strong><br>
+      Licenciado en Arte – Perito Tasador Registrado
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <h2>Estado del documento</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="label">Documento</div>
+      <div class="valor">Informe 005P-AGO-2026</div>
+    </div>
+
+    <div class="card">
+      <div class="label">Estado documental</div>
+      <div class="valor vigente">VIGENTE</div>
+    </div>
+
+    <div class="card">
+      <div class="label">Perito emisor</div>
+      <div class="valor">Marco Iván Cabrera Hernández</div>
+    </div>
+
+    <div class="card">
+      <div class="label">Fecha de emisión</div>
+      <div class="valor">__ de ___________ de 2026</div>
+    </div>
+
+    <div class="card">
+      <div class="label">Fecha de caducidad</div>
+      <div class="valor">30 de septiembre de 2027</div>
+    </div>
+
+    <div class="card">
+      <div class="label">Código de verificación</div>
+      <div class="valor">A8K93</div>
+    </div>
+
+  </div>
+
+  <div class="notice">
+
+    <h3>Certificación documental</h3>
+
+    <p>
+      La Oficina Profesional de Tasaciones de Arte certifica que el documento identificado como Informe 003-MAY-2026 se encuentra registrado en el sistema institucional de verificación documental.
+    </p>
+
+    <p>
+      Por razones de confidencialidad profesional, el contenido íntegro del expediente, antecedentes de investigación, anexos técnicos, imágenes, valores económicos y demás documentación complementaria no son de acceso público.
+    </p>
+
+    <p>
+      El acceso al expediente técnico integral requiere autorización expresa del titular o acreditación de interés legítimo.
+    </p>
+
+  </div>
+
+</section>
+
+<a class="whatsapp" href="https://wa.me/51930046681">
+  <svg viewBox="0 0 32 32"><path d="M16.001 2.667c-7.364 0-13.334 5.97-13.334 13.333 0 2.353.614 4.65 1.782 6.667l-1.885 6.885 7.052-1.854c1.94 1.06 4.13 1.62 6.385 1.62h.001c7.364 0 13.334-5.97 13.334-13.333S23.365 2.667 16.001 2.667z"/></svg>
+</a>
+
+<footer>
+  © 2026 TASACIONES DE ARTE | MARCO CABRERA – PERITO REGISTRADO
+  <br><br>
+  <a href="y-aviso-legal.html">Aviso legal</a> ·
+  <a href="y-politicadeprivacidad.html">Política de privacidad</a> ·
+  <a href="y-politica-cookies.html">Política de cookies</a> ·
+  <a href="y-libro-reclamaciones.html">Libro de reclamaciones</a>
+</footer>
+
+</body>
+</html>
