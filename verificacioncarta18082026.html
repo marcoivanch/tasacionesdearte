@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verificación de Documento - Tasaciones de Arte</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Inter',sans-serif;
+background:#0a1220;
+color:#e2e8f0;
+display:flex;
+flex-direction:column;
+min-height:100vh;
+}
+
+.nav{
+position:fixed;
+top:0;
+width:100%;
+padding:18px;
+display:flex;
+justify-content:center;
+gap:30px;
+background:rgba(10,15,28,.85);
+backdrop-filter:blur(10px);
+z-index:1000;
+box-sizing:border-box;
+}
+
+.nav a{
+color:#cbd5f5;
+text-decoration:none;
+font-size:14px;
+white-space:nowrap;
+}
+
+.container{
+max-width:720px;
+margin:120px auto 60px;
+padding:0 20px;
+flex:1;
+}
+
+.verification-card{
+background:#020617;
+border:1px solid rgba(148,163,184,.15);
+border-radius:12px;
+padding:40px;
+}
+
+.header-status{
+text-align:center;
+margin-bottom:35px;
+padding-bottom:25px;
+border-bottom:1px solid rgba(148,163,184,.10);
+}
+
+.title{
+font-size:13px;
+letter-spacing:1.5px;
+text-transform:uppercase;
+color:#94a3b8;
+margin-bottom:10px;
+}
+
+.status-badge{
+display:inline-flex;
+align-items:center;
+gap:8px;
+background:rgba(37,211,102,.1);
+border:1px solid #25D366;
+padding:8px 16px;
+border-radius:20px;
+color:#25D366;
+font-weight:500;
+font-size:15px;
+}
+
+.info-group{
+margin-bottom:22px;
+}
+
+.info-label{
+font-size:12px;
+text-transform:uppercase;
+letter-spacing:.5px;
+color:#64748b;
+margin-bottom:5px;
+}
+
+.info-value{
+font-size:15px;
+line-height:1.6;
+color:#e2e8f0;
+}
+
+.info-value strong{
+font-weight:600;
+color:#cbd5f5;
+}
+
+.observation-box{
+margin-top:30px;
+padding:18px 22px;
+background:rgba(30,41,59,.45);
+border-left:4px solid #64748b;
+border-radius:0 8px 8px 0;
+}
+
+.observation-box p{
+margin:0;
+font-size:13.5px;
+line-height:1.7;
+color:#94a3b8;
+}
+
+.footer-note{
+margin-top:35px;
+text-align:center;
+font-size:13px;
+font-style:italic;
+color:#64748b;
+}
+
+footer{
+text-align:center;
+padding:40px 0;
+font-size:14px;
+color:#64748b;
+border-top:1px solid rgba(148,163,184,.05);
+}
+
+@media(max-width:768px){
+
+.nav{
+justify-content:flex-start;
+gap:15px;
+padding:12px;
+overflow-x:auto;
+}
+
+.container{
+margin-top:95px;
+}
+
+.verification-card{
+padding:25px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="nav">
+<a href="index.html">Inicio</a>
+<a href="servicio.html">Servicio de Tasación</a>
+<a href="bitacora.html">Bitácora profesional</a>
+<a href="ranking.html">Ranking</a>
+<a href="contacto.html">Contacto</a>
+</div>
+
+<div class="container">
+
+<div class="verification-card">
+
+<div class="header-status">
+
+<p class="title">
+Verificación de Documento
+</p>
+
+<div class="status-badge">
+
+<svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+
+Documento auténtico
+
+</div>
+
+</div>
+
+<div class="info-group">
+<div class="info-label">Código de verificación</div>
+<div class="info-value" style="font-family:monospace;font-size:16px;font-weight:600;color:#cbd5f5;">
+MC-2026-1808-002
+</div>
+</div>
+
+<div class="info-group">
+<div class="info-label">Tipo de documento</div>
+<div class="info-value">
+Solicita pronuncimiento de cumplimiento de la Ley 32645
+</div>
+</div>
+
+<div class="info-group">
+<div class="info-label">Emisor</div>
+<div class="info-value">
+<strong>Marco Iván Cabrera Hernández</strong><br>
+<span style="font-size:13px;color:#94a3b8;">
+Licenciado en Arte · Magíster en Gestión Pública · Perito Tasador de Arte
+</span>
+</div>
+</div>
+
+<div class="info-group">
+<div class="info-label">Destinatario</div>
+<div class="info-value">
+Despacho Ministerial del Ministerio de Cultura del Perú
+</div>
+</div>
+
+<div class="info-group">
+<div class="info-label">Asunto</div>
+<div class="info-value">
+pronunciamiento expreso sobre el cumplimiento de la Ley N.° 32645
+y la designación del representante del Ministerio de Cultura ante la Comisión Organizadora del Colegio Profesional de Artistas del Perú.
+</div>
+</div>
+
+<div class="info-group">
+<div class="info-label">Fecha de emisión</div>
+<div class="info-value">
+18 de agosto de 2026
+</div>
+</div>
+
+<div class="info-group">
+<div class="info-label">Estado documental</div>
+<div class="info-value">
+Documento vigente
+</div>
+</div>
+
+<div class="info-group">
+<div class="info-label">Expedientes relacionados</div>
+<div class="info-value">
+0093087-2026<br>
+0101880-2026
+</div>
+</div>
+
+<div class="observation-box">
+
+<div class="info-label" style="color:#94a3b8;">
+Observación
+</div>
+
+<p>
+
+La presente página tiene por objeto acreditar la autenticidad del documento remitido al Ministerio de Cultura. Debido a que forma parte de actuaciones administrativas en trámite, el contenido íntegro del escrito no se publica. La presente ficha únicamente certifica su existencia, fecha de emisión y autenticidad.
+
+</p>
+
+</div>
+
+<p class="footer-note">
+
+Esta certificación constituye únicamente un mecanismo privado de autenticidad documental y no sustituye los registros oficiales de la entidad destinataria.
+
+</p>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 TASACIONES DE ARTE | MARCO CABRERA – PERITO REGISTRADO
+
+<br><br>
+
+<a href="y-aviso-legal.html" style="color:#888;text-decoration:none;margin:0 8px;">Aviso legal</a> ·
+
+<a href="y-politicadeprivacidad.html" style="color:#888;text-decoration:none;margin:0 8px;">Política de privacidad</a> ·
+
+<a href="y-politica-cookies.html" style="color:#888;text-decoration:none;margin:0 8px;">Política de cookies</a> ·
+
+<a href="y-libro-reclamaciones.html" style="color:#888;text-decoration:none;margin:0 8px;">Libro de reclamaciones</a>
+
+</footer>
+
+</body>
+</html>
