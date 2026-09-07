@@ -225,6 +225,57 @@ a.registro:hover, a.correo:hover{
   color: #fff !important;
 }
 
+
+/* AVISO FLOTANTE PONENCIA */
+.ponencia-float{
+  position:fixed;
+  left:25px;
+  bottom:25px;
+  z-index:1001;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  max-width:360px;
+  padding:14px 18px;
+  border-radius:50px;
+  background:rgba(248,250,252,0.96);
+  box-shadow:0 8px 24px rgba(2,6,23,0.35);
+  color:#0f2747;
+  font-size:14px;
+  line-height:1.3;
+}
+
+.ponencia-float::before{
+  content:"→";
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 36px;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:#0f2747;
+  color:#ffffff;
+  font-size:20px;
+  font-weight:600;
+}
+
+.ponencia-float strong{
+  display:block;
+  font-size:14px;
+  font-weight:600;
+}
+
+.ponencia-float a{
+  color:#0f2747;
+  text-decoration:underline;
+  font-weight:500;
+}
+
+.ponencia-float a:hover{
+  color:#1d4ed8;
+}
+
 /* MOBILE */
 @media(max-width:768px){
   .nav{
@@ -236,6 +287,29 @@ a.registro:hover, a.correo:hover{
   .nav a{ font-size:13px; }
   .hero h1{ font-size:30px; }
   .hero::before{ background-size:cover; background-position:center; }
+
+
+  .ponencia-float{
+    left:12px;
+    bottom:18px;
+    max-width:calc(100vw - 105px);
+    padding:10px 12px;
+    gap:8px;
+    border-radius:18px;
+    font-size:12px;
+    line-height:1.25;
+  }
+
+  .ponencia-float::before{
+    flex-basis:28px;
+    width:28px;
+    height:28px;
+    font-size:16px;
+  }
+
+  .ponencia-float strong{
+    font-size:12px;
+  }
 
   .info-icon {
     width: 11px;
@@ -549,6 +623,14 @@ a.registro:hover, a.correo:hover{
   </a>
 </footer>
   
+
+<div class="ponencia-float" role="status" aria-label="Nueva ponencia del Perito Marco Cabrera">
+  <div>
+    <strong>Nueva ponencia del Perito Marco Cabrera</strong>
+    <a href="bitacora.html">Ver Bitácora</a>
+  </div>
+</div>
+
 <a class="whatsapp" href="https://wa.me/51930046681">WhatsApp</a>
 
 <script>
