@@ -203,8 +203,6 @@ transition:border-color .2s;
 border-color:rgba(148,163,184,.30);
 }
 
-/* CABECERA DEL REGISTRO */
-
 .record-summary{
 padding:23px 26px;
 cursor:pointer;
@@ -242,7 +240,9 @@ color:#94a3b8;
 line-height:1.5;
 }
 
-/* ESTADOS */
+/* =========================
+   ESTADOS
+========================= */
 
 .status{
 display:inline-flex;
@@ -269,10 +269,16 @@ background:rgba(96,165,250,.10);
 border:1px solid rgba(96,165,250,.35);
 }
 
-.status-presented{
+.status-registered{
 color:#25D366;
 background:rgba(37,211,102,.10);
 border:1px solid rgba(37,211,102,.35);
+}
+
+.status-derived{
+color:#38bdf8;
+background:rgba(56,189,248,.10);
+border:1px solid rgba(56,189,248,.35);
 }
 
 .status-response{
@@ -287,7 +293,9 @@ background:rgba(251,191,36,.10);
 border:1px solid rgba(251,191,36,.35);
 }
 
-/* FLECHA */
+/* =========================
+   FLECHA
+========================= */
 
 .arrow{
 font-size:15px;
@@ -348,6 +356,54 @@ grid-column:1 / -1;
 }
 
 /* =========================
+   DATOS DEL REGISTRO OFICIAL
+========================= */
+
+.official-box{
+grid-column:1 / -1;
+padding:20px 22px;
+background:rgba(37,211,102,.045);
+border:1px solid rgba(37,211,102,.20);
+border-radius:9px;
+}
+
+.official-title{
+font-size:11px;
+text-transform:uppercase;
+letter-spacing:.8px;
+color:#25D366;
+margin-bottom:16px;
+font-weight:600;
+}
+
+.official-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:17px 25px;
+}
+
+.official-item-label{
+font-size:10.5px;
+text-transform:uppercase;
+letter-spacing:.5px;
+color:#64748b;
+margin-bottom:4px;
+}
+
+.official-item-value{
+font-size:13px;
+line-height:1.6;
+color:#cbd5e1;
+}
+
+.ru-code{
+font-family:monospace;
+font-size:15px;
+font-weight:600;
+color:#e2e8f0;
+}
+
+/* =========================
    OBSERVACIÓN
 ========================= */
 
@@ -367,7 +423,7 @@ color:#94a3b8;
 }
 
 /* =========================
-   LEYENDA / VERIFICACIÓN
+   NOTA DE VERIFICACIÓN
 ========================= */
 
 .verification-note{
@@ -470,8 +526,13 @@ grid-template-columns:1fr;
 }
 
 .full,
-.observation-box{
+.observation-box,
+.official-box{
 grid-column:1;
+}
+
+.official-grid{
+grid-template-columns:1fr;
 }
 
 }
@@ -513,10 +574,8 @@ Gestiones ante el Congreso de la República
 </h1>
 
 <p class="subtitle">
-
 Registro de comunicaciones y actuaciones documentales realizadas
 ante el Congreso de la República del Perú.
-
 </p>
 
 </header>
@@ -581,7 +640,7 @@ Gestiones
 
 
 <!-- =========================
-     2026
+     AÑO 2026
 ========================= -->
 
 <div class="year-heading">
@@ -591,10 +650,9 @@ Gestiones
 
 <!-- ==========================================================
      GP-006-2026
-     CARTA N.° 006-2026/MICH
 ========================================================== -->
 
-<article class="record solicitud">
+<article class="record solicitud gestion">
 
 <div class="record-summary"
 onclick="toggleRecord(this)">
@@ -614,13 +672,13 @@ Carta N.° 006-2026/MICH
 </div>
 
 <div class="record-destination">
-Comisión de Educación, Cultura y Deporte
+Comisión de Educación, Cultura y Deporte · Cámara de Diputados
 </div>
 
 </div>
 
-<div class="status status-issued">
-Emitida
+<div class="status status-registered">
+Registrada
 </div>
 
 <div class="arrow">
@@ -635,6 +693,8 @@ Emitida
 <div class="detail-grid">
 
 
+<!-- TIPO -->
+
 <div class="info-group">
 
 <div class="info-label">
@@ -648,6 +708,8 @@ Solicitud de participación técnica
 </div>
 
 
+<!-- MATERIA -->
+
 <div class="info-group">
 
 <div class="info-label">
@@ -660,6 +722,8 @@ Ley N.° 32645
 
 </div>
 
+
+<!-- EMISOR -->
 
 <div class="info-group full">
 
@@ -680,6 +744,8 @@ Perito Tasador de Arte – MVCS
 </div>
 
 
+<!-- DESTINATARIOS -->
+
 <div class="info-group full">
 
 <div class="info-label">
@@ -688,14 +754,16 @@ Destinatarios
 
 <div class="info-value">
 
-Presidente y miembros titulares y suplentes de la
-<strong>Comisión de Educación, Cultura y Deporte</strong><br>
-Cámara de Diputados – Congreso de la República del Perú.
+<strong>Comisión de Educación, Cultura y Deporte de la Cámara de Diputados</strong>,
+así como sus miembros titulares y suplentes individualmente registrados
+como destinatarios mediante la Mesa de Partes Digital del Congreso de la República.
 
 </div>
 
 </div>
 
+
+<!-- OBJETO -->
 
 <div class="info-group full">
 
@@ -716,6 +784,8 @@ y con las proposiciones legislativas que plantean su derogación.
 </div>
 
 
+<!-- DOCUMENTO -->
+
 <div class="info-group">
 
 <div class="info-label">
@@ -729,18 +799,119 @@ Carta N.° 006-2026/MICH
 </div>
 
 
+<!-- ESTADO -->
+
 <div class="info-group">
 
 <div class="info-label">
-Estado
+Estado actual
 </div>
 
 <div class="info-value">
-Documento emitido
+<strong>Registrado</strong>
 </div>
 
 </div>
 
+
+<!-- ===============================================
+     REGISTRO OFICIAL DEL CONGRESO
+================================================ -->
+
+<div class="official-box">
+
+<div class="official-title">
+Constancia de registro – Mesa de Partes Digital
+</div>
+
+<div class="official-grid">
+
+
+<div>
+
+<div class="official-item-label">
+Número de RU
+</div>
+
+<div class="official-item-value ru-code">
+21776-CD
+</div>
+
+</div>
+
+
+<div>
+
+<div class="official-item-label">
+Fecha y hora de registro
+</div>
+
+<div class="official-item-value">
+14 de septiembre de 2026<br>
+12:09 p. m.
+</div>
+
+</div>
+
+
+<div>
+
+<div class="official-item-label">
+Estado registrado por el Congreso
+</div>
+
+<div class="official-item-value">
+REGISTRADO
+</div>
+
+</div>
+
+
+<div>
+
+<div class="official-item-label">
+Parlamento
+</div>
+
+<div class="official-item-value">
+Cámara de Diputados
+</div>
+
+</div>
+
+
+<div>
+
+<div class="official-item-label">
+Destinatarios registrados
+</div>
+
+<div class="official-item-value">
+40 destinatarios
+</div>
+
+</div>
+
+
+<div>
+
+<div class="official-item-label">
+Distribución
+</div>
+
+<div class="official-item-value">
+Comisión de Educación, Cultura y Deporte + 39 diputados
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- OBSERVACIÓN -->
 
 <div class="observation-box">
 
@@ -756,6 +927,10 @@ emisor en participar en los espacios técnicos, audiencias o reuniones
 que eventualmente se convoquen para el análisis de la Ley N.° 32645.
 La comunicación no solicita la priorización del debate de las
 proposiciones legislativas que plantean su derogación.
+
+El 14 de septiembre de 2026, la Mesa de Partes Digital del Congreso
+de la República confirmó el registro satisfactorio de la comunicación
+con RU N.° 21776-CD y consignó 40 destinatarios.
 
 </p>
 
@@ -775,19 +950,20 @@ proposiciones legislativas que plantean su derogación.
      copiar un bloque ARTICLE completo y colocarlo ENCIMA
      del registro anterior.
 
-     Categorías disponibles:
+     Categorías:
 
      comunicacion
      solicitud
      respuesta
      gestion
 
-     Estados disponibles:
+     Estados:
 
-     status-issued       = Emitida
-     status-presented    = Presentada / Recepcionada
-     status-response     = Respondida
-     status-follow       = En seguimiento
+     status-issued      = Emitida
+     status-registered  = Registrada
+     status-derived     = Derivada
+     status-response    = Respondida
+     status-follow      = En seguimiento
 ========================================================== -->
 
 
@@ -805,9 +981,9 @@ autenticidad de las comunicaciones emitidas por su titular y la
 trazabilidad documental de las actuaciones incorporadas al presente
 registro. No sustituye los mecanismos oficiales de recepción,
 registro, trámite, autenticidad o validez utilizados por el Congreso
-de la República u otras entidades públicas. La condición de
-“presentada”, “recepcionada” o “respondida” se incorpora únicamente
-cuando existe constancia documental que la sustente.
+de la República u otras entidades públicas. Los números de registro,
+fechas, estados y destinatarios atribuidos al Congreso se incorporan
+únicamente cuando existe constancia emitida por sus sistemas oficiales.
 
 </p>
 
