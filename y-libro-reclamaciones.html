@@ -6,7 +6,7 @@
 
 <title>Libro de Reclamaciones</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 body{
@@ -71,19 +71,32 @@ form{
   gap:20px;
 }
 
-input, textarea, select{
+input,
+textarea,
+select{
   width:100%;
+  box-sizing:border-box;
   padding:14px;
   border-radius:8px;
   border:1px solid rgba(148,163,184,0.25);
   background:#020617;
   color:#e2e8f0;
+  font-family:'Inter', sans-serif;
   font-size:15px;
 }
 
 textarea{
   height:140px;
   resize:vertical;
+}
+
+textarea.pedido{
+  height:110px;
+}
+
+input::placeholder,
+textarea::placeholder{
+  color:#64748b;
 }
 
 button{
@@ -93,11 +106,38 @@ button{
   color:#0a0f1c;
   border:none;
   font-weight:600;
+  font-size:15px;
   cursor:pointer;
 }
 
 button:hover{
   background:#0ea5e9;
+}
+
+button:disabled{
+  opacity:0.6;
+  cursor:not-allowed;
+}
+
+/* MENSAJE DE CONFIRMACIÓN */
+.confirmacion{
+  display:none;
+  margin-top:30px;
+  padding:25px;
+  border:1px solid rgba(56,189,248,0.35);
+  border-radius:10px;
+  background:rgba(56,189,248,0.08);
+}
+
+.confirmacion h2{
+  margin-top:0;
+}
+
+.numero-hoja{
+  font-size:28px;
+  font-weight:600;
+  color:#38bdf8;
+  margin:10px 0;
 }
 
 /* FOOTER */
@@ -106,6 +146,19 @@ footer{
   padding:40px 0;
   color:#64748b;
   font-size:14px;
+}
+
+.whatsapp{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  background:#25D366;
+  color:white;
+  padding:12px 18px;
+  border-radius:30px;
+  text-decoration:none;
+  font-size:14px;
+  z-index:1000;
 }
 </style>
 </head>
@@ -133,9 +186,16 @@ footer{
   <form id="formReclamo">
 
     <h2>Datos del consumidor</h2>
-    <input type="text" id="nombre" placeholder="Nombre completo" required>
+
+    <input
+      type="text"
+      id="nombre"
+      placeholder="Nombre completo"
+      required
+    >
 
     <h2>Documento de identidad</h2>
+
     <select id="tipoDoc" required>
       <option value="">Seleccione tipo de documento</option>
       <option value="DNI">DNI</option>
@@ -144,119 +204,336 @@ footer{
       <option value="CE">Carné de Extranjería</option>
     </select>
 
-    <input type="text" id="numeroDoc" placeholder="Número de documento" required>
+    <input
+      type="text"
+      id="numeroDoc"
+      placeholder="Número de documento"
+      required
+    >
 
     <h2>Correo electrónico</h2>
-    <input type="email" id="correo" placeholder="ejemplo@correo.com" required>
+
+    <input
+      type="email"
+      id="correo"
+      placeholder="ejemplo@correo.com"
+      required
+    >
+
+    <h2>Teléfono</h2>
+
+    <input
+      type="tel"
+      id="telefono"
+      placeholder="Número de teléfono"
+      required
+    >
 
     <h2>Tipo de registro</h2>
+
     <select id="tipoRegistro" required>
       <option value="">Seleccione una opción</option>
       <option value="Reclamo">Reclamo</option>
       <option value="Queja">Queja</option>
     </select>
 
-    <h2>Descripción del reclamo</h2>
-    <textarea id="descripcion" placeholder="Describa el motivo del reclamo o queja (mínimo 100 caracteres)" required></textarea>
+    <h2>Servicio o materia del reclamo</h2>
 
-    <button type="submit">Enviar registro</button>
+    <input
+      type="text"
+      id="servicio"
+      placeholder="Indique el servicio o materia relacionada con su reclamo o queja"
+      required
+    >
+
+    <h2>Monto</h2>
+
+    <input
+      type="text"
+      id="monto"
+      placeholder="Monto relacionado con el reclamo, si corresponde. Si no corresponde, indique: No aplica"
+      required
+    >
+
+    <h2>Descripción del reclamo o queja</h2>
+
+    <textarea
+      id="descripcion"
+      placeholder="Describa detalladamente el motivo del reclamo o queja (mínimo 100 caracteres)"
+      required
+    ></textarea>
+
+    <h2>Pedido concreto</h2>
+
+    <textarea
+      id="pedido"
+      class="pedido"
+      placeholder="Indique concretamente qué solicita mediante este reclamo o queja"
+      required
+    ></textarea>
+
+    <button type="submit" id="btnEnviar">
+      Enviar registro
+    </button>
 
   </form>
 
+  <!-- CONFIRMACIÓN -->
+  <div id="confirmacion" class="confirmacion">
+    <h2>Registro recibido</h2>
+
+    <p>
+      Su reclamo o queja ha sido registrado correctamente.
+    </p>
+
+    <p>N.º de Hoja de Reclamación:</p>
+
+    <div id="numeroHoja" class="numero-hoja"></div>
+
+    <p>
+      Conserve este número como referencia de su registro.
+    </p>
+  </div>
+
   <h2>Definiciones</h2>
-  <p><strong>Reclamo:</strong> Disconformidad relacionada directamente con el servicio profesional recibido.</p>
-  <p><strong>Queja:</strong> Disconformidad no relacionada al servicio, sino a la atención o trato.</p>
+
+  <p>
+    <strong>Reclamo:</strong>
+    Disconformidad relacionada con los productos o servicios.
+  </p>
+
+  <p>
+    <strong>Queja:</strong>
+    Disconformidad no relacionada con los productos o servicios, o malestar o descontento respecto de la atención al público.
+  </p>
 
   <h2>Responsabilidad</h2>
+
   <p>
     El registro será atendido dentro de los plazos establecidos por la normativa peruana. La presentación del reclamo no limita el derecho del consumidor a acudir a otras instancias.
   </p>
 
 </div>
 
-<!-- FOOTER -->
 <script>
-// VALIDACIÓN RUC
+
+/* VALIDACIÓN RUC */
 function validarRUC(ruc){
   if(!/^[0-9]{11}$/.test(ruc)) return false;
-  const f=[5,4,3,2,7,6,5,4,3,2];
-  let s=0;
-  for(let i=0;i<10;i++) s+=ruc[i]*f[i];
-  let r=11-(s%11);
-  if(r==10) r=0;
-  if(r==11) r=1;
-  return r==ruc[10];
+
+  const f = [5,4,3,2,7,6,5,4,3,2];
+  let s = 0;
+
+  for(let i=0; i<10; i++){
+    s += Number(ruc[i]) * f[i];
+  }
+
+  let r = 11 - (s % 11);
+
+  if(r === 10) r = 0;
+  if(r === 11) r = 1;
+
+  return r === Number(ruc[10]);
 }
 
+
+/* ELEMENTOS DEL FORMULARIO */
 const form = document.getElementById('formReclamo');
 const tipoDoc = document.getElementById('tipoDoc');
 const numeroDoc = document.getElementById('numeroDoc');
 const descripcion = document.getElementById('descripcion');
+const pedido = document.getElementById('pedido');
+const btnEnviar = document.getElementById('btnEnviar');
 
-const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbyyrq2vxR0A3GpCAlNgXIKOfPLB5ppTQRtKQYneayLm1ZASKSFjNRpGCUV_5shvTUkD6w/exec";
 
+/* URL DEL APPS SCRIPT */
+const WEBAPP_URL =
+"https://script.google.com/macros/s/AKfycbyyrq2vxR0A3GpCAlNgXIKOfPLB5ppTQRtKQYneayLm1ZASKSFjNRpGCUV_5shvTUkD6w/exec";
+
+
+/* ENVÍO DEL FORMULARIO */
 form.addEventListener('submit', async function(e){
+
   e.preventDefault();
 
   const tipo = tipoDoc.value;
   const num = numeroDoc.value.trim();
 
-  if(tipo==="DNI" && !/^[0-9]{8}$/.test(num)) return alert("El DNI debe tener exactamente 8 dígitos.");
-  if(tipo==="RUC" && !validarRUC(num)) return alert("El RUC ingresado no es válido.");
-  if(tipo==="Pasaporte" && num.length < 6) return alert("El Pasaporte debe tener al menos 6 caracteres.");
-  if(tipo==="CE" && num.length < 9) return alert("El Carné de Extranjería debe tener al menos 9 caracteres.");
-  if(descripcion.value.trim().length < 100) return alert("La descripción debe tener al menos 100 caracteres.");
+
+  /* VALIDACIÓN DEL DOCUMENTO */
+
+  if(tipo === "DNI" && !/^[0-9]{8}$/.test(num)){
+    alert("El DNI debe tener exactamente 8 dígitos.");
+    return;
+  }
+
+  if(tipo === "RUC" && !validarRUC(num)){
+    alert("El RUC ingresado no es válido.");
+    return;
+  }
+
+  if(tipo === "Pasaporte" && num.length < 6){
+    alert("El Pasaporte debe tener al menos 6 caracteres.");
+    return;
+  }
+
+  if(tipo === "CE" && num.length < 9){
+    alert("El Carné de Extranjería debe tener al menos 9 caracteres.");
+    return;
+  }
+
+  if(descripcion.value.trim().length < 100){
+    alert("La descripción debe tener al menos 100 caracteres.");
+    return;
+  }
+
+  if(pedido.value.trim().length < 10){
+    alert("Indique su pedido concreto.");
+    return;
+  }
+
+
+  /* DATOS QUE SE ENVIARÁN AL APPS SCRIPT */
 
   const data = {
-    nombre: document.getElementById('nombre').value,
-    documento: num,
-    correo: document.getElementById('correo').value,
-    telefono: "",
-    tipo: document.getElementById('tipoRegistro').value,
-    detalle: descripcion.value.trim()
+
+    nombre:
+      document.getElementById('nombre').value.trim(),
+
+    documento:
+      num,
+
+    correo:
+      document.getElementById('correo').value.trim(),
+
+    telefono:
+      document.getElementById('telefono').value.trim(),
+
+    tipo:
+      document.getElementById('tipoRegistro').value,
+
+    tipoDocumento:
+      document.getElementById('tipoDoc').value,
+
+    servicio:
+      document.getElementById('servicio').value.trim(),
+
+    monto:
+      document.getElementById('monto').value.trim(),
+
+    detalle:
+      descripcion.value.trim(),
+
+    pedido:
+      pedido.value.trim()
   };
 
-  const res = await fetch(WEBAPP_URL, {
-    method: "POST",
-    body: JSON.stringify(data)
-  });
 
-  const json = await res.json();
+  /* EVITAR DOBLE ENVÍO */
 
-  if(json.status === "ok"){
-    alert("Su reclamo ha sido registrado correctamente.");
-    window.location.href = "y-gracias.html";
-  } else {
-    alert("Hubo un error al registrar el reclamo.");
+  btnEnviar.disabled = true;
+  btnEnviar.textContent = "Registrando...";
+
+
+  try {
+
+    const res = await fetch(WEBAPP_URL, {
+      method: "POST",
+      body: JSON.stringify(data)
+    });
+
+    const json = await res.json();
+
+
+    if(json.status === "ok"){
+
+      /* OCULTAR FORMULARIO */
+      form.style.display = "none";
+
+      /* MOSTRAR NÚMERO DE HOJA */
+      document.getElementById('numeroHoja').textContent =
+        json.numeroHoja;
+
+      /* MOSTRAR CONFIRMACIÓN */
+      document.getElementById('confirmacion').style.display =
+        "block";
+
+      /* SUBIR A LA CONFIRMACIÓN */
+      document.getElementById('confirmacion').scrollIntoView({
+        behavior:"smooth"
+      });
+
+    } else {
+
+      alert(
+        "No se pudo registrar el reclamo. Por favor, inténtelo nuevamente."
+      );
+
+      btnEnviar.disabled = false;
+      btnEnviar.textContent = "Enviar registro";
+    }
+
+  } catch(error){
+
+    console.error(error);
+
+    alert(
+      "No se pudo completar el registro. Por favor, inténtelo nuevamente."
+    );
+
+    btnEnviar.disabled = false;
+    btnEnviar.textContent = "Enviar registro";
   }
+
 });
+
 </script>
 
 
 <!-- FOOTER INSTITUCIONAL -->
-<footer style="text-align:center; padding:40px 0; color:#64748b; font-size:14px;">
+<footer>
+
   © 2026 TASACIONES DE ARTE | MARCO CABRERA – PERITO REGISTRADO
-   <br><br>
 
-  <a href="y-aviso-legal.html" style="color:#888; text-decoration:none; margin:0 8px;">
+  <br><br>
+
+  <a
+    href="y-aviso-legal.html"
+    style="color:#888; text-decoration:none; margin:0 8px;"
+  >
     Aviso Legal
-  </a> · 
+  </a> ·
 
-  <a href="y-politicadeprivacidad.html" style="color:#888; text-decoration:none; margin:0 8px;">
+  <a
+    href="y-politicadeprivacidad.html"
+    style="color:#888; text-decoration:none; margin:0 8px;"
+  >
     Política de Privacidad
-  </a> · 
+  </a> ·
 
-  <a href="y-politica-cookies.html" style="color:#888; text-decoration:none; margin:0 8px;">
+  <a
+    href="y-politica-cookies.html"
+    style="color:#888; text-decoration:none; margin:0 8px;"
+  >
     Política de Cookies
-  </a> · 
+  </a> ·
 
-  <a href="y-libro-reclamaciones.html" style="color:#888; text-decoration:none; margin:0 8px;">
+  <a
+    href="y-libro-reclamaciones.html"
+    style="color:#888; text-decoration:none; margin:0 8px;"
+  >
     Libro de Reclamaciones
   </a>
-</footer>
-  
-<a class="whatsapp" href="https://wa.me/51930046681">WhatsApp</a>
 
-  
+</footer>
+
+
+<a
+  class="whatsapp"
+  href="https://wa.me/51930046681"
+>
+  WhatsApp
+</a>
+
 </body>
 </html>
