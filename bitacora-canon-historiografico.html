@@ -3,119 +3,541 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>El canon historiográfico del arte peruano | V CIAP 2026</title>
-  <meta name="description" content="Ponencia de Marco Iván Cabrera Hernández en el V Congreso Internacional de Arte Peruano 2026. El canon historiográfico del arte peruano: permanencias, ausencias y contradicciones (1980–2021).">
+
+  <meta name="description"
+        content="Ponencia de Marco Iván Cabrera Hernández en el V Congreso Internacional de Arte Peruano 2026. El canon historiográfico del arte peruano: permanencias, ausencias y contradicciones (1980–2021).">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
   <style>
     :root{
-      --bg:#070b12; --panel:#0f1728; --text:#edf2f7; --muted:#9aa8bc;
-      --gold:#d2aa5d; --gold2:#f0cb7b; --line:rgba(255,255,255,.10);
-      --shadow:0 24px 70px rgba(0,0,0,.42); --radius:22px; --max:1180px;
+      --bg:#070b12;
+      --panel:#0f1728;
+      --text:#edf2f7;
+      --muted:#9aa8bc;
+      --gold:#d2aa5d;
+      --gold2:#f0cb7b;
+      --line:rgba(255,255,255,.10);
+      --shadow:0 24px 70px rgba(0,0,0,.42);
+      --radius:22px;
+      --max:1180px;
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
-      margin:0; font-family:'Inter',sans-serif; color:var(--text); line-height:1.7;
+      margin:0;
+      font-family:'Inter',sans-serif;
+      color:var(--text);
+      line-height:1.7;
       background:
         radial-gradient(circle at 20% 0%,rgba(50,95,160,.12),transparent 35%),
         radial-gradient(circle at 90% 15%,rgba(210,170,93,.09),transparent 30%),
         var(--bg);
     }
-    a{color:inherit}
-    img{display:block;max-width:100%}
+
+    a{
+      color:inherit;
+    }
+
+    img{
+      display:block;
+      max-width:100%;
+    }
+
+    /* NAVEGACIÓN */
+
     .nav{
-      position:fixed; inset:0 0 auto 0; z-index:1000; display:flex; justify-content:center;
-      gap:26px; padding:18px 22px; background:rgba(7,11,18,.72);
-      border-bottom:1px solid rgba(255,255,255,.07); backdrop-filter:blur(18px);
+      position:fixed;
+      inset:0 0 auto 0;
+      z-index:1000;
+      display:flex;
+      justify-content:center;
+      gap:26px;
+      padding:18px 22px;
+      background:rgba(7,11,18,.72);
+      border-bottom:1px solid rgba(255,255,255,.07);
+      backdrop-filter:blur(18px);
     }
-    .nav a{font-size:13px;text-decoration:none;color:#d8e0ec;white-space:nowrap}
-    .nav a:hover{color:var(--gold2)}
+
+    .nav a{
+      font-size:13px;
+      text-decoration:none;
+      color:#d8e0ec;
+      white-space:nowrap;
+    }
+
+    .nav a:hover{
+      color:var(--gold2);
+    }
+
+    /* HERO */
+
     .hero{
-      position:relative; min-height:100vh; display:grid; place-items:center; overflow:hidden;
-      isolation:isolate; padding:120px 24px 70px;
+      position:relative;
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+      isolation:isolate;
+      padding:120px 24px 70px;
     }
+
     .hero::before{
-      content:""; position:absolute; inset:0; z-index:-3;
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:-3;
       background:
         linear-gradient(90deg,rgba(5,9,16,.92) 0%,rgba(5,9,16,.72) 42%,rgba(5,9,16,.58) 100%),
         linear-gradient(180deg,rgba(5,9,16,.18),rgba(5,9,16,.92) 90%),
         url("assets/congresosarte/Flyer%20V%20Congreso.jpg") center/cover no-repeat;
       transform:scale(1.035);
     }
+
     .hero::after{
-      content:""; position:absolute; inset:0; z-index:-2;
-      background:radial-gradient(circle at 50% 45%,transparent 0 28%,rgba(4,8,14,.35) 70%,rgba(4,8,14,.72) 100%);
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:-2;
+      background:
+        radial-gradient(
+          circle at 50% 45%,
+          transparent 0 28%,
+          rgba(4,8,14,.35) 70%,
+          rgba(4,8,14,.72) 100%
+        );
     }
+
     .hero-inner{
-      width:min(var(--max),100%); display:grid; grid-template-columns:1.25fr .75fr;
-      gap:42px; align-items:end;
+      width:min(var(--max),100%);
+      display:grid;
+      grid-template-columns:1.25fr .75fr;
+      gap:42px;
+      align-items:end;
     }
+
     .eyebrow{
-      display:inline-flex; align-items:center; gap:10px; margin-bottom:20px; color:var(--gold2);
-      font-size:12px; font-weight:600; letter-spacing:.18em; text-transform:uppercase;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:20px;
+      color:var(--gold2);
+      font-size:12px;
+      font-weight:600;
+      letter-spacing:.18em;
+      text-transform:uppercase;
     }
-    .eyebrow::before{content:"";width:42px;height:1px;background:var(--gold)}
+
+    .eyebrow::before{
+      content:"";
+      width:42px;
+      height:1px;
+      background:var(--gold);
+    }
+
     h1{
-      margin:0; max-width:900px; font-family:'Playfair Display',serif; font-weight:600;
-      font-size:clamp(44px,6vw,84px); line-height:1.02; text-wrap:balance;
+      margin:0;
+      max-width:900px;
+      font-family:'Playfair Display',serif;
+      font-weight:600;
+      font-size:clamp(44px,6vw,84px);
+      line-height:1.02;
+      text-wrap:balance;
       text-shadow:0 8px 24px rgba(0,0,0,.35);
     }
-    .subtitle{margin:22px 0 0;max-width:760px;color:#d8e0ea;font-size:clamp(17px,2vw,24px);line-height:1.5}
+
+    .subtitle{
+      margin:22px 0 0;
+      max-width:760px;
+      color:#d8e0ea;
+      font-size:clamp(17px,2vw,24px);
+      line-height:1.5;
+    }
+
     .hero-card{
-      background:linear-gradient(180deg,rgba(15,23,40,.88),rgba(10,16,29,.82));
-      border:1px solid rgba(255,255,255,.12); border-radius:var(--radius); padding:26px;
-      box-shadow:var(--shadow); backdrop-filter:blur(16px);
+      background:
+        linear-gradient(180deg,rgba(15,23,40,.88),rgba(10,16,29,.82));
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:var(--radius);
+      padding:26px;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(16px);
     }
-    .hero-card .label{color:var(--gold);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
-    .hero-card p{margin:7px 0;color:#dfe6f0;font-size:14px}
-    .hero-card strong{color:#fff}
-    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+
+    .hero-card .label{
+      color:var(--gold);
+      font-size:11px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin-bottom:10px;
+    }
+
+    .hero-card p{
+      margin:7px 0;
+      color:#dfe6f0;
+      font-size:14px;
+    }
+
+    .hero-card strong{
+      color:#fff;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:22px;
+    }
+
     .btn{
-      display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;
-      border-radius:999px;text-decoration:none;font-size:13px;font-weight:600;transition:.2s ease;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:46px;
+      padding:0 18px;
+      border-radius:999px;
+      text-decoration:none;
+      font-size:13px;
+      font-weight:600;
+      transition:.2s ease;
     }
-    .btn-primary{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#17120a;box-shadow:0 10px 28px rgba(210,170,93,.22)}
-    .btn-secondary{border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.04);color:#eef3f9}
-    .btn:hover{transform:translateY(-2px)}
-    main{width:min(var(--max),calc(100% - 38px));margin:0 auto;padding:72px 0 110px}
-    .section{margin:0 0 82px;scroll-margin-top:96px}
-    .section-head{display:grid;grid-template-columns:1fr 1.4fr;gap:34px;align-items:start;margin-bottom:30px}
-    .kicker{color:var(--gold);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px}
-    h2{margin:0;font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(30px,4vw,48px);line-height:1.15}
-    .section-intro{margin:0;color:var(--muted);font-size:17px}
-    .feature-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:stretch}
-    .poster{position:relative;overflow:hidden;border-radius:var(--radius);border:1px solid var(--line);background:#0b1321;box-shadow:var(--shadow);margin:0}
-    .poster img{width:100%;height:100%;min-height:430px;object-fit:cover}
-    .poster::after{content:"";position:absolute;inset:auto 0 0;height:38%;background:linear-gradient(transparent,rgba(4,8,15,.82));pointer-events:none}
-    .feature-copy{border-radius:var(--radius);border:1px solid var(--line);background:linear-gradient(180deg,rgba(15,23,40,.88),rgba(10,16,29,.72));padding:34px;box-shadow:var(--shadow)}
-    .feature-copy p{color:#ced7e4;margin:0 0 17px}
+
+    .btn-primary{
+      background:linear-gradient(135deg,var(--gold2),var(--gold));
+      color:#17120a;
+      box-shadow:0 10px 28px rgba(210,170,93,.22);
+    }
+
+    .btn-secondary{
+      border:1px solid rgba(255,255,255,.15);
+      background:rgba(255,255,255,.04);
+      color:#eef3f9;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    /* CONTENIDO */
+
+    main{
+      width:min(var(--max),calc(100% - 38px));
+      margin:0 auto;
+      padding:72px 0 110px;
+    }
+
+    .section{
+      margin:0 0 82px;
+      scroll-margin-top:96px;
+    }
+
+    .section-head{
+      display:grid;
+      grid-template-columns:1fr 1.4fr;
+      gap:34px;
+      align-items:start;
+      margin-bottom:30px;
+    }
+
+    .kicker{
+      color:var(--gold);
+      font-size:11px;
+      font-weight:600;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:8px;
+    }
+
+    h2{
+      margin:0;
+      font-family:'Playfair Display',serif;
+      font-weight:600;
+      font-size:clamp(30px,4vw,48px);
+      line-height:1.15;
+    }
+
+    .section-intro{
+      margin:0;
+      color:var(--muted);
+      font-size:17px;
+    }
+
+    /* PONENCIA */
+
+    .feature-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:30px;
+      align-items:start;
+    }
+
+    /*
+      La columna izquierda contiene ahora
+      la imagen de la ponencia y el video.
+    */
+
+    .feature-media{
+      min-width:0;
+      display:flex;
+      flex-direction:column;
+      gap:28px;
+    }
+
+    .poster{
+      position:relative;
+      overflow:hidden;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      background:#0b1321;
+      box-shadow:var(--shadow);
+      margin:0;
+    }
+
+    .poster img{
+      width:100%;
+      height:100%;
+      min-height:430px;
+      object-fit:cover;
+    }
+
+    .poster::after{
+      content:"";
+      position:absolute;
+      inset:auto 0 0;
+      height:38%;
+      background:
+        linear-gradient(transparent,rgba(4,8,15,.82));
+      pointer-events:none;
+    }
+
+    /* VIDEO */
+
+    .video-block{
+      margin:0;
+    }
+
+    .video-shell{
+      position:relative;
+      width:100%;
+      aspect-ratio:16 / 9;
+      overflow:hidden;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      background:#000;
+      box-shadow:var(--shadow);
+    }
+
+    .video-shell iframe{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border:0;
+      display:block;
+    }
+
+    .video-caption{
+      margin:14px 4px 0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.6;
+    }
+
+    .video-caption strong{
+      color:#e8edf5;
+      font-weight:500;
+    }
+
+    .feature-copy{
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      background:
+        linear-gradient(180deg,rgba(15,23,40,.88),rgba(10,16,29,.72));
+      padding:34px;
+      box-shadow:var(--shadow);
+    }
+
+    .feature-copy p{
+      color:#ced7e4;
+      margin:0 0 17px;
+    }
+
     .question{
-      margin:26px 0;padding:20px 22px;border-left:3px solid var(--gold);
-      background:rgba(210,170,93,.06);border-radius:0 14px 14px 0;
-      font-family:'Playfair Display',serif;font-size:21px;line-height:1.55;color:#f3f5f8;
+      margin:26px 0;
+      padding:20px 22px;
+      border-left:3px solid var(--gold);
+      background:rgba(210,170,93,.06);
+      border-radius:0 14px 14px 0;
+      font-family:'Playfair Display',serif;
+      font-size:21px;
+      line-height:1.55;
+      color:#f3f5f8;
     }
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:linear-gradient(180deg,rgba(15,23,40,.80),rgba(10,16,29,.76));border:1px solid var(--line);border-radius:18px;padding:24px}
-    .card h3{margin:0 0 10px;font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:#fff}
-    .card p{margin:0;color:var(--muted);font-size:14px}
-    .pdf-shell{overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);box-shadow:var(--shadow)}
-    .pdf-toolbar{display:flex;gap:14px;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.025)}
-    .pdf-toolbar strong{font-family:'Playfair Display',serif;font-size:21px}
-    .pdf-toolbar span{color:var(--muted);font-size:13px}
-    .pdf-actions{display:flex;gap:10px;flex-wrap:wrap}
-    .pdf-viewer{width:100%;height:780px;border:0;background:#111827}
-    .pdf-fallback{padding:34px;text-align:center;color:var(--muted)}
-    .notice{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;padding:22px 24px;border:1px solid rgba(210,170,93,.28);background:linear-gradient(135deg,rgba(210,170,93,.08),rgba(255,255,255,.025));border-radius:18px}
-    .notice-dot{width:11px;height:11px;margin-top:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 22px rgba(210,170,93,.7)}
-    .notice p{margin:0;color:#cbd5e1}
-    footer{border-top:1px solid var(--line);padding:42px 24px 64px;text-align:center;color:#69778a;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
-    .whatsapp{position:fixed;right:22px;bottom:22px;z-index:999;display:flex;align-items:center;justify-content:center;min-width:54px;height:54px;padding:0 17px;border-radius:999px;text-decoration:none;color:#fff;background:#25D366;box-shadow:0 16px 32px rgba(0,0,0,.32);font-weight:600;font-size:13px}
+
+    /* TARJETAS */
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .card{
+      background:
+        linear-gradient(180deg,rgba(15,23,40,.80),rgba(10,16,29,.76));
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:24px;
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      font-family:'Playfair Display',serif;
+      font-size:22px;
+      font-weight:600;
+      color:#fff;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* PDF */
+
+    .pdf-shell{
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:var(--panel);
+      box-shadow:var(--shadow);
+    }
+
+    .pdf-toolbar{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      justify-content:space-between;
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+      background:rgba(255,255,255,.025);
+    }
+
+    .pdf-toolbar strong{
+      font-family:'Playfair Display',serif;
+      font-size:21px;
+    }
+
+    .pdf-toolbar span{
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .pdf-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .pdf-viewer{
+      width:100%;
+      height:780px;
+      border:0;
+      background:#111827;
+    }
+
+    .pdf-fallback{
+      padding:34px;
+      text-align:center;
+      color:var(--muted);
+    }
+
+    /* AVISO FINAL */
+
+    .notice{
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:18px;
+      align-items:start;
+      padding:22px 24px;
+      border:1px solid rgba(210,170,93,.28);
+      background:
+        linear-gradient(
+          135deg,
+          rgba(210,170,93,.08),
+          rgba(255,255,255,.025)
+        );
+      border-radius:18px;
+    }
+
+    .notice-dot{
+      width:11px;
+      height:11px;
+      margin-top:8px;
+      border-radius:50%;
+      background:var(--gold);
+      box-shadow:0 0 22px rgba(210,170,93,.7);
+    }
+
+    .notice p{
+      margin:0;
+      color:#cbd5e1;
+    }
+
+    /* FOOTER */
+
+    footer{
+      border-top:1px solid var(--line);
+      padding:42px 24px 64px;
+      text-align:center;
+      color:#69778a;
+      font-size:12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .whatsapp{
+      position:fixed;
+      right:22px;
+      bottom:22px;
+      z-index:999;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-width:54px;
+      height:54px;
+      padding:0 17px;
+      border-radius:999px;
+      text-decoration:none;
+      color:#fff;
+      background:#25D366;
+      box-shadow:0 16px 32px rgba(0,0,0,.32);
+      font-weight:600;
+      font-size:13px;
+    }
+
+    /* ESCRITORIO */
 
     @media(min-width:901px){
+
       .feature-grid{
-        grid-template-columns:minmax(0,1.35fr) minmax(360px,.65fr);
+        grid-template-columns:
+          minmax(0,1.35fr)
+          minmax(360px,.65fr);
         align-items:start;
       }
 
@@ -123,7 +545,11 @@
         aspect-ratio:16 / 9;
         min-height:0;
         background:
-          radial-gradient(circle at 50% 50%,rgba(28,52,82,.20),transparent 55%),
+          radial-gradient(
+            circle at 50% 50%,
+            rgba(28,52,82,.20),
+            transparent 55%
+          ),
           #050912;
       }
 
@@ -140,27 +566,97 @@
       }
     }
 
+    /* TABLET */
+
     @media(max-width:900px){
-      .hero{min-height:auto;padding-top:110px}
-      .hero-inner,.section-head,.feature-grid{grid-template-columns:1fr}
-      .hero-card{max-width:620px}
-      .cards{grid-template-columns:1fr}
-      .poster{aspect-ratio:auto}
-      .poster img{min-height:260px;height:auto;object-fit:cover}
-      .pdf-viewer{height:620px}
+
+      .hero{
+        min-height:auto;
+        padding-top:110px;
+      }
+
+      .hero-inner,
+      .section-head,
+      .feature-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-card{
+        max-width:620px;
+      }
+
+      .cards{
+        grid-template-columns:1fr;
+      }
+
+      .poster{
+        aspect-ratio:auto;
+      }
+
+      .poster img{
+        min-height:260px;
+        height:auto;
+        object-fit:cover;
+      }
+
+      .pdf-viewer{
+        height:620px;
+      }
     }
+
+    /* MÓVIL */
+
     @media(max-width:640px){
-      .nav{justify-content:flex-start;overflow-x:auto;gap:18px}
-      .hero{padding-left:18px;padding-right:18px}
-      h1{font-size:42px}
-      main{width:min(100% - 24px,var(--max))}
-      .feature-copy{padding:24px}
-      .pdf-toolbar{align-items:flex-start;flex-direction:column}
-      .pdf-viewer{height:520px}
-      .whatsapp{min-width:48px;height:48px;padding:0 14px}
+
+      .nav{
+        justify-content:flex-start;
+        overflow-x:auto;
+        gap:18px;
+      }
+
+      .hero{
+        padding-left:18px;
+        padding-right:18px;
+      }
+
+      h1{
+        font-size:42px;
+      }
+
+      main{
+        width:min(100% - 24px,var(--max));
+      }
+
+      .feature-copy{
+        padding:24px;
+      }
+
+      .feature-media{
+        gap:22px;
+      }
+
+      .video-shell{
+        border-radius:16px;
+      }
+
+      .pdf-toolbar{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .pdf-viewer{
+        height:520px;
+      }
+
+      .whatsapp{
+        min-width:48px;
+        height:48px;
+        padding:0 14px;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <nav class="nav" aria-label="Navegación principal">
@@ -170,138 +666,364 @@
     <a href="contacto.html">Contacto</a>
   </nav>
 
+
   <header class="hero">
+
     <div class="hero-inner">
+
       <div>
-        <div class="eyebrow">V Congreso Internacional de Arte Peruano · 2026</div>
+        <div class="eyebrow">
+          V Congreso Internacional de Arte Peruano · 2026
+        </div>
+
         <h1>El canon historiográfico del arte peruano</h1>
-        <p class="subtitle">Permanencias, ausencias y contradicciones (1980–2021)</p>
-      </div>
 
-      <aside class="hero-card">
-        <div class="label">Ficha de la ponencia</div>
-        <p><strong>Ponente:</strong> Marco Iván Cabrera Hernández</p>
-        <p><strong>Mesa:</strong> Teoría, crítica y métodos</p>
-        <p><strong>Condición:</strong> Investigador independiente</p>
-        <p><strong>Lugar:</strong> Pinacoteca Municipal Ignacio Merino, Lima</p>
-        <p><strong>Fecha:</strong> 25 de septiembre de 2026</p>
-        <p><strong>Horario:</strong> 16:10–16:30 h</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#ponencia">Ver ponencia</a>
-          <a class="btn btn-secondary" href="#programa">Programa oficial</a>
-        </div>
-      </aside>
-    </div>
-  </header>
-
-  <main>
-    <section class="section" id="ponencia">
-      <div class="section-head">
-        <div>
-          <div class="kicker">Ponencia</div>
-          <h2>Una pregunta historiográfica convertida en problema medible</h2>
-        </div>
-        <p class="section-intro">
-          Dos consultas realizadas en el Perú con cuarenta y un años de diferencia —<em>Hueso Húmero</em> (1980) y <em>El Comercio</em> (2021)— permiten observar cómo se distribuye, persiste y transforma el reconocimiento de determinados artistas dentro del campo artístico peruano.
+        <p class="subtitle">
+          Permanencias, ausencias y contradicciones (1980–2021)
         </p>
       </div>
 
+
+      <aside class="hero-card">
+
+        <div class="label">Ficha de la ponencia</div>
+
+        <p>
+          <strong>Ponente:</strong>
+          Marco Iván Cabrera Hernández
+        </p>
+
+        <p>
+          <strong>Mesa:</strong>
+          Teoría, crítica y métodos
+        </p>
+
+        <p>
+          <strong>Condición:</strong>
+          Investigador independiente
+        </p>
+
+        <p>
+          <strong>Lugar:</strong>
+          Pinacoteca Municipal Ignacio Merino, Lima
+        </p>
+
+        <p>
+          <strong>Fecha:</strong>
+          25 de septiembre de 2026
+        </p>
+
+        <p>
+          <strong>Horario:</strong>
+          16:10–16:30 h
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#ponencia">
+            Ver ponencia
+          </a>
+
+          <a class="btn btn-secondary" href="#programa">
+            Programa oficial
+          </a>
+        </div>
+
+      </aside>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- PONENCIA -->
+
+    <section class="section" id="ponencia">
+
+      <div class="section-head">
+
+        <div>
+          <div class="kicker">Ponencia</div>
+
+          <h2>
+            Una pregunta historiográfica convertida en problema medible
+          </h2>
+        </div>
+
+        <p class="section-intro">
+          Dos consultas realizadas en el Perú con cuarenta y un años
+          de diferencia —<em>Hueso Húmero</em> (1980) y
+          <em>El Comercio</em> (2021)— permiten observar cómo se
+          distribuye, persiste y transforma el reconocimiento de
+          determinados artistas dentro del campo artístico peruano.
+        </p>
+
+      </div>
+
+
       <div class="feature-grid">
-        <figure class="poster">
-          <img src="assets/congresosarte/Ponencia%20D1.jpg" alt="Diapositiva principal de la ponencia El canon historiográfico del arte peruano">
-        </figure>
+
+        <!-- COLUMNA IZQUIERDA -->
+
+        <div class="feature-media">
+
+          <figure class="poster">
+            <img
+              src="assets/congresosarte/Ponencia%20D1.jpg"
+              alt="Diapositiva principal de la ponencia El canon historiográfico del arte peruano">
+          </figure>
+
+
+          <!-- VIDEO COMPLETO DE LA PONENCIA -->
+
+          <figure class="video-block">
+
+            <div class="video-shell">
+
+              <iframe
+                src="https://www.youtube.com/embed/oLA3VN4-dls"
+                title="El canon historiográfico del arte peruano: permanencias, ausencias y contradicciones (1980–2021)"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+
+            </div>
+
+            <figcaption class="video-caption">
+              <strong>Registro audiovisual de la ponencia.</strong>
+              V Congreso Internacional de Arte Peruano,
+              Pinacoteca Municipal Ignacio Merino,
+              Lima, 25 de septiembre de 2026.
+            </figcaption>
+
+          </figure>
+
+        </div>
+
+
+        <!-- COLUMNA DERECHA -->
 
         <div class="feature-copy">
+
           <p>
-            La investigación no parte de la premisa de que una consulta de preferencias constituya, por sí misma, un canon. Las consultas son tratadas como fuentes empíricas capaces de registrar un determinado estado del reconocimiento especializado en momentos históricos distintos.
+            La investigación no parte de la premisa de que una
+            consulta de preferencias constituya, por sí misma, un
+            canon. Las consultas son tratadas como fuentes empíricas
+            capaces de registrar un determinado estado del
+            reconocimiento especializado en momentos históricos
+            distintos.
           </p>
+
           <div class="question">
-            ¿Qué permanece, qué cambia y qué permanece ausente cuando dos registros separados por 41 años son confrontados entre sí?
+            ¿Qué permanece, qué cambia y qué permanece ausente
+            cuando dos registros separados por 41 años son
+            confrontados entre sí?
           </div>
+
           <p>
-            El análisis combina lectura historiográfica con procedimientos cuantitativos. La formalización no sustituye la interpretación histórico-artística: la obliga a mostrar con mayor precisión de dónde parten sus afirmaciones.
+            El análisis combina lectura historiográfica con
+            procedimientos cuantitativos. La formalización no
+            sustituye la interpretación histórico-artística:
+            la obliga a mostrar con mayor precisión de dónde parten
+            sus afirmaciones.
           </p>
+
           <p>
-            La investigación presta especial atención a tres dimensiones: <strong>permanencias</strong>, <strong>variaciones</strong> y <strong>ausencias</strong>. Estas últimas adquieren especial interés cuando se confrontan con otros sistemas de reconocimiento artístico.
+            La investigación presta especial atención a tres
+            dimensiones:
+            <strong>permanencias</strong>,
+            <strong>variaciones</strong> y
+            <strong>ausencias</strong>.
+            Estas últimas adquieren especial interés cuando se
+            confrontan con otros sistemas de reconocimiento artístico.
           </p>
+
         </div>
+
       </div>
+
     </section>
 
+
+    <!-- METODOLOGÍA -->
+
     <section class="section">
+
       <div class="section-head">
+
         <div>
           <div class="kicker">Estructura de análisis</div>
           <h2>Del registro a la interpretación</h2>
         </div>
+
         <p class="section-intro">
-          El recorrido metodológico distingue entre datos observables, operaciones comparativas e interpretación historiográfica.
+          El recorrido metodológico distingue entre datos observables,
+          operaciones comparativas e interpretación historiográfica.
         </p>
+
       </div>
+
 
       <div class="cards">
+
         <article class="card">
           <h3>1. Registrar</h3>
-          <p>Identificar participantes, respuestas, frecuencias, presencias y ausencias en cada consulta.</p>
+          <p>
+            Identificar participantes, respuestas, frecuencias,
+            presencias y ausencias en cada consulta.
+          </p>
         </article>
+
         <article class="card">
           <h3>2. Comparar</h3>
-          <p>Organizar ambos cortes mediante matrices y procedimientos cuantitativos que hagan visibles recurrencias y variaciones.</p>
+          <p>
+            Organizar ambos cortes mediante matrices y procedimientos
+            cuantitativos que hagan visibles recurrencias y variaciones.
+          </p>
         </article>
+
         <article class="card">
           <h3>3. Interpretar</h3>
-          <p>Volver desde los resultados numéricos hacia la historia del arte para discutir su significado y sus límites.</p>
+          <p>
+            Volver desde los resultados numéricos hacia la historia
+            del arte para discutir su significado y sus límites.
+          </p>
         </article>
+
       </div>
+
     </section>
 
+
+    <!-- PROGRAMA -->
+
     <section class="section" id="programa">
+
       <div class="section-head">
+
         <div>
           <div class="kicker">Documento oficial</div>
-          <h2>Programa del V Congreso Internacional de Arte Peruano</h2>
+
+          <h2>
+            Programa del V Congreso Internacional de Arte Peruano
+          </h2>
         </div>
+
         <p class="section-intro">
-          El programa puede consultarse directamente en esta página. En dispositivos que no permitan visualizar PDF embebidos, el botón abre el documento en una pestaña independiente.
+          El programa puede consultarse directamente en esta página.
+          En dispositivos que no permitan visualizar PDF embebidos,
+          el botón abre el documento en una pestaña independiente.
         </p>
+
       </div>
 
+
       <div class="pdf-shell">
+
         <div class="pdf-toolbar">
+
           <div>
             <strong>Programa V Congreso</strong><br>
             <span>Documento oficial · PDF</span>
           </div>
+
           <div class="pdf-actions">
-            <a class="btn btn-secondary" href="assets/congresosarte/Programa%20V%20Congreso.pdf" target="_blank" rel="noopener noreferrer">Abrir PDF</a>
-            <a class="btn btn-primary" href="assets/congresosarte/Programa%20V%20Congreso.pdf" download>Descargar</a>
+
+            <a
+              class="btn btn-secondary"
+              href="assets/congresosarte/Programa%20V%20Congreso.pdf"
+              target="_blank"
+              rel="noopener noreferrer">
+              Abrir PDF
+            </a>
+
+            <a
+              class="btn btn-primary"
+              href="assets/congresosarte/Programa%20V%20Congreso.pdf"
+              download>
+              Descargar
+            </a>
+
           </div>
+
         </div>
 
-        <object class="pdf-viewer" data="assets/congresosarte/Programa%20V%20Congreso.pdf#view=FitH" type="application/pdf">
+
+        <object
+          class="pdf-viewer"
+          data="assets/congresosarte/Programa%20V%20Congreso.pdf#view=FitH"
+          type="application/pdf">
+
           <div class="pdf-fallback">
-            <p>Tu navegador no permite mostrar el PDF dentro de la página.</p>
-            <p><a class="btn btn-primary" href="assets/congresosarte/Programa%20V%20Congreso.pdf" target="_blank" rel="noopener noreferrer">Abrir programa oficial</a></p>
+
+            <p>
+              Tu navegador no permite mostrar el PDF dentro de la página.
+            </p>
+
+            <p>
+              <a
+                class="btn btn-primary"
+                href="assets/congresosarte/Programa%20V%20Congreso.pdf"
+                target="_blank"
+                rel="noopener noreferrer">
+                Abrir programa oficial
+              </a>
+            </p>
+
           </div>
+
         </object>
+
       </div>
+
     </section>
+
+
+    <!-- ESTADO ACTUAL DE LA INVESTIGACIÓN -->
 
     <section class="section">
+
       <div class="notice">
+
         <div class="notice-dot"></div>
+
         <div>
-          <strong>Investigación en presentación.</strong>
+
+          <strong>Ponencia presentada.</strong>
+
           <p>
-            Antes de la exposición académica del 25 de septiembre de 2026, esta página presenta únicamente el marco de la investigación. La documentación metodológica, tablas, matrices, resultados y referencias complementarias podrán incorporarse posteriormente como material de consulta.
+            La investigación fue presentada el 25 de septiembre de
+            2026 en el V Congreso Internacional de Arte Peruano.
+            Esta página conserva el registro audiovisual de la
+            exposición y el marco metodológico de la investigación.
+            La documentación complementaria, tablas, matrices,
+            resultados y referencias podrán incorporarse
+            progresivamente como material de consulta.
           </p>
+
         </div>
+
       </div>
+
     </section>
+
   </main>
 
-  <footer>© 2026 Tasaciones de Arte · Marco Iván Cabrera Hernández</footer>
 
-  <a class="whatsapp" href="https://wa.me/51930046681" aria-label="Contactar por WhatsApp">WhatsApp</a>
+  <footer>
+    © 2026 Tasaciones de Arte · Marco Iván Cabrera Hernández
+  </footer>
+
+
+  <a
+    class="whatsapp"
+    href="https://wa.me/51930046681"
+    aria-label="Contactar por WhatsApp">
+    WhatsApp
+  </a>
+
 </body>
 </html>
