@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- Google tag (gtag.js) — Google Analytics 4 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6DHFNH20E6"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -10,12 +13,8 @@
   gtag('config', 'G-6DHFNH20E6');
 </script>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Tasación profesional de obras de arte en Lima</title>
 <meta name="description" content="Tasación profesional y peritaje de obras de arte en Perú. Informes técnicos para herencias, seguros, procesos judiciales, inventarios patrimoniales y gestión pública.">
-
 <link rel="canonical" href="https://tasacionesdearte.org.pe/">
 
 <meta property="og:type" content="website">
@@ -23,30 +22,63 @@
 <meta property="og:description" content="Servicios de tasación, peritaje y valoración técnica de obras de arte en Perú.">
 <meta property="og:url" content="https://tasacionesdearte.org.pe/">
 <meta property="og:site_name" content="Tasaciones de Arte">
-
 <meta name="robots" content="index,follow">
 
-  
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-body{
-  margin:0;
-  font-family: 'Inter', sans-serif;
-  background:#0a1220;
-  color:#e2e8f0;
+*{
+  box-sizing:border-box;
 }
 
-/* NAV */
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:#0a1220;
+  color:#e2e8f0;
+  line-height:1.65;
+}
+
+body.modal-open{
+  overflow:hidden;
+}
+
+a{
+  color:#cbd5f5;
+}
+
+a:hover{
+  color:#ffffff;
+}
+
+a:focus-visible,
+button:focus-visible{
+  outline:2px solid #38bdf8;
+  outline-offset:5px;
+}
+
+h1,h2{
+  line-height:1.25;
+}
+
+img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:12px;
+}
+
+/* NAVEGACIÓN */
 .nav{
   position:fixed;
   top:0;
+  left:0;
   width:100%;
   padding:18px;
   display:flex;
   justify-content:center;
   gap:30px;
-  background:rgba(10,15,28,0.85);
+  background:rgba(10,15,28,.85);
   backdrop-filter:blur(10px);
   z-index:1000;
 }
@@ -58,54 +90,82 @@ body{
   white-space:nowrap;
 }
 
-/* HERO */
+.nav a:hover{
+  color:#ffffff;
+}
+
+/* PORTADA */
 .hero{
-  height:100vh;
+  min-height:100vh;
+  min-height:100svh;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
   position:relative;
+  padding:110px 24px 95px;
 }
 
 .hero::before{
-    content:"";
-    position:absolute; inset:0;
-    background:url('assets/index/Encuadernado.png') center no-repeat;
-    background-size:130%;
-    opacity:0.95;
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url('assets/index/Encuadernado.png') center no-repeat;
+  background-size:130%;
+  opacity:.95;
 }
 
 .hero::after{
   content:"";
-  position:absolute; inset:0;
-  background:rgba(10,15,28,0.75);
+  position:absolute;
+  inset:0;
+  background:rgba(10,15,28,.75);
 }
 
 .hero-content{
   position:relative;
   z-index:2;
+  width:100%;
   max-width:800px;
 }
 
 .hero h1{
   font-size:44px;
   font-weight:600;
+  margin:0 0 24px;
 }
 
 .hero p{
-  color:#94a3b8;
+  color:#cbd5e1;
 }
 
-/* BOTÓN */
+.hero-preguntas{
+  margin-top:18px;
+}
+
+.hero-preguntas a{
+  color:#dbe4f0;
+  text-decoration:underline;
+  text-underline-offset:3px;
+  font-size:14px;
+}
+
+/* BOTONES */
 .btn{
   display:inline-block;
   margin-top:25px;
   padding:14px 26px;
   border-radius:30px;
   background:#25D366;
-  color:#fff;
+  color:#062a16;
+  font-weight:600;
   text-decoration:none;
+  transition:background .2s ease;
+}
+
+.btn:hover{
+  background:#4ade80;
+  color:#062a16;
 }
 
 /* REDES */
@@ -120,53 +180,67 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  width:32px;
-  height:32px;
+  width:36px;
+  height:36px;
   background:#020617;
   border-radius:6px;
-  color:#94a3b8;
+  color:#cbd5e1;
   text-decoration:none;
-  font-size:14px;
+}
+
+.redes a:hover{
+  color:#ffffff;
+  background:#1e293b;
+}
+
+.redes svg{
+  width:16px;
+  height:16px;
 }
 
 /* SECCIONES */
 .section{
-  max-width:1000px;
-  margin:auto;
-  padding:80px 20px;
+  width:100%;
+  max-width:1040px;
+  margin:0 auto;
+  padding:40px 20px;
+}
+
+.hero + .section{
+  padding-top:60px;
 }
 
 .card{
   background:#020617;
-  border:1px solid rgba(148,163,184,0.15);
+  border:1px solid rgba(148,163,184,.15);
   border-radius:12px;
   padding:35px;
-  margin-bottom:30px;
+}
+
+.card h2:first-child{
+  margin-top:0;
+}
+
+.card p:last-child{
+  margin-bottom:0;
+}
+
+.texto-suave{
+  color:#b8c5d6;
 }
 
 .grid{
   display:grid;
   gap:30px;
+  align-items:center;
 }
 
-/* ENLACES INSTITUCIONALES */
-a.inscripción,
-a.registro,
-a.SUNEDU {
-  color:#cbd5f5;
-  text-decoration:none;
+.imagen-servicio{
+  margin-bottom:24px;
 }
 
-a.inscripción:hover,
-a.registro:hover,
-a.SUNEDU:hover {
-  color:#ffffff;
-}
-
-a.inscripción:visited,
-a.registro:visited,
-a.SUNEDU:visited {
-  color:#cbd5f5;
+.subseccion{
+  margin-top:38px;
 }
 
 @media(min-width:768px){
@@ -175,9 +249,22 @@ a.SUNEDU:visited {
   }
 }
 
-img{
-  width:100%;
-  border-radius:12px;
+/* ENLACES PROFESIONALES */
+a.inscripcion,
+a.registro{
+  color:#cbd5f5;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+a.inscripcion:hover,
+a.registro:hover{
+  color:#ffffff;
+}
+
+a.inscripcion:visited,
+a.registro:visited{
+  color:#cbd5f5;
 }
 
 /* CONTACTO */
@@ -185,13 +272,20 @@ img{
   text-align:center;
 }
 
-a.registro, a.correo{
-  color:#94a3b8;
-  text-decoration:none;
+a.correo{
+  color:#dbe4f0;
+  text-decoration:underline;
+  text-underline-offset:4px;
+  overflow-wrap:anywhere;
 }
 
-a.registro:hover, a.correo:hover{
-  color:#cbd5f5;
+a.correo:hover{
+  color:#ffffff;
+}
+
+.telefono{
+  color:#dbe4f0;
+  text-decoration:none;
 }
 
 /* WHATSAPP */
@@ -200,42 +294,21 @@ a.registro:hover, a.correo:hover{
   bottom:25px;
   right:25px;
   background:#25D366;
-  color:white;
+  color:#062a16;
+  font-weight:600;
   padding:14px 18px;
   border-radius:50px;
   text-decoration:none;
-  z-index: 1001;
+  z-index:1001;
+  box-shadow:0 5px 18px rgba(0,0,0,.25);
 }
 
-/* ICONO DEFINICIÓN */
-.info-icon {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  background: rgba(71, 85, 105, 0.4);
-  color: rgba(226, 232, 240, 0.7) !important;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 10px;
-  line-height: 14px;
-  font-family: serif;
-  font-style: italic;
-  font-weight: 300;
-  position: relative;
-  top: -8px;
-  margin-left: 1px;
-  text-decoration: none !important;
-  transition: all 0.2s ease;
-  vertical-align: baseline;
+.whatsapp:hover{
+  background:#4ade80;
+  color:#062a16;
 }
 
-.info-icon:hover {
-  background: rgba(71, 85, 105, 0.8);
-  color: #fff !important;
-}
-
-
-/* AVISO FLOTANTE PONENCIA */
+/* AVISO DE PONENCIA */
 .ponencia-float{
   position:fixed;
   left:25px;
@@ -244,14 +317,18 @@ a.registro:hover, a.correo:hover{
   display:flex;
   align-items:center;
   gap:12px;
-  max-width:360px;
-  padding:14px 18px;
-  border-radius:50px;
-  background:rgba(248,250,252,0.96);
-  box-shadow:0 8px 24px rgba(2,6,23,0.35);
+  max-width:390px;
+  padding:14px 42px 14px 18px;
+  border-radius:24px;
+  background:rgba(248,250,252,.96);
+  box-shadow:0 8px 24px rgba(2,6,23,.35);
   color:#0f2747;
   font-size:14px;
   line-height:1.3;
+}
+
+.ponencia-float[hidden]{
+  display:none;
 }
 
 .ponencia-float::before{
@@ -285,7 +362,118 @@ a.registro:hover, a.correo:hover{
   color:#1d4ed8;
 }
 
-/* MOBILE */
+.ponencia-cerrar{
+  position:absolute;
+  top:8px;
+  right:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:28px;
+  height:28px;
+  padding:0;
+  border:0;
+  border-radius:50%;
+  background:transparent;
+  color:#334155;
+  font-size:23px;
+  cursor:pointer;
+}
+
+.ponencia-cerrar:hover{
+  background:#e2e8f0;
+}
+
+/* BOTONES DE DOCUMENTOS */
+.ver{
+  border:0;
+  padding:0;
+  background:transparent;
+  color:#cbd5f5;
+  font-family:inherit;
+  font-size:13px;
+  margin-left:6px;
+  text-decoration:underline;
+  text-underline-offset:3px;
+  cursor:pointer;
+}
+
+.ver:hover{
+  color:#ffffff;
+}
+
+/* MODALES */
+.modal{
+  display:none;
+  position:fixed;
+  z-index:9999;
+  inset:0;
+  width:100%;
+  height:100%;
+  padding:24px;
+  overflow-y:auto;
+  background:rgba(15,23,42,.9);
+  backdrop-filter:blur(4px);
+}
+
+.modal-content{
+  position:relative;
+  background:#1e293b;
+  margin:30px auto;
+  padding:55px 20px 20px;
+  border-radius:12px;
+  width:100%;
+  max-width:900px;
+  text-align:center;
+}
+
+.modal-content img{
+  width:100%;
+  border-radius:8px;
+}
+
+.close{
+  position:absolute;
+  top:8px;
+  right:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:36px;
+  height:36px;
+  border:0;
+  border-radius:50%;
+  background:transparent;
+  color:#e2e8f0;
+  font-size:30px;
+  cursor:pointer;
+}
+
+.close:hover{
+  background:#334155;
+  color:#ffffff;
+}
+
+/* PIE */
+footer{
+  text-align:center;
+  padding:40px 20px 120px;
+  color:#b8c5d6;
+  font-size:14px;
+}
+
+footer a{
+  display:inline-block;
+  color:#cbd5e1;
+  text-decoration:none;
+  margin:4px 8px;
+}
+
+footer a:hover{
+  color:#ffffff;
+}
+
+/* MÓVILES */
 @media(max-width:768px){
   .nav{
     gap:15px;
@@ -293,20 +481,45 @@ a.registro:hover, a.correo:hover{
     overflow-x:auto;
     justify-content:flex-start;
   }
-  .nav a{ font-size:13px; }
-  .hero h1{ font-size:30px; }
-  .hero::before{ background-size:cover; background-position:center; }
 
+  .nav a{
+    font-size:13px;
+  }
+
+  .hero{
+    padding:100px 22px 150px;
+  }
+
+  .hero h1{
+    font-size:32px;
+  }
+
+  .hero::before{
+    background-size:cover;
+    background-position:center;
+  }
+
+  .section{
+    padding:28px 18px;
+  }
+
+  .hero + .section{
+    padding-top:40px;
+  }
+
+  .card{
+    padding:25px;
+  }
 
   .ponencia-float{
     left:12px;
-    bottom:18px;
-    max-width:calc(100vw - 105px);
-    padding:10px 12px;
+    bottom:80px;
+    max-width:calc(100vw - 24px);
+    padding:12px 40px 12px 12px;
     gap:8px;
     border-radius:18px;
     font-size:12px;
-    line-height:1.25;
+    line-height:1.3;
   }
 
   .ponencia-float::before{
@@ -320,98 +533,40 @@ a.registro:hover, a.correo:hover{
     font-size:12px;
   }
 
-  .info-icon {
-    width: 11px;
-    height: 11px;
-    font-size: 8px;
-    line-height: 11px;
-    top: -6px;
-    margin-left: 0px;
-    background: rgba(71, 85, 105, 0.6);
+  .whatsapp{
+    right:16px;
+    bottom:18px;
+    padding:12px 18px;
   }
-}
 
-/* MODALES */
-.ver {
-  color: #cbd5f5;
-  font-size: 13px;
-  margin-left: 6px;
-  text-decoration: underline;
-  cursor: pointer;
-}
+  .modal{
+    padding:12px;
+  }
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(4px);
-}
+  .modal-content{
+    margin:12px auto;
+    padding:52px 12px 12px;
+  }
 
-.modal-content {
-  background: #1e293b;
-  margin: 5% auto;
-  padding: 20px;
-  border-radius: 12px;
-  width: 60%;
-  max-width: 700px;
-  text-align: center;
-}
-
-.modal-content img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-.close {
-  color: #cbd5f5;
-  float: right;
-  font-size: 28px;
-  cursor: pointer;
-
-/* TOOLTIP */
-.tooltip {
-  position: relative;
-  cursor: pointer;
-  font-weight: 500;
-  margin-left: 4px;
-}
-
-.tooltiptext {
-  visibility: hidden;
-  background-color: #1e293b;
-  color: #cbd5f5;
-  padding: 6px 10px;
-  border-radius: 4px;
-  position: absolute;
-  z-index: 10;
-  top: -5px;
-  left: 20px;
-  white-space: nowrap;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-}
+  footer{
+    padding-bottom:180px;
+  }
 }
 </style>
 
-<!-- ⭐ SCHEMA JSON-LD -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Tasador de obras de arte en Lima",
   "url": "https://tasacionesdearte.org.pe",
+  "email": "marcoivanbitel@gmail.com",
+  "telephone": "+51 930 046 681",
   "areaServed": {
     "@type": "Place",
     "name": "Lima, Perú"
   },
-  "description": "Servicio profesional de tasación de obras de arte con sustento técnico, informes periciales con validez comercial, legal, financiera, público, arancelario y cultural.",
+  "description": "Servicio profesional de tasación de obras de arte e informes técnicos para fines comerciales, legales, financieros, de gestión pública, arancelarios y culturales.",
   "founder": {
     "@type": "Person",
     "name": "Marco Iván Cabrera Hernández",
@@ -419,49 +574,51 @@ a.registro:hover, a.correo:hover{
   }
 }
 </script>
-
 </head>
 
 <body>
 
-<!-- NAV -->
-<div class="nav">
+<nav class="nav" aria-label="Navegación principal">
   <a href="index.html">Inicio</a>
   <a href="servicio.html">Servicio de Tasación</a>
   <a href="bitacora.html">Bitácora profesional</a>
   <a href="ranking.html">Ranking</a>
   <a href="contacto.html">Contacto</a>
-</div>
+</nav>
 
+<main>
 <section class="hero">
   <div class="hero-content">
-    <h1>Tasador de obras de arte</h1> 
+    <h1>Tasador de obras de arte</h1>
     <p>Informes técnicos de tasación aplicables en ámbitos legales, comerciales y contables.</p>
 
-    <p style="margin-top:18px;">
-      <a href="servicio.html" style="color:#cbd5f5; text-decoration:underline; font-size:14px;">
+    <p class="hero-preguntas">
+      <a href="servicio.html">
         Respuestas a preguntas sobre el servicio de tasación
       </a>
     </p>
 
-    <a class="btn" href="contacto.html">Formulario de consulta</a>  
+    <a class="btn" href="contacto.html">Formulario de consulta</a>
 
-    <div class="redes">
-      <!-- redes intactas -->
-      <a href="https://www.instagram.com/tasadordearte.lima/" target="_blank" aria-label="Instagram">
-        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10zm6.5-.8a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4zM12 9a3 3 0 100 6 3 3 0 000-6z"/></svg>
+    <div class="redes" aria-label="Redes sociales">
+      <a href="https://www.instagram.com/tasadordearte.lima/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10zm6.5-.8a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4zM12 9a3 3 0 100 6 3 3 0 000-6z"/></svg>
       </a>
-      <a href="https://www.facebook.com/profile.php?id=61552761304153" target="_blank" aria-label="Facebook">
-        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M13 22v-8h3l1-4h-4V7c0-1 .3-2 2-2h2V1h-3c-3 0-5 2-5 5v3H6v4h3v8h4z"/></svg>
+
+      <a href="https://www.facebook.com/profile.php?id=61552761304153" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 22v-8h3l1-4h-4V7c0-1 .3-2 2-2h2V1h-3c-3 0-5 2-5 5v3H6v4h3v8h4z"/></svg>
       </a>
-      <a href="https://x.com/MarcoIvnCabrer1" target="_blank" aria-label="X">
-        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h3l-7 8 8 12h-6l-5-7-6 7H2l8-9-8-11h6l4 6 6-6z"/></svg>
+
+      <a href="https://x.com/MarcoIvnCabrer1" target="_blank" rel="noopener noreferrer" aria-label="X">
+        <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h3l-7 8 8 12h-6l-5-7-6 7H2l8-9-8-11h6l4 6 6-6z"/></svg>
       </a>
-      <a href="https://www.youtube.com/@marcoivanch" target="_blank" aria-label="YouTube">
-        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23 7s-.2-1.5-.8-2.2c-.7-.8-1.5-.8-1.9-.9C17.7 3.5 12 3.5 12 3.5h0s-5.7 0-8.3.4c-.4 0-1.2 0-1.9.9C1.2 5.5 1 7 1 7S.8 8.7.8 10.4v1.2C.8 13.3 1 15 1 15s.2 1.5.8 2.2c.7.8 1.7.8 2.1.9 1.5.1 6.1.4 8.1.4 0 0 5.7 0 8.3-.4.4 0 1.2 0 1.9-.9.6-.7.8-2.2.8-2.2s.2-1.7.2-3.4v-1.2C23.2 8.7 23 7 23 7zM10 14V8l5 3-5 3z"/></svg>
+
+      <a href="https://www.youtube.com/@marcoivanch" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+        <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7s-.2-1.5-.8-2.2c-.7-.8-1.5-.8-1.9-.9C17.7 3.5 12 3.5 12 3.5h0s-5.7 0-8.3.4c-.4 0-1.2 0-1.9.9C1.2 5.5 1 7 1 7S.8 8.7.8 10.4v1.2C.8 13.3 1 15 1 15s.2 1.5.8 2.2c.7.8 1.7.8 2.1.9 1.5.1 6.1.4 8.1.4 0 0 5.7 0 8.3-.4.4 0 1.2 0 1.9-.9.6-.7.8-2.2.8-2.2s.2-1.7.2-3.4v-1.2C23.2 8.7 23 7 23 7zM10 14V8l5 3-5 3z"/></svg>
       </a>
-      <a href="https://www.tiktok.com/@tasadordearte" target="_blank" aria-label="TikTok">
-        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 1c1.1 1.3 2.6 2.2 4 2.4v3c-1.7-.1-3.3-.7-4.6-1.7v7.4c0 3.5-2.9 6.4-6.4 6.4S2.6 15.6 2.6 12.1 5.5 5.7 9 5.7c.3 0 .6 0 .9.1v3.2c-.3-.1-.6-.2-.9-.2-1.8 0-3.3 1.5-3.3 3.3S7.2 15.4 9 15.4s3.3-1.5 3.3-3.3V1h3.7z"/></svg>
+
+      <a href="https://www.tiktok.com/@tasadordearte" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+        <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1c1.1 1.3 2.6 2.2 4 2.4v3c-1.7-.1-3.3-.7-4.6-1.7v7.4c0 3.5-2.9 6.4-6.4 6.4S2.6 15.6 2.6 12.1 5.5 5.7 9 5.7c.3 0 .6 0 .9.1v3.2c-.3-.1-.6-.2-.9-.2-1.8 0-3.3 1.5-3.3 3.3S7.2 15.4 9 15.4s3.3-1.5 3.3-3.3V1h3.7z"/></svg>
       </a>
     </div>
   </div>
@@ -470,23 +627,11 @@ a.registro:hover, a.correo:hover{
 <section class="section">
   <div class="card">
     <h2>Nosotros</h2>
-    <p></p>
-      <p>
-        Usted se encuentra en <em>tasacionesdearte.org.pe</em> oficina virtual del Licenciado Marco Cabrera.
-      </p>     
-      <p>Si tiene un bien artístico o cultural y necesita conocer su valor comercial (precio), no dude en llamarnos.</p>
-    </p>
-    <p style="color:#94a3b8;">
-      Para atención inmediata, utilice el botón de "WhatsApp".
-    </p>
-    <p style="color:#94a3b8;">
-      Para trámites regulares, complete el "Formulario de consulta".
-    </p>
-    <p></p>
-    <p></p>
-    <p  style="color:#94a3b8;">
-      El proceso se inicia con una <a href="consulta_profesional.html" style="color:#cbd5f5; text-decoration:underline; font-weight:500;">consulta</a>.
-    </p>
+    <p>Usted se encuentra en <em>tasacionesdearte.org.pe</em>, oficina virtual del Licenciado Marco Cabrera.</p>
+    <p>Si tiene un bien artístico o cultural y necesita conocer su valor comercial (precio), no dude en llamarnos.</p>
+    <p class="texto-suave">Para atención inmediata, utilice el botón de WhatsApp.</p>
+    <p class="texto-suave">Para trámites regulares, complete el Formulario de consulta.</p>
+    <p class="texto-suave">El proceso se inicia con una <a href="consulta_profesional.html">consulta</a>.</p>
   </div>
 </section>
 
@@ -498,66 +643,48 @@ a.registro:hover, a.correo:hover{
         <h2>MARCO IVÁN CABRERA H.</h2>
 
         <p>
-          Licenciado en Arte 
-          <span class="ver" onclick="openModal('titulo')">(ver)</span>
+          Licenciado en Arte
+          <button type="button" class="ver" onclick="openModal('titulo', this)" aria-haspopup="dialog" aria-controls="modal-titulo" aria-label="Ver título de Licenciado en Arte">(ver)</button>
         </p>
 
         <p>
-          Magíster en Gestión Pública 
-          <span class="ver" onclick="openModal('grado')">(ver)</span>
+          Magíster en Gestión Pública
+          <button type="button" class="ver" onclick="openModal('grado', this)" aria-haspopup="dialog" aria-controls="modal-grado" aria-label="Ver grado de Magíster en Gestión Pública">(ver)</button>
         </p>
 
         <p>
-          Tasador de arte <a class="inscripción" href="https://www.gob.pe/institucion/vivienda/normas-legales/1896604-025-2021-vivienda-vmcs-dgprcs" target="_blank">(inscripción)</a>
+          Tasador de arte
+          <a class="inscripcion" href="https://www.gob.pe/institucion/vivienda/normas-legales/1896604-025-2021-vivienda-vmcs-dgprcs" target="_blank" rel="noopener noreferrer">(inscripción)</a>
         </p>
 
         <p>
-          Perito N.º <a class="registro" href="https://www.datosabiertos.gob.pe/dataset/registro-de-peritos-adscritos-al-mvcs/resource/6c6fbeb6-72c3-4efe-9b97-d8f8f7aaab8e" target="_blank">75</a>
+          Perito N.º
+          <a class="registro" href="https://www.datosabiertos.gob.pe/dataset/registro-de-peritos-adscritos-al-mvcs/resource/6c6fbeb6-72c3-4efe-9b97-d8f8f7aaab8e" target="_blank" rel="noopener noreferrer">75</a>
           (Modificación 2026-05-15)
         </p>
       </div>
-      
+
       <div>
-        <img src="assets/index/MarcoCabrera.jpg">
+        <img src="assets/index/MarcoCabrera.jpg" alt="Marco Iván Cabrera Hernández durante una exposición profesional" loading="lazy">
       </div>
     </div>
+  </div>
 </section>
 
-<!-- MODALES -->
-<div id="modal-titulo" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('titulo')">&times;</span>
-    <img src="assets/index/Titulo Profesional anverso.jpg">
-  </div>
-</div>
-
-<div id="modal-grado" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('grado')">&times;</span>
-    <img src="assets/index/Grado en Gestión Pública 1.jpg">
-  </div>
-</div>
-
-<div id="modal-sunedu" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('sunedu')">&times;</span>
-    <img src="assets/index/SUNEDU_page-0001 (1).jpg">
-  </div>
-</div>
-
 <section class="section">
-  <img src="assets/index/informes técnicos de tasación.png">
+  <img class="imagen-servicio" src="assets/index/informes técnicos de tasación.png" alt="Informes técnicos de tasación de obras de arte" loading="lazy">
   <div class="card">
     <h2>Nuestro servicio</h2>
     <p>Elaboramos informes técnicos de tasación de obras de arte, con firma de profesional acreditado, válidos para fines legales, comerciales, contables, seguros, financieros, patrimoniales, impuestos y aranceles.</p>
-    <br></br>
-    <p style="color:#94a3b8;">Peritaje y autentificación.</p>
+    <p class="texto-suave">Peritaje y autentificación.</p>
   </div>
 </section>
 
 <section class="section">
   <div class="grid grid-2">
-    <div><img src="assets/index/Acción.png"></div>
+    <div>
+      <img src="assets/index/Acción.png" alt="Examen directo de una obra de arte" loading="lazy">
+    </div>
     <div>
       <h2>Revisión directa</h2>
       <p>Revisión de los bienes <em>in situ</em>.</p>
@@ -566,16 +693,16 @@ a.registro:hover, a.correo:hover{
   </div>
 </section>
 
-<section class="section"><img src="assets/index/Medición 01.png"></section>
+<section class="section">
+  <img src="assets/index/Medición 01.png" alt="Medición de un bien durante su evaluación técnica" loading="lazy">
+</section>
 
 <section class="section">
   <div class="card">
     <h2>Metodología</h2>
     <p>Reglamento Nacional de Tasaciones (RNT).</p>
     <p>Procedimiento Internacional de Peritaje de obras de arte.</p>
-
-    <h2>Absoluta confidencialidad</h2>
-    
+    <h2 class="subseccion">Absoluta confidencialidad</h2>
   </div>
 </section>
 
@@ -588,69 +715,148 @@ a.registro:hover, a.correo:hover{
     <p>Valoración financiera de arte</p>
     <p>Procesos judiciales</p>
     <p>Impuestos y aranceles</p>
-    <br>
-    <p> </p>
-    
-    <h2>Casos administrativos y de gestión pública</h2>
+
+    <h2 class="subseccion">Casos administrativos y de gestión pública</h2>
     <p>Metodología</p>
     <p>Consultoría de Gestión</p>
     <p>Contabilidad pública (NICSP)</p>
     <p>Auditorías administrativas y patrimoniales</p>
-
-    <p> </p>
-    
     <p>Consúltenos su caso y reciba una orientación profesional.</p>
   </div>
 </section>
 
 <section class="section contacto">
   <h2>Informes y consultas</h2>
-  <p><strong><a class="correo" href="mailto:oficina@tasacionesdearte.org.es">marcoivanbitel@gmail.com</a></strong></p>
-  <p><strong>+51 930 046 681</strong></p>
+  <p>
+    <strong>
+      <a class="correo" href="mailto:marcoivanbitel@gmail.com">marcoivanbitel@gmail.com</a>
+    </strong>
+  </p>
+  <p>
+    <strong>
+      <a class="telefono" href="tel:+51930046681">+51 930 046 681</a>
+    </strong>
+  </p>
   <a class="btn" href="contacto.html">Formulario de consulta</a>
 </section>
+</main>
 
-<!-- FOOTER INSTITUCIONAL -->
-<footer style="text-align:center; padding:40px 0; color:#64748b; font-size:14px;">
+<!-- DOCUMENTOS ACADÉMICOS -->
+<div id="modal-titulo" class="modal" role="dialog" aria-modal="true" aria-label="Título de Licenciado en Arte" aria-hidden="true">
+  <div class="modal-content">
+    <button type="button" class="close" onclick="closeModal('titulo')" aria-label="Cerrar documento">&times;</button>
+    <img src="assets/index/Titulo Profesional anverso.jpg" alt="Título profesional de Licenciado en Arte de Marco Iván Cabrera Hernández" loading="lazy">
+  </div>
+</div>
+
+<div id="modal-grado" class="modal" role="dialog" aria-modal="true" aria-label="Grado de Magíster en Gestión Pública" aria-hidden="true">
+  <div class="modal-content">
+    <button type="button" class="close" onclick="closeModal('grado')" aria-label="Cerrar documento">&times;</button>
+    <img src="assets/index/Grado en Gestión Pública 1.jpg" alt="Grado de Magíster en Gestión Pública de Marco Iván Cabrera Hernández" loading="lazy">
+  </div>
+</div>
+
+<div id="modal-sunedu" class="modal" role="dialog" aria-modal="true" aria-label="Registro de grados y títulos" aria-hidden="true">
+  <div class="modal-content">
+    <button type="button" class="close" onclick="closeModal('sunedu')" aria-label="Cerrar documento">&times;</button>
+    <img src="assets/index/SUNEDU_page-0001 (1).jpg" alt="Constancia de registro de grados y títulos" loading="lazy">
+  </div>
+</div>
+
+<footer>
   © 2026 TASACIONES DE ARTE | MARCO CABRERA – PERITO REGISTRADO
-   <br><br>
-
-  <a href="y-aviso-legal.html" style="color:#888; text-decoration:none; margin:0 8px;">
-    Aviso legal
-  </a> · 
-
-  <a href="y-politicadeprivacidad.html" style="color:#888; text-decoration:none; margin:0 8px;">
-    Política de privacidad
-  </a> · 
-
-  <a href="y-politica-cookies.html" style="color:#888; text-decoration:none; margin:0 8px;">
-    Política de cookies
-  </a> · 
-
-  <a href="y-libro-reclamaciones.html" style="color:#888; text-decoration:none; margin:0 8px;">
-    Libro de reclamaciones
-  </a>
+  <br><br>
+  <a href="y-aviso-legal.html">Aviso legal</a> ·
+  <a href="y-politicadeprivacidad.html">Política de privacidad</a> ·
+  <a href="y-politica-cookies.html">Política de cookies</a> ·
+  <a href="y-libro-reclamaciones.html">Libro de reclamaciones</a>
 </footer>
-  
 
-<div class="ponencia-float" role="status" aria-label="Nueva ponencia del Perito Marco Cabrera">
+<aside id="aviso-ponencia" class="ponencia-float" aria-label="Nueva ponencia del Perito Marco Cabrera">
   <div>
     <strong>Nueva ponencia del Perito Marco Cabrera</strong>
     <a href="bitacora.html">Ver Bitácora</a>
   </div>
-</div>
+  <button type="button" class="ponencia-cerrar" onclick="cerrarPonencia()" aria-label="Cerrar aviso de ponencia">&times;</button>
+</aside>
 
-<a class="whatsapp" href="https://wa.me/51930046681">WhatsApp</a>
+<a class="whatsapp" href="https://wa.me/51930046681" aria-label="Contactar por WhatsApp">WhatsApp</a>
 
 <script>
-function openModal(id) {
-  document.getElementById('modal-' + id).style.display = 'block';
+let modalActivo = null;
+let botonOrigen = null;
+
+function openModal(id, boton) {
+  const modal = document.getElementById('modal-' + id);
+  if (!modal) return;
+
+  botonOrigen = boton || document.activeElement;
+  modalActivo = modal;
+  modal.style.display = 'block';
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-open');
+
+  const cerrar = modal.querySelector('.close');
+  if (cerrar) cerrar.focus();
 }
 
 function closeModal(id) {
-  document.getElementById('modal-' + id).style.display = 'none';
+  const modal = document.getElementById('modal-' + id);
+  if (!modal) return;
+
+  modal.style.display = 'none';
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+  modalActivo = null;
+
+  if (botonOrigen) {
+    botonOrigen.focus();
+    botonOrigen = null;
+  }
+}
+
+document.querySelectorAll('.modal').forEach(function(modal) {
+  modal.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      closeModal(modal.id.replace('modal-', ''));
+    }
+  });
+});
+
+document.addEventListener('keydown', function(event) {
+  if (!modalActivo) return;
+
+  if (event.key === 'Escape') {
+    closeModal(modalActivo.id.replace('modal-', ''));
+  }
+
+  if (event.key === 'Tab') {
+    const cerrar = modalActivo.querySelector('.close');
+    if (cerrar) {
+      event.preventDefault();
+      cerrar.focus();
+    }
+  }
+});
+
+function cerrarPonencia() {
+  document.getElementById('aviso-ponencia').hidden = true;
+
+  try {
+    sessionStorage.setItem('avisoPonenciaCerrado', '1');
+  } catch (error) {
+    /* El aviso puede cerrarse aunque el almacenamiento esté deshabilitado. */
+  }
+}
+
+try {
+  if (sessionStorage.getItem('avisoPonenciaCerrado') === '1') {
+    document.getElementById('aviso-ponencia').hidden = true;
+  }
+} catch (error) {
+  /* El aviso permanece disponible si el almacenamiento está deshabilitado. */
 }
 </script>
-  
+
 </body>
 </html>
