@@ -206,6 +206,43 @@ body {
   .congreso-flotante:hover { transform:none; }
 }
 
+/* NUEVA MINIATURA FLOTANTE — BICENTENARIO DE LUIS MONTERO */
+.montero-flotante {
+  position:fixed;
+  left:218px;
+  bottom:24px;
+  width:180px;
+  z-index:999;
+  display:block;
+  text-decoration:none;
+  line-height:0;
+  filter:drop-shadow(0 8px 18px rgba(0,0,0,0.45));
+  transition:transform 0.25s ease, filter 0.25s ease;
+}
+.montero-flotante img {
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:5px;
+  border:1px solid rgba(197,160,89,0.55);
+}
+.montero-flotante:hover {
+  transform:translateY(-5px) scale(1.02);
+  filter:drop-shadow(0 12px 24px rgba(0,0,0,0.55));
+}
+.montero-flotante:focus-visible {
+  outline:2px solid var(--primary-gold);
+  outline-offset:4px;
+}
+@media(max-width:768px){
+  .montero-flotante {
+    left:124px;
+    bottom:14px;
+    width:100px;
+  }
+  .montero-flotante:hover { transform:none; }
+}
+
 </style>
 
 </head>
@@ -232,7 +269,7 @@ body {
     <a class="btn" href="producciones.html">Producciones</a>
     <a class="btn" href="#">Artículos</a>
     <a class="btn" href="notas.html">Notas</a>
-    
+
 <div class="fila-redes-academicas">
   <a class="icono-academico" href="https://orcid.org/0000-0002-9931-7424" target="_blank"><span class="icono-texto">iD</span></a>
   <a class="icono-academico" href="https://unmsm.academia.edu/MarcoIv%C3%A1nCabreraHern%C3%A1ndez" target="_blank"><span class="icono-texto">A</span></a>
@@ -308,15 +345,15 @@ body {
 
   <a href="y-aviso-legal.html" style="color:#888; text-decoration:none; margin:0 8px;">
     Aviso legal
-  </a> · 
+  </a> ·
 
   <a href="y-politicadeprivacidad.html" style="color:#888; text-decoration:none; margin:0 8px;">
     Política de privacidad
-  </a> · 
+  </a> ·
 
   <a href="y-politica-cookies.html" style="color:#888; text-decoration:none; margin:0 8px;">
     Política de cookies
-  </a> · 
+  </a> ·
 
   <a href="y-libro-reclamaciones.html" style="color:#888; text-decoration:none; margin:0 8px;">
     Libro de reclamaciones
@@ -332,6 +369,16 @@ body {
    aria-label="Ver programa oficial del V Congreso Internacional de Arte Peruano 2026">
   <img src="assets/congresosarte/Flyer%20V%20Congreso.jpg"
        alt="V Congreso Internacional de Arte Peruano 2026. Homenaje al Dr. Ricardo Estabridis Cárdenas.">
+</a>
+
+<!-- NUEVA MINIATURA FLOTANTE — BICENTENARIO DE LUIS MONTERO -->
+<a class="montero-flotante"
+   href="bitacora-bicentenario-luis-montero.html#conferencia"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Ver conferencia grabada por el Bicentenario de Luis Montero">
+  <img src="assets/bitacora/flyer-bicentenario-luis-montero.jpg"
+       alt="Conferencia Homenaje a Luis Montero, a cargo de Marco Cabrera. Pinacoteca Municipal Ignacio Merino.">
 </a>
 
 <a class="whatsapp" href="https://wa.me/51930046681" target="_blank">
