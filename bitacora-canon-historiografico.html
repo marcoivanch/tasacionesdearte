@@ -285,7 +285,7 @@
     }
 
     /*
-      La columna izquierda contiene ahora
+      La columna izquierda contiene
       la imagen de la ponencia y el video.
     */
 
@@ -415,55 +415,6 @@
       margin:0;
       color:var(--muted);
       font-size:14px;
-    }
-
-    /* PDF */
-
-    .pdf-shell{
-      overflow:hidden;
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      background:var(--panel);
-      box-shadow:var(--shadow);
-    }
-
-    .pdf-toolbar{
-      display:flex;
-      gap:14px;
-      align-items:center;
-      justify-content:space-between;
-      padding:18px 20px;
-      border-bottom:1px solid var(--line);
-      background:rgba(255,255,255,.025);
-    }
-
-    .pdf-toolbar strong{
-      font-family:'Playfair Display',serif;
-      font-size:21px;
-    }
-
-    .pdf-toolbar span{
-      color:var(--muted);
-      font-size:13px;
-    }
-
-    .pdf-actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    .pdf-viewer{
-      width:100%;
-      height:780px;
-      border:0;
-      background:#111827;
-    }
-
-    .pdf-fallback{
-      padding:34px;
-      text-align:center;
-      color:var(--muted);
     }
 
     /* AVISO FINAL */
@@ -598,10 +549,6 @@
         height:auto;
         object-fit:cover;
       }
-
-      .pdf-viewer{
-        height:620px;
-      }
     }
 
     /* MÓVIL */
@@ -639,15 +586,6 @@
         border-radius:16px;
       }
 
-      .pdf-toolbar{
-        align-items:flex-start;
-        flex-direction:column;
-      }
-
-      .pdf-viewer{
-        height:520px;
-      }
-
       .whatsapp{
         min-width:48px;
         height:48px;
@@ -666,7 +604,6 @@
     <a href="contacto.html">Contacto</a>
   </nav>
 
-
   <header class="hero">
 
     <div class="hero-inner">
@@ -682,7 +619,6 @@
           Permanencias, ausencias y contradicciones (1980–2021)
         </p>
       </div>
-
 
       <aside class="hero-card">
 
@@ -719,13 +655,20 @@
         </p>
 
         <div class="hero-actions">
+
           <a class="btn btn-primary" href="#ponencia">
             Ver ponencia
           </a>
 
-          <a class="btn btn-secondary" href="#programa">
+          <!-- PROGRAMA OFICIAL: ENLACE DIRECTO AL PDF -->
+          <a
+            class="btn btn-secondary"
+            href="assets/congresosarte/Programa%20V%20Congreso.pdf"
+            target="_blank"
+            rel="noopener noreferrer">
             Programa oficial
           </a>
+
         </div>
 
       </aside>
@@ -733,7 +676,6 @@
     </div>
 
   </header>
-
 
   <main>
 
@@ -761,7 +703,6 @@
 
       </div>
 
-
       <div class="feature-grid">
 
         <!-- COLUMNA IZQUIERDA -->
@@ -773,7 +714,6 @@
               src="assets/congresosarte/Ponencia%20D1.jpg"
               alt="Diapositiva principal de la ponencia El canon historiográfico del arte peruano">
           </figure>
-
 
           <!-- VIDEO COMPLETO DE LA PONENCIA -->
 
@@ -802,7 +742,6 @@
           </figure>
 
         </div>
-
 
         <!-- COLUMNA DERECHA -->
 
@@ -847,7 +786,6 @@
 
     </section>
 
-
     <!-- METODOLOGÍA -->
 
     <section class="section">
@@ -865,7 +803,6 @@
         </p>
 
       </div>
-
 
       <div class="cards">
 
@@ -897,91 +834,6 @@
 
     </section>
 
-
-    <!-- PROGRAMA -->
-
-    <section class="section" id="programa">
-
-      <div class="section-head">
-
-        <div>
-          <div class="kicker">Documento oficial</div>
-
-          <h2>
-            Programa del V Congreso Internacional de Arte Peruano
-          </h2>
-        </div>
-
-        <p class="section-intro">
-          El programa puede consultarse directamente en esta página.
-          En dispositivos que no permitan visualizar PDF embebidos,
-          el botón abre el documento en una pestaña independiente.
-        </p>
-
-      </div>
-
-
-      <div class="pdf-shell">
-
-        <div class="pdf-toolbar">
-
-          <div>
-            <strong>Programa V Congreso</strong><br>
-            <span>Documento oficial · PDF</span>
-          </div>
-
-          <div class="pdf-actions">
-
-            <a
-              class="btn btn-secondary"
-              href="assets/congresosarte/Programa%20V%20Congreso.pdf"
-              target="_blank"
-              rel="noopener noreferrer">
-              Abrir PDF
-            </a>
-
-            <a
-              class="btn btn-primary"
-              href="assets/congresosarte/Programa%20V%20Congreso.pdf"
-              download>
-              Descargar
-            </a>
-
-          </div>
-
-        </div>
-
-
-        <object
-          class="pdf-viewer"
-          data="assets/congresosarte/Programa%20V%20Congreso.pdf#view=FitH"
-          type="application/pdf">
-
-          <div class="pdf-fallback">
-
-            <p>
-              Tu navegador no permite mostrar el PDF dentro de la página.
-            </p>
-
-            <p>
-              <a
-                class="btn btn-primary"
-                href="assets/congresosarte/Programa%20V%20Congreso.pdf"
-                target="_blank"
-                rel="noopener noreferrer">
-                Abrir programa oficial
-              </a>
-            </p>
-
-          </div>
-
-        </object>
-
-      </div>
-
-    </section>
-
-
     <!-- ESTADO ACTUAL DE LA INVESTIGACIÓN -->
 
     <section class="section">
@@ -1012,11 +864,9 @@
 
   </main>
 
-
   <footer>
     © 2026 Tasaciones de Arte · Marco Iván Cabrera Hernández
   </footer>
-
 
   <a
     class="whatsapp"
