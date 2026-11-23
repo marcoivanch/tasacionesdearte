@@ -1,1 +1,540 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="theme-color" content="#0a1220">
 
+  <title>Documento Verificado | Informe 010P-OCT-2026</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold:#c5a059;
+      --bg:#0a1220;
+      --card:#020617;
+      --text:#e2e8f0;
+      --text-soft:#94a3b8;
+      --border:rgba(148,163,184,.16);
+      --green:#34d399;
+    }
+
+    * { box-sizing:border-box; }
+
+    html { scroll-behavior:smooth; }
+
+    body {
+      margin:0;
+      font-family:'Inter',sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }
+
+    /* NAVEGACIÓN */
+
+    .nav {
+      position:fixed;
+      inset:0 0 auto;
+      min-height:58px;
+      padding:17px 22px;
+      display:flex;
+      justify-content:center;
+      gap:30px;
+      background:rgba(10,15,28,.9);
+      backdrop-filter:blur(10px);
+      z-index:1000;
+      border-bottom:1px solid var(--border);
+    }
+
+    .nav a {
+      color:#cbd5f5;
+      text-decoration:none;
+      font-size:14px;
+      white-space:nowrap;
+    }
+
+    .nav a:hover,
+    footer a:hover {
+      color:var(--gold);
+    }
+
+    /* PRESENTACIÓN */
+
+    .hero {
+      position:relative;
+      min-height:72vh;
+      display:flex;
+      align-items:center;
+      padding:120px max(30px,calc((100vw - 1100px)/2)) 80px;
+      isolation:isolate;
+    }
+
+    .hero::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(
+          120deg,
+          rgba(10,18,32,.92),
+          rgba(10,18,32,.64)
+        ),
+        url('assets/index/Encuadernado.png') center / cover no-repeat;
+      z-index:-2;
+    }
+
+    .hero::after {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(10,15,28,.25);
+      z-index:-1;
+    }
+
+    .hero-content {
+      max-width:810px;
+    }
+
+    .estado {
+      display:inline-block;
+      padding:10px 22px;
+      border-radius:30px;
+      background:rgba(16,185,129,.15);
+      border:1px solid rgba(16,185,129,.35);
+      color:var(--green);
+      font-size:14px;
+      font-weight:600;
+      margin-bottom:17px;
+    }
+
+    .hero h1 {
+      font-size:clamp(32px,5vw,46px);
+      font-weight:600;
+      margin:0 0 13px;
+    }
+
+    .hero h2 {
+      color:var(--gold);
+      font-size:clamp(24px,4vw,32px);
+      font-weight:500;
+      margin:0 0 22px;
+    }
+
+    .hero p {
+      color:#bdc8d8;
+      line-height:1.75;
+      font-size:16px;
+      max-width:720px;
+    }
+
+    .credenciales {
+      margin:20px 12px 0 0;
+      padding:18px 22px;
+      background:rgba(255,255,255,.08);
+      border-left:4px solid var(--gold);
+      border-radius:10px;
+      display:inline-block;
+      line-height:1.8;
+      vertical-align:top;
+    }
+
+    .credenciales strong {
+      color:#fff;
+    }
+
+    .credenciales .item {
+      font-size:14px;
+      color:#dbe4ee;
+    }
+
+    /* CONTENIDO */
+
+    .section {
+      max-width:1140px;
+      margin:auto;
+      padding:65px 20px;
+    }
+
+    .section h2 {
+      margin:0 0 23px;
+      font-size:26px;
+      font-weight:600;
+      color:var(--gold);
+    }
+
+    .cards {
+      display:grid;
+      gap:22px;
+      grid-template-columns:repeat(auto-fit,minmax(225px,1fr));
+    }
+
+    .card {
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:26px;
+      min-height:110px;
+    }
+
+    .label {
+      color:#94a3b8;
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      margin-bottom:12px;
+    }
+
+    .valor {
+      font-size:18px;
+      font-weight:600;
+      overflow-wrap:anywhere;
+    }
+
+    .vigente {
+      color:var(--green);
+    }
+
+    .notice {
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:28px;
+      margin-top:28px;
+    }
+
+    .notice h3 {
+      color:var(--gold);
+      margin:0 0 15px;
+    }
+
+    .notice p {
+      color:var(--text-soft);
+      line-height:1.8;
+      margin:12px 0;
+    }
+
+    .link-comprobacion {
+      font-size:13px;
+      color:#94a3b8;
+      overflow-wrap:anywhere;
+    }
+
+    .link-comprobacion a {
+      color:#c5a059;
+      text-decoration:none;
+    }
+
+    /* WHATSAPP */
+
+    .whatsapp {
+      position:fixed;
+      bottom:25px;
+      right:25px;
+      width:58px;
+      height:58px;
+      background:#25D366;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      z-index:1001;
+      box-shadow:0 0 12px rgba(0,0,0,.35);
+    }
+
+    .whatsapp svg {
+      width:31px;
+      height:31px;
+      fill:white;
+    }
+
+    /* PIE DE PÁGINA */
+
+    footer {
+      text-align:center;
+      padding:38px 15px 45px;
+      color:#64748b;
+      font-size:13px;
+      line-height:2;
+      letter-spacing:.3px;
+    }
+
+    footer a {
+      color:#94a3b8;
+      text-decoration:none;
+      margin:0 7px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px) {
+
+      .nav {
+        gap:17px;
+        padding:12px 15px;
+        justify-content:flex-start;
+        overflow-x:auto;
+      }
+
+      .hero {
+        min-height:auto;
+        padding:120px 22px 72px;
+      }
+
+      .credenciales {
+        display:block;
+        max-width:100%;
+      }
+
+      .section {
+        padding:48px 19px;
+      }
+
+      .card {
+        padding:22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVEGACIÓN -->
+
+  <nav class="nav" aria-label="Navegación principal">
+    <a href="index.html">Inicio</a>
+    <a href="servicio.html">Servicio de Tasación</a>
+    <a href="bitacora.html">Bitácora profesional</a>
+    <a href="ranking.html">Ranking</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+
+  <main>
+
+    <!-- PRESENTACIÓN -->
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="estado">
+          ✓ DOCUMENTO VERIFICADO
+        </div>
+
+        <h1>Verificación de Autenticidad Documental</h1>
+
+        <h2>Informe 010P-OCT-2026</h2>
+
+        <p>
+          La presente consulta corresponde al registro de
+          verificación documental de la Oficina Profesional
+          de Tasaciones de Arte.
+
+          La verificación se refiere a la emisión del documento
+          y no constituye, por sí misma, una certificación
+          de autenticidad de las obras examinadas.
+        </p>
+
+        <div class="credenciales">
+
+          <strong>Marco Iván Cabrera Hernández</strong><br>
+
+          Licenciado en Arte<br>
+          Perito Tasador de Arte Registrado<br>
+          Perito Adscrito N.º 75
+
+        </div>
+
+        <div class="credenciales">
+
+          <strong>Bienes comprendidos en el encargo</strong>
+
+          <div class="item">
+            Bien N.º 1.
+            <em>Desnudo</em> (1938),
+            atribuido a José Sabogal Diéguez.
+          </div>
+
+          <div class="item">
+            Bien N.º 2.
+            Pintura atribuida a Fernando de Szyszlo.
+          </div>
+
+          <div class="item">
+            Bien N.º 3.
+            Pintura atribuida a Camilo Blas.
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ESTADO DOCUMENTAL -->
+
+    <section class="section">
+
+      <h2>Estado del documento</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="label">Documento</div>
+          <div class="valor">Informe 010P-OCT-2026</div>
+        </div>
+
+        <div class="card">
+          <div class="label">Estado documental</div>
+          <div class="valor vigente">VIGENTE</div>
+        </div>
+
+        <div class="card">
+          <div class="label">Perito emisor</div>
+          <div class="valor">
+            Marco Iván Cabrera Hernández
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="label">Fecha de emisión</div>
+          <div class="valor">
+            23 de noviembre de 2026
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="label">Vigencia de la tasación</div>
+          <div class="valor">
+            Un año desde su emisión
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="label">Identificador de verificación web</div>
+          <div class="valor">
+            r917gtta
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CERTIFICACIÓN DOCUMENTAL -->
+
+      <div class="notice">
+
+        <h3>Certificación documental</h3>
+
+        <p>
+          La Oficina Profesional de Tasaciones de Arte
+          identifica el documento Informe 010P-OCT-2026
+          mediante este registro de verificación web.
+
+          La presente página acredita únicamente
+          la correspondencia documental del informe
+          identificado, sin sustituir su contenido firmado
+          ni extender sus conclusiones a otros bienes
+          o expedientes.
+        </p>
+
+        <p>
+          Por razones de confidencialidad profesional,
+          el contenido íntegro del expediente,
+          antecedentes de investigación, anexos técnicos,
+          imágenes, valores económicos y demás documentación
+          complementaria no son de acceso público.
+        </p>
+
+        <p>
+          El acceso al expediente técnico integral
+          requiere autorización expresa del titular
+          o acreditación de interés legítimo.
+        </p>
+
+      </div>
+
+      <!-- INTELIGENCIA ARTIFICIAL -->
+
+      <div class="notice">
+
+        <h3>Uso responsable de inteligencia artificial</h3>
+
+        <p>
+          En la elaboración del informe se emplearon
+          herramientas de inteligencia artificial como
+          apoyo auxiliar para la organización, contraste
+          y procesamiento de información.
+
+          Sus resultados fueron revisados por el perito
+          y no sustituyeron la inspección ocular,
+          los procedimientos técnicos aplicados,
+          las fuentes documentales examinadas
+          ni el juicio profesional del suscrito.
+        </p>
+
+        <p>
+          La valoración de las evidencias,
+          las conclusiones y los valores consignados
+          en el informe son responsabilidad del
+          perito que lo suscribe.
+        </p>
+
+        <p>
+          El uso de estas herramientas se realizó
+          considerando la Ley N.º 31814 y su normativa
+          reglamentaria aplicable.
+        </p>
+
+      </div>
+
+      <p class="link-comprobacion">
+
+        Dirección de verificación:
+
+        <a href="https://tasacionesdearte.org.pe/verif-2026-010P-oct-r917gtta.html">
+
+          tasacionesdearte.org.pe/verif-2026-010P-oct-r917gtta.html
+
+        </a>
+
+      </p>
+
+    </section>
+
+  </main>
+
+  <!-- WHATSAPP -->
+
+  <a
+    class="whatsapp"
+    href="https://wa.me/51930046681"
+    aria-label="Contacto por WhatsApp"
+    rel="noopener noreferrer"
+  >
+
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M16 2.7a13.3 13.3 0 0 0-11.5 20l-1.9 6.9 7-1.9A13.3 13.3 0 1 0 16 2.7zm0 24.2a11 11 0 0 1-5.6-1.5l-.4-.2-4.2 1.1 1.1-4.1-.3-.4A11 11 0 1 1 16 26.9zm6.1-8.1c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.3-.7.1a9.1 9.1 0 0 1-2.7-1.7 10.1 10.1 0 0 1-1.9-2.3c-.2-.3 0-.5.1-.7l.5-.6.3-.5a.6.6 0 0 0 0-.6c-.1-.2-.7-1.8-1-2.4s-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.8 3.8 0 0 0-1.2 2.8 6.6 6.6 0 0 0 1.4 3.5 14.8 14.8 0 0 0 5.7 5 5 0 0 0 3.6.8 3 3 0 0 0 2.1-1.5 2.6 2.6 0 0 0 .2-1.5c-.1-.1-.3-.2-.6-.4z"/>
+    </svg>
+
+  </a>
+
+  <!-- PIE DE PÁGINA -->
+
+  <footer>
+
+    © 2026 TASACIONES DE ARTE |
+    MARCO CABRERA – PERITO REGISTRADO
+
+    <br><br>
+
+    <a href="y-aviso-legal.html">Aviso legal</a> ·
+    <a href="y-politicadeprivacidad.html">Política de privacidad</a> ·
+    <a href="y-politica-cookies.html">Política de cookies</a> ·
+    <a href="y-libro-reclamaciones.html">Libro de reclamaciones</a>
+
+  </footer>
+
+</body>
+</html>
