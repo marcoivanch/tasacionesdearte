@@ -1,1 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Verificación de propuesta interinstitucional | Marco Cabrera</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:'Inter',Arial,sans-serif;
+background:#0a1220;
+color:#e2e8f0;
+display:flex;
+flex-direction:column;
+min-height:100vh;
+}
+
+.nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px;
+display:flex;
+justify-content:center;
+gap:30px;
+background:rgba(10,15,28,.95);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+.nav a{
+color:#cbd5f5;
+text-decoration:none;
+font-size:14px;
+white-space:nowrap;
+}
+
+.nav a:hover,
+footer a:hover{
+text-decoration:underline;
+}
+
+a:focus-visible{
+outline:2px solid #e2e8f0;
+outline-offset:5px;
+}
+
+.container{
+width:100%;
+max-width:760px;
+margin:110px auto 55px;
+padding:0 20px;
+flex:1;
+}
+
+.verification-card{
+background:#020617;
+border:1px solid rgba(148,163,184,.22);
+border-radius:12px;
+padding:40px;
+}
+
+.header-status{
+text-align:center;
+margin-bottom:32px;
+padding-bottom:25px;
+border-bottom:1px solid rgba(148,163,184,.15);
+}
+
+.title{
+font-size:13px;
+letter-spacing:1.5px;
+text-transform:uppercase;
+color:#a8b5c8;
+margin:0 0 15px;
+font-weight:500;
+}
+
+.status-badge{
+display:inline-flex;
+align-items:center;
+gap:8px;
+background:rgba(37,211,102,.1);
+border:1px solid #25d366;
+padding:8px 16px;
+border-radius:20px;
+color:#25d366;
+font-weight:500;
+font-size:15px;
+}
+
+h1{
+font-size:20px;
+line-height:1.5;
+font-weight:600;
+margin:22px 0 0;
+}
+
+dl{
+margin:0;
+}
+
+.info-group{
+margin-bottom:22px;
+}
+
+.info-label{
+font-size:12px;
+text-transform:uppercase;
+letter-spacing:.5px;
+color:#a8b5c8;
+margin:0 0 6px;
+}
+
+.info-value{
+margin:0;
+font-size:15px;
+line-height:1.7;
+color:#e2e8f0;
+overflow-wrap:anywhere;
+}
+
+.info-value strong{
+font-weight:600;
+color:#e2e8f0;
+}
+
+.credentials{
+font-size:13px;
+color:#a8b5c8;
+}
+
+.code{
+font-family:monospace;
+font-size:16px;
+font-weight:600;
+}
+
+.observation-box{
+margin-top:28px;
+padding:18px 22px;
+background:rgba(30,41,59,.45);
+border-left:4px solid #94a3b8;
+border-radius:0 8px 8px 0;
+}
+
+.observation-box p{
+margin:0;
+font-size:13.5px;
+line-height:1.8;
+color:#cbd5e1;
+}
+
+.footer-note{
+margin-top:30px;
+text-align:center;
+font-size:13px;
+line-height:1.8;
+color:#a8b5c8;
+}
+
+footer{
+text-align:center;
+padding:30px 20px;
+font-size:13px;
+line-height:1.8;
+color:#a8b5c8;
+border-top:1px solid rgba(148,163,184,.12);
+}
+
+footer a{
+color:#a8b5c8;
+text-decoration:none;
+margin:0 6px;
+}
+
+.legal{
+margin-top:18px;
+}
+
+@media(max-width:768px){
+.nav{
+justify-content:flex-start;
+gap:18px;
+padding:14px;
+overflow-x:auto;
+}
+
+.container{
+margin-top:90px;
+}
+
+.verification-card{
+padding:25px;
+}
+
+h1{
+font-size:18px;
+}
+}
+
+@media print{
+body{
+background:#fff;
+color:#000;
+}
+
+.nav,
+footer{
+display:none;
+}
+
+.container{
+margin:0;
+max-width:none;
+padding:0;
+}
+
+.verification-card{
+border:1px solid #000;
+border-radius:0;
+padding:24px;
+}
+
+.title,
+.info-label,
+.info-value,
+.info-value strong,
+.credentials,
+.footer-note,
+h1{
+color:#000;
+}
+
+.status-badge{
+color:#000;
+border-color:#000;
+background:none;
+}
+
+.observation-box{
+background:none;
+border-color:#000;
+}
+
+.observation-box p{
+color:#000;
+}
+}
+</style>
+</head>
+
+<body>
+
+<nav class="nav" aria-label="Navegación principal">
+<a href="index.html">Inicio</a>
+<a href="servicio.html">Servicio de Tasación</a>
+<a href="bitacora.html">Bitácora profesional</a>
+<a href="ranking.html">Ranking</a>
+<a href="contacto.html">Contacto</a>
+</nav>
+
+<main class="container">
+
+<article class="verification-card" aria-labelledby="document-title">
+
+<header class="header-status">
+
+<p class="title">Verificación de documento</p>
+
+<div class="status-badge">
+<svg width="16" height="16" fill="currentColor"
+viewBox="0 0 16 16" aria-hidden="true">
+<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+Documento auténtico
+</div>
+
+<h1 id="document-title">
+Propuesta de tasación técnica de bienes artísticos públicos
+</h1>
+
+</header>
+
+<dl>
+
+<div class="info-group">
+<dt class="info-label">Código de verificación</dt>
+<dd class="info-value code">MC-2026-2311-PROP01-MINCUL</dd>
+</div>
+
+<div class="info-group">
+<dt class="info-label">Tipo de documento</dt>
+<dd class="info-value">
+Carta de presentación y propuesta de iniciativa interinstitucional
+para su evaluación.
+</dd>
+</div>
+
+<div class="info-group">
+<dt class="info-label">Emisor y proponente</dt>
+<dd class="info-value">
+<strong>Marco Iván Cabrera Hernández</strong><br>
+<span class="credentials">
+Licenciado en Arte · Magíster en Gestión Pública · Perito Tasador de Arte
+</span>
+</dd>
+</div>
+
+<div class="info-group">
+<dt class="info-label">Destinatario</dt>
+<dd class="info-value">
+Señor <strong>Fernando López Sánchez</strong><br>
+Viceministro de Patrimonio Cultural e Industrias Culturales<br>
+Ministerio de Cultura
+</dd>
+</div>
+
+<div class="info-group">
+<dt class="info-label">Asunto</dt>
+<dd class="info-value">
+Propuesta de articulación MINCUL - MVCS - MEF para la tasación técnica
+de bienes artísticos públicos y su adecuada utilización contable.
+</dd>
+</div>
+
+<div class="info-group">
+<dt class="info-label">Finalidad de la propuesta</dt>
+<dd class="info-value">
+Promover una coordinación interinstitucional para formular procedimientos
+de tasación económica sustentada de obras de arte y bienes culturales
+muebles del Estado, con atención a su gestión y a los requerimientos
+contables aplicables a los bienes del patrimonio histórico, artístico y
+cultural (<em>heritage assets</em>).
+</dd>
+</div>
+
+<div class="info-group">
+<dt class="info-label">Fecha de emisión</dt>
+<dd class="info-value">
+<time datetime="2026-11-23">23 de noviembre de 2026</time>
+</dd>
+</div>
+
+<div class="info-group">
+<dt class="info-label">Horizonte de trabajo propuesto</dt>
+<dd class="info-value">
+Coordinación inicial en diciembre de 2026 y desarrollo progresivo
+durante 2027, sujeto a evaluación y acuerdo institucional.
+</dd>
+</div>
+
+<div class="info-group">
+<dt class="info-label">Composición del documento</dt>
+<dd class="info-value">
+Carta de presentación y propuesta técnica con calendario, diagramas
+y referencias normativas y metodológicas. Versión de 14 páginas.
+</dd>
+</div>
+
+<div class="info-group">
+<dt class="info-label">Estado documental</dt>
+<dd class="info-value">
+Emitido por el proponente para presentación y evaluación.
+Esta ficha no acredita recepción, conformidad ni aprobación
+del Ministerio de Cultura.
+</dd>
+</div>
+
+</dl>
+
+<section class="observation-box" aria-labelledby="observation-title">
+
+<h2 id="observation-title" class="info-label">
+Alcance de la verificación
+</h2>
+
+<p>
+La presente ficha identifica el documento emitido por Marco Iván Cabrera
+Hernández y permite contrastar su código, fecha, destinatario y asunto.
+El contenido íntegro de la propuesta no se publica en esta página.
+La autenticidad aquí declarada se refiere a su procedencia documental
+y no constituye validación institucional de la propuesta ni acredita
+su ejecución o contratación.
+</p>
+
+</section>
+
+<p class="footer-note">
+Este mecanismo privado de verificación documental no sustituye una
+firma digital, los registros de mesa de partes ni las decisiones
+de las entidades destinatarias.
+</p>
+
+</article>
+
+</main>
+
+<footer>
+
+© 2026 TASACIONES DE ARTE | MARCO CABRERA - PERITO REGISTRADO
+
+<div class="legal">
+<a href="y-aviso-legal.html">Aviso legal</a> ·
+<a href="y-politicadeprivacidad.html">Política de privacidad</a> ·
+<a href="y-politica-cookies.html">Política de cookies</a> ·
+<a href="y-libro-reclamaciones.html">Libro de reclamaciones</a>
+</div>
+
+</footer>
+
+</body>
+</html>
