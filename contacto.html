@@ -9,21 +9,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
 body{
   margin:0;
   font-family:'Inter',sans-serif;
   background:
     linear-gradient(rgba(10,15,28,0.85), rgba(10,15,28,0.85)),
     url('iStock-1198427623.jpg');
-  background-size:cover;
-  background-position:center 25%;
+  background-size: cover;
+  background-position: center 25%;
   background-attachment:fixed;
   color:#e2e8f0;
 }
 
 /* NAV */
-
 .nav{
   position:fixed;
   top:0;
@@ -45,7 +43,6 @@ body{
 }
 
 /* CONTENEDOR */
-
 .container{
   max-width:720px;
   margin:120px auto 60px;
@@ -53,7 +50,6 @@ body{
 }
 
 /* TITULO */
-
 h1{
   text-align:center;
   font-weight:500;
@@ -76,7 +72,6 @@ h1{
 }
 
 /* FORM */
-
 form{
   display:flex;
   flex-direction:column;
@@ -115,7 +110,6 @@ textarea{
 }
 
 /* RADIO */
-
 .radio-group{
   display:flex;
   flex-direction:column;
@@ -135,7 +129,6 @@ textarea{
 }
 
 /* BOTÓN */
-
 button{
   margin-top:10px;
   padding:15px;
@@ -146,13 +139,6 @@ button{
   font-size:15px;
   cursor:pointer;
 }
-
-/* PROTECCIÓN ANTISPAM */
-
-.antispam{
-  display:none !important;
-}
-
 </style>
 </head>
 
@@ -171,7 +157,7 @@ button{
 <h1>Formulario de consulta</h1>
 
 <p class="sub">
-Complete el siguiente Formulario como primer paso para el asesoramiento profesional.
+Complete el siguiente Formulario como primer paso para el asesoramiento profesional. 
 Una vez enviada la información le aparecerá un mensaje de confirmación.
 </p>
 
@@ -180,95 +166,44 @@ El envío de este formulario tiene carácter informativo y no genera obligación
 La información proporcionada será tratada de forma confidencial.
 </p>
 
-<form id="form"
-action="https://formsubmit.co/radiarte@hotmail.com"
-method="POST"
-enctype="multipart/form-data">
+<form id="form" action="https://formsubmit.co/radiarte@hotmail.com" method="POST" enctype="multipart/form-data">
 
-<!-- CONFIGURACIÓN FORMSUBMIT -->
-
-<input type="hidden" name="_captcha" value="true">
-
+<input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_template" value="table">
-
-<input type="hidden" name="_next"
-value="https://tasacionesdearte.org.pe/gracias.html">
-
-<!-- PROTECCIÓN HONEYPOT -->
-
-<input type="text"
-name="_honey"
-class="antispam"
-tabindex="-1"
-autocomplete="off"
-aria-hidden="true">
-
-<!-- FILTRO ANTISPAM -->
-
-<input type="hidden"
-name="_blacklist"
-value="nulls.ee,mail@gcl.su">
+<input type="hidden" name="_next" value="https://tasacionesdearte.org.pe/gracias.html">
 
 <!-- NOMBRE -->
-
 <div class="field">
-
 <label>Nombre del solicitante</label>
-
-<input type="text"
-name="Nombre"
-autocomplete="name"
-required>
-
+<input type="text" name="Nombre" required>
 </div>
 
 <!-- NACIONALIDAD -->
-
 <div class="field">
-
 <label>Nacionalidad</label>
-
-<select id="nacionalidad"
-name="Nacionalidad"
-required>
-
+<select id="nacionalidad" name="Nacionalidad" required>
 <option value="">Seleccione</option>
 <option value="Peru">Perú</option>
 <option value="Extranjero">Extranjero</option>
-
 </select>
-
 </div>
 
 <!-- PERÚ -->
-
 <div id="bloquePeru" style="display:none;">
 
 <div class="field">
-
 <label>Ubicación</label>
-
-<select id="regionTipo" disabled>
-
+<select id="regionTipo">
 <option value="">Seleccione</option>
 <option value="Lima Metropolitana">Lima Metropolitana</option>
 <option value="Lima Provincias">Lima Provincias</option>
 <option value="Regiones del Perú">Regiones del Perú</option>
-
 </select>
-
 </div>
 
-<!-- DISTRITOS -->
-
-<div class="field"
-id="distritosLima"
-style="display:none;">
-
+<div class="field" id="distritosLima" style="display:none;">
 <label>Distrito</label>
-
-<select name="DistritoLima" disabled>
-
+<select name="DistritoLima">
 <option>Miraflores</option>
 <option>San Isidro</option>
 <option>Barranco</option>
@@ -282,6 +217,7 @@ style="display:none;">
 <option>Surquillo</option>
 <option>San Miguel</option>
 <option>Rímac</option>
+<option>Pueblo Libre</option>
 <option>La Victoria</option>
 <option>Lince</option>
 <option>Breña</option>
@@ -306,19 +242,11 @@ style="display:none;">
 <option>Callao/Distritos</option>
 
 </select>
-
 </div>
 
-<!-- PROVINCIAS -->
-
-<div class="field"
-id="limaProvincias"
-style="display:none;">
-
+<div class="field" id="limaProvincias" style="display:none;">
 <label>Provincia</label>
-
-<select name="ProvinciaLima" disabled>
-
+<select name="ProvinciaLima">
 <option>Barranca</option>
 <option>Cajatambo</option>
 <option>Canta</option>
@@ -328,21 +256,12 @@ style="display:none;">
 <option>Huaura</option>
 <option>Oyón</option>
 <option>Yauyos</option>
-
 </select>
-
 </div>
 
-<!-- REGIONES -->
-
-<div class="field"
-id="regionesPeru"
-style="display:none;">
-
+<div class="field" id="regionesPeru" style="display:none;">
 <label>Región</label>
-
-<select name="RegionPeru" disabled>
-
+<select name="RegionPeru">
 <option>Amazonas</option>
 <option>Áncash</option>
 <option>Apurímac</option>
@@ -367,24 +286,16 @@ style="display:none;">
 <option>Tacna</option>
 <option>Tumbes</option>
 <option>Ucayali</option>
-
 </select>
-
 </div>
 
 </div>
 
 <!-- EXTRANJERO -->
-
-<div id="bloqueExtranjero"
-style="display:none;">
-
+<div id="bloqueExtranjero" style="display:none;">
 <div class="field">
-
 <label>País</label>
-
-<select name="Pais" disabled>
-
+<select name="Pais">
 <option>Argentina</option>
 <option>Brasil</option>
 <option>Chile</option>
@@ -401,90 +312,37 @@ style="display:none;">
 <option>Reino Unido</option>
 <option>Suiza</option>
 <option>Otros</option>
-
 </select>
-
 </div>
-
 </div>
 
 <!-- DOCUMENTO -->
-
 <div class="field">
-
 <label>Documento de identidad</label>
-
 <div class="radio-group">
-
-<label>
-DNI
-<input type="radio"
-name="TipoDocumento"
-value="DNI"
-required>
-</label>
-
-<label>
-RUC
-<input type="radio"
-name="TipoDocumento"
-value="RUC">
-</label>
-
-<label>
-Pasaporte
-<input type="radio"
-name="TipoDocumento"
-value="Pasaporte">
-</label>
-
-<label>
-CE
-<input type="radio"
-name="TipoDocumento"
-value="CE">
-</label>
-
+<label>DNI <input type="radio" name="TipoDocumento" value="DNI" required></label>
+<label>RUC <input type="radio" name="TipoDocumento" value="RUC"></label>
+<label>Pasaporte <input type="radio" name="TipoDocumento" value="Pasaporte"></label>
+<label>CE <input type="radio" name="TipoDocumento" value="CE"></label>
 </div>
-
 </div>
 
 <div class="field">
-
 <label>Número de documento</label>
-
-<input type="text"
-id="doc"
-name="NumeroDocumento"
-autocomplete="off"
-required>
-
+<input type="text" id="doc" name="NumeroDocumento" required>
 </div>
 
 <!-- EMAIL -->
-
 <div class="field">
-
 <label>Email</label>
-
-<input type="email"
-name="Email"
-placeholder="ejemplo@correo.com"
-autocomplete="email"
-required>
-
+<input type="email" name="Email" placeholder="ejemplo@correo.com" required>
 </div>
 
 <!-- CELULAR -->
-
 <div class="field">
-
 <label>Celular</label>
-
 <div style="display:flex; gap:10px;">
-
 <select name="CodigoPais">
-
 <option>+51 Perú</option>
 <option>+1 USA</option>
 <option>+34 España</option>
@@ -496,34 +354,18 @@ required>
 <option>+44 Reino Unido</option>
 <option>+33 Francia</option>
 <option>+49 Alemania</option>
-
 </select>
-
-<input type="tel"
-name="Celular"
-id="celular"
-autocomplete="tel-national"
-required>
-
+<input type="tel" name="Celular" required>
 </div>
-
 </div>
 
 <!-- MENSAJE -->
-
 <div class="field">
-
 <label>Mensaje</label>
-
-<textarea name="Mensaje" id="mensaje"></textarea>
-
+<textarea name="Mensaje"></textarea>
 </div>
 
-<button type="submit">
-
-Enviar Formulario
-
-</button>
+<button type="submit">Enviar Formulario</button>
 
 </form>
 
@@ -531,366 +373,91 @@ Enviar Formulario
 
 <script>
 
-"use strict";
-
-/* VALIDACIÓN MATEMÁTICA DEL RUC */
-
+// VALIDACIÓN RUC REAL
 function validarRUC(ruc){
-
-  if(!/^[0-9]{11}$/.test(ruc)){
-    return false;
-  }
-
-  const factores=[5,4,3,2,7,6,5,4,3,2];
-
-  let suma=0;
-
-  for(let i=0;i<10;i++){
-
-    suma+=Number(ruc[i])*factores[i];
-
-  }
-
-  const digito=(11-(suma%11))%10;
-
-  return digito===Number(ruc[10]);
-
+if(!/^[0-9]{11}$/.test(ruc)) return false;
+const f=[5,4,3,2,7,6,5,4,3,2];
+let s=0;
+for(let i=0;i<10;i++) s+=ruc[i]*f[i];
+let r=11-(s%11);
+if(r==10) r=0;
+if(r==11) r=1;
+return r==ruc[10];
 }
 
-/* ELEMENTOS DEL FORMULARIO */
-
+// VALIDACIÓN FORM
 const form=document.getElementById('form');
-
 const doc=document.getElementById('doc');
 
-const celular=document.getElementById('celular');
+form.addEventListener('submit',function(e){
+const tipo=document.querySelector('input[name="TipoDocumento"]:checked');
 
+if(tipo){
+if(tipo.value==="DNI" && doc.value.length!==8){
+alert("DNI debe tener 8 dígitos"); e.preventDefault();
+}
+if(tipo.value==="RUC" && !validarRUC(doc.value)){
+alert("RUC inválido"); e.preventDefault();
+}
+}
+});
+
+// BLOQUES
 const nacionalidad=document.getElementById('nacionalidad');
-
 const bloquePeru=document.getElementById('bloquePeru');
-
 const bloqueExtranjero=document.getElementById('bloqueExtranjero');
 
-const regionTipo=document.getElementById('regionTipo');
-
-const distritosLima=document.getElementById('distritosLima');
-
-const limaProvincias=document.getElementById('limaProvincias');
-
-const regionesPeru=document.getElementById('regionesPeru');
-
-/* CONFIGURACIÓN SEGÚN DOCUMENTO */
-
-function configurarDocumento(){
-
-  const tipo=document.querySelector(
-    'input[name="TipoDocumento"]:checked'
-  );
-
-  doc.removeAttribute('maxlength');
-
-  doc.removeAttribute('pattern');
-
-  doc.removeAttribute('inputmode');
-
-  if(!tipo){
-
-    return;
-
-  }
-
-  if(tipo.value==="DNI"){
-
-    doc.maxLength=8;
-
-    doc.pattern="[0-9]{8}";
-
-    doc.inputMode="numeric";
-
-    doc.title="Ingrese los 8 dígitos de su DNI";
-
-  }
-
-  if(tipo.value==="RUC"){
-
-    doc.maxLength=11;
-
-    doc.pattern="[0-9]{11}";
-
-    doc.inputMode="numeric";
-
-    doc.title="Ingrese los 11 dígitos de su RUC";
-
-  }
-
-  if(tipo.value==="Pasaporte" || tipo.value==="CE"){
-
-    doc.title="Ingrese su número de documento";
-
-  }
-
-}
-
-document.querySelectorAll(
-  'input[name="TipoDocumento"]'
-).forEach(function(elemento){
-
-  elemento.addEventListener(
-    'change',
-    configurarDocumento
-  );
-
-});
-
-/* VALIDACIÓN DEL FORMULARIO */
-
-form.addEventListener('submit',function(e){
-
-  const tipo=document.querySelector(
-    'input[name="TipoDocumento"]:checked'
-  );
-
-  const numero=doc.value.trim();
-
-  doc.value=numero;
-
-  if(!tipo){
-
-    alert("Seleccione el tipo de documento.");
-
-    e.preventDefault();
-
-    return;
-
-  }
-
-  /* DNI */
-
-  if(tipo.value==="DNI" && !/^[0-9]{8}$/.test(numero)){
-
-    alert("El DNI debe contener exactamente 8 dígitos numéricos.");
-
-    e.preventDefault();
-
-    doc.focus();
-
-    return;
-
-  }
-
-  /* RUC */
-
-  if(tipo.value==="RUC" && !validarRUC(numero)){
-
-    alert("El número de RUC ingresado no es válido.");
-
-    e.preventDefault();
-
-    doc.focus();
-
-    return;
-
-  }
-
-  /* TELÉFONO */
-
-  const telefono=celular.value.replace(/[\s()-]/g,'');
-
-  if(!/^[0-9]{6,15}$/.test(telefono)){
-
-    alert("Ingrese un número telefónico válido.");
-
-    e.preventDefault();
-
-    celular.focus();
-
-    return;
-
-  }
-
-  celular.value=telefono;
-
-});
-
-/* VISIBILIDAD DE CAMPOS GEOGRÁFICOS */
-
-function mostrarBloque(bloque,mostrar){
-
-  bloque.style.display=mostrar?'block':'none';
-
-  bloque.querySelectorAll('input,select,textarea')
-  .forEach(function(campo){
-
-    campo.disabled=!mostrar;
-
-  });
-
-}
-
-/* SUBNIVELES GEOGRÁFICOS */
-
-function actualizarRegion(){
-
-  mostrarBloque(distritosLima,false);
-
-  mostrarBloque(limaProvincias,false);
-
-  mostrarBloque(regionesPeru,false);
-
-  if(nacionalidad.value!=="Peru"){
-
-    return;
-
-  }
-
-  if(regionTipo.value==="Lima Metropolitana"){
-
-    mostrarBloque(distritosLima,true);
-
-  }
-
-  if(regionTipo.value==="Lima Provincias"){
-
-    mostrarBloque(limaProvincias,true);
-
-  }
-
-  if(regionTipo.value==="Regiones del Perú"){
-
-    mostrarBloque(regionesPeru,true);
-
-  }
-
-}
-
-/* NACIONALIDAD */
-
-function actualizarNacionalidad(){
-
-  mostrarBloque(bloquePeru,false);
-
-  mostrarBloque(bloqueExtranjero,false);
-
-  if(nacionalidad.value==="Peru"){
-
-    mostrarBloque(bloquePeru,true);
-
-    actualizarRegion();
-
-  }
-
-  if(nacionalidad.value==="Extranjero"){
-
-    mostrarBloque(bloqueExtranjero,true);
-
-  }
-
-}
-
-nacionalidad.addEventListener(
-  'change',
-  actualizarNacionalidad
-);
-
-regionTipo.addEventListener(
-  'change',
-  actualizarRegion
-);
-
-/* ESTADO INICIAL */
-
-actualizarNacionalidad();
-
-configurarDocumento();
-
-/* DETECCIÓN GEOGRÁFICA POR IP */
-
-let seleccionManual=false;
-
 nacionalidad.addEventListener('change',function(){
+bloquePeru.style.display='none';
+bloqueExtranjero.style.display='none';
 
-  seleccionManual=true;
-
+if(this.value==="Peru") bloquePeru.style.display='block';
+if(this.value==="Extranjero") bloqueExtranjero.style.display='block';
 });
 
+// SUBNIVELES
+document.getElementById('regionTipo').addEventListener('change',function(){
+document.getElementById('distritosLima').style.display='none';
+document.getElementById('limaProvincias').style.display='none';
+document.getElementById('regionesPeru').style.display='none';
+
+if(this.value==="Lima Metropolitana") document.getElementById('distritosLima').style.display='block';
+if(this.value==="Lima Provincias") document.getElementById('limaProvincias').style.display='block';
+if(this.value==="Regiones del Perú") document.getElementById('regionesPeru').style.display='block';
+});
+
+// IP
 fetch('https://ipapi.co/json/')
-
-.then(function(respuesta){
-
-  if(!respuesta.ok){
-
-    throw new Error("Geolocalización no disponible");
-
-  }
-
-  return respuesta.json();
-
-})
-
-.then(function(datos){
-
-  if(seleccionManual || nacionalidad.value!==""){
-
-    return;
-
-  }
-
-  if(datos.country_code && datos.country_code!=="PE"){
-
-    nacionalidad.value="Extranjero";
-
-    actualizarNacionalidad();
-
-  }
-
-})
-
-.catch(function(){
-
-  /* Si el servicio de geolocalización no está
-     disponible, el formulario sigue funcionando. */
-
+.then(r=>r.json())
+.then(d=>{
+if(d.country_name!=="Peru"){
+nacionalidad.value="Extranjero";
+bloqueExtranjero.style.display="block";
+}
 });
-
 </script>
 
 <!-- FOOTER INSTITUCIONAL -->
-
 <footer style="text-align:center; padding:40px 0; color:#64748b; font-size:14px;">
+  © 2026 TASACIONES DE ARTE | MARCO CABRERA – PERITO REGISTRADO
+   <br><br>
 
-© 2026 TASACIONES DE ARTE | MARCO CABRERA – PERITO REGISTRADO
+  <a href="y-aviso-legal.html" style="color:#888; text-decoration:none; margin:0 8px;">
+    Aviso Legal
+  </a> · 
 
-<br><br>
+  <a href="y-politicadeprivacidad.html" style="color:#888; text-decoration:none; margin:0 8px;">
+    Política de Privacidad
+  </a> · 
 
-<a href="y-aviso-legal.html"
-style="color:#888; text-decoration:none; margin:0 8px;">
+  <a href="y-politica-cookies.html" style="color:#888; text-decoration:none; margin:0 8px;">
+    Política de Cookies
+  </a> · 
 
-Aviso Legal
-
-</a> ·
-
-<a href="y-politicadeprivacidad.html"
-style="color:#888; text-decoration:none; margin:0 8px;">
-
-Política de Privacidad
-
-</a> ·
-
-<a href="y-politica-cookies.html"
-style="color:#888; text-decoration:none; margin:0 8px;">
-
-Política de Cookies
-
-</a> ·
-
-<a href="y-libro-reclamaciones.html"
-style="color:#888; text-decoration:none; margin:0 8px;">
-
-Libro de Reclamaciones
-
-</a>
-
+  <a href="y-libro-reclamaciones.html" style="color:#888; text-decoration:none; margin:0 8px;">
+    Libro de Reclamaciones
+  </a>
 </footer>
-
+  
 </body>
 </html>
